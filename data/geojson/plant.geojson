@@ -1,0 +1,4178 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2026-03-23T08:46:30Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/123719269",
+        "building": "yes",
+        "location": "indoor",
+        "name": "한남변전소",
+        "name:en": "Hannam Substation",
+        "name:ko": "한남변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.999832,
+          37.5352296
+        ]
+      },
+      "id": "way/123719269"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/278752532",
+        "building": "yes",
+        "location": "indoor",
+        "name": "노량진변전소",
+        "name:en": "Noryangjin Substation",
+        "name:ko": "노량진변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9459959,
+          37.5138738
+        ]
+      },
+      "id": "way/278752532"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/301354080",
+        "access": "no",
+        "barrier": "fence",
+        "frequency": "60",
+        "location": "outdoor",
+        "name": "보광변전소",
+        "name:en": "Bogwang Substation",
+        "name:ko": "보광변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9956722,
+          37.5240074
+        ]
+      },
+      "id": "way/301354080"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/312151269",
+        "building": "yes",
+        "frequency": "60",
+        "location": "indoor",
+        "name": "강동변전소",
+        "name:en": "Gangdong Substation",
+        "name:ko": "강동변전소",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1509341,
+          37.5368648
+        ]
+      },
+      "id": "way/312151269"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/328442770",
+        "building": "yes",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "아현변전소",
+        "name:en": "Ahyeon Substation",
+        "name:ja": "阿峴変電所",
+        "name:ko": "아현변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.955935,
+          37.5545224
+        ]
+      },
+      "id": "way/328442770"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/328442775",
+        "building": "yes",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "신촌변전소",
+        "name:en": "Sinchon Substation",
+        "name:ko": "신촌변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9415661,
+          37.556185
+        ]
+      },
+      "id": "way/328442775"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/355405884",
+        "building": "commercial",
+        "frequency": "60",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "영등포변전소",
+        "name:en": "Yeongdeungpo Substation",
+        "name:ko": "영등포변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "transmission",
+        "voltage": "345000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8944473,
+          37.5196943
+        ]
+      },
+      "id": "way/355405884"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/379943262",
+        "location": "outdoor",
+        "power": "substation",
+        "substation": "minor_distribution",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9876875,
+          37.5509196
+        ]
+      },
+      "id": "way/379943262"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/400847807",
+        "addr:city": "서울특별시",
+        "addr:district": "중구",
+        "addr:housenumber": "29",
+        "addr:postcode": "04567",
+        "addr:street": "마장로1길",
+        "addr:subdistrict": "신당동",
+        "building": "yes",
+        "location": "indoor",
+        "name": "흥인변전소",
+        "name:en": "Heungin Substation",
+        "name:ko": "흥인변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0114904,
+          37.5691841
+        ]
+      },
+      "id": "way/400847807"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/430291672",
+        "addr:city": "서울특별시",
+        "addr:district": "관악구",
+        "addr:housenumber": "1",
+        "addr:postcode": "08826",
+        "addr:street": "관악로",
+        "addr:subdistrict": "신림동",
+        "building": "industrial",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "신림변전소",
+        "name:en": "Sillim Substation",
+        "name:ko": "신림변전소",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9548192,
+          37.4666261
+        ]
+      },
+      "id": "way/430291672"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/448707897",
+        "building": "yes",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "안암변전소",
+        "name:en": "Anam Substation",
+        "name:ko": "안암변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0285928,
+          37.58401
+        ]
+      },
+      "id": "way/448707897"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/462647234",
+        "building": "industrial",
+        "frequency": "60",
+        "location": "outdoor",
+        "name": "은평변전소",
+        "name:en": "Eunpyeong Substation",
+        "name:ko": "은평변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9371132,
+          37.6101503
+        ]
+      },
+      "id": "way/462647234"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/469345027",
+        "barrier": "fence",
+        "name": "화곡변전소",
+        "name:en": "Hwagok Substation",
+        "name:ko": "화곡변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8251458,
+          37.5485595
+        ]
+      },
+      "id": "way/469345027"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/470423681",
+        "landuse": "industrial",
+        "name": "서울에너지공사(목동)",
+        "name:en": "Mokdong Yancheon power station",
+        "name:ja": "ソウルエナジー公社(木洞)",
+        "plant:method": "combustion",
+        "plant:output:electricity": "yes",
+        "plant:source": "gas",
+        "power": "plant",
+        "source": "https://www.gem.wiki/Mok-Dong_Yangcheon_power_station",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8837316,
+          37.5397262
+        ]
+      },
+      "id": "way/470423681"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/470876802",
+        "frequency": "60",
+        "name": "수색변전소",
+        "name:en": "Susaek Substation",
+        "name:ja": "水色変電所",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8986702,
+          37.5820687
+        ]
+      },
+      "id": "way/470876802"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/472066007",
+        "building": "yes",
+        "location": "indoor",
+        "name": "상계변전소",
+        "name:en": "Sanggye Substation",
+        "name:ko": "상계변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0556656,
+          37.6541721
+        ]
+      },
+      "id": "way/472066007"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/474276584",
+        "landuse": "industrial",
+        "name": "노원열병합발전소",
+        "name:en": "Nowon CHP Plant",
+        "name:ja": "蘆原熱併合発電所",
+        "name:ko": "노원열병합발전소",
+        "operator": "서울에너지공사",
+        "plant:output:electricity": "39 MW",
+        "power": "plant",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0581688,
+          37.6408214
+        ]
+      },
+      "id": "way/474276584"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/475080862",
+        "building": "yes",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "구로변전소",
+        "name:en": "Guro Substation",
+        "name:ko": "구로변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8834016,
+          37.4979718
+        ]
+      },
+      "id": "way/475080862"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/500683784",
+        "addr:city": "서울특별시",
+        "addr:district": "금천구",
+        "addr:housenumber": "93-24",
+        "addr:postcode": "08634",
+        "addr:street": "시흥대로51길",
+        "addr:subdistrict": "시흥동",
+        "building": "yes",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "시흥변전소",
+        "name:en": "Siheung Substation",
+        "name:ko": "시흥변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8971752,
+          37.4498969
+        ]
+      },
+      "id": "way/500683784"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/520038085",
+        "addr:city": "서울특별시",
+        "addr:country": "KR",
+        "addr:district": "구로구",
+        "addr:subdistrict": "온수동",
+        "frequency": "60",
+        "location": "underground",
+        "name": "온수변전소",
+        "name:en": "Onsu Substation",
+        "name:ko": "온수변전소",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8237711,
+          37.4910327
+        ]
+      },
+      "id": "way/520038085"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/677655657",
+        "building": "yes",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "동빙고변전소",
+        "name:en": "Dongbinggo Substation",
+        "name:ko": "동빙고변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.974058,
+          37.5230993
+        ]
+      },
+      "id": "way/677655657"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/685034837",
+        "building": "yes",
+        "power": "substation",
+        "substation": "traction",
+        "voltage": "55000;27500",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8778482,
+          37.4984356
+        ]
+      },
+      "id": "way/685034837"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/691122408",
+        "building": "yes",
+        "building:levels": "3",
+        "frequency": "60",
+        "location": "indoor",
+        "name": "상암변전소",
+        "name:en": "Sangam Substation",
+        "name:ko": "상암변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8777609,
+          37.5805456
+        ]
+      },
+      "id": "way/691122408"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/780139421",
+        "building": "yes",
+        "location": "indoor",
+        "name": "미아변전소",
+        "name:en": "Mia Substation",
+        "name:ko": "미아변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0285961,
+          37.6137393
+        ]
+      },
+      "id": "way/780139421"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/793603155",
+        "building": "yes",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "잠실변전소",
+        "name:en": "Jamsil Substation",
+        "name:ko": "잠실변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.081763,
+          37.5036303
+        ]
+      },
+      "id": "way/793603155"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/830729465",
+        "building": "yes",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "목동변전소",
+        "name:en": "Mokdong Substation",
+        "name:ko": "목동변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "transmission",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.868787,
+          37.5201129
+        ]
+      },
+      "id": "way/830729465"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/879319755",
+        "building": "yes",
+        "landuse": "industrial",
+        "plant:method": "combustion",
+        "plant:output:electricity": "yes",
+        "plant:source": "gas",
+        "power": "plant",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9170813,
+          37.5443634
+        ]
+      },
+      "id": "way/879319755"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/879319756",
+        "building": "yes",
+        "power": "substation",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9159532,
+          37.5436365
+        ]
+      },
+      "id": "way/879319756"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/879319764",
+        "building": "yes",
+        "landuse": "industrial",
+        "plant:method": "combustion",
+        "plant:output:electricity": "yes",
+        "plant:source": "gas",
+        "power": "plant",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.919689,
+          37.543891
+        ]
+      },
+      "id": "way/879319764"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/879319765",
+        "building": "yes",
+        "landuse": "industrial",
+        "plant:method": "combustion",
+        "plant:output:electricity": "yes",
+        "plant:source": "gas",
+        "power": "plant",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9202344,
+          37.544352
+        ]
+      },
+      "id": "way/879319765"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/884033660",
+        "building": "yes",
+        "frequency": "60",
+        "location": "indoor",
+        "name": "성동변전소",
+        "name:en": "Seongdong Substation",
+        "name:ko": "성동변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "transmission",
+        "voltage": "345000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0396628,
+          37.568087
+        ]
+      },
+      "id": "way/884033660"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/912799256",
+        "building": "yes",
+        "building:levels": "3",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "동남변전소",
+        "name:en": "Dongnam Substation",
+        "name:ko": "동남변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1321935,
+          37.4759938
+        ]
+      },
+      "id": "way/912799256"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/923070450",
+        "building": "yes",
+        "frequency": "60",
+        "name": "반포변전소",
+        "name:en": "Banpo Substation",
+        "name:ko": "반포변전소",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0087998,
+          37.516135
+        ]
+      },
+      "id": "way/923070450"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1025717075",
+        "building": "yes",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "수서변전소",
+        "name:en": "Suseo Substation",
+        "name:ko": "수서변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1077126,
+          37.4859096
+        ]
+      },
+      "id": "way/1025717075"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1028453947",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "yes",
+        "plant:source": "solar",
+        "power": "plant",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0305541,
+          37.5655956
+        ]
+      },
+      "id": "way/1028453947"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1064546944",
+        "addr:city": "서울특별시",
+        "addr:district": "동대문구",
+        "building": "yes",
+        "frequency": "60",
+        "location": "indoor",
+        "name": "휘경변전소",
+        "name:en": "Hwigyeong Substation",
+        "name:ko": "휘경변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0684349,
+          37.5923985
+        ]
+      },
+      "id": "way/1064546944"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1081669148",
+        "building": "industrial",
+        "frequency": "60",
+        "location": "indoor",
+        "name": "사당변전소",
+        "name:en": "Sadang Substation",
+        "name:ko": "사당변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9840959,
+          37.4757771
+        ]
+      },
+      "id": "way/1081669148"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1098581082",
+        "addr:city": "서울특별시",
+        "addr:country": "KR",
+        "addr:district": "구로구",
+        "addr:subdistrict": "천왕동",
+        "building": "industrial",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "천왕변전소",
+        "name:en": "Cheonwang Substation",
+        "name:ko": "천왕변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8451331,
+          37.4797195
+        ]
+      },
+      "id": "way/1098581082"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1101857586",
+        "building": "yes",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "가양변전소",
+        "name:en": "Gayang Substation",
+        "name:ko": "가양변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8362825,
+          37.5706371
+        ]
+      },
+      "id": "way/1101857586"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1101878213",
+        "building": "yes",
+        "frequency": "60",
+        "name": "군자변전소",
+        "name:en": "Gunja Substation",
+        "name:ko": "군자변전소",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0567167,
+          37.5596711
+        ]
+      },
+      "id": "way/1101878213"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1101878214",
+        "building": "yes",
+        "frequency": "60",
+        "name": "마장변전소",
+        "name:en": "Majang Substation",
+        "name:ko": "마장변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0334874,
+          37.5679452
+        ]
+      },
+      "id": "way/1101878214"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1101878215",
+        "building": "yes",
+        "frequency": "60",
+        "name": "왕십리변전소",
+        "name:en": "Wangsimni Substation",
+        "name:ko": "왕십리변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0390966,
+          37.5682123
+        ]
+      },
+      "id": "way/1101878215"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1101878219",
+        "building": "yes",
+        "frequency": "60",
+        "name": "뚝도변전소",
+        "name:en": "Ttukdo Substation",
+        "name:ko": "뚝도변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0695573,
+          37.5361654
+        ]
+      },
+      "id": "way/1101878219"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1101878220",
+        "frequency": "60",
+        "name": "광장변전소",
+        "name:en": "Gwangjang Substation",
+        "name:ko": "광장변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0991548,
+          37.5458475
+        ]
+      },
+      "id": "way/1101878220"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1101917694",
+        "frequency": "60",
+        "gas_insulated": "yes",
+        "location": "underground",
+        "name": "신사변전소",
+        "name:en": "Sinsa Substation",
+        "name:ko": "신사변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0338065,
+          37.5249134
+        ]
+      },
+      "id": "way/1101917694"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1101917697",
+        "location": "underground",
+        "name": "염곡변전소",
+        "name:en": "Yeomgok Substation",
+        "name:ko": "염곡변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0464348,
+          37.4657651
+        ]
+      },
+      "id": "way/1101917697"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1101917698",
+        "building": "yes",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "개포변전소",
+        "name:en": "Gaepo Substation",
+        "name:ko": "개포변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0739583,
+          37.4838611
+        ]
+      },
+      "id": "way/1101917698"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1101917699",
+        "power": "substation",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0816453,
+          37.5036411
+        ]
+      },
+      "id": "way/1101917699"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1101917700",
+        "building": "yes",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "송파변전소",
+        "name:en": "Songpa Substation",
+        "name:ko": "송파변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1194498,
+          37.5086666
+        ]
+      },
+      "id": "way/1101917700"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1101917701",
+        "building": "yes",
+        "gas_insulated": "yes",
+        "height": "16.45",
+        "location": "indoor",
+        "name": "상일변전소",
+        "name:en": "Sangil Substation",
+        "name:ko": "상일변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1772658,
+          37.5477049
+        ]
+      },
+      "id": "way/1101917701"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1101926172",
+        "location": "outdoor",
+        "name": "구공변전소",
+        "name:en": "Gugong Substation",
+        "name:ko": "구공변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8782581,
+          37.4770598
+        ]
+      },
+      "id": "way/1101926172"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1101926174",
+        "building": "yes",
+        "location": "indoor",
+        "name": "대방변전소",
+        "name:en": "Daebang Substation",
+        "name:ko": "대방변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9172887,
+          37.472
+        ]
+      },
+      "id": "way/1101926174"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1101926175",
+        "location": "underground",
+        "name": "양천변전소",
+        "name:en": "Yangcheon Substation",
+        "name:ko": "양천변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8761251,
+          37.5321061
+        ]
+      },
+      "id": "way/1101926175"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1101926176",
+        "location": "underground",
+        "name": "신정변전소",
+        "name:en": "Sinjeong Substation",
+        "name:ko": "신정변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8466095,
+          37.5100621
+        ]
+      },
+      "id": "way/1101926176"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1101926177",
+        "building": "industrial",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "오류변전소",
+        "name:en": "Oryu Substation",
+        "name:ko": "오류변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8625069,
+          37.5020637
+        ]
+      },
+      "id": "way/1101926177"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1102076031",
+        "addr:city": "서울특별시",
+        "addr:country": "KR",
+        "addr:district": "동작구",
+        "addr:subdistrict": "신대방동",
+        "level": "-3",
+        "location": "underground",
+        "name": "신길변전소",
+        "name:en": "Singil Substation",
+        "name:ko": "신길변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9224196,
+          37.4907776
+        ]
+      },
+      "id": "way/1102076031"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1102076039",
+        "building": "industrial",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "옥인변전소",
+        "name:en": "Ogin Substation",
+        "name:ko": "옥인변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9688925,
+          37.5822831
+        ]
+      },
+      "id": "way/1102076039"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1102259030",
+        "building": "yes",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "현저변전소",
+        "name:en": "Hyeonjeo Substation",
+        "name:ko": "현저변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9548901,
+          37.5766033
+        ]
+      },
+      "id": "way/1102259030"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1102259035",
+        "building": "yes",
+        "location": "indoor",
+        "name": "신내변전소",
+        "name:en": "Sinnae Substation",
+        "name:ko": "신내변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0956185,
+          37.6106721
+        ]
+      },
+      "id": "way/1102259035"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1102290943",
+        "building": "yes",
+        "location": "indoor",
+        "name": "노원변전소",
+        "name:en": "Nowon Substation",
+        "name:ko": "노원변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0589287,
+          37.628048
+        ]
+      },
+      "id": "way/1102290943"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1102290950",
+        "building": "yes",
+        "name": "쌍문변전소",
+        "name:en": "Ssangmun Substation",
+        "name:ko": "쌍문변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0271385,
+          37.6473576
+        ]
+      },
+      "id": "way/1102290950"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1102290959",
+        "power": "substation",
+        "substation": "transition",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0245224,
+          37.4777029
+        ]
+      },
+      "id": "way/1102290959"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1102290961",
+        "building": "yes",
+        "name": "용산변전소",
+        "name:en": "Yongsan Substation",
+        "name:ko": "용산변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9572094,
+          37.5314126
+        ]
+      },
+      "id": "way/1102290961"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1102490847",
+        "building": "yes",
+        "building:levels": "2",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "문래변전소",
+        "name:en": "Mullae Substation",
+        "name:ko": "문래변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8939936,
+          37.5197763
+        ]
+      },
+      "id": "way/1102490847"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1102490850",
+        "building": "yes",
+        "location": "indoor",
+        "name": "양평변전소",
+        "name:en": "Yangpyeong Substation",
+        "name:ko": "양평변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8930079,
+          37.5303425
+        ]
+      },
+      "id": "way/1102490850"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1102519404",
+        "building": "yes",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "종로변전소",
+        "name:en": "Jongno Substation",
+        "name:ko": "종로변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9920394,
+          37.5687329
+        ]
+      },
+      "id": "way/1102519404"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1102577473",
+        "gas_insulated": "yes",
+        "location": "underground",
+        "name": "세종로변전소",
+        "name:en": "Sejongro Substation",
+        "name:ja": "世宗路変電所",
+        "name:ko": "세종로변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9751576,
+          37.5731162
+        ]
+      },
+      "id": "way/1102577473"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1102577474",
+        "building": "yes",
+        "location": "indoor",
+        "name": "성수변전소",
+        "name:en": "Seongsu Substation",
+        "name:ko": "성수변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0507509,
+          37.5465156
+        ]
+      },
+      "id": "way/1102577474"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1102577475",
+        "location": "outdoor",
+        "name": "종암변전소",
+        "name:en": "Jongam Substation",
+        "name:ko": "종암변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0410205,
+          37.5940005
+        ]
+      },
+      "id": "way/1102577475"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1194000571",
+        "name": "자곡 병렬급전소",
+        "name:en": "Jagok Parallel Post",
+        "name:ko": "자곡 병렬급전소",
+        "power": "substation",
+        "substation": "traction",
+        "voltage": "55000;27500",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1100562,
+          37.4775977
+        ]
+      },
+      "id": "way/1194000571"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274565239",
+        "name": "SK 신길 태양광",
+        "operator": "SK에너지",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "0.0258 MW",
+        "plant:source": "solar",
+        "power": "plant",
+        "source": "survey;aerial imagery",
+        "start_date": "2021-01-01",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9170221,
+          37.515283
+        ]
+      },
+      "id": "way/1274565239"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274565240",
+        "name": "SK 은평뉴타운 태양광",
+        "operator": "SK에너지",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "0.02064 MW",
+        "plant:source": "solar",
+        "power": "plant",
+        "source": "survey;aerial imagery",
+        "start_date": "2021-01-01",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9203638,
+          37.625313
+        ]
+      },
+      "id": "way/1274565240"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274565241",
+        "name": "SK 신평 태양광",
+        "operator": "SK에너지",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "0.0258 MW",
+        "plant:source": "solar",
+        "power": "plant",
+        "start_date": "2021-01-01",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8661484,
+          37.5094476
+        ]
+      },
+      "id": "way/1274565241"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274565242",
+        "name": "SK 삼미북부 태양광",
+        "operator": "SK에너지",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "0.01806 MW",
+        "plant:source": "solar",
+        "power": "plant",
+        "start_date": "2021-01-01",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0321134,
+          37.6449626
+        ]
+      },
+      "id": "way/1274565242"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274565243",
+        "name": "SK 박미 태양광",
+        "operator": "SK에너지",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "0.02064 MW",
+        "plant:source": "solar",
+        "power": "plant",
+        "source": "survey;aerial imagery",
+        "start_date": "2021-01-01",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9026496,
+          37.4373681
+        ]
+      },
+      "id": "way/1274565243"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274565244",
+        "name": "SK 창동 태양광",
+        "operator": "SK에너지",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "0.01806 MW",
+        "plant:source": "solar",
+        "power": "plant",
+        "start_date": "2021-01-01",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0326771,
+          37.6446027
+        ]
+      },
+      "id": "way/1274565244"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274565245",
+        "name": "SK 신봉천 태양광",
+        "operator": "SK에너지",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "0.01548 MW",
+        "plant:source": "solar",
+        "power": "plant",
+        "source": "survey;aerial imagery",
+        "start_date": "2021-01-01",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.958377,
+          37.4787854
+        ]
+      },
+      "id": "way/1274565245"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274565246",
+        "name": "건국대 경영관 태양광",
+        "operator": "건국대학교",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "0.0972 MW",
+        "plant:source": "solar",
+        "power": "plant",
+        "source": "survey;aerial imagery",
+        "start_date": "2015-01-01",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0760176,
+          37.544352
+        ]
+      },
+      "id": "way/1274565246"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274565247",
+        "name": "건국대 상허연구관 태양광",
+        "operator": "건국대학교",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "0.1 MW",
+        "plant:source": "solar",
+        "power": "plant",
+        "source": "survey;aerial imagery",
+        "start_date": "2015-01-01",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0750417,
+          37.5440414
+        ]
+      },
+      "id": "way/1274565247"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274565248",
+        "name": "건국대 생명과학관 태양광",
+        "operator": "건국대",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "0.09792 MW",
+        "plant:source": "solar",
+        "power": "plant",
+        "source": "survey;aerial imagery",
+        "start_date": "2013-01-01",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0745022,
+          37.5409667
+        ]
+      },
+      "id": "way/1274565248"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274566709",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "yes",
+        "plant:source": "solar",
+        "power": "plant",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1232636,
+          37.4739937
+        ]
+      },
+      "id": "way/1274566709"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274566710",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "yes",
+        "plant:source": "solar",
+        "power": "plant",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1223545,
+          37.4736541
+        ]
+      },
+      "id": "way/1274566710"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274573263",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "yes",
+        "plant:source": "solar",
+        "power": "plant",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.7952457,
+          37.5804939
+        ]
+      },
+      "id": "way/1274573263"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274573264",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "yes",
+        "plant:source": "solar",
+        "power": "plant",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.795551,
+          37.5798358
+        ]
+      },
+      "id": "way/1274573264"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274573265",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "yes",
+        "plant:source": "solar",
+        "power": "plant",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.7957195,
+          37.5790615
+        ]
+      },
+      "id": "way/1274573265"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274573266",
+        "name": "고덕차량기지 태양광",
+        "operator": "서울에너지공사",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "0.612 MW",
+        "plant:source": "solar",
+        "power": "plant",
+        "source": "survey;aerial imagery",
+        "start_date": "2015-01-01",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.168357,
+          37.5665147
+        ]
+      },
+      "id": "way/1274573266"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274573267",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "yes",
+        "plant:source": "solar",
+        "power": "plant",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.150188,
+          37.5549583
+        ]
+      },
+      "id": "way/1274573267"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274573268",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "yes",
+        "plant:source": "solar",
+        "power": "plant",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1507292,
+          37.5560751
+        ]
+      },
+      "id": "way/1274573268"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274573269",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "yes",
+        "plant:source": "solar",
+        "power": "plant",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1514169,
+          37.5562498
+        ]
+      },
+      "id": "way/1274573269"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274573270",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "yes",
+        "plant:source": "solar",
+        "power": "plant",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1518435,
+          37.555
+        ]
+      },
+      "id": "way/1274573270"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274573271",
+        "name": "방화차량기지 태양광",
+        "operator": "서울에너지공사",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "0.63423 MW",
+        "plant:source": "solar",
+        "power": "plant",
+        "source": "survey;aerial imagery",
+        "start_date": "2020-01-01",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8083108,
+          37.5876322
+        ]
+      },
+      "id": "way/1274573271"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274573272",
+        "name": "불광천 태양광",
+        "operator": "옴니시스템",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "0.143075 MW",
+        "plant:source": "solar",
+        "power": "plant",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0491519,
+          37.5510559
+        ]
+      },
+      "id": "way/1274573272"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274574403",
+        "name": "성대골햇빛 태양광 3호",
+        "operator": "성대골에너지협동조합",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "0.025125 MW",
+        "plant:source": "solar",
+        "power": "plant",
+        "source": "survey;aerial imagery",
+        "start_date": "2020-01-01",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9333011,
+          37.5040643
+        ]
+      },
+      "id": "way/1274574403"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274597539",
+        "name": "그리드위즈 도봉 1호 태양광",
+        "operator": "아산신재생복합발전",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "0.168 MW",
+        "plant:source": "solar",
+        "power": "plant",
+        "source": "survey;aerial imagery",
+        "start_date": "2021-01-01",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0464648,
+          37.6922455
+        ]
+      },
+      "id": "way/1274597539"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274597540",
+        "name": "그리드위즈 도봉 2호 태양광",
+        "operator": "아산신재생복합발전",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "0.036 MW",
+        "plant:source": "solar",
+        "power": "plant",
+        "source": "survey;aerial imagery",
+        "start_date": "2021-01-01",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0465554,
+          37.691711
+        ]
+      },
+      "id": "way/1274597540"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274597541",
+        "name": "신내차량기지 태양광",
+        "operator": "서울에너지공사",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "0.63423 MW",
+        "plant:source": "solar",
+        "power": "plant",
+        "source": "survey;aerial imagery",
+        "start_date": "2020-01-01",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1091966,
+          37.6109751
+        ]
+      },
+      "id": "way/1274597541"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274597542",
+        "name": "신내차량기지  태양광",
+        "operator": "케이서울햇빛발전소",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "1.70496 MW",
+        "plant:source": "solar",
+        "power": "plant",
+        "start_date": "2022-01-01",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1047254,
+          37.6131894
+        ]
+      },
+      "id": "way/1274597542"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274597543",
+        "name": "고덕 태양광",
+        "operator": "케이서울햇빛발전소",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "0.9984 MW",
+        "plant:source": "solar",
+        "power": "plant",
+        "source": "survey;aerial imagery",
+        "start_date": "2014-01-01",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1539403,
+          37.5599673
+        ]
+      },
+      "id": "way/1274597543"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274597544",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "yes",
+        "plant:source": "solar",
+        "power": "plant",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8281488,
+          37.574013
+        ]
+      },
+      "id": "way/1274597544"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274597545",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "yes",
+        "plant:source": "solar",
+        "power": "plant",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8285418,
+          37.574948
+        ]
+      },
+      "id": "way/1274597545"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274597546",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "yes",
+        "plant:source": "solar",
+        "power": "plant",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8319097,
+          37.5736262
+        ]
+      },
+      "id": "way/1274597546"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274597547",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "yes",
+        "plant:source": "solar",
+        "power": "plant",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.830384,
+          37.5731649
+        ]
+      },
+      "id": "way/1274597547"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274597548",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "yes",
+        "plant:source": "solar",
+        "power": "plant",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8309463,
+          37.5729306
+        ]
+      },
+      "id": "way/1274597548"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274597549",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "yes",
+        "plant:source": "solar",
+        "power": "plant",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.831901,
+          37.5728707
+        ]
+      },
+      "id": "way/1274597549"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274597550",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "yes",
+        "plant:source": "solar",
+        "power": "plant",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8289652,
+          37.575888
+        ]
+      },
+      "id": "way/1274597550"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274597551",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "yes",
+        "plant:source": "solar",
+        "power": "plant",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8295017,
+          37.5768544
+        ]
+      },
+      "id": "way/1274597551"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274597554",
+        "name": "광성중학교 태양광",
+        "operator": "KS솔라",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "0.074 MW",
+        "plant:source": "solar",
+        "power": "plant",
+        "source": "survey;aerial imagery",
+        "start_date": "2014-01-01",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9366478,
+          37.5486506
+        ]
+      },
+      "id": "way/1274597554"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274597555",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "yes",
+        "plant:source": "solar",
+        "power": "plant",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0595357,
+          37.5577393
+        ]
+      },
+      "id": "way/1274597555"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274597556",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "yes",
+        "plant:source": "solar",
+        "power": "plant",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0596409,
+          37.5572733
+        ]
+      },
+      "id": "way/1274597556"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274597557",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "yes",
+        "plant:source": "solar",
+        "power": "plant",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0595139,
+          37.556827
+        ]
+      },
+      "id": "way/1274597557"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274597558",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "yes",
+        "plant:source": "solar",
+        "power": "plant",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.058977,
+          37.5555495
+        ]
+      },
+      "id": "way/1274597558"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274597559",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "yes",
+        "plant:source": "solar",
+        "power": "plant",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0599794,
+          37.5555236
+        ]
+      },
+      "id": "way/1274597559"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274597563",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "yes",
+        "plant:source": "solar",
+        "power": "plant",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0946036,
+          37.4934206
+        ]
+      },
+      "id": "way/1274597563"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274597564",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "yes",
+        "plant:source": "solar",
+        "power": "plant",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0947117,
+          37.4930046
+        ]
+      },
+      "id": "way/1274597564"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274597565",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "yes",
+        "plant:source": "solar",
+        "power": "plant",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.095558,
+          37.4929322
+        ]
+      },
+      "id": "way/1274597565"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274597566",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "yes",
+        "plant:source": "solar",
+        "power": "plant",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0956444,
+          37.4931916
+        ]
+      },
+      "id": "way/1274597566"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1278459093",
+        "landuse": "industrial",
+        "name": "신정 열병합",
+        "operator": "서울에너지공사",
+        "plant:method": "combustion",
+        "plant:output:electricity": "6 MW",
+        "plant:output:steam": "yes",
+        "plant:source": "gas",
+        "power": "plant",
+        "source": "survey;aerial imagery",
+        "start_date": "2011-08-15",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8282956,
+          37.5152729
+        ]
+      },
+      "id": "way/1278459093"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1278640419",
+        "landuse": "industrial",
+        "name": "동대문 환경자원센터",
+        "operator": "동대문환경개발공사",
+        "plant:method": "anaerobic_digestion",
+        "plant:output:electricity": "1.065 MW",
+        "plant:source": "biogas",
+        "power": "plant",
+        "source": "survey;aerial imagery",
+        "start_date": "2010-06-01",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0386648,
+          37.5730014
+        ]
+      },
+      "id": "way/1278640419"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1278678664",
+        "landuse": "industrial",
+        "name": "강동 연료전지",
+        "operator": "파주에너지서비스",
+        "plant:method": "fuel_cell",
+        "plant:output:electricity": "19.8 MW",
+        "plant:source": "gas",
+        "power": "plant",
+        "source": "survey;aerial imagery",
+        "start_date": "2023-03-01",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1636835,
+          37.568081
+        ]
+      },
+      "id": "way/1278678664"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1278678665",
+        "landuse": "industrial",
+        "name": "SK(박미) 연료전지",
+        "operator": "SK에너지",
+        "plant:method": "fuel_cell",
+        "plant:output:electricity": "0.3 MW",
+        "plant:source": "gas",
+        "power": "plant",
+        "source": "survey;aerial imagery",
+        "start_date": "2022-01-01",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9024798,
+          37.437211
+        ]
+      },
+      "id": "way/1278678665"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1278678666",
+        "landuse": "industrial",
+        "name": "SK(개나리) 연료전지",
+        "operator": "SK에너지",
+        "plant:method": "fuel_cell",
+        "plant:output:electricity": "0.3 MW",
+        "plant:source": "gas",
+        "power": "plant",
+        "source": "survey;aerial imagery",
+        "start_date": "2022-09-05",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8329212,
+          37.5281009
+        ]
+      },
+      "id": "way/1278678666"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1278678667",
+        "landuse": "industrial",
+        "name": "롯데월드타워 연료전지",
+        "operator": "롯데물산",
+        "plant:method": "fuel_cell",
+        "plant:output:electricity": "0.8 MW",
+        "plant:source": "gas",
+        "power": "plant",
+        "source": "survey;aerial imagery",
+        "start_date": "2023-12-29",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.10204,
+          37.5132181
+        ]
+      },
+      "id": "way/1278678667"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1281474110",
+        "landuse": "industrial",
+        "name": "SK(신길) 연료전지",
+        "operator": "SK에너지",
+        "plant:method": "fuel_cell",
+        "plant:output:electricity": "0.3 MW",
+        "plant:source": "gas",
+        "power": "plant",
+        "start_date": "2024-01-01",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9169845,
+          37.5154002
+        ]
+      },
+      "id": "way/1281474110"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10083186315",
+        "name": "성수변전소",
+        "name:en": "Seongsu Substation",
+        "name:ko": "성수변전소",
+        "operator": "서울교통공사",
+        "power": "substation",
+        "substation": "industrial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0643924,
+          37.5471772
+        ]
+      },
+      "id": "node/10083186315"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10083209039",
+        "building": "yes",
+        "frequency": "60",
+        "name": "화양변전소",
+        "name:en": "Hwayang Substation",
+        "name:ko": "화양변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0844515,
+          37.5667664
+        ]
+      },
+      "id": "node/10083209039"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10083209052",
+        "building": "yes",
+        "building:levels:underground": "4",
+        "frequency": "60",
+        "name": "구의변전소",
+        "name:en": "Guui Substation",
+        "name:ko": "구의변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0956959,
+          37.5358559
+        ]
+      },
+      "id": "node/10083209052"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10083512808",
+        "building": "commercial",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "논현변전소",
+        "name:en": "Nonhyeon Substation",
+        "name:ko": "논현변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0341401,
+          37.5196202
+        ]
+      },
+      "id": "node/10083512808"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10083524125",
+        "building": "commercial",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "논일변전소",
+        "name:en": "Nonil Substation",
+        "name:ko": "논일변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0225828,
+          37.5116784
+        ]
+      },
+      "id": "node/10083524125"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10083524126",
+        "building": "commercial",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "역삼변전소",
+        "name:en": "Yeoksam Substation",
+        "name:ko": "역삼변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0362684,
+          37.5001495
+        ]
+      },
+      "id": "node/10083524126"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10083524127",
+        "building": "commercial",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "선릉변전소",
+        "name:en": "Seolleung Substation",
+        "name:ko": "선릉변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0581983,
+          37.5114431
+        ]
+      },
+      "id": "node/10083524127"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10083524140",
+        "building": "commercial",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "양지변전소",
+        "name:en": "Yangji Substation",
+        "name:ko": "양지변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0273459,
+          37.4853239
+        ]
+      },
+      "id": "node/10083524140"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10083524141",
+        "building": "commercial",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "서초변전소",
+        "name:en": "Seocho Substation",
+        "name:ko": "서초변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0124603,
+          37.4941631
+        ]
+      },
+      "id": "node/10083524141"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10083524142",
+        "building": "apartments",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "도곡변전소",
+        "name:en": "Dogok Substation",
+        "name:ko": "도곡변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0541016,
+          37.4883083
+        ]
+      },
+      "id": "node/10083524142"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10083524143",
+        "building": "commercial",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "교대변전소",
+        "name:en": "Gyodae Substation",
+        "name:ko": "교대변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0123696,
+          37.4858239
+        ]
+      },
+      "id": "node/10083524143"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10083524144",
+        "building": "commercial",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "대치변전소",
+        "name:en": "Daechi Substation",
+        "name:ko": "대치변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0563712,
+          37.5060546
+        ]
+      },
+      "id": "node/10083524144"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10083524155",
+        "building": "apartments",
+        "building:levels:underground": "2",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "가락변전소",
+        "name:en": "Garak Substation",
+        "name:ko": "가락변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1184572,
+          37.4947762
+        ]
+      },
+      "id": "node/10083524155"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10083524156",
+        "building": "apartments",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "천호변전소",
+        "name:en": "Cheonho Substation",
+        "name:ko": "천호변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1338112,
+          37.5467942
+        ]
+      },
+      "id": "node/10083524156"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10083524157",
+        "gas_insulated": "yes",
+        "location": "underground",
+        "name": "풍납변전소",
+        "name:en": "Pungnap Substation",
+        "name:ko": "풍납변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1124893,
+          37.526741
+        ]
+      },
+      "id": "node/10083524157"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10083603126",
+        "building": "yes",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "독산변전소",
+        "name:en": "Doksan Substation",
+        "name:ko": "독산변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8979988,
+          37.4725687
+        ]
+      },
+      "id": "node/10083603126"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10083603139",
+        "building": "residential",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "봉천변전소",
+        "name:en": "Bongcheon Substation",
+        "name:ko": "봉천변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9515358,
+          37.4819792
+        ]
+      },
+      "id": "node/10083603139"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10084423765",
+        "location": "underground",
+        "name": "대림변전소",
+        "name:en": "Daelim Substation",
+        "name:ko": "대림변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9090554,
+          37.5006803
+        ]
+      },
+      "id": "node/10084423765"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10084431449",
+        "building": "yes",
+        "gas_insulated": "yes",
+        "location": "underground",
+        "name": "마곡변전소",
+        "name:en": "Magok Substation",
+        "name:ko": "마곡변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.821286,
+          37.5563331
+        ]
+      },
+      "id": "node/10084431449"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10086055893",
+        "building": "commercial",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "등촌변전소",
+        "name:en": "Deungchon Substation",
+        "name:ko": "등촌변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8650558,
+          37.551426
+        ]
+      },
+      "id": "node/10086055893"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10086100440",
+        "building": "commercial",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "순화변전소",
+        "name:en": "Sunhwa Substation",
+        "name:ko": "순화변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9713022,
+          37.5608054
+        ]
+      },
+      "id": "node/10086100440"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10086100515",
+        "building": "residential",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "녹번변전소",
+        "name:en": "Nokbeon Substation",
+        "name:ko": "녹번변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9230994,
+          37.6038632
+        ]
+      },
+      "id": "node/10086100515"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10086523340",
+        "building": "commercial",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "신양재변전소",
+        "name:en": "Shin-Yangjae Substation",
+        "name:ko": "신양재변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "transmission",
+        "voltage": "345000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0275647,
+          37.4852226
+        ]
+      },
+      "id": "node/10086523340"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10086523403",
+        "building": "commercial",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "노들변전소",
+        "name:en": "Nodeul Substation",
+        "name:ko": "노들변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9214323,
+          37.5156285
+        ]
+      },
+      "id": "node/10086523403"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10088342981",
+        "building": "commercial",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "영오변전소",
+        "name:en": "Yeongoh Substation",
+        "name:ko": "영오변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9060309,
+          37.5219607
+        ]
+      },
+      "id": "node/10088342981"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10088342991",
+        "building": "office",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "여의변전소",
+        "name:en": "Yeoui Substation",
+        "name:ko": "여의변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9302604,
+          37.5277577
+        ]
+      },
+      "id": "node/10088342991"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10088342992",
+        "building": "office",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "마포변전소",
+        "name:en": "Mapo Substation",
+        "name:ko": "마포변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9465674,
+          37.5420315
+        ]
+      },
+      "id": "node/10088342992"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10088342993",
+        "building": "commercial",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "상봉변전소",
+        "name:en": "Sangbong Substation",
+        "name:ko": "상봉변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.080461,
+          37.5928015
+        ]
+      },
+      "id": "node/10088342993"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10088375442",
+        "building": "residential",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "중계변전소",
+        "name:en": "Junggye Substation",
+        "name:ko": "중계변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0823098,
+          37.6467312
+        ]
+      },
+      "id": "node/10088375442"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10088748781",
+        "building": "yes",
+        "frequency": "60",
+        "name": "석촌변전소",
+        "name:en": "Seokchon Substation",
+        "name:ko": "석촌변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1045611,
+          37.5137514
+        ]
+      },
+      "id": "node/10088748781"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10088748806",
+        "building": "residential",
+        "frequency": "60",
+        "location": "indoor",
+        "name": "신당변전소",
+        "name:en": "Sindang Substation",
+        "name:ko": "신당변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0163451,
+          37.5668305
+        ]
+      },
+      "id": "node/10088748806"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10088748807",
+        "building": "commercial",
+        "frequency": "60",
+        "location": "indoor",
+        "name": "방산변전소",
+        "name:en": "Bangsan Substation",
+        "name:ko": "방산변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9990474,
+          37.5657436
+        ]
+      },
+      "id": "node/10088748807"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10088748808",
+        "building": "commercial",
+        "frequency": "60",
+        "location": "indoor",
+        "name": "서대문변전소",
+        "name:en": "Seodaemun Substation",
+        "name:ko": "서대문변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9682969,
+          37.564261
+        ]
+      },
+      "id": "node/10088748808"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10088748809",
+        "building": "commercial",
+        "frequency": "60",
+        "location": "indoor",
+        "name": "용두변전소",
+        "name:en": "Yongdu Substation",
+        "name:ko": "용두변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0391962,
+          37.5756993
+        ]
+      },
+      "id": "node/10088748809"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10088748810",
+        "building": "commercial",
+        "frequency": "60",
+        "location": "indoor",
+        "name": "돈암변전소",
+        "name:en": "Donam Substation",
+        "name:ko": "돈암변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0107834,
+          37.590883
+        ]
+      },
+      "id": "node/10088748810"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10088748811",
+        "building": "commercial",
+        "frequency": "60",
+        "location": "indoor",
+        "name": "이수변전소",
+        "name:en": "Isu Substation",
+        "name:ko": "이수변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9910839,
+          37.4990688
+        ]
+      },
+      "id": "node/10088748811"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10089413562",
+        "building": "office",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "중앙변전소",
+        "name:en": "Jungang Substation",
+        "name:ko": "중앙변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9828267,
+          37.5653562
+        ]
+      },
+      "id": "node/10089413562"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10089413567",
+        "gas_insulated": "yes",
+        "location": "underground",
+        "name": "운니변전소",
+        "name:en": "Unni Substation",
+        "name:ko": "운니변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9890131,
+          37.5775814
+        ]
+      },
+      "id": "node/10089413567"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10089413568",
+        "building": "hospital",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "원남변전소",
+        "name:en": "Wonnam Substation",
+        "name:ko": "원남변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9974609,
+          37.5800159
+        ]
+      },
+      "id": "node/10089413568"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10089413579",
+        "building": "commercial",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "방학변전소",
+        "name:en": "Banghak Substation",
+        "name:ko": "방학변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0464713,
+          37.6827952
+        ]
+      },
+      "id": "node/10089413579"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10089413580",
+        "building": "university",
+        "gas_insulated": "yes",
+        "location": "indoor",
+        "name": "연대변전소",
+        "name:en": "Yeondae Substation",
+        "name:ko": "연대변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9324572,
+          37.5625142
+        ]
+      },
+      "id": "node/10089413580"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10094992357",
+        "gas_insulated": "yes",
+        "location": "underground",
+        "name": "강남변전소",
+        "name:en": "Gangnam Substation",
+        "name:ko": "강남변전소",
+        "operator": "한국전력공사",
+        "operator:en": "Korea Electric Power Corporation",
+        "operator:ko": "한국전력공사",
+        "operator:short": "KEPCO",
+        "operator:wikidata": "Q486737",
+        "power": "substation",
+        "substation": "distribution",
+        "voltage": "154000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0649991,
+          37.5117201
+        ]
+      },
+      "id": "node/10094992357"
+    }
+  ]
+}

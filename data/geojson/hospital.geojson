@@ -1,0 +1,6992 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2026-03-23T08:39:30Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/168231850",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "선한이웃병원",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0637136,
+          37.6148444
+        ]
+      },
+      "id": "way/168231850"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/175320336",
+        "addr:city": "서울특별시",
+        "addr:district": "광진구",
+        "addr:housenumber": "117",
+        "addr:postcode": "05026",
+        "addr:street": "자양로",
+        "addr:subdistrict": "자양동",
+        "amenity": "clinic",
+        "building": "yes",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;community",
+        "name": "광진구보건소",
+        "name:ja": "廣津区保健所",
+        "name:ko": "광진구보건소",
+        "name:ko-Hani": "廣津區保健所",
+        "name:zh": "广津区卫生所",
+        "name:zh-Hans": "广津区卫生所",
+        "name:zh-Hant": "廣津區衛生所",
+        "operator:type": "government",
+        "phone": "+82 2 450 1998",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0819156,
+          37.5384976
+        ]
+      },
+      "id": "way/175320336"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/177342856",
+        "addr:city": "서울특별시",
+        "addr:district": "서초구",
+        "addr:housenumber": "2584",
+        "addr:postcode": "06750",
+        "addr:street": "남부순환로",
+        "addr:subdistrict": "서초동",
+        "amenity": "clinic",
+        "building": "yes",
+        "emergency": "no",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;community",
+        "name": "서초구보건소",
+        "name:ja": "瑞草区保健所",
+        "name:ko": "서초구보건소",
+        "name:ko-Hani": "瑞草區保健所",
+        "name:zh": "瑞草区卫生所",
+        "name:zh-Hans": "瑞草区卫生所",
+        "name:zh-Hant": "瑞草區衛生所",
+        "operator:type": "government",
+        "phone": "+82 2 2155 6114",
+        "website": "http://www.seocho.go.kr/site/sh/index.jsp",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0334597,
+          37.4835925
+        ]
+      },
+      "id": "way/177342856"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/187354410",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "한양대학교의료원",
+        "name:en": "Hanyang University Seoul Hopital",
+        "name:ja": "漢陽大学校医療院",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.04406,
+          37.5593399
+        ]
+      },
+      "id": "way/187354410"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/223434840",
+        "abbr_name": "SNUH",
+        "addr:city": "서울특별시",
+        "addr:district": "종로구",
+        "addr:housenumber": "101",
+        "addr:postcode": "03080",
+        "addr:street": "대학로",
+        "addr:subdistrict": "연건동",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "서울대학교병원",
+        "name:en": "Seoul National University Hospital",
+        "name:ja": "ソウル大学校病院",
+        "name:ko": "서울대학교병원",
+        "opening_hours": "Mo-Fr 09:00-17:00; Sa 09:00-13:00",
+        "phone": "+82 2 2072 2114",
+        "short_name": "서울대병원",
+        "short_name:en": "SNUH",
+        "short_name:ko": "서울대병원",
+        "website": "http://www.snuh.org",
+        "wikidata": "Q4403855",
+        "wikipedia": "ko:서울대학교병원",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9993692,
+          37.5788702
+        ]
+      },
+      "id": "way/223434840"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/250296132",
+        "addr:city": "서울특별시",
+        "addr:country": "KR",
+        "addr:district": "구로구",
+        "addr:subdistrict": "개봉동",
+        "amenity": "hospital",
+        "building": "yes",
+        "healthcare": "hospital",
+        "internet_access": "wlan",
+        "name": "미소들병원",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8412363,
+          37.5029004
+        ]
+      },
+      "id": "way/250296132"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/250306450",
+        "amenity": "hospital",
+        "building": "yes",
+        "building:levels": "10",
+        "healthcare": "hospital",
+        "height": "43",
+        "name": "구로성심병원",
+        "name:en": "Guro Sungsim Hospital",
+        "name:ko": "구로성심병원",
+        "name:ko-Latn": "guloseongsimbyeong-won",
+        "name:zh": "九老城心医院",
+        "start_date": "2000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8664411,
+          37.4996653
+        ]
+      },
+      "id": "way/250306450"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/250489344",
+        "addr:city": "서울특별시",
+        "addr:district": "구로구",
+        "addr:housenumber": "148",
+        "addr:postcode": "08308",
+        "addr:street": "구로동로",
+        "addr:subdistrict": "구로동",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "고려대학교구로병원",
+        "name:en": "Korea University Guro Hospital",
+        "name:ja": "高麗大学校九老病院",
+        "name:ko": "고려대학교구로병원",
+        "name:zh": "韩国高大九老医院",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8848966,
+          37.4922312
+        ]
+      },
+      "id": "way/250489344"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/253746289",
+        "amenity": "hospital",
+        "building": "yes",
+        "building:levels": "9",
+        "healthcare": "hospital",
+        "height": "38",
+        "name": "동신목동한방병원",
+        "start_date": "2004",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8767994,
+          37.5246124
+        ]
+      },
+      "id": "way/253746289"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/253746290",
+        "amenity": "hospital",
+        "building": "yes",
+        "healthcare": "hospital",
+        "name": "목동힘찬병원",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8768529,
+          37.5250071
+        ]
+      },
+      "id": "way/253746290"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/278565011",
+        "addr:city": "서울특별시",
+        "addr:country": "KR",
+        "addr:district": "동작구",
+        "addr:subdistrict": "상도1동",
+        "amenity": "hospital",
+        "building": "yes",
+        "healthcare": "hospital",
+        "name": "정동병원",
+        "name:en": "Jungdong Hospital",
+        "name:ko": "정동병원",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9494888,
+          37.5049333
+        ]
+      },
+      "id": "way/278565011"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/286555230",
+        "addr:city": "서울특별시",
+        "addr:country": "KR",
+        "addr:district": "동작구",
+        "addr:subdistrict": "신대방동",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "서울특별시 보라매병원",
+        "name:en": "Seoul Boramae Medical Center",
+        "name:ja": "ソウル特別市 ボラメ病院",
+        "name:ko": "서울특별시 보라매병원",
+        "official_name": "서울대학교병원운영 서울특별시보라매병원",
+        "official_name:en": "SMG - SNU Boramae Medical Center",
+        "official_name:ko": "서울대학교병원운영 서울특별시보라매병원",
+        "short_name": "보라매병원",
+        "short_name:en": "Boramae Hospital",
+        "short_name:ko": "보라매병원",
+        "wikidata": "Q16095057",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9244513,
+          37.4938905
+        ]
+      },
+      "id": "way/286555230"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/296976582",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "중앙대학교병원",
+        "name:en": "Chung-Ang University Hospital",
+        "name:ja": "中央大学校病院",
+        "name:ko": "중앙대학교병원",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9606237,
+          37.5066289
+        ]
+      },
+      "id": "way/296976582"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/327092795",
+        "addr:city": "서울특별시",
+        "addr:district": "은평구",
+        "addr:housenumber": "49",
+        "addr:postcode": "03433",
+        "addr:street": "갈현로7길",
+        "addr:subdistrict": "역촌동",
+        "amenity": "hospital",
+        "name": "서울시립서북병원",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9048629,
+          37.6040662
+        ]
+      },
+      "id": "way/327092795"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/350913033",
+        "addr:city": "서울특별시",
+        "addr:district": "서초구",
+        "addr:housenumber": "260",
+        "addr:postcode": "06801",
+        "addr:street": "헌릉로",
+        "addr:subdistrict": "내곡동",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "서울특별시 어린이병원",
+        "name:en": "Seoul Child Hospital",
+        "name:ko": "서​울​특​별​시​어​린​이​병​원",
+        "opening_hours": "Mo-Sa 09:00-18:00",
+        "phone": "+82 2-570-8000",
+        "website": "http://childhosp.seoul.go.kr/",
+        "wikidata": "Q16097707",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0690325,
+          37.4557709
+        ]
+      },
+      "id": "way/350913033"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/358284971",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "국립중앙의료원",
+        "name:en": "National Medical Center",
+        "name:ja": "国立中央医療院",
+        "name:zh": "国立中央医疗院",
+        "name:zh-Hans": "国立中央医疗院",
+        "name:zh-Hant": "國立中央醫療院",
+        "wikidata": "Q12585766",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.005982,
+          37.5673392
+        ]
+      },
+      "id": "way/358284971"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368737732",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "강동미즈여성병원",
+        "name:en": "Gangdongmijeuyeoseong Hospital",
+        "name:ko": "강동미즈여성병원",
+        "name:ko-Latn": "Gangdongmijeuyeoseongbyeongwon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.128029,
+          37.537593
+        ]
+      },
+      "id": "node/368737732"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368737754",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "포미즈여성병원",
+        "name:en": "Pomijeuyeoseong Hospital",
+        "name:ko": "포미즈여성병원",
+        "name:ko-Latn": "Pomijeuyeoseongbyeongwon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8722413,
+          37.5467859
+        ]
+      },
+      "id": "node/368737754"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368737861",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "대항병원",
+        "name:en": "Daehang Hospital",
+        "name:ko": "대항병원",
+        "name:ko-Latn": "Daehangbyeongwon",
+        "wikidata": "Q30254271"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.987863,
+          37.475586
+        ]
+      },
+      "id": "node/368737861"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368737956",
+        "amenity": "clinic",
+        "emergency": "no",
+        "healthcare": "alternative",
+        "healthcare:speciality": "traditional_korean_medicine",
+        "level": "0",
+        "name": "맞춤한의원",
+        "name:ko": "맞춤한의원",
+        "operator:type": "private"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0858161,
+          37.5093713
+        ]
+      },
+      "id": "node/368737956"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368738263",
+        "amenity": "hospital",
+        "name": "서울명병원",
+        "name:en": "SeoulMyong Hospital",
+        "name:ko": "효림재활요양병원",
+        "name:ko-Latn": "Hyorimjaehwalyoyangbyeongwon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.037893,
+          37.577373
+        ]
+      },
+      "id": "node/368738263"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368738330",
+        "amenity": "hospital",
+        "name": "창동제일병원",
+        "name:en": "Changdongjeil Hospital",
+        "name:ko": "창동제일병원",
+        "name:ko-Latn": "Changdongjeilbyeongwon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0453662,
+          37.6519259
+        ]
+      },
+      "id": "node/368738330"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368738508",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "뉴서울성모병원",
+        "name:en": "New Seoul Seongmo Hospital",
+        "name:ko": "뉴서울성모병원",
+        "name:ko-Latn": "Nyuseoulseongmobyeongwon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9061302,
+          37.5260478
+        ]
+      },
+      "id": "node/368738508"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368738769",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "인애가우신향한방병원",
+        "name:en": "Inaegausinhyang Oriental Medicine Hospital",
+        "name:ko": "인애가우신향한방병원",
+        "name:ko-Latn": "Inaegausinhyanghanbangbyeongwon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.123005,
+          37.528842
+        ]
+      },
+      "id": "node/368738769"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368739382",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "자생한방병원 목동점",
+        "name:en": "Jasaeng Oriental Medicine Hospital Mokdongjeom",
+        "name:ko": "자생한방병원 목동점",
+        "name:ko-Latn": "Jasaenghanbangbyeongwon Mokdongjeom"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.875646,
+          37.523622
+        ]
+      },
+      "id": "node/368739382"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368739562",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "에스앤비안과",
+        "name:en": "Eseuaenbi Eye Clinic",
+        "name:ko": "에스앤비안과",
+        "name:ko-Latn": "Eseuaenbiangwa"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.008381,
+          37.5683533
+        ]
+      },
+      "id": "node/368739562"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368739757",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "신촌연세병원",
+        "name:en": "Sinchon Yonsei Hospital",
+        "name:ko": "신촌연세병원",
+        "name:ko-Latn": "Sinchonyeonsebyeongwon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.933617,
+          37.552464
+        ]
+      },
+      "id": "node/368739757"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368739954",
+        "amenity": "hospital",
+        "name": "리안요양병원",
+        "name:en": "Rianyoyang Hospital",
+        "name:ko": "리안요양병원",
+        "name:ko-Latn": "Rianyoyangbyeongwon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.063112,
+          37.539908
+        ]
+      },
+      "id": "node/368739954"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368740032",
+        "amenity": "hospital",
+        "name": "엔비의원",
+        "name:en": "Enbi Clinic",
+        "name:ko": "엔비의원",
+        "name:ko-Latn": "Enbiuiwon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.135043,
+          37.497598
+        ]
+      },
+      "id": "node/368740032"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368740109",
+        "amenity": "hospital",
+        "name": "코리아병원",
+        "name:en": "Korea Hospital",
+        "name:ko": "코리아병원",
+        "name:ko-Latn": "Koriabyeongwon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.071436,
+          37.573217
+        ]
+      },
+      "id": "node/368740109"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368740200",
+        "amenity": "hospital",
+        "name": "인애가보생한방병원",
+        "name:en": "Inaegabosaeng Oriental Medicine Hospital",
+        "name:ko": "인애가보생한방병원",
+        "name:ko-Latn": "Inaegabosaenghanbangbyeongwon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.129428,
+          37.487274
+        ]
+      },
+      "id": "node/368740200"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368740264",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "모심요양병원",
+        "name:en": "Mosimyoyang Hospital",
+        "name:ko": "모심요양병원",
+        "name:ko-Latn": "Mosimyoyangbyeongwon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.986499,
+          37.476152
+        ]
+      },
+      "id": "node/368740264"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368740284",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "목동삼성병원",
+        "name:en": "Mokdongsamseong Hospital",
+        "name:ko": "목동삼성병원",
+        "name:ko-Latn": "Mokdongsamseongbyeongwon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.887899,
+          37.522918
+        ]
+      },
+      "id": "node/368740284"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368740334",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "정성요양병원",
+        "name:en": "Jeongseongyoyang Hospital",
+        "name:ko": "정성요양병원",
+        "name:ko-Latn": "Jeongseongyoyangbyeongwon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.893717,
+          37.478943
+        ]
+      },
+      "id": "node/368740334"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368740348",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "선한이웃병원",
+        "name:en": "Good Samaritan Hospital",
+        "name:ko": "선한이웃병원",
+        "name:ko-Latn": "Seonhaniusbyeongwon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0637084,
+          37.614903
+        ]
+      },
+      "id": "node/368740348"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368740380",
+        "amenity": "hospital",
+        "name": "뿌리와새싹의원",
+        "name:en": "Bburiwasaessak Clinic",
+        "name:ko": "뿌리와새싹의원",
+        "name:ko-Latn": "Bburiwasaessakuiwon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0453637,
+          37.6520985
+        ]
+      },
+      "id": "node/368740380"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368740669",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "티엘씨병원",
+        "name:en": "Tielssi Hospital",
+        "name:ko": "티엘씨병원",
+        "name:ko-Latn": "Tielssibyeongwon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.013806,
+          37.656672
+        ]
+      },
+      "id": "node/368740669"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368740906",
+        "amenity": "hospital",
+        "name": "사랑요양병원",
+        "name:en": "Sarangyoyang Hospital",
+        "name:ko": "사랑요양병원",
+        "name:ko-Latn": "Sarangyoyangbyeongwon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.905525,
+          37.574167
+        ]
+      },
+      "id": "node/368740906"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368740921",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "사랑의병원",
+        "name:en": "Sarangui Hospital",
+        "name:ko": "사랑의병원",
+        "website": "http://saranghospital.net/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9564377,
+          37.4795861
+        ]
+      },
+      "id": "node/368740921"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368740922",
+        "amenity": "hospital",
+        "check_date": "2023-12-09",
+        "healthcare": "hospital",
+        "name": "홍익병원",
+        "name:en": "Hongik Hospital",
+        "name:ko": "홍익병원",
+        "name:ko-Latn": "Hongikbyeongwon",
+        "name:zh": "宏益医院"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.863557,
+          37.528508
+        ]
+      },
+      "id": "node/368740922"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368740958",
+        "amenity": "hospital",
+        "name": "햇빛여성병원",
+        "name:en": "Haetbichyeoseong Hospital",
+        "name:ko": "햇빛여성병원",
+        "name:ko-Latn": "Haetbichyeoseongbyeongwon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.028058,
+          37.620628
+        ]
+      },
+      "id": "node/368740958"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368741033",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "연세미메이드치과",
+        "name:en": "Yeonsemimeideu Dental Clinic",
+        "name:ko": "연세미메이드치과",
+        "name:ko-Latn": "Yeonsemimeideuchigwa"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.05579,
+          37.67805
+        ]
+      },
+      "id": "node/368741033"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368741075",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "원진 녹색병원",
+        "name:en": "Wonjin Noksaek Hospital",
+        "name:ko": "원진 녹색병원",
+        "name:ko-Latn": "Wonjin Noksaekbyeongwon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.086153,
+          37.583551
+        ]
+      },
+      "id": "node/368741075"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368741149",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "메이저피부과 성신여대점",
+        "name:en": "Major Dermatologic Seongsinyeodaejeom",
+        "name:ko": "메이저피부과 성신여대점",
+        "name:ko-Latn": "Meijeopibugwa Seongsinyeodaejeom"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0162095,
+          37.5929011
+        ]
+      },
+      "id": "node/368741149"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368741159",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "한림대학교의료원 한강성심병원",
+        "name:en": "Hallim University Uiryowon Hangangseongsim Hospital",
+        "name:ko": "한림대학교의료원 한강성심병원",
+        "name:ko-Latn": "Hallimdaehakgyouiryowon Hangangseongsimbyeongwon",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.909977,
+          37.523403
+        ]
+      },
+      "id": "node/368741159"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368741480",
+        "amenity": "hospital",
+        "check_date": "2024-01-21",
+        "healthcare": "hospital",
+        "name": "양병원",
+        "name:en": "Yang Hospital",
+        "name:ko": "양병원",
+        "name:ko-Latn": "Yangbyeongwon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.140133,
+          37.53405
+        ]
+      },
+      "id": "node/368741480"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368741494",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "서울효요양병원",
+        "name:en": "Seoul Hyoyoyang Hospital",
+        "name:ko": "서울효요양병원",
+        "name:ko-Latn": "Seoulhyoyoyangbyeongwon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.014049,
+          37.658008
+        ]
+      },
+      "id": "node/368741494"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368741527",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "강남수병원",
+        "name:en": "Gangnamsu Hospital",
+        "name:ko": "강남수병원",
+        "name:ko-Latn": "Gangnamsubyeongwon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0876704,
+          37.5034087
+        ]
+      },
+      "id": "node/368741527"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368741537",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "name": "경희의료원",
+        "name:en": "Kyung Hee University Medical Center",
+        "name:ko": "경희의료원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0512769,
+          37.5935885
+        ]
+      },
+      "id": "node/368741537"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368741626",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "제중병원",
+        "name:en": "Jejung Hospital",
+        "name:ko": "제중병원",
+        "name:ko-Latn": "Jejungbyeongwon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8867043,
+          37.5032489
+        ]
+      },
+      "id": "node/368741626"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368741860",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "에스앤비의원",
+        "name:en": "Eseuaenbi Clinic",
+        "name:ko": "에스앤비의원",
+        "name:ko-Latn": "Eseuaenbiuiwon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9239682,
+          37.5209964
+        ]
+      },
+      "id": "node/368741860"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368741920",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "KS병원",
+        "name:en": "KS Hospital",
+        "name:ko": "KS병원",
+        "name:ko-Latn": "KS Byeongwon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0439692,
+          37.5093746
+        ]
+      },
+      "id": "node/368741920"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368741930",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "메디코스",
+        "name:en": "Medikoseu",
+        "name:ja": "メディコス",
+        "name:ko": "메디코스",
+        "name:ko-Latn": "Medikoseu"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.981799,
+          37.564261
+        ]
+      },
+      "id": "node/368741930"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368742053",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "큰나무병원",
+        "name:en": "Keunnamu Hospital",
+        "name:ko": "큰나무병원",
+        "name:ko-Latn": "Keunnamubyeongwon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.851344,
+          37.563443
+        ]
+      },
+      "id": "node/368742053"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368742106",
+        "amenity": "hospital",
+        "name": "서울효요양병원",
+        "name:en": "Seoul Hyoyoyang Hospital",
+        "name:ko": "서울효요양병원",
+        "name:ko-Latn": "Seoulhyoyoyangbyeongwon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.918862,
+          37.595331
+        ]
+      },
+      "id": "node/368742106"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368742168",
+        "amenity": "hospital",
+        "name": "서울내과외과건강검진센터",
+        "name:en": "Seoul Internal Medicine Oegwageonganggeomjin Center",
+        "name:ko": "서울내과외과건강검진센터",
+        "name:ko-Latn": "Seoullaegwaoegwageonganggeomjinsenteo"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.09374,
+          37.539516
+        ]
+      },
+      "id": "node/368742168"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368742293",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "새서울병원",
+        "name:en": "Sae Seoul Hospital",
+        "name:ko": "새서울병원",
+        "name:ko-Latn": "Saeseoulbyeongwon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0556059,
+          37.6764562
+        ]
+      },
+      "id": "node/368742293"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368742554",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "하늘마음한의원 천호점",
+        "name:en": "Haneulmaeumhanuiwon Cheonhojeom",
+        "name:ko": "하늘마음한의원 천호점",
+        "name:ko-Latn": "Haneulmaeumhanuiwon Cheonhojeom"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.123204,
+          37.537053
+        ]
+      },
+      "id": "node/368742554"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368742733",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "핑크리본외과",
+        "name:en": "Pink Ribon Surgery",
+        "name:ko": "핑크리본외과",
+        "name:ko-Latn": "Pingkeuribonoegwa"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1236481,
+          37.5380454
+        ]
+      },
+      "id": "node/368742733"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368742865",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "봄날효요양병원",
+        "name:en": "Bomnalhyoyoyang Hospital",
+        "name:ko": "봄날효요양병원",
+        "name:ko-Latn": "Dongindanghyoyoyangbyeongwon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.809231,
+          37.574264
+        ]
+      },
+      "id": "node/368742865"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368858066",
+        "amenity": "hospital",
+        "name": "명인한의원",
+        "name:en": "Myoung-in Oriental medical clinic",
+        "name:ko": "명인한의원",
+        "name:ko-Latn": "Saparisauna"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.143817,
+          37.553361
+        ]
+      },
+      "id": "node/368858066"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368899652",
+        "addr:city": "서울특별시",
+        "addr:district": "은평구",
+        "addr:housenumber": "11",
+        "addr:postcode": "03347",
+        "addr:street": "연서로34길",
+        "addr:subdistrict": "불광동",
+        "amenity": "clinic",
+        "name": "불광보건분소",
+        "name:en": "Bulgwang Comunity Health Center",
+        "name:ko": "불광보건분소",
+        "name:ko-Latn": "BulgwangBogunBunso"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.927614,
+          37.621544
+        ]
+      },
+      "id": "node/368899652"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368951106",
+        "addr:city": "서울특별시",
+        "addr:district": "종로구",
+        "addr:housenumber": "176",
+        "addr:postcode": "03127",
+        "addr:street": "율곡로",
+        "addr:subdistrict": "원남동",
+        "amenity": "hospital",
+        "name": "서울대병원 원남별관",
+        "name:en": "SNUH Wonnam building",
+        "name:ko": "서울대병원 원남별관",
+        "name:ko-Latn": "Biwonhotel",
+        "tourism": "hotel"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.998287,
+          37.575648
+        ]
+      },
+      "id": "node/368951106"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/369559505",
+        "addr:city": "서울특별시",
+        "addr:district": "서대문구",
+        "addr:housenumber": "50-1",
+        "addr:postcode": "03722",
+        "addr:street": "연세로",
+        "addr:subdistrict": "신촌동",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "세브란스병원",
+        "name:en": "Severance Hospital",
+        "name:ja": "セブランス病院",
+        "name:ko": "세브란스병원",
+        "operator": "연세대학교 의료원",
+        "operator:en": "Yonsei University Health System",
+        "operator:type": "private",
+        "website": "http://sev.iseverance.com/",
+        "wikidata": "Q625321",
+        "wikipedia": "en:Severance Hospital",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.940493,
+          37.5622957
+        ]
+      },
+      "id": "way/369559505"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/369788217",
+        "addr:city": "서울특별시",
+        "addr:district": "중랑구",
+        "addr:housenumber": "156",
+        "addr:postcode": "02053",
+        "addr:street": "신내로",
+        "addr:subdistrict": "신내동",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "서울특별시 서울의료원",
+        "name:en": "Seoul Medical Center",
+        "wikidata": "Q12601359",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0980979,
+          37.6131586
+        ]
+      },
+      "id": "way/369788217"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/380780289",
+        "amenity": "hospital",
+        "name": "국립재활원",
+        "name:en": "National Rehabilitation Center",
+        "name:ko": "국립재활원",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes",
+        "wikidata": "Q12585755",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0108124,
+          37.6385978
+        ]
+      },
+      "id": "way/380780289"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/385228660",
+        "addr:city": "서울특별시",
+        "addr:district": "영등포구",
+        "addr:housenumber": "10",
+        "addr:postcode": "07345",
+        "addr:street": "63로",
+        "addr:subdistrict": "여의도동",
+        "amenity": "hospital",
+        "emergency": "no",
+        "healthcare": "hospital",
+        "name": "가톨릭대학교 여의도성모병원",
+        "name:en": "The Catholic University of Korea Yeouido St. Mary's Hospital",
+        "name:ja": "カトリック大学校 汝矣島聖母病院",
+        "name:ko": "가톨릭대학교 여의도성모병원",
+        "phone": "+82 2 1661 7575",
+        "website": "https://www.cmcsungmo.or.kr/",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9365228,
+          37.5181706
+        ]
+      },
+      "id": "way/385228660"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/404201569",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "인제대학교 서울백병원",
+        "name:en": "Inje University Seoul Paik Hospital",
+        "wikidata": "Q30253971",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9888595,
+          37.5649546
+        ]
+      },
+      "id": "way/404201569"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/412970177",
+        "addr:city": "서울특별시",
+        "addr:district": "서초구",
+        "addr:housenumber": "222",
+        "addr:postcode": "06591",
+        "addr:street": "반포대로",
+        "addr:subdistrict": "반포동",
+        "amenity": "hospital",
+        "check_date": "2024-01-26",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "가톨릭대학교 서울성모병원",
+        "name:en": "The Catholic University of Korea, Seoul St. Mary’s Hospital",
+        "name:ja": "カトリック大学校 ソウル聖母病院",
+        "name:ko": "가톨릭대학교 서울성모병원",
+        "short_name": "서울성모병원",
+        "short_name:en": "Seoul St. Mary's Hospital",
+        "short_name:ja": "ソウル聖母病院",
+        "short_name:ko": "서울성모병원",
+        "website": "https://www.cmcseoul.or.kr/",
+        "wikidata": "Q16095606",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0054461,
+          37.5002731
+        ]
+      },
+      "id": "way/412970177"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/414683397",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "junction": "yes",
+        "name": "동부제일병원",
+        "name:en": "Dongbujeil Hospital",
+        "name:ko": "동부제일병원",
+        "name:ko-Latn": "Dongbujeilbyeongwon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1091889,
+          37.6005918
+        ]
+      },
+      "id": "node/414683397"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/414687999",
+        "amenity": "hospital",
+        "name": "한일병원",
+        "name:en": "Hanil Hospital",
+        "name:ko": "한일병원",
+        "name:ko-Latn": "Hanilbyeongwon",
+        "wikidata": "Q12624294"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0280374,
+          37.6451936
+        ]
+      },
+      "id": "node/414687999"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/416557805",
+        "amenity": "hospital",
+        "name": "시립동부병원",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0315619,
+          37.5753596
+        ]
+      },
+      "id": "way/416557805"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/416586666",
+        "addr:city": "서울특별시",
+        "addr:district": "동대문구",
+        "addr:housenumber": "82",
+        "addr:postcode": "02500",
+        "addr:street": "망우로",
+        "addr:subdistrict": "휘경동",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "삼육의료원 서울병원",
+        "website": "https://www.symcs.co.kr/",
+        "wikidata": "Q2945878",
+        "wikipedia": "ko:삼육서울병원",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0646751,
+          37.5875276
+        ]
+      },
+      "id": "way/416586666"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/416822238",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "국립정신건강센터",
+        "wikidata": "Q16094643",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0851838,
+          37.5655593
+        ]
+      },
+      "id": "way/416822238"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/417994820",
+        "addr:city": "서울특별시",
+        "addr:district": "강남구",
+        "addr:housenumber": "81",
+        "addr:postcode": "06351",
+        "addr:street": "일원로",
+        "addr:subdistrict": "일원동",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "삼성서울병원",
+        "name:en": "Samsung Medical Center",
+        "name:ja": "三星ソウル病院",
+        "name:ko": "삼성서울병원",
+        "website": "http://www.samsunghospital.com/",
+        "wikidata": "Q624119",
+        "wikipedia": "ko:삼성서울병원",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0862913,
+          37.4886049
+        ]
+      },
+      "id": "way/417994820"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/419034494",
+        "addr:city": "서울특별시",
+        "addr:district": "강동구",
+        "addr:housenumber": "53",
+        "addr:postcode": "05368",
+        "addr:street": "진황도로61길",
+        "addr:subdistrict": "둔촌동",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "중앙보훈병원",
+        "name:en": "VHS Medical Center",
+        "name:ja": "中央報勲病院",
+        "name:ko": "중앙보훈병원",
+        "name:zh": "中央报勋医院",
+        "operator": "국가보훈처",
+        "toilets:wheelchair": "yes",
+        "wikidata": "Q16099935",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1477297,
+          37.5297006
+        ]
+      },
+      "id": "way/419034494"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/462688074",
+        "addr:city": "서울특별시",
+        "addr:district": "은평구",
+        "addr:housenumber": "195",
+        "addr:postcode": "03384",
+        "addr:street": "은평로",
+        "addr:subdistrict": "녹번동",
+        "amenity": "clinic",
+        "building": "yes",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;community",
+        "name": "은평구보건소",
+        "name:ja": "恩平区保健所",
+        "name:ko": "은평구보건소",
+        "name:ko-Hani": "恩平區保健所",
+        "name:zh": "恩平区卫生所",
+        "name:zh-Hans": "恩平区卫生所",
+        "name:zh-Hant": "恩平區衛生所",
+        "operator:type": "government",
+        "phone": "+82 2 351 8114",
+        "website": "https://health.ep.go.kr/",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9288202,
+          37.6024668
+        ]
+      },
+      "id": "way/462688074"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/463187627",
+        "addr:city": "서울특별시",
+        "addr:district": "종로구",
+        "addr:housenumber": "29",
+        "addr:postcode": "03181",
+        "addr:street": "새문안로",
+        "addr:subdistrict": "평동",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "강북삼성병원",
+        "name:en": "Kangbuk Samsung Hospital",
+        "name:ja": "江北三星病院",
+        "name:ko": "강북삼성병원",
+        "phone": "+82 1599 8114",
+        "website": "https://www.kbsmc.co.kr/index.jsp",
+        "wikidata": "Q30280617",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9677993,
+          37.5682288
+        ]
+      },
+      "id": "way/463187627"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/465480953",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "이대서울병원",
+        "name:en": "Ewha Womans University Seoul Hospital",
+        "name:ko": "이대서울병원",
+        "official_name": "이화여자대학교부속서울병원",
+        "official_name:ko": "이화여자대학교부속서울병원",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8361981,
+          37.5572628
+        ]
+      },
+      "id": "way/465480953"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/468438487",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "이대목동병원",
+        "name:en": "Ewha Womans University Mokdong Hospital",
+        "name:ja": "梨大木洞病院",
+        "name:ko": "이대목동병원",
+        "official_name": "이화여자대학교부속목동병원",
+        "official_name:ko": "이화여자대학교부속목동병원",
+        "wikidata": "Q12613238",
+        "wikipedia": "ko:이대목동병원",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.886274,
+          37.536476
+        ]
+      },
+      "id": "way/468438487"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/468720187",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "대림성모병원",
+        "name:en": "Daerim St. Mary's Hospital",
+        "name:ko": "대림성모병원",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.907022,
+          37.4905938
+        ]
+      },
+      "id": "way/468720187"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/469027990",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "독산보건분소",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9023032,
+          37.4736798
+        ]
+      },
+      "id": "way/469027990"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/469044558",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "병원건물",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8582263,
+          37.4939262
+        ]
+      },
+      "id": "way/469044558"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/469046329",
+        "addr:city": "서울특별시",
+        "addr:country": "KR",
+        "addr:district": "구로구",
+        "addr:subdistrict": "개봉동",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "강서효병원",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8555664,
+          37.4927097
+        ]
+      },
+      "id": "way/469046329"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/469693615",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "미즈메디병원 (Miz Medi Hospital)",
+        "name:en": "Miz Medi Hospital",
+        "name:ko": "미즈메디병원",
+        "website": "https://www.mizmedi.com/wweb/main/main.asp",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8359006,
+          37.552093
+        ]
+      },
+      "id": "way/469693615"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/470079487",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "마리아병원",
+        "name:ko": "마리아병원",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0253531,
+          37.5743218
+        ]
+      },
+      "id": "way/470079487"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/470080276",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "남기세병원",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1378244,
+          37.534854
+        ]
+      },
+      "id": "way/470080276"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/471401193",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "서울송도병원",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0082759,
+          37.5512993
+        ]
+      },
+      "id": "way/471401193"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/471690270",
+        "addr:city": "서울특별시",
+        "addr:district": "송파구",
+        "addr:housenumber": "436",
+        "addr:postcode": "05662",
+        "addr:street": "백제고분로",
+        "addr:subdistrict": "송파동",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "송파 의료시설",
+        "name:en": "Songpa Medical Facility",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.112092,
+          37.5093421
+        ]
+      },
+      "id": "way/471690270"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/472461709",
+        "addr:city": "서울특별시",
+        "addr:district": "강서구",
+        "addr:housenumber": "561",
+        "addr:postcode": "07560",
+        "addr:street": "공항대로",
+        "addr:subdistrict": "염창동",
+        "amenity": "clinic",
+        "check_date": "2024-08-20",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;community",
+        "name": "강서구보건소",
+        "name:ja": "江西区保健所",
+        "name:ko": "강서구보건소",
+        "name:ko-Hani": "江西區保健所",
+        "name:zh": "江西区卫生所",
+        "name:zh-Hans": "江西区卫生所",
+        "name:zh-Hant": "江西區衛生所",
+        "operator:type": "government",
+        "phone": "+82 2 2600 5814",
+        "website": "http://www.gangseo.seoul.kr/site/health/",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.868336,
+          37.5496098
+        ]
+      },
+      "id": "way/472461709"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/472492628",
+        "addr:city": "서울특별시",
+        "addr:district": "서대문구",
+        "addr:housenumber": "272",
+        "addr:postcode": "03653",
+        "addr:street": "연희로",
+        "addr:subdistrict": "홍은동",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "동신병원",
+        "name:en": "Dongshin Hospital",
+        "phone": "+82 2 396 9161",
+        "website": "https://dshospital.co.kr/",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9365075,
+          37.581428
+        ]
+      },
+      "id": "way/472492628"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/472679397",
+        "addr:city": "서울특별시",
+        "addr:district": "강남구",
+        "addr:housenumber": "668",
+        "addr:postcode": "06088",
+        "addr:street": "선릉로",
+        "addr:subdistrict": "삼성동",
+        "amenity": "clinic",
+        "building": "yes",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;community",
+        "name": "강남구보건소",
+        "name:ja": "江南区保健所",
+        "name:ko": "강남구보건소",
+        "name:ko-Hani": "江南區保健所",
+        "name:zh": "江南区卫生所",
+        "name:zh-Hans": "江南区卫生所",
+        "name:zh-Hant": "江南區衛生所",
+        "operator:type": "government",
+        "phone": "+82 2 3423 7200",
+        "website": "https://health.gangnam.go.kr/",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0422812,
+          37.5163127
+        ]
+      },
+      "id": "way/472679397"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/473299256",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "한림대학교한강성심병원 화상센터",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9102747,
+          37.5234202
+        ]
+      },
+      "id": "way/473299256"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/473299258",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "한림대학교한강성심병원 본관",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9097362,
+          37.5232005
+        ]
+      },
+      "id": "way/473299258"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/473300356",
+        "amenity": "hospital",
+        "building:levels": "8",
+        "healthcare": "hospital",
+        "name": "한림대학교한강성심병원 1별관",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9093802,
+          37.5225954
+        ]
+      },
+      "id": "way/473300356"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/473584295",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.866998,
+          37.5401836
+        ]
+      },
+      "id": "way/473584295"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/474076244",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "햇빛여성병원 신관",
+        "name:ko": "햇빛여성병원 신관",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0303119,
+          37.615764
+        ]
+      },
+      "id": "way/474076244"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/474276554",
+        "amenity": "hospital",
+        "name": "인제대학교상계백병원",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0629849,
+          37.6486603
+        ]
+      },
+      "id": "way/474276554"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/475924464",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "청담병원",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0456834,
+          37.5206967
+        ]
+      },
+      "id": "way/475924464"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/496108940",
+        "addr:city": "서울특별시",
+        "addr:district": "금천구",
+        "addr:housenumber": "70",
+        "addr:postcode": "08611",
+        "addr:street": "시흥대로73길",
+        "addr:subdistrict": "시흥동",
+        "amenity": "clinic",
+        "building": "hospital",
+        "building:levels": "5",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;community",
+        "name": "금천구보건소",
+        "name:ja": "衿川区保健所",
+        "name:ko": "금천구보건소",
+        "name:ko-Hani": "衿川區保健所",
+        "name:zh": "衿川区卫生所",
+        "name:zh-Hans": "衿川区卫生所",
+        "name:zh-Hant": "衿川區衛生所",
+        "operator:type": "government",
+        "phone": "+82 2 890 2422",
+        "website": "http://bogunso.geumcheon.go.kr/",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8959146,
+          37.4570575
+        ]
+      },
+      "id": "way/496108940"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/503505209",
+        "addr:city": "서울특별시",
+        "addr:district": "송파구",
+        "addr:housenumber": "88",
+        "addr:postcode": "05505",
+        "addr:street": "올림픽로43길",
+        "addr:subdistrict": "풍납동",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "서울아산병원",
+        "name:en": "Asan Medical Center",
+        "name:ja": "ソウル峨山病院",
+        "name:ko": "서울아산병원",
+        "operator": "아산사회복지재단",
+        "website": "http://www.amc.seoul.kr/",
+        "wikidata": "Q4803501",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1096056,
+          37.5264755
+        ]
+      },
+      "id": "way/503505209"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/551023748",
+        "addr:city": "서울특별시",
+        "addr:district": "금천구",
+        "addr:housenumber": "244",
+        "addr:postcode": "08626",
+        "addr:street": "시흥대로",
+        "addr:subdistrict": "시흥동",
+        "amenity": "hospital",
+        "building": "yes",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "희명병원",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9005585,
+          37.4556872
+        ]
+      },
+      "id": "way/551023748"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/551588568",
+        "addr:city": "서울특별시",
+        "addr:district": "광진구",
+        "addr:housenumber": "120-1",
+        "addr:postcode": "05030",
+        "addr:street": "능동로",
+        "addr:subdistrict": "화양동",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "건국대학교병원",
+        "name:en": "Konkuk University Medical Center",
+        "name:ja": "建国大学校病院",
+        "name:ko": "건국대학교병원",
+        "name:ko-Latn": "Konkukdae byeongwon",
+        "website": "http://www.kuh.ac.kr/",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0722244,
+          37.54069
+        ]
+      },
+      "id": "way/551588568"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/553036222",
+        "addr:city": "서울특별시",
+        "addr:district": "영등포구",
+        "addr:housenumber": "156",
+        "addr:postcode": "07417",
+        "addr:street": "도림로",
+        "addr:subdistrict": "대림동",
+        "amenity": "hospital",
+        "building": "hospital",
+        "healthcare": "hospital",
+        "name": "명지성모병원",
+        "name:en": "Myongji St. Mary's Hospital",
+        "website": "http://www.myongji-sm.co.kr/",
+        "wikidata": "Q55729673",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8993172,
+          37.4938211
+        ]
+      },
+      "id": "way/553036222"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/554382684",
+        "addr:city": "서울특별시",
+        "addr:district": "용산구",
+        "addr:housenumber": "59",
+        "addr:postcode": "04401",
+        "addr:street": "대사관로",
+        "addr:subdistrict": "한남동",
+        "alt_name": "순천향대학교병원",
+        "alt_name:en": "Soonchunhyang University Hospital",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "순천향대학교 서울병원",
+        "name:en": "Soon Chun Hyang University Hospital Seoul",
+        "name:ja": "順天郷大学校 ソウル病院",
+        "website": "http://www.schmc.ac.kr/seoul/",
+        "wikidata": "Q16097590",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0045559,
+          37.534058
+        ]
+      },
+      "id": "way/554382684"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/576541242",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "을지병원 연구동",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0699427,
+          37.635822
+        ]
+      },
+      "id": "way/576541242"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/609069652",
+        "addr:city": "서울특별시",
+        "addr:district": "종로구",
+        "addr:housenumber": "9",
+        "addr:postcode": "03181",
+        "addr:street": "새문안로",
+        "addr:subdistrict": "평동",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "서울적십자병원",
+        "name:en": "Seoul Red Cross Hospital",
+        "name:ja": "ソウル赤十字病院",
+        "name:ko": "서울적십자병원",
+        "phone": "+82 02-2002-8114",
+        "website": "https://www.rch.or.kr/seoul",
+        "wikidata": "Q16097572",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9668955,
+          37.5673917
+        ]
+      },
+      "id": "way/609069652"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/609177371",
+        "addr:city": "서울특별시",
+        "addr:district": "종로구",
+        "addr:housenumber": "36",
+        "addr:postcode": "03035",
+        "addr:street": "자하문로19길",
+        "addr:subdistrict": "옥인동",
+        "amenity": "clinic",
+        "building": "yes",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;community",
+        "name": "종로구보건소",
+        "name:en": "Jongno District Public Health Center",
+        "name:ja": "鍾路区保健所",
+        "name:ko": "종로구보건소",
+        "name:ko-Hani": "鍾路區保健所",
+        "name:zh": "钟路区卫生所",
+        "name:zh-Hans": "钟路区卫生所",
+        "name:zh-Hant": "鍾路區衛生所",
+        "operator:type": "government",
+        "phone": "+82 2 2148 3520",
+        "website": "health.jongno.go.kr",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9692475,
+          37.5818339
+        ]
+      },
+      "id": "way/609177371"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/614507243",
+        "addr:city": "서울특별시",
+        "addr:district": "강남구",
+        "addr:housenumber": "211",
+        "addr:postcode": "06273",
+        "addr:street": "언주로",
+        "addr:subdistrict": "도곡동",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "강남세브란스병원",
+        "name:en": "Gangnam Severance Hospital",
+        "name:ko": "강남세브란스병원",
+        "old_name": "영동세브란스병원",
+        "operator": "연세대학교 의료원",
+        "operator:en": "Yonsei University Health System",
+        "operator:type": "private",
+        "website": "https://gs.iseverance.com/",
+        "wikidata": "Q30260428",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.046498,
+          37.4926108
+        ]
+      },
+      "id": "way/614507243"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/624150582",
+        "amenity": "hospital",
+        "building": "hospital",
+        "building:levels": "9",
+        "healthcare": "hospital",
+        "height": "31",
+        "name": "강남고려병원",
+        "name:en": "Kangnam Korea Hospital",
+        "name:ko": "강남고려병원",
+        "start_date": "1984",
+        "wheelchair": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9568123,
+          37.4856404
+        ]
+      },
+      "id": "way/624150582"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/633219431",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "청구섬심병원",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9195769,
+          37.620724
+        ]
+      },
+      "id": "way/633219431"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/633219432",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "은평연세병원",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9175094,
+          37.6147432
+        ]
+      },
+      "id": "way/633219432"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/636201479",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "강남차병원",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0347314,
+          37.5068244
+        ]
+      },
+      "id": "way/636201479"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/642162215",
+        "addr:city": "서울특별시",
+        "addr:district": "서대문구",
+        "addr:housenumber": "242",
+        "addr:postcode": "03718",
+        "addr:street": "연희로",
+        "addr:subdistrict": "연희동",
+        "amenity": "clinic",
+        "building": "yes",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;community",
+        "name": "서대문구보건소",
+        "name:en": "Seodaemun-gu Public Health Center",
+        "name:ja": "西大門区保健所",
+        "name:ko": "서대문구보건소",
+        "name:ko-Hani": "西大門區保健所",
+        "name:zh": "西大门区卫生所",
+        "name:zh-Hans": "西大门区卫生所",
+        "name:zh-Hant": "西大門區衛生所",
+        "opening_hours": "Mo-Fr 09:00-18:00",
+        "operator:type": "government",
+        "phone": "+82 2 330 1801",
+        "website": "http://health.sdm.go.kr/",
+        "wheelchair": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9362772,
+          37.5786378
+        ]
+      },
+      "id": "way/642162215"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/698230010",
+        "addr:city": "서울특별시",
+        "addr:district": "중랑구",
+        "addr:housenumber": "38",
+        "addr:postcode": "02062",
+        "addr:street": "양원역로",
+        "addr:subdistrict": "망우동",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "서울특별시 북부병원",
+        "operator": "서울특별시",
+        "wikidata": "Q22974116",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1076561,
+          37.6043426
+        ]
+      },
+      "id": "way/698230010"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/703087330",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "성모자애복지관",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1194286,
+          37.470056
+        ]
+      },
+      "id": "way/703087330"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/733295653",
+        "addr:city": "서울특별시",
+        "addr:district": "송파구",
+        "addr:housenumber": "326",
+        "addr:postcode": "05552",
+        "addr:street": "올림픽로",
+        "addr:subdistrict": "신천동",
+        "amenity": "clinic",
+        "building": "public",
+        "building:levels": "3",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;community",
+        "name": "송파구보건소",
+        "name:en": "Songpa-gu public health center",
+        "name:ja": "松坡区保健所",
+        "name:ko": "송파구보건소",
+        "name:ko-Hani": "松坡區保健所",
+        "name:zh": "松坡区卫生所",
+        "name:zh-Hans": "松坡区卫生所",
+        "name:zh-Hant": "松坡區衛生所",
+        "operator:type": "government",
+        "phone": "+82 2 2147 3458",
+        "website": "http://ehealth.songpa.go.kr/",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1065738,
+          37.5146085
+        ]
+      },
+      "id": "way/733295653"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/736281271",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "나우동물의료센터",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0556834,
+          37.6743998
+        ]
+      },
+      "id": "way/736281271"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/736281282",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "상계성모정형외과의원",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0548568,
+          37.6747972
+        ]
+      },
+      "id": "way/736281282"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/767778737",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9990197,
+          37.5620881
+        ]
+      },
+      "id": "way/767778737"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/768576027",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "강동경희대학교병원",
+        "name:ko": "강동경희대학교병원",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1574191,
+          37.5530412
+        ]
+      },
+      "id": "way/768576027"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/768952288",
+        "addr:city": "서울특별시",
+        "addr:district": "중구",
+        "addr:housenumber": "17",
+        "addr:postcode": "04619",
+        "addr:street": "서애로1길",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "제일병원",
+        "name:en": "Cheil General Hospital & Women's Healthcare Center",
+        "name:ja": "第一病院",
+        "name:ko": "제일병원",
+        "website": "http://www.cheilmc.co.kr/",
+        "wikidata": "Q30279765",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9996376,
+          37.5613644
+        ]
+      },
+      "id": "way/768952288"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/768952289",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Cheil Hospital",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9997714,
+          37.5612429
+        ]
+      },
+      "id": "way/768952289"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/795967479",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "서울특별시 은평병원",
+        "operator": "은평구",
+        "operator:type": "public",
+        "wikidata": "Q12601363",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9236126,
+          37.5939371
+        ]
+      },
+      "id": "way/795967479"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/829275220",
+        "amenity": "hospital",
+        "building": "yes",
+        "check_date": "2024-11-02",
+        "healthcare": "hospital",
+        "name": "청화여성병원",
+        "name:en": "Cheongwha Women's Hospital",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9403096,
+          37.507169
+        ]
+      },
+      "id": "way/829275220"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/854415174",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "국군서울지구병원",
+        "name:en": "Armed Force Seoul Center district Hospital",
+        "operator": "대한민국 국군",
+        "operator:type": "military",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9830066,
+          37.5881254
+        ]
+      },
+      "id": "way/854415174"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/864936008",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "강동경희대학교병원",
+        "wikidata": "Q52857511",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1574191,
+          37.5530412
+        ]
+      },
+      "id": "way/864936008"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/895138183",
+        "addr:city": "서울특별시",
+        "addr:district": "서초구",
+        "addr:housename": "4",
+        "addr:street": "서초중앙로",
+        "amenity": "hospital",
+        "building": "yes",
+        "healthcare": "hospital",
+        "name": "기쁨병원",
+        "name:ko": "기쁨병원",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0180695,
+          37.4827059
+        ]
+      },
+      "id": "way/895138183"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/896706032",
+        "addr:city": "서울특별시",
+        "addr:district": "은평구",
+        "addr:housenumber": "1021",
+        "addr:postcode": "03312",
+        "addr:street": "통일로",
+        "addr:subdistrict": "진관동",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "가톨릭대학교 은평성모병원",
+        "name:ko": "가톨릭대학교 은평성모병원",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9161046,
+          37.6335089
+        ]
+      },
+      "id": "way/896706032"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/976970950",
+        "addr:city": "서울특별시",
+        "addr:district": "은평구",
+        "addr:housenumber": "41",
+        "addr:postcode": "03308",
+        "addr:street": "연서로48길",
+        "addr:subdistrict": "진관동",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "인덕 재가노인복지센터",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.938086,
+          37.6392772
+        ]
+      },
+      "id": "way/976970950"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1000976770",
+        "amenity": "hospital",
+        "check_date": "2024-05-09",
+        "healthcare": "hospital",
+        "name": "연세 바로 척 병원",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0648829,
+          37.5443734
+        ]
+      },
+      "id": "way/1000976770"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1030078831",
+        "addr:city": "서울특별시",
+        "addr:district": "중랑구",
+        "addr:housenumber": "511",
+        "addr:postcode": "02063",
+        "addr:street": "망우로",
+        "addr:subdistrict": "망우동",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "동부제일병원",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1092885,
+          37.6007556
+        ]
+      },
+      "id": "way/1030078831"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1039905770",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "서울라본병원",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1051875,
+          37.6002923
+        ]
+      },
+      "id": "way/1039905770"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1051696798",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1204932,
+          37.5278496
+        ]
+      },
+      "id": "way/1051696798"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1083692329",
+        "addr:city": "서울특별시",
+        "addr:district": "영등포구",
+        "addr:housenumber": "100",
+        "addr:postcode": "07246",
+        "addr:street": "영중로",
+        "addr:subdistrict": "영등포동7가",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "healthcare:speciality": "hospital;funeral",
+        "name": "신화요양병원",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9058368,
+          37.5251092
+        ]
+      },
+      "id": "way/1083692329"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1117645669",
+        "addr:city": "서울특별시",
+        "addr:district": "동대문구",
+        "addr:housenumber": "142",
+        "addr:street": "제기로",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "청량리정신병원",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0485153,
+          37.5857296
+        ]
+      },
+      "id": "way/1117645669"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1338355162",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "국립 경찰병원",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1235171,
+          37.4961732
+        ]
+      },
+      "id": "way/1338355162"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1431248987",
+        "amenity": "hospital",
+        "building": "yes",
+        "building:levels": "6",
+        "name": "서부중앙의원병원",
+        "name:ko": "서부중앙의원병원",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9679528,
+          37.5596496
+        ]
+      },
+      "id": "way/1431248987"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1436896185",
+        "addr:city": "서울특별시",
+        "addr:district": "광진구",
+        "addr:housenumber": "400",
+        "addr:postcode": "05050",
+        "addr:street": "아차산로",
+        "addr:subdistrict": "자양동",
+        "amenity": "clinic",
+        "building": "yes",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;community",
+        "name": "광진구보건소",
+        "name:ja": "廣津区保健所",
+        "name:ko": "광진구보건소",
+        "name:ko-Hani": "廣津區保健所",
+        "name:zh": "广津区卫生所",
+        "name:zh-Hans": "广津区卫生所",
+        "name:zh-Hant": "廣津區衛生所",
+        "operator:type": "government",
+        "phone": "+82 2 450 1998",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0878397,
+          37.5358392
+        ]
+      },
+      "id": "way/1436896185"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1810749002",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "국립 경찰병원",
+        "name:ja": "国立警察病院",
+        "wikidata": "Q12583911"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1234605,
+          37.4960412
+        ]
+      },
+      "id": "node/1810749002"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1822580077",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "뉴강서성심병원 (New Kangseosungsim Hospital)",
+        "name:en": "New Kangseosungsim Hospital",
+        "name:ko": "뉴강서성심병원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8087929,
+          37.5733086
+        ]
+      },
+      "id": "node/1822580077"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1924799908",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "혜민병원",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0836547,
+          37.5353464
+        ]
+      },
+      "id": "node/1924799908"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1934173270",
+        "amenity": "hospital",
+        "name": "우신향병원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0302343,
+          37.5852378
+        ]
+      },
+      "id": "node/1934173270"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2101252293",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "서울대학교병원헬스케어시스템강남센터",
+        "name:ja": "ソウル大学校病院 ヘルスケアシステム 江南センター"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0367051,
+          37.5003623
+        ]
+      },
+      "id": "node/2101252293"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2103896714",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "동국한방병원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9923739,
+          37.4902106
+        ]
+      },
+      "id": "node/2103896714"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2104058788",
+        "addr:city": "서울특별시",
+        "addr:district": "서초구",
+        "addr:housenumber": "116",
+        "addr:postcode": "06664",
+        "addr:street": "서초대로",
+        "addr:subdistrict": "방배동",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "healthcare:speciality": "general",
+        "name": "방배제일병원",
+        "operator": "정경미",
+        "phone": "+82 2 586 5557",
+        "website": "www.jeil-hospital.co.kr"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9951082,
+          37.4879071
+        ]
+      },
+      "id": "node/2104058788"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2279743961",
+        "amenity": "hospital",
+        "name": "로이병원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9689403,
+          37.6068633
+        ]
+      },
+      "id": "node/2279743961"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2279785065",
+        "amenity": "hospital",
+        "name": "은평튼튼병원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9352875,
+          37.6036007
+        ]
+      },
+      "id": "node/2279785065"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2460151776",
+        "addr:city": "서울특별시",
+        "addr:district": "중랑구",
+        "addr:housenumber": "411",
+        "addr:street": "Mangu-ro",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Jang's Women's Hospital"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0979412,
+          37.5995485
+        ]
+      },
+      "id": "node/2460151776"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2471445560",
+        "amenity": "hospital",
+        "name": "해정병원",
+        "name:en": "Haejeong Hospital"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9852705,
+          37.5760692
+        ]
+      },
+      "id": "node/2471445560"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2546485945",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "사랑의 안과",
+        "name:en": "Sarangui Eye Clinic",
+        "name:ko": "사랑의 안과",
+        "name:ko-Latn": "Sarangui Angwa"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0353461,
+          37.560592
+        ]
+      },
+      "id": "node/2546485945"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2598501543",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "강서경희 한방병원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8389829,
+          37.5299561
+        ]
+      },
+      "id": "node/2598501543"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2615993201",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "서울 한방병원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8388467,
+          37.5299333
+        ]
+      },
+      "id": "node/2615993201"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3287089961",
+        "amenity": "clinic",
+        "check_date": "2024-06-05",
+        "name": "새서울의원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.907012,
+          37.5513166
+        ]
+      },
+      "id": "node/3287089961"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3610463120",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "참사랑요양병원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.893302,
+          37.512744
+        ]
+      },
+      "id": "node/3610463120"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3612031620",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "라임나무 치과병원",
+        "name:en": "Lime Dentist",
+        "name:ko": "라임나무 치과병원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9850495,
+          37.5636409
+        ]
+      },
+      "id": "node/3612031620"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3628145836",
+        "amenity": "hospital",
+        "name": "드림병원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1221543,
+          37.4966735
+        ]
+      },
+      "id": "node/3628145836"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3681037090",
+        "amenity": "clinic",
+        "healthcare": "clinic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.976142,
+          37.5434213
+        ]
+      },
+      "id": "node/3681037090"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4378123800",
+        "amenity": "hospital",
+        "name:de": "Medical Shop sanitätshaus"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0448559,
+          37.5594211
+        ]
+      },
+      "id": "node/4378123800"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4395690214",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name:en": "Lavian Plastic Surgery & Aesthetic",
+        "opening_hours": "Mo-Sa 9:30-16:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0390608,
+          37.5241114
+        ]
+      },
+      "id": "node/4395690214"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4395690296",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name:en": "Answer Plastic Surgery",
+        "opening_hours": "Mo-Sa 9:30-19:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0285528,
+          37.4985156
+        ]
+      },
+      "id": "node/4395690296"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4395690394",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name:en": "Line Plastic Surgery Clinic",
+        "opening_hours": "Mo-Sa 10:00-19:00",
+        "website": "https://www.thelineclinic.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0256625,
+          37.5189472
+        ]
+      },
+      "id": "node/4395690394"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4395720190",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name:en": "Banobagi Plastic and Aesthetic Clinic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.035764,
+          37.502644
+        ]
+      },
+      "id": "node/4395720190"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4395765189",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "티엘 성형외과",
+        "name:en": "TL Plastic Surgery Korea",
+        "opening_hours": "Mo-Sa 9:30-19:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0251109,
+          37.5251736
+        ]
+      },
+      "id": "node/4395765189"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4506092095",
+        "addr:city": "서울특별시",
+        "addr:district": "마포구",
+        "addr:street": "동교로",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "internet_access": "wlan",
+        "opening_hours": "Mo-Su 03:40-18:55",
+        "operator": "The Horrible Company"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9245794,
+          37.5586469
+        ]
+      },
+      "id": "node/4506092095"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4553202205",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name:en": "Jyubiseu Miajeom",
+        "name:ko": "쥬비스 미아점",
+        "name:ko-Latn": "Jyubiseu Miajeom"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0180568,
+          37.5940792
+        ]
+      },
+      "id": "node/4553202205"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4582122523",
+        "addr:city": "서울특별시",
+        "addr:district": "은평구",
+        "addr:housenumber": "30",
+        "addr:postcode": "03428",
+        "addr:street": "갈현로11길",
+        "addr:subdistrict": "구산동",
+        "amenity": "hospital",
+        "emergency": "no",
+        "name": "서울재활병원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9075044,
+          37.6051764
+        ]
+      },
+      "id": "node/4582122523"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4628145726",
+        "addr:city": "서울특별시",
+        "addr:district": "구로구",
+        "addr:housenumber": "66",
+        "addr:postcode": "08299",
+        "addr:street": "구로중앙로28길",
+        "addr:subdistrict": "구로동",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;community",
+        "name": "구로구보건소",
+        "name:ja": "九老区保健所",
+        "name:ko": "구로구보건소",
+        "name:ko-Hani": "九老區保健所",
+        "name:zh": "九老区卫生所",
+        "name:zh-Hans": "九老区卫生所",
+        "name:zh-Hant": "九老區衛生所",
+        "operator:type": "government",
+        "phone": "+82 2 860 2600",
+        "website": "http://www.guro.go.kr/health/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8892945,
+          37.5001593
+        ]
+      },
+      "id": "node/4628145726"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4633798177",
+        "addr:city": "서울특별시",
+        "addr:district": "은평구",
+        "addr:housenumber": "873",
+        "addr:postcode": "03330",
+        "addr:street": "통일로",
+        "addr:subdistrict": "갈현동",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "name": "청구성심병원",
+        "name:en": "CHUNGGOO SUNGSHIM HOSPITAL",
+        "phone": "+8223830129"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.919627,
+          37.6209036
+        ]
+      },
+      "id": "node/4633798177"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4637166525",
+        "addr:city": "서울특별시",
+        "addr:district": "영등포구",
+        "addr:housenumber": "223",
+        "addr:postcode": "07378",
+        "addr:street": "대림로",
+        "addr:subdistrict": "대림동",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "명지춘혜병원",
+        "phone": "+82 2-3284-7777",
+        "website": "http://www.mjchoonhey.co.kr/",
+        "wheelchair": "yes",
+        "wikidata": "Q56583127"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8971162,
+          37.5006404
+        ]
+      },
+      "id": "node/4637166525"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4637478431",
+        "addr:city": "서울특별시",
+        "addr:district": "도봉구",
+        "addr:housenumber": "117",
+        "addr:postcode": "01395",
+        "addr:street": "방학로3길",
+        "addr:subdistrict": "쌍문동",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;community",
+        "name": "도봉구보건소",
+        "name:en": "Dobong-gu Community Health Center",
+        "name:ja": "道峰区保健所",
+        "name:ko": "도봉구보건소",
+        "name:ko-Hani": "道峰區保健所",
+        "name:zh": "道峰区卫生所",
+        "name:zh-Hans": "道峰区卫生所",
+        "name:zh-Hant": "道峰區衛生所",
+        "operator:type": "government",
+        "phone": "+82 2 2091 4600",
+        "website": "https://health.dobong.go.kr/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0389254,
+          37.6579935
+        ]
+      },
+      "id": "node/4637478431"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4639296578",
+        "amenity": "hospital",
+        "name": "대한병원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0228765,
+          37.6355439
+        ]
+      },
+      "id": "node/4639296578"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4639712057",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "name": "영동병원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.058661,
+          37.5632346
+        ]
+      },
+      "id": "node/4639712057"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4646478793",
+        "amenity": "hospital",
+        "name": "새한빛병원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0300137,
+          37.6380678
+        ]
+      },
+      "id": "node/4646478793"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4648390420",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "성애병원",
+        "name:en": "Seongae Hospital",
+        "wikidata": "Q12602048"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9224618,
+          37.5120094
+        ]
+      },
+      "id": "node/4648390420"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4650466098",
+        "amenity": "hospital",
+        "name": "성북참노인전문병원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0052329,
+          37.5976288
+        ]
+      },
+      "id": "node/4650466098"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4655504331",
+        "amenity": "hospital",
+        "check_date": "2024-04-20",
+        "healthcare": "hospital",
+        "name": "서울송도병원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0081996,
+          37.5513291
+        ]
+      },
+      "id": "node/4655504331"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4658403250",
+        "addr:city": "서울특별시",
+        "addr:district": "송파구",
+        "addr:housenumber": "407",
+        "addr:postcode": "05621",
+        "addr:street": "백제고분로",
+        "addr:subdistrict": "송파동",
+        "amenity": "hospital",
+        "check_date": "2024-03-17",
+        "healthcare": "hospital",
+        "name": "강남힘찬병원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.109977,
+          37.5075302
+        ]
+      },
+      "id": "node/4658403250"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4658438568",
+        "addr:city": "서울특별시",
+        "addr:district": "송파구",
+        "addr:housenumber": "405",
+        "addr:postcode": "05621",
+        "addr:street": "백제고분로",
+        "addr:subdistrict": "송파동",
+        "amenity": "hospital",
+        "check_date": "2025-05-18",
+        "emergency": "no",
+        "healthcare": "hospital",
+        "name": "빠른병원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1098151,
+          37.5073897
+        ]
+      },
+      "id": "node/4658438568"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4660773334",
+        "addr:city": "서울특별시",
+        "addr:district": "은평구",
+        "addr:housenumber": "29-7",
+        "addr:postcode": "03414",
+        "addr:street": "연서로13길",
+        "addr:subdistrict": "구산동",
+        "amenity": "clinic",
+        "emergency": "no",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;community",
+        "name": "구산보건지소",
+        "name:ja": "九山保健支所",
+        "name:ko": "구산보건지소",
+        "name:ko-Hani": "九山保健支所",
+        "name:zh": "九山卫生分所",
+        "name:zh-Hans": "九山卫生分所",
+        "name:zh-Hant": "九山衛生分所",
+        "operator:type": "government",
+        "phone": "+82 2 351 8702"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9127859,
+          37.6097321
+        ]
+      },
+      "id": "node/4660773334"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4683905756",
+        "addr:city": "서울특별시",
+        "addr:district": "강동구",
+        "addr:housenumber": "123",
+        "addr:postcode": "1234",
+        "addr:street": "동남로85길",
+        "amenity": "hospital",
+        "name": "병원",
+        "operator": "알 수 없음"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1535806,
+          37.5607901
+        ]
+      },
+      "id": "node/4683905756"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4714450495",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "서울병원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1247756,
+          37.5038991
+        ]
+      },
+      "id": "node/4714450495"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4736041823",
+        "addr:city": "서울특별시",
+        "addr:district": "동대문구",
+        "addr:housenumber": "57",
+        "addr:postcode": "02558",
+        "addr:street": "서울시립대로",
+        "addr:subdistrict": "전농동",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "다일천사병원",
+        "name:en": "Dail Angel's Hospital",
+        "name:ko": "다일천사병원",
+        "phone": "+82 2 2212 8004"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0477129,
+          37.5765491
+        ]
+      },
+      "id": "node/4736041823"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4904180222",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "린여성병원",
+        "name:en": "Lin Hospital"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0698669,
+          37.5723208
+        ]
+      },
+      "id": "node/4904180222"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5235757246",
+        "amenity": "hospital",
+        "check_date": "2025-03-26",
+        "healthcare": "hospital",
+        "healthcare:speciality": "gynaecology",
+        "name": "Korea University Anam Hospital emergency medical center",
+        "name:ko": "고려대의료원 안암병원 응급의료센터",
+        "name:zh": "高麗大學安岩醫院 緊急醫療中心"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0261445,
+          37.5866168
+        ]
+      },
+      "id": "node/5235757246"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5438836220",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "서동일음성클리닉"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0269382,
+          37.5247478
+        ]
+      },
+      "id": "node/5438836220"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5438846826",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "봄날성형외과"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.027887,
+          37.5256389
+        ]
+      },
+      "id": "node/5438846826"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5438846831",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "양두병성형외과"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0280239,
+          37.5266402
+        ]
+      },
+      "id": "node/5438846831"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5518535029",
+        "amenity": "clinic",
+        "name": "Raphael Center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0044796,
+          37.5882814
+        ]
+      },
+      "id": "node/5518535029"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5765162453",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name:ru": "Зубы"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8973156,
+          37.5051909
+        ]
+      },
+      "id": "node/5765162453"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5994874797",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "윤호산후클리닉"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0344627,
+          37.5288507
+        ]
+      },
+      "id": "node/5994874797"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5994874801",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "세실내과"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0316575,
+          37.5280155
+        ]
+      },
+      "id": "node/5994874801"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5994874814",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "항문외과의원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0268537,
+          37.5244524
+        ]
+      },
+      "id": "node/5994874814"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6033707265",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "하늘느낌피부과"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0369778,
+          37.5237444
+        ]
+      },
+      "id": "node/6033707265"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6033707274",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "로고스성형외과"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0392267,
+          37.5245184
+        ]
+      },
+      "id": "node/6033707274"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6033707275",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "연세디아뜨성형외과피부과"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0391435,
+          37.5243584
+        ]
+      },
+      "id": "node/6033707275"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6033707785",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "더미소피부과의원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0336653,
+          37.5259871
+        ]
+      },
+      "id": "node/6033707785"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6189297886",
+        "amenity": "hospital",
+        "name": "서울 석병원",
+        "name:en": "Seoul Seok hospital",
+        "name:ja": "ソウル ソク病院"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1240225,
+          37.4939561
+        ]
+      },
+      "id": "node/6189297886"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6425258486",
+        "addr:city": "서울특별시",
+        "addr:district": "서초구",
+        "addr:housenumber": "110",
+        "addr:postcode": "06634",
+        "addr:street": "서초중앙로",
+        "addr:subdistrict": "서초동",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name:en": "Medi Flower OBGYN & Natural Birthing Center",
+        "website": "http://mediflower.co.kr"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0141222,
+          37.4916183
+        ]
+      },
+      "id": "node/6425258486"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6425261985",
+        "addr:city": "서울특별시",
+        "addr:district": "강남구",
+        "addr:housenumber": "521",
+        "addr:postcode": "06072",
+        "addr:street": "학동로",
+        "addr:subdistrict": "청담동",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name:en": "Yeon & Nature OBGYN",
+        "website": "https://en.yeonnnature.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0561512,
+          37.5199838
+        ]
+      },
+      "id": "node/6425261985"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6461075250",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "제일성모365의원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9116739,
+          37.5648959
+        ]
+      },
+      "id": "node/6461075250"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6512558188",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name:en": "opera surgery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0276545,
+          37.4988889
+        ]
+      },
+      "id": "node/6512558188"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6512570706",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name:en": "namu surgery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0268541,
+          37.4982118
+        ]
+      },
+      "id": "node/6512570706"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6512571094",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name:en": "View"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0253832,
+          37.5048042
+        ]
+      },
+      "id": "node/6512571094"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6678177909",
+        "addr:city": "서울특별시",
+        "addr:district": "강서구",
+        "addr:housenumber": "463",
+        "addr:postcode": "07791",
+        "addr:street": "강서로",
+        "addr:subdistrict": "마곡동",
+        "amenity": "hospital",
+        "email": "ekovkoree@bk.ru",
+        "healthcare": "hospital",
+        "internet_access": "wlan",
+        "name": "에이치아이여성의원",
+        "name:en": "HI FERTILITY CENTER",
+        "name:ru": "ЭКО в Корее Хай Фертилити клиника",
+        "opening_hours": "Mo-Fr 08:00-17:00; Sa 08:00-12:00",
+        "phone": "+821052081368",
+        "website": "http://821052081368.blogspot.com/?m=1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8405844,
+          37.5668483
+        ]
+      },
+      "id": "node/6678177909"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6726250285",
+        "amenity": "clinic",
+        "name:en": "Yonsei Woori Pediatric Clinic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9687755,
+          37.5804002
+        ]
+      },
+      "id": "node/6726250285"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7501768239",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "선수촌병원",
+        "name:en": "Sunsoochon Hospital",
+        "name:ko": "선수촌병원",
+        "website": "http://www.sunsoochon.com"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0792142,
+          37.5115194
+        ]
+      },
+      "id": "node/7501768239"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7557517913",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "루시나산부인과"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0153755,
+          37.5900452
+        ]
+      },
+      "id": "node/7557517913"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7557524320",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "대한민국요양병원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.072506,
+          37.5783265
+        ]
+      },
+      "id": "node/7557524320"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7557531110",
+        "amenity": "clinic",
+        "name": "음치클리닉",
+        "name:ko": "음치클리닉2F"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0083908,
+          37.589637
+        ]
+      },
+      "id": "node/7557531110"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7557531116",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "연세좋은치과"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0975774,
+          37.5990022
+        ]
+      },
+      "id": "node/7557531116"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7557536206",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "구천당한의원",
+        "name:ko": "구천당한의원2F",
+        "name:zh": "龟川堂韩医院"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0195947,
+          37.5725829
+        ]
+      },
+      "id": "node/7557536206"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7557536801",
+        "amenity": "hospital",
+        "name": "서울종합동물병원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0182903,
+          37.5871688
+        ]
+      },
+      "id": "node/7557536801"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7558542689",
+        "amenity": "hospital",
+        "name": "동서병원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0287603,
+          37.6070431
+        ]
+      },
+      "id": "node/7558542689"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7558553290",
+        "amenity": "hospital",
+        "name": "우리아이들병원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0292886,
+          37.6069578
+        ]
+      },
+      "id": "node/7558553290"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7559559485",
+        "addr:city": "서울특별시",
+        "addr:district": "성동구",
+        "addr:housenumber": "10",
+        "addr:postcode": "04706",
+        "addr:street": "마장로23길",
+        "addr:subdistrict": "홍익동",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;community",
+        "name": "성동구보건소",
+        "name:ja": "城東区保健所",
+        "name:ko": "성동구보건소",
+        "name:ko-Hani": "城東區保健所",
+        "name:zh": "城东区卫生所",
+        "name:zh-Hans": "城东区卫生所",
+        "name:zh-Hant": "城東區衛生所",
+        "operator:type": "government",
+        "phone": "+82 2 2286 7000",
+        "website": "https://bogunso.sd.go.kr/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0332301,
+          37.5670735
+        ]
+      },
+      "id": "node/7559559485"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7723052186",
+        "amenity": "clinic",
+        "healthcare": "clinic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0692421,
+          37.5481664
+        ]
+      },
+      "id": "node/7723052186"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7832838187",
+        "amenity": "hospital",
+        "name": "중앙한의원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.045679,
+          37.5680485
+        ]
+      },
+      "id": "node/7832838187"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7899190585",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "이충호산부인과"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8999153,
+          37.4946705
+        ]
+      },
+      "id": "node/7899190585"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7899444285",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "초록나무요양병원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8991995,
+          37.5013141
+        ]
+      },
+      "id": "node/7899444285"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7904903987",
+        "amenity": "clinic",
+        "name": "이병직내과의원2F"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0551358,
+          37.5374499
+        ]
+      },
+      "id": "node/7904903987"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8033318685",
+        "amenity": "hospital",
+        "name": "애플동물병원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0882533,
+          37.5549114
+        ]
+      },
+      "id": "node/8033318685"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8082427317",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "장수한의원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9253831,
+          37.4832392
+        ]
+      },
+      "id": "node/8082427317"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8138881517",
+        "amenity": "hospital",
+        "name": "거북이한의원",
+        "name:ko": "거북이한의원2F"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0881104,
+          37.5571704
+        ]
+      },
+      "id": "node/8138881517"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8139917018",
+        "amenity": "hospital",
+        "name": "서울앞선치과2F"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0878402,
+          37.5586815
+        ]
+      },
+      "id": "node/8139917018"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8139976117",
+        "amenity": "hospital",
+        "name": "우리치과2F"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0877459,
+          37.5591709
+        ]
+      },
+      "id": "node/8139976117"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8147061917",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "늘찬병원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0989908,
+          37.595284
+        ]
+      },
+      "id": "node/8147061917"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8148092719",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "서울선병원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0937252,
+          37.5986195
+        ]
+      },
+      "id": "node/8148092719"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8323782857",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "서울명가한의원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9555174,
+          37.483966
+        ]
+      },
+      "id": "node/8323782857"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8364806919",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "요셉의원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9049435,
+          37.5153089
+        ]
+      },
+      "id": "node/8364806919"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8374571594",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "고도일병원",
+        "name:ko": "고도일병원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0228281,
+          37.5070518
+        ]
+      },
+      "id": "node/8374571594"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8587100270",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "예작병원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0422085,
+          37.4924473
+        ]
+      },
+      "id": "node/8587100270"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8852180528",
+        "addr:city": "서울특별시",
+        "addr:district": "강남구",
+        "addr:housenumber": "830",
+        "addr:postcode": "06014",
+        "addr:street": "선릉로",
+        "addr:subdistrict": "청담동",
+        "amenity": "hospital",
+        "description": "레이저 시술 전문 피부과, 닥터이레이저. 20여년 동안 축적된 진료경험과 프리미엄 레이저들을 바탕으로 드라마틱한 효과를 추구합니다. 또한 과거의 기미, 색소치료 방식에서 벗어나 닥터이레이저만의 적극적이고 강력한 치료방식을 자랑합니다. 수많은 피부 고민, 닥터이레이저와 함께 해결하세요.",
+        "healthcare": "hospital",
+        "healthcare:speciality": "기미;색소침착;레이저토닝;레이저시술;피부과",
+        "name": "닥터이레이저피부과-기미레이저",
+        "name:ko": "닥터이레이저피부과의원",
+        "operator": "서광석 원장",
+        "operator:type": "private",
+        "phone": "+82 02-543-2202",
+        "website": "https://www.drelaser.co.kr/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0405199,
+          37.5261068
+        ]
+      },
+      "id": "node/8852180528"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9004839508",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "보건진료소"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0791235,
+          37.6307186
+        ]
+      },
+      "id": "node/9004839508"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9019193417",
+        "amenity": "hospital",
+        "name": "김성우내과의원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9200375,
+          37.6183592
+        ]
+      },
+      "id": "node/9019193417"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9061817575",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "강남베드로병원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0378776,
+          37.4853647
+        ]
+      },
+      "id": "node/9061817575"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9169245217",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "internet_access": "wlan",
+        "name": "세란병원",
+        "name:en": "Seran hospital"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9576043,
+          37.575244
+        ]
+      },
+      "id": "node/9169245217"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9336111767",
+        "addr:city": "서울특별시",
+        "addr:district": "송파구",
+        "addr:housenumber": "248",
+        "addr:postcode": "05790",
+        "addr:street": "위례서로",
+        "addr:subdistrict": "거여동",
+        "amenity": "hospital",
+        "emergency": "no",
+        "healthcare": "hospital",
+        "healthcare:speciality": "orthopaedics;internal_medicine",
+        "name": "서울 세계로병원",
+        "phone": "+82 2 1670 9111"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1422813,
+          37.4865093
+        ]
+      },
+      "id": "node/9336111767"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9393888397",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "healthcare:speciality": "neurology",
+        "name": "디딤신경정신과",
+        "name:ko": "디딤신경정신과"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0622421,
+          37.6543616
+        ]
+      },
+      "id": "node/9393888397"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9749328669",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "level": "3",
+        "level:ref": "4",
+        "name": "유내과의원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9324411,
+          37.5518757
+        ]
+      },
+      "id": "node/9749328669"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9776139873",
+        "amenity": "clinic",
+        "name": "시온한의원",
+        "name:ko": "시온한의원",
+        "opening_hours": "Mo-Fr 10:00-19:30"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9793838,
+          37.5716212
+        ]
+      },
+      "id": "node/9776139873"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9798363011",
+        "amenity": "clinic",
+        "description:en": "\"Anti-aging & Stem Cell Therapy Clinic\"",
+        "healthcare": "clinic",
+        "name:en": "IEUL Clinic",
+        "phone": "02 593 0101"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9982993,
+          37.49638
+        ]
+      },
+      "id": "node/9798363011"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9809014484",
+        "amenity": "clinic",
+        "healthcare": "clinic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0447117,
+          37.5670713
+        ]
+      },
+      "id": "node/9809014484"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10126972443",
+        "addr:city": "서울특별시",
+        "addr:district": "중랑구",
+        "addr:housenumber": "679",
+        "addr:postcode": "02130",
+        "addr:street": "동일로",
+        "addr:subdistrict": "면목동",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "88병원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0798119,
+          37.5910523
+        ]
+      },
+      "id": "node/10126972443"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10234906414",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "level": "2",
+        "name": "유앤이피부과의원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0343072,
+          37.5616765
+        ]
+      },
+      "id": "node/10234906414"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10582984076",
+        "addr:city": "서울특별시",
+        "addr:district": "강남구",
+        "addr:housenumber": "18",
+        "addr:postcode": "06192",
+        "addr:street": "테헤란로64길",
+        "addr:subdistrict": "대치동",
+        "amenity": "hospital",
+        "description": "여의사 진료 산부인과 / 평일 야간 진료 여성성형 관련 수술법 관련 특허 다수 보유 저희 테헤란체리산부인과의원에서 친절함과 배려심을 가진 의료진과 직원들이 최선을 다해서 진료하겠습니다. 병원에 들어서는 순간 힐링의 장소가 될 수 있게 인테리어 공간구성에 심혈을 기울였습니다. 항상 따뜻한 관심 부탁드립니다.",
+        "emergency": "no",
+        "healthcare": "hospital",
+        "healthcare:speciality": "gynaecology",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "테헤란체리산부인과",
+        "note": "https://blog.naver.com/cherry-clinic",
+        "operator": "테헤란체리산부인과의원",
+        "operator:type": "private_individual",
+        "phone": "+82 02 563 7275",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0512202,
+          37.5037808
+        ]
+      },
+      "id": "node/10582984076"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10938705505",
+        "addr:city": "서울특별시",
+        "addr:district": "강남구",
+        "addr:floor": "2",
+        "addr:housename": "세경빌딩",
+        "addr:housenumber": "10",
+        "addr:postcode": "06134",
+        "addr:street": "테헤란로1길",
+        "addr:subdistrict": "역삼동",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "샤인빔의원",
+        "name:en": "Shine Beam Clinic",
+        "opening_hours": "Mo-Fr 11:00-21:00; Sa 11:00-17:00",
+        "phone": "02-2088-1008",
+        "website": "https://gangnam.shinebeam.co.kr"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0282211,
+          37.4989566
+        ]
+      },
+      "id": "node/10938705505"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10938746605",
+        "addr:city": "서울특별시",
+        "addr:district": "송파구",
+        "addr:floor": "5;6;7",
+        "addr:housename": "태원빌딩",
+        "addr:housenumber": "14",
+        "addr:postcode": "05561",
+        "addr:street": "백제고분로7길",
+        "addr:subdistrict": "잠실동",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "클럽미즈라미체의원",
+        "opening_hours": "Mo,We,Fr 12:30-21:30; Tu,Th 10:00-19:00; Sa 09:00-15:00",
+        "phone": "+ 82 2 422 9888",
+        "website": "http://www.lamiche.co.kr"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0804322,
+          37.5103094
+        ]
+      },
+      "id": "node/10938746605"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10938865205",
+        "addr:city": "서울특별시",
+        "addr:district": "강남구",
+        "addr:floor": "1;2;3;4;5",
+        "addr:housenumber": "6",
+        "addr:postcode": "06019",
+        "addr:street": "도산대로53길",
+        "addr:subdistrict": "신사동",
+        "amenity": "clinic",
+        "email": "drsonyouna.japan@gmail.com",
+        "healthcare": "clinic",
+        "name": "닥터송유나의원",
+        "opening_hours": "Tu,Fr 10:00-13:00,14:00-21:00; Mo,Th 10:00-13:00,14:00-19:00; Sa 10:00-13:00,14:00-15:00",
+        "phone": "0507-1414-1117",
+        "website": "http://drsonyouna.com/m/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0384404,
+          37.5235768
+        ]
+      },
+      "id": "node/10938865205"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10938882905",
+        "addr:city": "서울특별시",
+        "addr:district": "강남구",
+        "addr:housenumber": "125",
+        "addr:postcode": "06133",
+        "addr:street": "테헤란로",
+        "addr:subdistrict": "역삼동",
+        "addr:unit": "3~12층",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "디에이성형외과의원",
+        "name:ja": "DA整形外科",
+        "opening_hours": "Mo-Th 10:00-19:00; Fr 10:00-20:00; Sa 10:00-18:00",
+        "phone": "02-515-4600",
+        "website": "http://daprs.com/m/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0316861,
+          37.4995636
+        ]
+      },
+      "id": "node/10938882905"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10938896105",
+        "addr:city": "서울특별시",
+        "addr:district": "마포구",
+        "addr:floor": "4",
+        "addr:housenumber": "3",
+        "addr:postcode": "04051",
+        "addr:street": "양화로18길",
+        "addr:subdistrict": "동교동",
+        "amenity": "clinic",
+        "check_date": "2024-08-20",
+        "healthcare": "clinic",
+        "name": "리엔장의원 홍대점",
+        "opening_hours": "Mo-Fr 10:00-20:00; Sa 10:00-17:00; Su 11:00-17:00",
+        "phone": "0507-1432-3625",
+        "website": "https://hongdae.lienjang.net"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9244529,
+          37.5570127
+        ]
+      },
+      "id": "node/10938896105"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10940070105",
+        "addr:city": "서울특별시",
+        "addr:district": "강남구",
+        "addr:floor": "9",
+        "addr:housename": "시계탑빌딩",
+        "addr:housenumber": "402",
+        "addr:postcode": "06134",
+        "addr:street": "강남대로",
+        "addr:subdistrict": "역삼동",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "level": "8",
+        "name": "올리팅리프팅클리닉",
+        "opening_hours": "Mo-Th 10:00-19:00; Fr 10:00-20:00; Sa 10:00-17:00",
+        "phone": "0262040077",
+        "website": "https://allliting.com"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0278347,
+          37.498789
+        ]
+      },
+      "id": "node/10940070105"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10967504087",
+        "addr:city": "서울특별시",
+        "addr:district": "강남구",
+        "addr:housenumber": "13",
+        "addr:postcode": "06134",
+        "addr:street": "강남대로92길",
+        "addr:subdistrict": "역삼동",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "두드림모발이식센터"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.028492,
+          37.4986447
+        ]
+      },
+      "id": "node/10967504087"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10982215606",
+        "addr:city": "서울특별시",
+        "addr:district": "서초구",
+        "addr:floor": "4",
+        "addr:housenumber": "441",
+        "addr:postcode": "06612",
+        "addr:street": "강남대로",
+        "addr:subdistrict": "서초동",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "세니아 클리닉",
+        "name:en": "XENIA CLINIC",
+        "opening_hours": "Mo-Fr 11:00-21:00; Sa 10:30-17:00",
+        "website": "https://xenia.clinic/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0253899,
+          37.5016997
+        ]
+      },
+      "id": "node/10982215606"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11259319801",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "광장한의원",
+        "name:ko": "광장한의원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8440796,
+          37.5223205
+        ]
+      },
+      "id": "node/11259319801"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11265649818",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "큰길내과의원",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0520434,
+          37.5678838
+        ]
+      },
+      "id": "node/11265649818"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11292465380",
+        "amenity": "clinic",
+        "name": "우리들가정의원",
+        "name:ko": "우리들가정의원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9353625,
+          37.5449616
+        ]
+      },
+      "id": "node/11292465380"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11306336585",
+        "addr:city": "서울특별시",
+        "addr:district": "영등포구",
+        "addr:housenumber": "22",
+        "addr:postcode": "07223",
+        "addr:street": "양평로",
+        "addr:subdistrict": "당산동6가",
+        "amenity": "hospital",
+        "description": "Specializing in stem cell treatment",
+        "emergency": "yes",
+        "fax": "+82 2 2636 3720",
+        "healthcare": "hospital",
+        "healthcare:speciality": "internal",
+        "name": "김애경내과의원",
+        "opening_hours": "Mo-Sa 08:00-17:00",
+        "operator": "KIm Ae Kyoung",
+        "operator:type": "hospital",
+        "payment:american_express": "yes",
+        "payment:cards": "yes",
+        "payment:cheque": "yes",
+        "payment:contactless": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:mastercard_contactless": "yes",
+        "payment:samsung_pay": "yes",
+        "payment:unionpay": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "payment:wechat": "yes",
+        "phone": "+82 2 2636 3721",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9038793,
+          37.5331631
+        ]
+      },
+      "id": "node/11306336585"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11397452061",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "조은탑내과의원",
+        "name:ko": "조은탑내과의원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.896819,
+          37.52516
+        ]
+      },
+      "id": "node/11397452061"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11478109669",
+        "amenity": "hospital",
+        "name": "명동성모안과"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9831017,
+          37.5653427
+        ]
+      },
+      "id": "node/11478109669"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11493081111",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "오승현내과의원건강검진센터"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0552197,
+          37.5655027
+        ]
+      },
+      "id": "node/11493081111"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11493875731",
+        "addr:city": "서울특별시",
+        "addr:district": "용산구",
+        "addr:housenumber": "259",
+        "addr:postcode": "04322",
+        "addr:street": "한강대로",
+        "addr:subdistrict": "갈월동",
+        "amenity": "clinic",
+        "description": "Dermatologist",
+        "healthcare": "clinic",
+        "name": "김낙인피부과의원",
+        "opening_hours": "Mo, Tu, Th, Fr 09:30-18:00",
+        "phone": "+82220397550"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9723257,
+          37.541695
+        ]
+      },
+      "id": "node/11493875731"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11622328287",
+        "amenity": "clinic",
+        "check_date": "2025-03-16",
+        "healthcare": "clinic",
+        "name": "송파본내과의원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1099325,
+          37.501712
+        ]
+      },
+      "id": "node/11622328287"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11788439152",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "연세가정의원",
+        "opening_hours": "Mo-Fr 09:00-18:00; Sa 09:00-13:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0520664,
+          37.5644804
+        ]
+      },
+      "id": "node/11788439152"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11829724036",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "혜당한방병원",
+        "name:en": "Hyedang Oriental Medicine Hospital"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.916806,
+          37.5481143
+        ]
+      },
+      "id": "node/11829724036"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11893002380",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "핑크힐병원",
+        "name:ko": "핑크힐병원",
+        "phone": "+82 2 2658 5114",
+        "website": "http://www.pinkheal.co.kr/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8748433,
+          37.5493092
+        ]
+      },
+      "id": "node/11893002380"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12074542746",
+        "addr:city": "서울특별시",
+        "addr:district": "광진구",
+        "addr:housenumber": "120-1",
+        "addr:postcode": "05030",
+        "addr:street": "능동로",
+        "addr:subdistrict": "화양동",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "건국대학교병원 장례식장"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0718949,
+          37.5410125
+        ]
+      },
+      "id": "node/12074542746"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12074547902",
+        "addr:city": "서울특별시",
+        "addr:district": "동대문구",
+        "addr:housenumber": "68",
+        "addr:postcode": "02570",
+        "addr:street": "약령시로",
+        "addr:subdistrict": "제기동",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "한방약선연구원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0374245,
+          37.5827922
+        ]
+      },
+      "id": "node/12074547902"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12466360089",
+        "addr:city": "서울특별시",
+        "addr:district": "노원구",
+        "addr:housenumber": "437",
+        "addr:postcode": "01689",
+        "addr:street": "노해로",
+        "addr:subdistrict": "상계동",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;community",
+        "name": "노원구보건소",
+        "name:ja": "蘆原区保健所",
+        "name:ko": "노원구보건소",
+        "name:ko-Hani": "蘆原區保健所",
+        "name:zh": "芦原区卫生所",
+        "name:zh-Hans": "芦原区卫生所",
+        "name:zh-Hant": "蘆原區衛生所",
+        "operator:type": "government",
+        "phone": "+82 2 2116 4311",
+        "website": "https://www.nowon.kr/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.056473,
+          37.654358
+        ]
+      },
+      "id": "node/12466360089"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12466360090",
+        "addr:city": "서울특별시",
+        "addr:district": "동작구",
+        "addr:housenumber": "42",
+        "addr:postcode": "06963",
+        "addr:street": "장승배기로10길",
+        "addr:subdistrict": "상도동",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;community",
+        "name": "동작구보건소",
+        "name:ja": "銅雀区保健所",
+        "name:ko": "동작구보건소",
+        "name:ko-Hani": "銅雀區保健所",
+        "name:zh": "铜雀区卫生所",
+        "name:zh-Hans": "铜雀区卫生所",
+        "name:zh-Hant": "銅雀區衛生所",
+        "operator:type": "government",
+        "phone": "+82 2 820 1423",
+        "website": "http://healthcare.dongjak.go.kr"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9411042,
+          37.5057131
+        ]
+      },
+      "id": "node/12466360090"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12466360091",
+        "addr:city": "서울특별시",
+        "addr:district": "영등포구",
+        "addr:housenumber": "123",
+        "addr:postcode": "07260",
+        "addr:street": "당산로",
+        "addr:subdistrict": "당산동3가",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;community",
+        "name": "영등포구보건소",
+        "name:ja": "永登浦区保健所",
+        "name:ko": "영등포구보건소",
+        "name:ko-Hani": "永登浦區保健所",
+        "name:zh": "永登浦区卫生所",
+        "name:zh-Hans": "永登浦区卫生所",
+        "name:zh-Hant": "永登浦區衛生所",
+        "operator:type": "government",
+        "phone": "+82 2 2670 4823",
+        "website": "https://www.ydp.go.kr/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8956526,
+          37.5264807
+        ]
+      },
+      "id": "node/12466360091"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12466360092",
+        "addr:city": "서울특별시",
+        "addr:district": "은평구",
+        "addr:housenumber": "11",
+        "addr:postcode": "03347",
+        "addr:street": "연서로34길",
+        "addr:subdistrict": "불광동",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;community",
+        "name": "불광보건지소",
+        "name:ja": "佛光保健支所",
+        "name:ko": "불광보건지소",
+        "name:ko-Hani": "佛光保健支所",
+        "name:zh": "佛光卫生分所",
+        "name:zh-Hans": "佛光卫生分所",
+        "name:zh-Hant": "佛光衛生分所",
+        "operator:type": "government",
+        "phone": "+82 2 351 8114"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9276913,
+          37.6215625
+        ]
+      },
+      "id": "node/12466360092"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12466360093",
+        "addr:city": "서울특별시",
+        "addr:district": "관악구",
+        "addr:housenumber": "145",
+        "addr:postcode": "08832",
+        "addr:street": "관악로",
+        "addr:subdistrict": "봉천동",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;community",
+        "name": "관악구보건소",
+        "name:ja": "冠岳区保健所",
+        "name:ko": "관악구보건소",
+        "name:ko-Hani": "冠岳區保健所",
+        "name:zh": "冠岳区卫生所",
+        "name:zh-Hans": "冠岳区卫生所",
+        "name:zh-Hant": "冠岳區衛生所",
+        "opening_hours": "Mo-Fr 09:00-18:00",
+        "operator:type": "government",
+        "phone": "+82 2 879 7103",
+        "website": "http://health.gwanak.go.kr/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9514847,
+          37.4781549
+        ]
+      },
+      "id": "node/12466360093"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12466360094",
+        "addr:city": "서울특별시",
+        "addr:district": "강동구",
+        "addr:housenumber": "45",
+        "addr:postcode": "05397",
+        "addr:street": "성내로",
+        "addr:subdistrict": "성내동",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;community",
+        "name": "강동구보건소",
+        "name:ja": "江東区保健所",
+        "name:ko": "강동구보건소",
+        "name:ko-Hani": "江東區保健所",
+        "name:zh": "江东区卫生所",
+        "name:zh-Hans": "江东区卫生所",
+        "name:zh-Hant": "江東區衛生所",
+        "operator:type": "government",
+        "phone": "+82 2 3425 6655",
+        "website": "https://health.gangdong.go.kr/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1255532,
+          37.5293107
+        ]
+      },
+      "id": "node/12466360094"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12466360095",
+        "addr:city": "서울특별시",
+        "addr:district": "중랑구",
+        "addr:housenumber": "179",
+        "addr:postcode": "02043",
+        "addr:street": "봉화산로",
+        "addr:subdistrict": "신내동",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;community",
+        "name": "중랑구보건소",
+        "name:ja": "中浪区保健所",
+        "name:ko": "중랑구보건소",
+        "name:ko-Hani": "中浪區保健所",
+        "name:zh": "中浪区卫生所",
+        "name:zh-Hans": "中浪区卫生所",
+        "name:zh-Hant": "中浪區衛生所",
+        "operator:type": "government",
+        "phone": "+82 2 490 3741",
+        "website": "http://www.healthcare.go.kr/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0925842,
+          37.6063242
+        ]
+      },
+      "id": "node/12466360095"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12466360096",
+        "addr:city": "서울특별시",
+        "addr:district": "양천구",
+        "addr:housenumber": "339",
+        "addr:postcode": "08095",
+        "addr:street": "목동서로",
+        "addr:subdistrict": "신정동",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;community",
+        "name": "양천구보건소",
+        "name:ja": "陽川区保健所",
+        "name:ko": "양천구보건소",
+        "name:ko-Hani": "陽川區保健所",
+        "name:zh": "阳川区卫生所",
+        "name:zh-Hans": "阳川区卫生所",
+        "name:zh-Hant": "陽川區衛生所",
+        "operator:type": "government",
+        "phone": "+82 2 2620 4340",
+        "website": "http://health.yangcheon.go.kr/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8658999,
+          37.5175447
+        ]
+      },
+      "id": "node/12466360096"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12466360097",
+        "addr:city": "서울특별시",
+        "addr:district": "서초구",
+        "addr:housenumber": "173",
+        "addr:postcode": "06572",
+        "addr:street": "방배로",
+        "addr:subdistrict": "방배동",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;community",
+        "name": "방배보건지소",
+        "name:ja": "方背保健支所",
+        "name:ko": "방배보건지소",
+        "name:ko-Hani": "方背保健支所",
+        "name:zh": "方背卫生分所",
+        "name:zh-Hans": "方背卫生分所",
+        "name:zh-Hant": "方背衛生分所",
+        "operator:type": "government",
+        "phone": "+82 2 2155 8160"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9923344,
+          37.489007
+        ]
+      },
+      "id": "node/12466360097"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12466360098",
+        "addr:city": "서울특별시",
+        "addr:district": "마포구",
+        "addr:housenumber": "212",
+        "addr:postcode": "03937",
+        "addr:street": "월드컵로",
+        "addr:subdistrict": "성산동",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;community",
+        "name": "마포구보건소",
+        "name:ja": "麻浦区保健所",
+        "name:ko": "마포구보건소",
+        "name:ko-Hani": "麻浦區保健所",
+        "name:zh": "麻浦区卫生所",
+        "name:zh-Hans": "麻浦区卫生所",
+        "name:zh-Hant": "麻浦區衛生所",
+        "operator:type": "government",
+        "phone": "+82 2 3153 9020",
+        "website": "https://health.mapo.go.kr/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.901491,
+          37.5663245
+        ]
+      },
+      "id": "node/12466360098"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12466360099",
+        "addr:city": "서울특별시",
+        "addr:district": "송파구",
+        "addr:housenumber": "5",
+        "addr:postcode": "05771",
+        "addr:street": "양산로",
+        "addr:subdistrict": "거여동",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;community",
+        "name": "송파구보건지소",
+        "name:ja": "松坡区保健支所",
+        "name:ko": "송파구보건지소",
+        "name:ko-Hani": "松坡區保健支所",
+        "name:zh": "松坡区卫生分所",
+        "name:zh-Hans": "松坡区卫生分所",
+        "name:zh-Hant": "松坡區衛生分所",
+        "operator:type": "government",
+        "phone": "+82 2 2147 4840",
+        "website": "http://www.songpa.go.kr/user.kdf?a=songpa.menu.MenuApp&c=1001&cate_id=BB3600000000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1425733,
+          37.4897832
+        ]
+      },
+      "id": "node/12466360099"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12466360100",
+        "addr:city": "서울특별시",
+        "addr:district": "은평구",
+        "addr:housenumber": "195",
+        "addr:postcode": "03479",
+        "addr:street": "가좌로",
+        "addr:subdistrict": "응암동",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;community",
+        "name": "응암보건지소",
+        "name:ja": "鷹岩保健支所",
+        "name:ko": "응암보건지소",
+        "name:ko-Hani": "鷹岩保健支所",
+        "name:zh": "鹰岩卫生分所",
+        "name:zh-Hans": "鹰岩卫生分所",
+        "name:zh-Hant": "鷹岩衛生分所",
+        "operator:type": "government",
+        "phone": "+82 2 351 8732"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9194968,
+          37.5880357
+        ]
+      },
+      "id": "node/12466360100"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12466361601",
+        "addr:city": "서울특별시",
+        "addr:district": "용산구",
+        "addr:housename": "용산구종합행정타운",
+        "addr:housenumber": "150",
+        "addr:postcode": "04390",
+        "addr:street": "녹사평대로",
+        "addr:subdistrict": "이태원동",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;community",
+        "name": "용산구보건소",
+        "name:ja": "龍山区保健所",
+        "name:ko": "용산구보건소",
+        "name:ko-Hani": "龍山區保健所",
+        "name:zh": "龙山区卫生所",
+        "name:zh-Hans": "龙山区卫生所",
+        "name:zh-Hant": "龍山區衛生所",
+        "operator:type": "government",
+        "phone": "+82 2 2199 8390",
+        "website": "http://health.yongsan.go.kr/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.99049,
+          37.532527
+        ]
+      },
+      "id": "node/12466361601"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12466361602",
+        "addr:city": "서울특별시",
+        "addr:district": "서초구",
+        "addr:floor": "1",
+        "addr:housenumber": "12",
+        "addr:postcode": "06655",
+        "addr:street": "서초대로38길",
+        "addr:subdistrict": "서초동",
+        "addr:unit": "101동",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;community",
+        "level": "0",
+        "name": "서초보건지소",
+        "name:ja": "瑞草保健支所",
+        "name:ko": "서초보건지소",
+        "name:ko-Hani": "瑞草保健支所",
+        "name:zh": "瑞草卫生分所",
+        "name:zh-Hans": "瑞草卫生分所",
+        "name:zh-Hant": "瑞草衛生分所",
+        "operator:type": "government",
+        "phone": "+82 2 2155 8261"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0051245,
+          37.4902698
+        ]
+      },
+      "id": "node/12466361602"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12466361603",
+        "addr:city": "서울특별시",
+        "addr:district": "서대문구",
+        "addr:housenumber": "100-55",
+        "addr:postcode": "03790",
+        "addr:street": "수색로",
+        "addr:subdistrict": "북가좌동",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;community",
+        "name": "가좌보건지소",
+        "name:ja": "加佐保健支所",
+        "name:ko": "가좌보건지소",
+        "name:ko-Hani": "加佐保健支所",
+        "name:zh": "加佐卫生分所",
+        "name:zh-Hans": "加佐卫生分所",
+        "name:zh-Hant": "加佐衛生分所",
+        "operator:type": "government",
+        "phone": "+82 2 3140 8357"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.910194,
+          37.57429
+        ]
+      },
+      "id": "node/12466361603"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12466361604",
+        "addr:city": "서울특별시",
+        "addr:district": "성북구",
+        "addr:housenumber": "568",
+        "addr:postcode": "02782",
+        "addr:street": "한천로",
+        "addr:subdistrict": "석관동",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;community",
+        "name": "장위석관보건지소",
+        "name:ja": "長位石串保健支所",
+        "name:ko": "장위석관보건지소",
+        "name:ko-Hani": "長位石串保健支所",
+        "name:zh": "長位石串衛生分所",
+        "name:zh-Hans": "长位石串卫生分所",
+        "name:zh-Hant": "長位石串衛生分所",
+        "operator:type": "government",
+        "phone": "+82 2 2241 6255"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0634208,
+          37.6104732
+        ]
+      },
+      "id": "node/12466361604"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12466361605",
+        "addr:city": "서울특별시",
+        "addr:district": "노원구",
+        "addr:housenumber": "378",
+        "addr:postcode": "01905",
+        "addr:street": "월계로",
+        "addr:subdistrict": "월계동",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;community",
+        "name": "노원구보건지소",
+        "name:ja": "蘆原区保健支所",
+        "name:ko": "노원구보건지소",
+        "name:ko-Hani": "蘆原區保健支所",
+        "name:zh": "蘆原区卫生分所",
+        "name:zh-Hans": "芦原区卫生分所",
+        "name:zh-Hant": "蘆原區衛生分所",
+        "operator:type": "government",
+        "phone": "+82 2 2116 4584"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0616286,
+          37.6314519
+        ]
+      },
+      "id": "node/12466361605"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12466361606",
+        "addr:city": "서울특별시",
+        "addr:district": "성북구",
+        "addr:housenumber": "63",
+        "addr:postcode": "02751",
+        "addr:street": "화랑로",
+        "addr:subdistrict": "하월곡동",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;community",
+        "name": "성북구보건소",
+        "name:ja": "城北区保健所",
+        "name:ko": "성북구보건소",
+        "name:ko-Hani": "城北區保健所",
+        "name:zh": "城北区卫生所",
+        "name:zh-Hans": "城北区卫生所",
+        "name:zh-Hant": "城北區衛生所",
+        "operator:type": "government",
+        "phone": "+82 2 2241 1749"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0395493,
+          37.6026849
+        ]
+      },
+      "id": "node/12466361606"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12466361607",
+        "addr:city": "서울특별시",
+        "addr:district": "중구",
+        "addr:housenumber": "16",
+        "addr:postcode": "04611",
+        "addr:street": "다산로39길",
+        "addr:subdistrict": "무학동",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;community",
+        "name": "중구보건소",
+        "name:ja": "中区保健所",
+        "name:ko": "중구보건소",
+        "name:ko-Hani": "中區保健所",
+        "name:zh": "中区卫生所",
+        "name:zh-Hans": "中区卫生所",
+        "name:zh-Hant": "中區衛生所",
+        "operator:type": "government",
+        "phone": "+82 2 2250 4400",
+        "website": "http://health.junggu.seoul.kr/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0151114,
+          37.564587
+        ]
+      },
+      "id": "node/12466361607"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12466361608",
+        "addr:city": "서울특별시",
+        "addr:district": "성북구",
+        "addr:housenumber": "8",
+        "addr:postcode": "02718",
+        "addr:street": "보국문로4길",
+        "addr:subdistrict": "정릉동",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;community",
+        "name": "정릉보건지소",
+        "name:ja": "貞陵保健支所",
+        "name:ko": "정릉보건지소",
+        "name:ko-Hani": "貞陵保健支所",
+        "name:zh": "貞陵卫生分所",
+        "name:zh-Hans": "贞陵卫生分所",
+        "name:zh-Hant": "貞陵衛生分所",
+        "operator:type": "government",
+        "phone": "+82 2 2241 5995"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0119974,
+          37.6052388
+        ]
+      },
+      "id": "node/12466361608"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12466361609",
+        "addr:city": "서울특별시",
+        "addr:country": "KR",
+        "addr:district": "구로구",
+        "addr:housenumber": "44-3",
+        "addr:postcode": "08342",
+        "addr:street": "오리로10길",
+        "addr:subdistrict": "오류동",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;community",
+        "name": "오류보건지소",
+        "name:ja": "梧柳保健支所",
+        "name:ko": "오류보건지소",
+        "name:ko-Hani": "梧柳保健支所",
+        "name:zh": "梧柳卫生分所",
+        "name:zh-Hans": "梧柳卫生分所",
+        "name:zh-Hant": "梧柳洞衛生分所",
+        "operator:type": "government",
+        "phone": "+82 2 860 8161"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.839352,
+          37.4888096
+        ]
+      },
+      "id": "node/12466361609"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12466361610",
+        "addr:city": "서울특별시",
+        "addr:district": "동대문구",
+        "addr:housenumber": "145",
+        "addr:postcode": "02565",
+        "addr:street": "천호대로",
+        "addr:subdistrict": "용두동",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;community",
+        "name": "동대문구보건소",
+        "name:ja": "東大門区保健所",
+        "name:ko": "동대문구보건소",
+        "name:ko-Hani": "東大門區保健所",
+        "name:zh": "东大门区卫生所",
+        "name:zh-Hans": "东大门区卫生所",
+        "name:zh-Hant": "東大門區衛生所",
+        "operator:type": "government",
+        "phone": "+82 2 2127 5365",
+        "website": "https://health.ddm.go.kr/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.03965,
+          37.574524
+        ]
+      },
+      "id": "node/12466361610"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12466361611",
+        "addr:city": "서울특별시",
+        "addr:district": "강북구",
+        "addr:housenumber": "897",
+        "addr:postcode": "01145",
+        "addr:street": "한천로",
+        "addr:subdistrict": "번동",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;community",
+        "name": "강북구보건소",
+        "name:ja": "江北区保健所",
+        "name:ko": "강북구보건소",
+        "name:ko-Hani": "江北區保健所",
+        "name:zh": "江北区卫生所",
+        "name:zh-Hans": "江北区卫生所",
+        "name:zh-Hant": "江北區衛生所",
+        "operator:type": "government",
+        "phone": "+82 2 901 7600",
+        "website": "https://www.gangbuk.go.kr/health/main/main.do"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0387953,
+          37.6323588
+        ]
+      },
+      "id": "node/12466361611"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12497442756",
+        "addr:city": "서울특별시",
+        "addr:district": "강남구",
+        "addr:housenumber": "21",
+        "addr:postcode": "06056",
+        "addr:street": "선릉로145길",
+        "addr:subdistrict": "논현동",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "엔키뷰티"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0377573,
+          37.5210377
+        ]
+      },
+      "id": "node/12497442756"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12497494085",
+        "addr:city": "서울특별시",
+        "addr:district": "서초구",
+        "addr:housenumber": "421",
+        "addr:postcode": "06614",
+        "addr:street": "강남대로",
+        "addr:subdistrict": "서초동",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "plastic_surgery",
+        "name": "오호성형외과"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0260555,
+          37.5000361
+        ]
+      },
+      "id": "node/12497494085"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12557456781",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "디지털헬스케어센터",
+        "website": "https://dhc.severance.healthcare/dhc/index.do"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.94019,
+          37.5633864
+        ]
+      },
+      "id": "node/12557456781"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12606391987",
+        "addr:city": "서울특별시",
+        "addr:district": "강남구",
+        "addr:housenumber": "6",
+        "addr:postcode": "06019",
+        "addr:street": "도산대로53길",
+        "addr:subdistrict": "신사동",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "family_medicine",
+        "name": "닥터손유나의원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0383946,
+          37.5235618
+        ]
+      },
+      "id": "node/12606391987"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12803457101",
+        "amenity": "hospital",
+        "name": "네이처요양병원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0997395,
+          37.4664094
+        ]
+      },
+      "id": "node/12803457101"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12832848288",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "연세가족의원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8599595,
+          37.5610073
+        ]
+      },
+      "id": "node/12832848288"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12832848295",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "비전이비인후과"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8601506,
+          37.5612247
+        ]
+      },
+      "id": "node/12832848295"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12976047203",
+        "addr:city": "서울특별시",
+        "addr:district": "노원구",
+        "addr:housenumber": "456",
+        "addr:postcode": "01762",
+        "addr:street": "노해로",
+        "addr:subdistrict": "상계동",
+        "addr:unit": "5",
+        "amenity": "hospital",
+        "description": "Nowon Samsung Orthopedic Surgery We are performing spinal joint surgery for health. Don't feel the pain. Come to the hospital",
+        "email": "nowonsamsungos@naver.com",
+        "healthcare": "hospital",
+        "healthcare:speciality": "형외과과;상의학과과;anaesthetics;internal",
+        "name": "노원삼성정형외과",
+        "official_name": "노원삼성정형외과",
+        "official_name:en": "nowonsamsungos",
+        "phone": "+82 2 2092 3030",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.058649,
+          37.6535229
+        ]
+      },
+      "id": "node/12976047203"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12976295551",
+        "addr:district": "강남구",
+        "addr:housenumber": "17",
+        "addr:postcode": "06030",
+        "addr:street": "압구정로28길",
+        "addr:subdistrict": "신사동",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "healthcare:speciality": "plastic_surgery",
+        "name": "RNWOOD Plastic Surgery 알앤우드 성형외과"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0278732,
+          37.5256681
+        ]
+      },
+      "id": "node/12976295551"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12987488065",
+        "addr:city": "서울특별시",
+        "addr:district": "금천구",
+        "addr:floor": "2",
+        "addr:housenumber": "10-5",
+        "addr:postcode": "08654",
+        "addr:street": "시흥대로12길",
+        "addr:subdistrict": "시흥동",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "level": "1",
+        "name": "박미보건지소"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.904609,
+          37.4386668
+        ]
+      },
+      "id": "node/12987488065"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13000199615",
+        "addr:city": "서울특별시",
+        "addr:district": "노원구",
+        "addr:housenumber": "449",
+        "addr:postcode": "01689",
+        "addr:street": "노해로",
+        "addr:subdistrict": "상계동",
+        "amenity": "hospital",
+        "contact:facebook": "https://www.instagram.com/nowonsamsungos/",
+        "description": "This is the affiliated building of Nowon Samsung Orthopedic Surgery. We have an operating room, an inpatient ward, and a rehabilitation center. The treatment will take place at the main building across the street. Contact is 02-2092-3030",
+        "healthcare": "hospital",
+        "healthcare:speciality": "orthopaedics",
+        "internet_access": "yes",
+        "name": "노원삼성정형외과별관",
+        "operator": "Directly",
+        "phone": "+82 2 2092 3030",
+        "website": "http://nowonsamsungos.com/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.057995,
+          37.6540248
+        ]
+      },
+      "id": "node/13000199615"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13055689066",
+        "addr:city": "서울특별시",
+        "addr:district": "용산구",
+        "addr:floor": "2",
+        "addr:housenumber": "149",
+        "addr:postcode": "04337",
+        "addr:street": "신흥로",
+        "addr:subdistrict": "후암동",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "우리가정의원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9815486,
+          37.5464962
+        ]
+      },
+      "id": "node/13055689066"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13091179653",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "제일성모내과의원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9014122,
+          37.4832675
+        ]
+      },
+      "id": "node/13091179653"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13091179654",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "아비쥬의원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9013793,
+          37.4832296
+        ]
+      },
+      "id": "node/13091179654"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13259931489",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "올바로병원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0043873,
+          37.4862268
+        ]
+      },
+      "id": "node/13259931489"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13427774764",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "마리아쥬니어치과의원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9613272,
+          37.4769824
+        ]
+      },
+      "id": "node/13427774764"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13427774765",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "모세마취통증의학과의원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9614942,
+          37.4768777
+        ]
+      },
+      "id": "node/13427774765"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13439454137",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "설악한의원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0155937,
+          37.5177423
+        ]
+      },
+      "id": "node/13439454137"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13439468862",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "자생한방병원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0223693,
+          37.5098723
+        ]
+      },
+      "id": "node/13439468862"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13439524825",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "level": "6",
+        "name": "HS의원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0292582,
+          37.5183328
+        ]
+      },
+      "id": "node/13439524825"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13439524826",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "포에버성형외과의원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0290309,
+          37.5182741
+        ]
+      },
+      "id": "node/13439524826"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13455348958",
+        "addr:city": "서울특별시",
+        "addr:district": "서초구",
+        "addr:housenumber": "80",
+        "addr:postcode": "06526",
+        "addr:street": "나루터로",
+        "addr:subdistrict": "잠원동",
+        "addr:unit": "3층",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "dermatology",
+        "name": "더이뻐의원",
+        "opening_hours": "Mo-Fr 10:00-20:00, Sa 10:00-16:00",
+        "operator": "더이뻐의원"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0184625,
+          37.5155159
+        ]
+      },
+      "id": "node/13455348958"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13591325402",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "정담이비인후과"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1132306,
+          37.5202807
+        ]
+      },
+      "id": "node/13591325402"
+    }
+  ]
+}

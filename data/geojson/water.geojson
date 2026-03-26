@@ -1,0 +1,195 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2026-03-24T03:13:26Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/253002682",
+        "man_made": "water_works",
+        "name": "유수지",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8741927,
+          37.4902002
+        ]
+      },
+      "id": "way/253002682"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/285364015",
+        "building": "yes",
+        "man_made": "water_works",
+        "name": "노량진 배수지",
+        "name:en": "Noryangjin Flooded Underground Reservoir",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9537742,
+          37.5132373
+        ]
+      },
+      "id": "way/285364015"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/285364016",
+        "building": "yes",
+        "man_made": "water_works",
+        "name": "노량진 배수지",
+        "name:en": "Noryangjin Flooded Underground Reservoir",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.953442,
+          37.5134752
+        ]
+      },
+      "id": "way/285364016"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/299177454",
+        "man_made": "water_works",
+        "name": "영등포아리수정수센터",
+        "name:en": "Yeongdeungpo Arisu Water Purification Center",
+        "name:ja": "永登浦アリス浄水センター",
+        "operator": "서울특별시상수도사업본부",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8837583,
+          37.5494761
+        ]
+      },
+      "id": "way/299177454"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/475625904",
+        "man_made": "water_works",
+        "name": "까치울정수장",
+        "name:ja": "カッチウル浄水場",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8194771,
+          37.507391
+        ]
+      },
+      "id": "way/475625904"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/476067786",
+        "man_made": "water_works",
+        "name": "염창2빗물펌프장",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8775904,
+          37.550528
+        ]
+      },
+      "id": "way/476067786"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/845581188",
+        "man_made": "water_works",
+        "name": "암사아리수정수센터",
+        "name:ja": "岩寺アリ水浄水センター",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1409562,
+          37.5632778
+        ]
+      },
+      "id": "way/845581188"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/871884984",
+        "man_made": "water_works",
+        "name": "뚝도아리수정수센터",
+        "name:en": "Ttukseom Ari Water Purification Center",
+        "name:ja": "トゥクソム アリ水浄水センター",
+        "name:ko": "뚝도아리수정수센터",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0415765,
+          37.5405037
+        ]
+      },
+      "id": "way/871884984"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/977845159",
+        "addr:city": "서울특별시",
+        "addr:district": "광진구",
+        "addr:housenumber": "571",
+        "addr:postcode": "04981",
+        "addr:street": "광나루로",
+        "addr:subdistrict": "구의동",
+        "man_made": "water_works",
+        "name": "구의아리수정수센터",
+        "name:ko": "구의아리수정수센터",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0945394,
+          37.5452649
+        ]
+      },
+      "id": "way/977845159"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8445067068",
+        "man_made": "water_tower"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0322184,
+          37.5900295
+        ]
+      },
+      "id": "node/8445067068"
+    }
+  ]
+}

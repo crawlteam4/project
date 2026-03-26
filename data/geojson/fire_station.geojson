@@ -1,0 +1,1764 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2026-03-23T08:43:30Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/166555384",
+        "addr:city": "서울특별시",
+        "addr:country": "KR",
+        "addr:district": "동작구",
+        "addr:subdistrict": "신대방동",
+        "amenity": "fire_station",
+        "building": "fire_station",
+        "check_date": "2025-07-02",
+        "name": "동작소방서",
+        "name:en": "Dongjak Fire Station",
+        "name:ja": "銅雀消防署",
+        "name:ko": "동작소방서",
+        "wikidata": "Q16097317",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9176312,
+          37.4947343
+        ]
+      },
+      "id": "way/166555384"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/172606290",
+        "amenity": "fire_station",
+        "check_date": "2025-11-26",
+        "name": "관악소방서",
+        "name:en": "Gwanak Fire Station",
+        "name:ja": "冠岳消防署",
+        "name:ko": "관악소방서",
+        "wikidata": "Q12601159",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9525526,
+          37.4738167
+        ]
+      },
+      "id": "way/172606290"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/249675792",
+        "amenity": "fire_station",
+        "building": "yes",
+        "name": "구로소방서",
+        "name:en": "Guro Fire station",
+        "name:ja": "九老消防署",
+        "name:ko": "구로소방서",
+        "name:zh": "九老消防局",
+        "wikidata": "Q12601163",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.865261,
+          37.4977701
+        ]
+      },
+      "id": "way/249675792"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/253040169",
+        "addr:city": "서울특별시",
+        "addr:district": "구로구",
+        "addr:housenumber": "56",
+        "addr:postcode": "08379",
+        "addr:street": "디지털로34길",
+        "addr:subdistrict": "구로동",
+        "amenity": "fire_station",
+        "building": "yes",
+        "name": "공단 119 안전센터",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8984725,
+          37.4842215
+        ]
+      },
+      "id": "way/253040169"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/253271871",
+        "amenity": "fire_station",
+        "building": "yes",
+        "building:levels": "3",
+        "name": "양천소방서",
+        "name:en": "Seoul Yangcheon Fire Station",
+        "name:ja": "陽川消防署",
+        "wikidata": "Q12601290",
+        "wikipedia": "ko:서울양천소방서",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8722741,
+          37.5302776
+        ]
+      },
+      "id": "way/253271871"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/259544739",
+        "amenity": "fire_station",
+        "building": "yes",
+        "check_date": "2023-12-09",
+        "name": "신월119 안전센터",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8331053,
+          37.5279412
+        ]
+      },
+      "id": "way/259544739"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/278615353",
+        "amenity": "fire_station",
+        "building": "yes",
+        "name": "서초소방서",
+        "name:en": "Seocho Firestation",
+        "wikidata": "Q12601259",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9919271,
+          37.4985492
+        ]
+      },
+      "id": "way/278615353"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/285364007",
+        "amenity": "fire_station",
+        "building": "yes",
+        "check_date": "2025-04-26",
+        "name": "노량진119안전센터",
+        "name:en": "Noryangjin 119 Security Center",
+        "name:ko": "노량진119안전센터",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9469493,
+          37.5136555
+        ]
+      },
+      "id": "way/285364007"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/309255670",
+        "amenity": "fire_station",
+        "building": "yes",
+        "name": "서대문소방서",
+        "wikidata": "Q12601255",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9360543,
+          37.5732
+        ]
+      },
+      "id": "way/309255670"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/357115372",
+        "amenity": "fire_station",
+        "building": "yes",
+        "building:levels": "2",
+        "name": "이태원119안전센터",
+        "name:ja": "梨泰院119安全センター",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9958163,
+          37.5343814
+        ]
+      },
+      "id": "way/357115372"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/371728580",
+        "addr:city": "서울특별시",
+        "addr:district": "중랑구",
+        "addr:housenumber": "783",
+        "addr:postcode": "02102",
+        "addr:street": "동일로",
+        "addr:subdistrict": "중화동",
+        "amenity": "fire_station",
+        "building": "yes",
+        "name": "중화119안전센터",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0792971,
+          37.6004368
+        ]
+      },
+      "id": "way/371728580"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/387027611",
+        "addr:city": "서울특별시",
+        "addr:district": "중랑구",
+        "addr:subdistrict": "신내동",
+        "amenity": "fire_station",
+        "building": "yes",
+        "name": "중랑소방서",
+        "wikidata": "Q12601330",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0948436,
+          37.6153247
+        ]
+      },
+      "id": "way/387027611"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/414685329",
+        "amenity": "fire_station",
+        "name": "고덕소방파출소",
+        "name:en": "Godeok Fire Branch Office",
+        "name:ko": "고덕소방파출소",
+        "name:ko-Latn": "Godeoksobangpachulso"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1517855,
+          37.5571755
+        ]
+      },
+      "id": "node/414685329"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/453640736",
+        "amenity": "fire_station",
+        "building": "yes",
+        "name": "이촌 119 안전센터",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9534354,
+          37.5300485
+        ]
+      },
+      "id": "way/453640736"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/469693701",
+        "addr:city": "서울특별시",
+        "addr:district": "강서구",
+        "addr:housenumber": "329",
+        "addr:postcode": "07632",
+        "addr:street": "강서로",
+        "addr:subdistrict": "내발산동",
+        "amenity": "fire_station",
+        "building": "public",
+        "check_date": "2025-03-08",
+        "name": "발산119안전센터",
+        "name:ja": "鉢山119安全センター",
+        "name:zh": "119消防站",
+        "operator": "서울 강서소방서",
+        "phone": "+82 2 2663 0119",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8369282,
+          37.555264
+        ]
+      },
+      "id": "way/469693701"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/471384895",
+        "addr:city": "서울특별시",
+        "addr:district": "강남구",
+        "addr:housenumber": "629",
+        "addr:postcode": "06171",
+        "addr:street": "테헤란로",
+        "addr:subdistrict": "삼성동",
+        "amenity": "fire_station",
+        "building": "public",
+        "name": "강남소방서",
+        "name:en": "Seoul Gangnam Fire Station",
+        "name:ja": "江南消防署",
+        "name:ko": "강남소방서",
+        "wikidata": "Q16097194",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0668447,
+          37.5103594
+        ]
+      },
+      "id": "way/471384895"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/471413119",
+        "addr:city": "서울특별시",
+        "addr:district": "송파구",
+        "addr:housenumber": "932",
+        "addr:postcode": "05699",
+        "addr:street": "양재대로",
+        "addr:subdistrict": "가락동",
+        "amenity": "fire_station",
+        "building": "yes",
+        "name": "가락 119 안전센터",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1134824,
+          37.4964524
+        ]
+      },
+      "id": "way/471413119"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/472574166",
+        "amenity": "fire_station",
+        "building": "yes",
+        "name": "성산119안전센터",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9030986,
+          37.5705748
+        ]
+      },
+      "id": "way/472574166"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/511090885",
+        "amenity": "fire_station",
+        "building": "yes",
+        "name": "신트리119안전센터",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.847985,
+          37.5105928
+        ]
+      },
+      "id": "way/511090885"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/527226782",
+        "amenity": "fire_station",
+        "building": "yes",
+        "name": "동대문소방센터",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0666748,
+          37.5640265
+        ]
+      },
+      "id": "way/527226782"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/538081759",
+        "amenity": "fire_station",
+        "building": "yes",
+        "name": "길음119안전센터",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0191027,
+          37.6028878
+        ]
+      },
+      "id": "way/538081759"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/542869466",
+        "addr:city": "서울특별시",
+        "addr:district": "은평구",
+        "addr:housenumber": "962",
+        "addr:postcode": "03311",
+        "addr:street": "통일로",
+        "addr:subdistrict": "진관동",
+        "amenity": "fire_station",
+        "building": "yes",
+        "name": "은평소방서",
+        "name:ja": "恩平消防署",
+        "name:ko": "은평소방서",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.920012,
+          37.6287617
+        ]
+      },
+      "id": "way/542869466"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/544097827",
+        "amenity": "fire_station",
+        "building": "yes",
+        "name": "노원소방서 월계119안전센터",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0563351,
+          37.6287741
+        ]
+      },
+      "id": "way/544097827"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/545765910",
+        "addr:city": "서울특별시",
+        "addr:district": "은평구",
+        "addr:housenumber": "962",
+        "addr:postcode": "03311",
+        "addr:street": "통일로",
+        "addr:subdistrict": "진관동",
+        "amenity": "fire_station",
+        "building": "yes",
+        "name": "은평소방서",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9203273,
+          37.6286504
+        ]
+      },
+      "id": "way/545765910"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/609078540",
+        "addr:city": "서울특별시",
+        "addr:district": "종로구",
+        "addr:housenumber": "93",
+        "addr:postcode": "03032",
+        "addr:street": "자하문로",
+        "addr:subdistrict": "신교동",
+        "amenity": "fire_station",
+        "building": "yes",
+        "name": "신교119안전센터",
+        "name:en": "Singyo 119 Safety Center",
+        "phone": "+82 02-737-8119",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.970035,
+          37.5843202
+        ]
+      },
+      "id": "way/609078540"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/611808386",
+        "addr:city": "서울특별시",
+        "addr:district": "강남구",
+        "addr:housenumber": "268",
+        "addr:postcode": "06377",
+        "addr:street": "율현동",
+        "addr:subdistrict": "율현동",
+        "amenity": "fire_station",
+        "building": "yes",
+        "name": "강남소방서 세곡119안전센터",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1072322,
+          37.4704235
+        ]
+      },
+      "id": "way/611808386"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/629324671",
+        "addr:city": "서울특별시",
+        "addr:district": "광진구",
+        "addr:subdistrict": "능동",
+        "amenity": "fire_station",
+        "building": "yes",
+        "name": "능동119안전센터",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0770141,
+          37.5516801
+        ]
+      },
+      "id": "way/629324671"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/668969422",
+        "addr:city": "서울특별시",
+        "addr:district": "영등포구",
+        "addr:housenumber": "202",
+        "addr:postcode": "07423",
+        "addr:street": "도림로",
+        "addr:subdistrict": "대림동",
+        "amenity": "fire_station",
+        "building": "yes",
+        "name": "대림119안전센터",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9040677,
+          37.4973159
+        ]
+      },
+      "id": "way/668969422"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/677209057",
+        "amenity": "fire_station",
+        "building": "yes",
+        "name": "Fire Station",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.980415,
+          37.5268996
+        ]
+      },
+      "id": "way/677209057"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/681800823",
+        "amenity": "fire_station",
+        "building": "public",
+        "building:levels": "2",
+        "height": "8",
+        "name": "여의도119안전센터",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9279461,
+          37.5172476
+        ]
+      },
+      "id": "way/681800823"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/691123318",
+        "addr:city": "서울특별시",
+        "addr:district": "마포구",
+        "addr:housenumber": "34",
+        "addr:postcode": "03905",
+        "addr:street": "월드컵로42길",
+        "addr:subdistrict": "상암동",
+        "amenity": "fire_station",
+        "building": "public",
+        "building:levels": "2",
+        "name": "Sangam Fire Station",
+        "name:en": "Sangam Fire Station",
+        "name:ko": "상암119안전센터",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8812114,
+          37.5799051
+        ]
+      },
+      "id": "way/691123318"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/701368394",
+        "amenity": "fire_station",
+        "building": "yes",
+        "level": "3",
+        "name": "영등포 소방서",
+        "name:en": "Yeong Deung Po Fire Station",
+        "name:ja": "永登浦消防署",
+        "name:ko": "영등포 소방서",
+        "wikidata": "Q12601297",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9041704,
+          37.5184318
+        ]
+      },
+      "id": "way/701368394"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/706564386",
+        "addr:city": "서울특별시",
+        "addr:district": "광진구",
+        "addr:housenumber": "480",
+        "addr:postcode": "05023",
+        "addr:street": "광나루로",
+        "addr:subdistrict": "구의동",
+        "amenity": "fire_station",
+        "building": "yes",
+        "name": "광진소방서",
+        "operator": "광진구",
+        "wikidata": "Q12601161",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0827044,
+          37.5448332
+        ]
+      },
+      "id": "way/706564386"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/714753841",
+        "addr:city": "서울특별시",
+        "addr:district": "도봉구",
+        "addr:housenumber": "666",
+        "addr:postcode": "01334",
+        "addr:street": "도봉로",
+        "addr:subdistrict": "방학동",
+        "amenity": "fire_station",
+        "building": "yes",
+        "name": "도봉소방서",
+        "name:en": "Dobong Firestation",
+        "name:ko": "도봉소방서",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.043031,
+          37.6641352
+        ]
+      },
+      "id": "way/714753841"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/765605482",
+        "amenity": "fire_station",
+        "building": "yes",
+        "name": "도봉119안전센터",
+        "name:ko": "도봉119안전센터",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0431111,
+          37.6689334
+        ]
+      },
+      "id": "way/765605482"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/855932924",
+        "addr:city": "서울특별시",
+        "addr:district": "강북구",
+        "addr:housenumber": "208",
+        "addr:postcode": "01193",
+        "addr:street": "솔샘로",
+        "addr:subdistrict": "미아동",
+        "amenity": "fire_station",
+        "building": "yes",
+        "name": "삼각산119안전센터",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0155422,
+          37.6198753
+        ]
+      },
+      "id": "way/855932924"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/874583385",
+        "amenity": "fire_station",
+        "building": "yes",
+        "name": "성동소방서",
+        "wikidata": "Q47745791",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.039518,
+          37.5538155
+        ]
+      },
+      "id": "way/874583385"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/880276346",
+        "amenity": "fire_station",
+        "building": "yes",
+        "name": "수색119안전센터",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8899696,
+          37.5852248
+        ]
+      },
+      "id": "way/880276346"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/889438349",
+        "amenity": "fire_station",
+        "building": "yes",
+        "check_date": "2024-05-19",
+        "name": "종로소방서 연견 119 안전센터",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0018182,
+          37.5794514
+        ]
+      },
+      "id": "way/889438349"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/901459208",
+        "addr:city": "서울특별시",
+        "addr:district": "강동구",
+        "addr:housenumber": "22",
+        "addr:postcode": "05286",
+        "addr:street": "고덕로98길",
+        "addr:subdistrict": "상일동",
+        "amenity": "fire_station",
+        "building": "yes",
+        "name": "강일119안전센터",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1797122,
+          37.5573423
+        ]
+      },
+      "id": "way/901459208"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/945371435",
+        "addr:city": "서울특별시",
+        "addr:district": "중구",
+        "addr:housenumber": "394",
+        "addr:postcode": "04611",
+        "addr:street": "퇴계로",
+        "addr:subdistrict": "무학동",
+        "amenity": "fire_station",
+        "building": "yes",
+        "name": "중부소방서",
+        "wikidata": "Q12601332",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0153987,
+          37.5648754
+        ]
+      },
+      "id": "way/945371435"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/986085458",
+        "amenity": "fire_station",
+        "building": "fire_station",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9877004,
+          37.576985
+        ]
+      },
+      "id": "way/986085458"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/993856002",
+        "addr:city": "서울특별시",
+        "addr:district": "금천구",
+        "addr:housenumber": "344",
+        "addr:postcode": "08616",
+        "addr:street": "시흥대로",
+        "addr:subdistrict": "독산동",
+        "amenity": "fire_station",
+        "area": "yes",
+        "name": "서울금천소방서",
+        "start_date": "2022-01-27",
+        "wikipedia": "ko:서울금천소방서",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8980289,
+          37.4640851
+        ]
+      },
+      "id": "way/993856002"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1015726500",
+        "amenity": "fire_station",
+        "building": "yes",
+        "name": "왕십리119안전센터",
+        "name:en": "Wangsimni Fire House",
+        "name:ko": "왕십리119안전센터",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.035484,
+          37.5620284
+        ]
+      },
+      "id": "way/1015726500"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1030375362",
+        "amenity": "fire_station",
+        "building": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9833305,
+          37.5581774
+        ]
+      },
+      "id": "way/1030375362"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1044253262",
+        "addr:city": "서울특별시",
+        "addr:district": "서초구",
+        "addr:street": "효령로400",
+        "addr:subdistrict": "서초2동",
+        "amenity": "fire_station",
+        "building": "yes",
+        "name": "서초119안전센터",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0268975,
+          37.4878574
+        ]
+      },
+      "id": "way/1044253262"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1062365436",
+        "addr:city": "서울특별시",
+        "addr:district": "중랑구",
+        "addr:housenumber": "38",
+        "addr:postcode": "02167",
+        "addr:street": "봉우재로71길",
+        "addr:subdistrict": "망우동",
+        "amenity": "fire_station",
+        "building": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0980008,
+          37.5965106
+        ]
+      },
+      "id": "way/1062365436"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1064314103",
+        "amenity": "fire_station",
+        "building": "yes",
+        "name": "마곡 119 안전 센터",
+        "name:ko": "마곡 119 안전 센터",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8206824,
+          37.5559662
+        ]
+      },
+      "id": "way/1064314103"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1066961078",
+        "addr:city": "서울특별시",
+        "addr:district": "동대문구",
+        "addr:housenumber": "106",
+        "addr:postcode": "02501",
+        "addr:street": "망우로",
+        "addr:subdistrict": "휘경동",
+        "amenity": "fire_station",
+        "building": "yes",
+        "name": "휘경119안전센터",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0651725,
+          37.5906651
+        ]
+      },
+      "id": "way/1066961078"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1068291697",
+        "addr:city": "서울특별시",
+        "addr:district": "중랑구",
+        "addr:housenumber": "524",
+        "addr:postcode": "02176",
+        "addr:street": "용마산로",
+        "addr:subdistrict": "망우동",
+        "amenity": "fire_station",
+        "building": "yes",
+        "name": "망우119안전센터",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1006364,
+          37.5977323
+        ]
+      },
+      "id": "way/1068291697"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1116924474",
+        "addr:city": "서울특별시",
+        "addr:district": "동대문구",
+        "addr:housenumber": "3",
+        "addr:postcode": "02591",
+        "addr:street": "황물로",
+        "addr:subdistrict": "전농동",
+        "amenity": "fire_station",
+        "name": "전농119안전센터",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.045964,
+          37.5763345
+        ]
+      },
+      "id": "way/1116924474"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1133967478",
+        "addr:city": "서울특별시",
+        "addr:district": "양천구",
+        "addr:housenumber": "1139",
+        "addr:postcode": "07978",
+        "addr:street": "안양천로",
+        "addr:subdistrict": "목동",
+        "amenity": "fire_station",
+        "name": "양천소방서 목동119안전센터",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8834951,
+          37.5426445
+        ]
+      },
+      "id": "way/1133967478"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1305488131",
+        "addr:city": "서울특별시",
+        "addr:district": "강서구",
+        "addr:housenumber": "8",
+        "addr:postcode": "07504",
+        "addr:street": "개화동로19길",
+        "addr:subdistrict": "개화동",
+        "amenity": "fire_station",
+        "building": "yes",
+        "name": "개화119안전센터",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.803128,
+          37.5749836
+        ]
+      },
+      "id": "way/1305488131"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1388013223",
+        "amenity": "fire_station",
+        "name": "강서소방서",
+        "name:ko": "강서소방서",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8601246,
+          37.5579925
+        ]
+      },
+      "id": "way/1388013223"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1422577863",
+        "addr:city": "서울특별시",
+        "addr:district": "마포구",
+        "addr:housenumber": "82",
+        "addr:postcode": "04208",
+        "addr:street": "만리재옛길",
+        "addr:subdistrict": "공덕동",
+        "amenity": "fire_station",
+        "building": "fire_station",
+        "building:levels": "3",
+        "name": "마포소방서공덕119안전센터",
+        "name:ko": "마포소방서공덕119안전센터",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9597637,
+          37.5500485
+        ]
+      },
+      "id": "way/1422577863"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1839874737",
+        "amenity": "fire_station",
+        "name": "소방서"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0939896,
+          37.5072929
+        ]
+      },
+      "id": "node/1839874737"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2102550807",
+        "amenity": "fire_station",
+        "name": "역삼119안전센터"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0427717,
+          37.4974639
+        ]
+      },
+      "id": "node/2102550807"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2102557948",
+        "amenity": "fire_station",
+        "name": "개포119안전센터"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0504848,
+          37.4742419
+        ]
+      },
+      "id": "node/2102557948"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2102564264",
+        "amenity": "fire_station",
+        "name": "수서119안전센터"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0928888,
+          37.4849334
+        ]
+      },
+      "id": "node/2102564264"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2103921661",
+        "amenity": "fire_station",
+        "name": "방배119안전센터"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9882365,
+          37.4755064
+        ]
+      },
+      "id": "node/2103921661"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2103927741",
+        "amenity": "fire_station",
+        "name": "양재119안전센터"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.040829,
+          37.4694423
+        ]
+      },
+      "id": "node/2103927741"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2111910418",
+        "amenity": "fire_station",
+        "name": "종합운동장119안전센터",
+        "name:en": "sports complex 119 center",
+        "name:ja": "総合運動場119安全センター"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0706975,
+          37.514197
+        ]
+      },
+      "id": "node/2111910418"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2111910419",
+        "amenity": "fire_station",
+        "name": "송파소방서",
+        "wikidata": "Q16097660"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1425933,
+          37.4999707
+        ]
+      },
+      "id": "node/2111910419"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2111910420",
+        "amenity": "fire_station",
+        "name": "거여119안전센터"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1517705,
+          37.4941154
+        ]
+      },
+      "id": "node/2111910420"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2279744031",
+        "amenity": "fire_station",
+        "name": "세검정 소방서"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9608429,
+          37.6058123
+        ]
+      },
+      "id": "node/2279744031"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3280277331",
+        "amenity": "fire_station",
+        "name": "Banghwadong Fire Depot"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8142866,
+          37.5798196
+        ]
+      },
+      "id": "node/3280277331"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3396253240",
+        "amenity": "fire_station",
+        "name": "방이소방파출소"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1365422,
+          37.5197973
+        ]
+      },
+      "id": "node/3396253240"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4189295732",
+        "amenity": "fire_station",
+        "check_date": "2024-05-01",
+        "name": "서교 119 안전센터",
+        "name:ja": "西橋119安全センター",
+        "name:ko": "서교 119 안전센터"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9155375,
+          37.5502979
+        ]
+      },
+      "id": "node/4189295732"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4642439068",
+        "addr:city": "서울특별시",
+        "addr:district": "도봉구",
+        "addr:housenumber": "152",
+        "addr:postcode": "01450",
+        "addr:street": "노해로",
+        "addr:subdistrict": "쌍문동",
+        "amenity": "fire_station",
+        "name": "쌍문119안전센터",
+        "name:ja": "雙門119安全センター"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0270232,
+          37.6485632
+        ]
+      },
+      "id": "node/4642439068"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4655595280",
+        "addr:city": "서울특별시",
+        "addr:district": "송파구",
+        "addr:housenumber": "932",
+        "addr:postcode": "05699",
+        "addr:street": "양재대로",
+        "addr:subdistrict": "가락동",
+        "amenity": "fire_station",
+        "name": "가락 119 안전센터",
+        "name:ja": "可楽119安全センター"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1134771,
+          37.4964535
+        ]
+      },
+      "id": "node/4655595280"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5122241562",
+        "amenity": "fire_station",
+        "name": "전농119안전센터",
+        "name:en": "Jeonnong Fire House"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0460351,
+          37.5763315
+        ]
+      },
+      "id": "node/5122241562"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5792179138",
+        "amenity": "fire_station",
+        "name": "강남소방서 세곡119안전센터"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1072451,
+          37.4704684
+        ]
+      },
+      "id": "node/5792179138"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5887332485",
+        "addr:city": "서울특별시",
+        "addr:district": "강서구",
+        "addr:housenumber": "49",
+        "amenity": "fire_station",
+        "name": "강서소방서 화곡 119안전센터"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8451928,
+          37.5436462
+        ]
+      },
+      "id": "node/5887332485"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7018938233",
+        "amenity": "fire_station",
+        "name": "성북소방서",
+        "wikidata": "Q12601266"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0317045,
+          37.6024647
+        ]
+      },
+      "id": "node/7018938233"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7557517906",
+        "amenity": "fire_station",
+        "name": "성북소방서"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0140668,
+          37.5911049
+        ]
+      },
+      "id": "node/7557517906"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7558553112",
+        "addr:city": "서울특별시",
+        "addr:country": "KR",
+        "addr:district": "동작구",
+        "addr:subdistrict": "상도동",
+        "amenity": "fire_station",
+        "name": "상도119"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9294197,
+          37.4990659
+        ]
+      },
+      "id": "node/7558553112"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7559560029",
+        "amenity": "fire_station",
+        "name": "면목119"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0799354,
+          37.5741056
+        ]
+      },
+      "id": "node/7559560029"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8026852785",
+        "amenity": "fire_station",
+        "name": "중곡119안전센터"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0865688,
+          37.5671305
+        ]
+      },
+      "id": "node/8026852785"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8388852617",
+        "amenity": "fire_station",
+        "name": "역촌119"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9106973,
+          37.6049983
+        ]
+      },
+      "id": "node/8388852617"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9174078283",
+        "addr:city": "서울특별시",
+        "addr:district": "중구",
+        "addr:housenumber": "2",
+        "addr:postcode": "04597",
+        "addr:street": "다산로8길",
+        "addr:subdistrict": "신당동",
+        "amenity": "fire_station",
+        "check_date": "2024-04-20",
+        "name": "신당119안전센터"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0096343,
+          37.5529772
+        ]
+      },
+      "id": "node/9174078283"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10899721061",
+        "amenity": "fire_station",
+        "name": "잠원119안전센터"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0116794,
+          37.4990493
+        ]
+      },
+      "id": "node/10899721061"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11133140044",
+        "amenity": "fire_station",
+        "name": "Dobong Fire House",
+        "name:en": "Dobong Fire House"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0410344,
+          37.687423
+        ]
+      },
+      "id": "node/11133140044"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12582830029",
+        "amenity": "fire_station",
+        "name": "영동119안전센터"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0369496,
+          37.5221726
+        ]
+      },
+      "id": "node/12582830029"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12743622019",
+        "amenity": "fire_station",
+        "name": "신정119안전센터",
+        "name:ko": "신정119안전센터"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8510001,
+          37.5218091
+        ]
+      },
+      "id": "node/12743622019"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13041427390",
+        "addr:city": "서울특별시",
+        "addr:district": "중랑구",
+        "addr:housenumber": "475",
+        "addr:postcode": "02248",
+        "addr:street": "동일로",
+        "addr:subdistrict": "면목동",
+        "amenity": "fire_station",
+        "name": "면목119안전센터"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0799229,
+          37.5728465
+        ]
+      },
+      "id": "node/13041427390"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13076816824",
+        "addr:district": "종로구",
+        "addr:housenumber": "63",
+        "addr:postcode": "03110",
+        "addr:street": "숭인동길",
+        "addr:subdistrict": "숭인동",
+        "amenity": "fire_station",
+        "name": "숭인119안전센터"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0217795,
+          37.5777814
+        ]
+      },
+      "id": "node/13076816824"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2026-03-23T08:47:33Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/678368980",
+        "power": "transformer",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9917787,
+          37.5281829
+        ]
+      },
+      "id": "way/678368980"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3863007891",
+        "location": "outdoor",
+        "power": "transformer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.987785,
+          37.5508877
+        ]
+      },
+      "id": "node/3863007891"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3863007892",
+        "location": "outdoor",
+        "power": "transformer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9877554,
+          37.5508882
+        ]
+      },
+      "id": "node/3863007892"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3863007893",
+        "location": "outdoor",
+        "power": "transformer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9877258,
+          37.5508886
+        ]
+      },
+      "id": "node/3863007893"
+    }
+  ]
+}

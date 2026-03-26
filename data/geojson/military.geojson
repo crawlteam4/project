@@ -1,0 +1,1572 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2026-03-24T03:15:29Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/170053294",
+        "addr:city": "서울특별시",
+        "addr:district": "송파구",
+        "addr:housenumber": "234",
+        "addr:postcode": "05830",
+        "addr:street": "송파대로",
+        "addr:subdistrict": "가락동",
+        "fax": "+82 2-3400-2124",
+        "government": "yes",
+        "landuse": "military",
+        "name": "중앙전파관리소",
+        "opening_hours": "Mo-Fr 09:00-18:00",
+        "phone": "+82 2-3400-2000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1209895,
+          37.4922574
+        ]
+      },
+      "id": "way/170053294"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/180356068",
+        "landuse": "military",
+        "name": "AFN Korea 남산송신소",
+        "name:en": "AFN Korea Namsan Transmitter station",
+        "name:ko": "AFN Korea 남산송신소",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9951222,
+          37.5474411
+        ]
+      },
+      "id": "way/180356068"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/305888891",
+        "landuse": "military",
+        "name": "해군재경근무지원대대",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9171575,
+          37.5058923
+        ]
+      },
+      "id": "way/305888891"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/363988311",
+        "building": "yes",
+        "landuse": "military",
+        "military": "barracks",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9791887,
+          37.5401549
+        ]
+      },
+      "id": "way/363988311"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/363988312",
+        "building": "yes",
+        "landuse": "military",
+        "military": "barracks",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9792336,
+          37.5397515
+        ]
+      },
+      "id": "way/363988312"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/363988313",
+        "building": "yes",
+        "landuse": "military",
+        "military": "barracks",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9792344,
+          37.5405102
+        ]
+      },
+      "id": "way/363988313"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/363988314",
+        "building": "yes",
+        "landuse": "military",
+        "military": "barracks",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9791835,
+          37.5409691
+        ]
+      },
+      "id": "way/363988314"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/363988349",
+        "building": "yes",
+        "landuse": "military",
+        "military": "barracks",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9817759,
+          37.5400087
+        ]
+      },
+      "id": "way/363988349"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/363988354",
+        "building": "yes",
+        "landuse": "military",
+        "military": "barracks",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9805656,
+          37.5409791
+        ]
+      },
+      "id": "way/363988354"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/363988356",
+        "building": "yes",
+        "landuse": "military",
+        "military": "barracks",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9800747,
+          37.5409416
+        ]
+      },
+      "id": "way/363988356"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/363988359",
+        "building": "yes",
+        "landuse": "military",
+        "military": "barracks",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9814884,
+          37.5396936
+        ]
+      },
+      "id": "way/363988359"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/364000318",
+        "landuse": "military",
+        "name": "Camp Coiner",
+        "wikidata": "Q5027079",
+        "wikipedia": "en:Camp Coiner",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9765371,
+          37.543549
+        ]
+      },
+      "id": "way/364000318"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/364000320",
+        "building": "yes",
+        "landuse": "military",
+        "military": "barracks",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9785452,
+          37.5421043
+        ]
+      },
+      "id": "way/364000320"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/375665390",
+        "landuse": "military",
+        "name": "국가정보원",
+        "name:en": "National Intelligence Service",
+        "name:ko": "국가정보원",
+        "name:ru": "Национальная разведывательная служба",
+        "old_name": "안전기획부",
+        "short_name": "국정원",
+        "short_name:en": "NIS",
+        "short_name:ko": "국정원",
+        "wikidata": "Q485566",
+        "wikipedia": "ko:대한민국 국가정보원",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0724186,
+          37.4668398
+        ]
+      },
+      "id": "way/375665390"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/382497114",
+        "description": "No.59",
+        "landuse": "military",
+        "name": "학군단",
+        "name:en": "R.O.T.C.",
+        "name:ko": "학군단",
+        "university": "seoultech",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0813105,
+          37.6287131
+        ]
+      },
+      "id": "way/382497114"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/448977541",
+        "barrier": "fence",
+        "landuse": "military",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0292244,
+          37.5944382
+        ]
+      },
+      "id": "way/448977541"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/468991029",
+        "landuse": "military",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8494295,
+          37.4913978
+        ]
+      },
+      "id": "way/468991029"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/473422057",
+        "landuse": "military",
+        "name": "국군화생방방호사령부",
+        "name:en": "The Armed Force CBR Defense Command",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0866773,
+          37.4525214
+        ]
+      },
+      "id": "way/473422057"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/473423777",
+        "landuse": "military",
+        "name": "국군재정관리단",
+        "name:en": "Armed Forces Financial Management Agency",
+        "name:ko": "국군재정관리단",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9879385,
+          37.5379326
+        ]
+      },
+      "id": "way/473423777"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/473798949",
+        "landuse": "military",
+        "name": "강동,송파예비군훈련장",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0728056,
+          37.4496623
+        ]
+      },
+      "id": "way/473798949"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/474286019",
+        "landuse": "military",
+        "name": "강남서초예비군훈련장",
+        "name:en": "Gangnam Seocho Reserve Army Training Center",
+        "name:ko": "강남서초예비군훈련장",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0795801,
+          37.447985
+        ]
+      },
+      "id": "way/474286019"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/475625910",
+        "landuse": "military",
+        "name": "제1공수특전여단",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8206824,
+          37.542139
+        ]
+      },
+      "id": "way/475625910"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/475625913",
+        "landuse": "military",
+        "name": "제1공수특전여단",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8259919,
+          37.5442042
+        ]
+      },
+      "id": "way/475625913"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/484862982",
+        "building": "bunker",
+        "landuse": "military",
+        "military": "bunker",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9909873,
+          37.55921
+        ]
+      },
+      "id": "way/484862982"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/499497101",
+        "landuse": "military",
+        "name": "공군 제3미사일방어여단",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.8945838,
+          37.4627379
+        ]
+      },
+      "id": "way/499497101"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/536373746",
+        "landuse": "military",
+        "name": "제 3033 부대 진지",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0075722,
+          37.6239331
+        ]
+      },
+      "id": "way/536373746"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/545835860",
+        "landuse": "military",
+        "name": "제52전차대대",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9370427,
+          37.6460008
+        ]
+      },
+      "id": "way/545835860"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/545835861",
+        "landuse": "military",
+        "name": "수도방위사령부 방패교육대",
+        "official_name": "수도방위사령부 방패교육대",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9432211,
+          37.6471351
+        ]
+      },
+      "id": "way/545835861"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/561983195",
+        "aeroway": "aerodrome",
+        "alt_name:en": "Seoul Airport",
+        "iata": "SSN",
+        "icao": "RKSM",
+        "landuse": "military",
+        "military": "airfield",
+        "name": "서울공항",
+        "name:en": "Seoul Air Base",
+        "name:ja": "ソウル空港",
+        "name:ko": "서울공항",
+        "source": "ourairports.com;namu.wiki",
+        "wikidata": "Q492992",
+        "wikipedia": "ko:서울공항",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1108566,
+          37.445171
+        ]
+      },
+      "id": "way/561983195"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/607847910",
+        "barrier": "fence",
+        "landuse": "military",
+        "name": "수도방위사령부 \"방패",
+        "name:en": "Capital Defense Command \"Shield",
+        "name:ko": "수도방위사령부 \"방패",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9223094,
+          37.5684009
+        ]
+      },
+      "id": "way/607847910"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/615168131",
+        "barrier": "fence",
+        "landuse": "military",
+        "name": "551방공유도탄포대",
+        "name:ko": "551방공유도탄포대",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0082829,
+          37.4708119
+        ]
+      },
+      "id": "way/615168131"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/616026417",
+        "landuse": "military",
+        "name": "남산 통제구역",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.996779,
+          37.5452027
+        ]
+      },
+      "id": "way/616026417"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/616029533",
+        "landuse": "military",
+        "name": "1025부대 방공중대",
+        "official_name": "수도방위사령부 제1방공여단 507대대 방공중대",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9877815,
+          37.5914782
+        ]
+      },
+      "id": "way/616029533"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/616037000",
+        "landuse": "military",
+        "name": "제3미사일방어여단 559포대",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9780936,
+          37.6000262
+        ]
+      },
+      "id": "way/616037000"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/616037003",
+        "landuse": "military",
+        "name": "제1경비단 제1경비대대",
+        "official_name": "수도방위사령부 제1경비단 경비대대",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9843848,
+          37.6034612
+        ]
+      },
+      "id": "way/616037003"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/616186578",
+        "landuse": "military",
+        "name": "수방사 1경비단",
+        "official_name": "수도방위사령부 제1경비단",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9449279,
+          37.5771948
+        ]
+      },
+      "id": "way/616186578"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/616186579",
+        "landuse": "military",
+        "name": "안산통신소",
+        "official_name": "국군지휘통신사령부 안산통신소",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9459978,
+          37.577056
+        ]
+      },
+      "id": "way/616186579"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/616189149",
+        "alt_name": "9208부대",
+        "landuse": "military",
+        "name": "국군수송사령부",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9881096,
+          37.4557063
+        ]
+      },
+      "id": "way/616189149"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/616189150",
+        "alt_name": "1596부대",
+        "landuse": "military",
+        "name": "수도방위사령부",
+        "short_name": "수방사",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9820783,
+          37.4630948
+        ]
+      },
+      "id": "way/616189150"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/678534812",
+        "building": "yes",
+        "landuse": "military",
+        "military": "barracks",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9834225,
+          37.5379071
+        ]
+      },
+      "id": "way/678534812"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/678534814",
+        "building": "yes",
+        "landuse": "military",
+        "military": "barracks",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9838817,
+          37.5379202
+        ]
+      },
+      "id": "way/678534814"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/678534815",
+        "building": "yes",
+        "landuse": "military",
+        "military": "barracks",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9834256,
+          37.5377424
+        ]
+      },
+      "id": "way/678534815"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/678534816",
+        "building": "yes",
+        "landuse": "military",
+        "military": "barracks",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9838869,
+          37.5377606
+        ]
+      },
+      "id": "way/678534816"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/678818880",
+        "building": "yes",
+        "landuse": "military",
+        "military": "barracks",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.982202,
+          37.5381024
+        ]
+      },
+      "id": "way/678818880"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/678818883",
+        "building": "yes",
+        "landuse": "military",
+        "military": "barracks",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9825307,
+          37.5381224
+        ]
+      },
+      "id": "way/678818883"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/678818886",
+        "building": "yes",
+        "landuse": "military",
+        "military": "barracks",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9828663,
+          37.5381345
+        ]
+      },
+      "id": "way/678818886"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/678818889",
+        "building": "yes",
+        "landuse": "military",
+        "military": "barracks",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.983192,
+          37.5381397
+        ]
+      },
+      "id": "way/678818889"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/678818891",
+        "building": "yes",
+        "landuse": "military",
+        "military": "barracks",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9835173,
+          37.5381539
+        ]
+      },
+      "id": "way/678818891"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/678818894",
+        "building": "yes",
+        "landuse": "military",
+        "military": "barracks",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9838482,
+          37.5381661
+        ]
+      },
+      "id": "way/678818894"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/678818896",
+        "building": "yes",
+        "landuse": "military",
+        "military": "barracks",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9841707,
+          37.5381771
+        ]
+      },
+      "id": "way/678818896"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/678818899",
+        "building": "yes",
+        "landuse": "military",
+        "military": "barracks",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9815947,
+          37.53845
+        ]
+      },
+      "id": "way/678818899"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/678818904",
+        "building": "yes",
+        "landuse": "military",
+        "military": "barracks",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9810476,
+          37.5380569
+        ]
+      },
+      "id": "way/678818904"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/678818906",
+        "building": "yes",
+        "landuse": "military",
+        "military": "barracks",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9813912,
+          37.5380686
+        ]
+      },
+      "id": "way/678818906"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/678819066",
+        "building": "yes",
+        "landuse": "military",
+        "military": "barracks",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9810535,
+          37.5391051
+        ]
+      },
+      "id": "way/678819066"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/689618467",
+        "landuse": "military",
+        "military": "training_area",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9367727,
+          37.643849
+        ]
+      },
+      "id": "way/689618467"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/689618541",
+        "landuse": "military",
+        "military": "training_area",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9441972,
+          37.6477218
+        ]
+      },
+      "id": "way/689618541"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/689618546",
+        "landuse": "military",
+        "military": "training_area",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9445874,
+          37.6483719
+        ]
+      },
+      "id": "way/689618546"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/701650599",
+        "landuse": "military",
+        "name": "국가정보원",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0679092,
+          37.4583308
+        ]
+      },
+      "id": "way/701650599"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/763692106",
+        "landuse": "military",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9577451,
+          37.5931056
+        ]
+      },
+      "id": "way/763692106"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/778775922",
+        "landuse": "military",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9283452,
+          37.5510817
+        ]
+      },
+      "id": "way/778775922"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/902685861",
+        "access": "private",
+        "landuse": "military",
+        "military_service": "joint",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9759896,
+          37.5313449
+        ]
+      },
+      "id": "way/902685861"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/928198101",
+        "landuse": "military",
+        "name": "제1175공병단",
+        "name:ko": "제1175공병단",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.7981197,
+          37.5424335
+        ]
+      },
+      "id": "way/928198101"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1011540060",
+        "landuse": "military",
+        "military": "range",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9803661,
+          37.5897578
+        ]
+      },
+      "id": "way/1011540060"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1096318011",
+        "landuse": "military",
+        "name": "별내 예비군 훈련장",
+        "name:ko": "별내 예비군 훈련장",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.1060496,
+          37.64658
+        ]
+      },
+      "id": "way/1096318011"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1106346360",
+        "landuse": "military",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0249353,
+          37.5152104
+        ]
+      },
+      "id": "way/1106346360"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1120713862",
+        "landuse": "military",
+        "military": "range",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9707126,
+          37.5295368
+        ]
+      },
+      "id": "way/1120713862"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1120713864",
+        "landuse": "military",
+        "military": "range",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9717087,
+          37.5296333
+        ]
+      },
+      "id": "way/1120713864"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1135578750",
+        "landuse": "military",
+        "military": "base",
+        "name": "제 5858 부대 진지",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0898206,
+          37.6345175
+        ]
+      },
+      "id": "way/1135578750"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1135580444",
+        "landuse": "military",
+        "name": "제 3033 부대",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9828409,
+          37.6089045
+        ]
+      },
+      "id": "way/1135580444"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1136955241",
+        "landuse": "military",
+        "military": "base",
+        "name": "제 3033 부대 진지",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0595163,
+          37.6805816
+        ]
+      },
+      "id": "way/1136955241"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1147356359",
+        "landuse": "military",
+        "military": "training_area",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9728554,
+          37.581164
+        ]
+      },
+      "id": "way/1147356359"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1178701536",
+        "landuse": "military",
+        "name": "제220보병여단",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0959406,
+          37.6799812
+        ]
+      },
+      "id": "way/1178701536"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1189558645",
+        "landuse": "military",
+        "name": "제 3033 부대",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0011334,
+          37.6021678
+        ]
+      },
+      "id": "way/1189558645"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1189559384",
+        "landuse": "military",
+        "name": "제1경비단 제1경비대대",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.98362,
+          37.6016034
+        ]
+      },
+      "id": "way/1189559384"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1189801213",
+        "landuse": "military",
+        "military": "base",
+        "name": "제 5858 부대 진지",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0269095,
+          37.6005812
+        ]
+      },
+      "id": "way/1189801213"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1194301545",
+        "addr:city": "서울특별시",
+        "addr:district": "송파구",
+        "addr:subdistrict": "거여동",
+        "amenity": "research_institute",
+        "landuse": "military",
+        "name": "국방과학연구소 서울연구동",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.139356,
+          37.492138
+        ]
+      },
+      "id": "way/1194301545"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1216050505",
+        "landuse": "military",
+        "name": "국군복지단/국방홍보원",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9818087,
+          37.5424131
+        ]
+      },
+      "id": "way/1216050505"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1230227354",
+        "landuse": "military",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9394157,
+          37.435835
+        ]
+      },
+      "id": "way/1230227354"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1273130444",
+        "landuse": "military",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0857491,
+          37.5337611
+        ]
+      },
+      "id": "way/1273130444"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1291643837",
+        "landuse": "military",
+        "name": "수도방위사령부 제1경비단",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9535323,
+          37.5741225
+        ]
+      },
+      "id": "way/1291643837"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1362306994",
+        "landuse": "military",
+        "military": "base",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0569623,
+          37.6250099
+        ]
+      },
+      "id": "way/1362306994"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1390893266",
+        "landuse": "military",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9938137,
+          37.5195462
+        ]
+      },
+      "id": "way/1390893266"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1391113600",
+        "landuse": "military",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.0241009,
+          37.5309872
+        ]
+      },
+      "id": "way/1391113600"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1444685410",
+        "landuse": "military",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9370716,
+          37.6102348
+        ]
+      },
+      "id": "way/1444685410"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6112448564",
+        "building": "bunker",
+        "bunker_type": "shelter",
+        "landuse": "military",
+        "military": "bunker",
+        "name": "B5 벙커",
+        "name:ko": "B5 벙커"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9505673,
+          37.4520877
+        ]
+      },
+      "id": "node/6112448564"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6351906690",
+        "landuse": "military",
+        "military": "range",
+        "name": "South Post"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9857559,
+          37.531328
+        ]
+      },
+      "id": "node/6351906690"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6351906691",
+        "landuse": "military",
+        "military": "range",
+        "name": "North Post"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9804966,
+          37.53661
+        ]
+      },
+      "id": "node/6351906691"
+    }
+  ]
+}

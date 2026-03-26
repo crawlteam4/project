@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>구역 격자화 (수계 자동 감지) → CSV</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:monospace; background:#111; color:#eee; height:100vh; display:flex; flex-direction:column; }
+.bar { background:#1a1a1a; border-bottom:1px solid #333; padding:10px 16px; display:flex; align-items:center; gap:8px; flex-wrap:wrap; z-index:1000; }
+.bar-title { font-size:14px; font-weight:700; color:#60a5fa; white-space:nowrap; }
+.btn { font-size:11px; padding:5px 14px; border-radius:4px; border:none; cursor:pointer; font-weight:700; transition:all 0.15s; white-space:nowrap; }
+.btn-yellow { background:#854d0e; color:#fef08a; border:1px solid #ca8a04; }
+.btn-red    { background:#7f1d1d; color:#fca5a5; border:1px solid #dc2626; }
+.btn-green  { background:#14532d; color:#86efac; border:1px solid #16a34a; }
+.btn-blue   { background:#1e3a5f; color:#93c5fd; border:1px solid #2563eb; }
+.btn-cyan   { background:#0c3344; color:#67e8f9; border:1px solid #0891b2; }
+.btn:hover  { filter:brightness(1.2); }
+.btn:disabled { opacity:0.3; cursor:not-allowed; }
+.sep { width:1px; height:20px; background:#333; flex-shrink:0; }
+.ctrl-group { display:flex; align-items:center; gap:6px; }
+label { font-size:11px; color:#666; }
+input[type=range] { width:70px; accent-color:#60a5fa; }
+.ctrl-val { font-size:11px; color:#60a5fa; min-width:36px; }
+#status { font-size:11px; padding:4px 10px; border-radius:4px; color:#facc15; background:#1a1400; border:1px solid #854d0e; }
+#map { flex:1; }
+.side { position:absolute; top:58px; left:12px; z-index:1000; display:flex; flex-direction:column; gap:8px; }
+.card { background:#1a1a1a; border:1px solid #333; border-radius:8px; padding:10px 14px; font-size:10px; min-width:210px; }
+.card-title { color:#64748b; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:6px; font-size:9px; }
+.coord-item { color:#94a3b8; padding:2px 0; border-bottom:1px solid #222; display:flex; gap:6px; }
+.coord-item:last-child { border-bottom:none; }
+.coord-num { color:#facc15; }
+.stat-row { display:flex; justify-content:space-between; gap:12px; padding:3px 0; border-bottom:1px solid #222; color:#94a3b8; }
+.stat-row:last-child { border-bottom:none; }
+.stat-val { color:#60a5fa; font-weight:700; }
+.stat-val.red { color:#f87171; }
+.progress-bar { height:4px; background:#222; border-radius:2px; margin-top:6px; overflow:hidden; display:none; }
+.progress-fill { height:100%; background:#0891b2; border-radius:2px; width:0%; transition:width 0.1s; }
+.preview { position:absolute; bottom:20px; right:12px; z-index:1000; background:#1a1a1a; border:1px solid #333; border-radius:8px; padding:10px 14px; font-size:10px; max-width:340px; max-height:200px; overflow-y:auto; display:none; }
+.preview-title { color:#64748b; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:6px; font-size:9px; }
+pre { color:#94a3b8; line-height:1.8; font-size:10px; }
+.head { color:#60a5fa; font-weight:700; }
+.leaflet-container { background:#111; }
+.leaflet-tile { filter:brightness(0.65) saturate(0.7); }
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="bar-title">🗺 격자화 (수계 자동 감지) → CSV</div>
+  <button class="btn btn-yellow" id="undoBtn"  onclick="undoPoint()"    disabled>↩ 취소</button>
+  <div class="sep"></div>
+  <button class="btn btn-red"   id="clearBtn" onclick="clearAll()"     disabled>✕ 초기화</button>
+  <button class="btn btn-cyan"  id="waterBtn" onclick="detectWater()"  disabled>💧 수계 감지</button>
+  <button class="btn btn-green" id="gridBtn"  onclick="generateGrid()" disabled>⊞ 격자 생성</button>
+  <button class="btn btn-blue"  id="csvBtn"   onclick="downloadCSV()"  disabled>⬇ CSV 저장</button>
+  <div class="ctrl-group">
+    <label>격자 크기</label>
+    <input type="range" id="gridM" min="50" max="500" value="100" step="50"
+           oninput="document.getElementById('gridMVal').textContent=this.value+'m'">
+    <span class="ctrl-val" id="gridMVal">100m</span>
+  </div>
+  <div id="status">지도를 클릭해서 꼭짓점을 찍으세요 (최소 3개)</div>
+</div>
+
+<div id="map"></div>
+
+<!-- 숨겨진 캔버스 — 타일 픽셀 읽기용 -->
+<canvas id="tileCanvas" style="display:none;"></canvas>
+
+<div class="side">
+  <div class="card">
+    <div class="card-title">꼭짓점</div>
+    <div id="coordsList" style="color:#555;">아직 없음</div>
+  </div>
+  <div class="card" id="statsCard" style="display:none;">
+    <div class="card-title">결과</div>
+    <div class="stat-row"><span>전체 후보</span><span class="stat-val" id="r-total">—</span></div>
+    <div class="stat-row"><span>수계 제외</span><span class="stat-val red" id="r-water">—</span></div>
+    <div class="stat-row"><span>최종 격자</span><span class="stat-val" id="r-count">—</span></div>
+    <div class="stat-row"><span>격자 크기</span><span class="stat-val" id="r-size">—</span></div>
+    <div class="progress-bar" id="progressBar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+  </div>
+</div>
+
+<div class="preview" id="preview">
+  <div class="preview-title">CSV 미리보기 (앞 10행)</div>
+  <pre id="previewText"></pre>
+</div>
+
+<script>
+// ── 지도 ──────────────────────────────────────────────────────────
+// 수계 감지를 위해 일반 OSM 타일 사용 (밝은 배경)
+const map = L.map('map', { zoomControl:true }).setView([37.555, 126.928], 14);
+
+// 수계 감지용: 밝은 타일 (물이 파란색으로 명확히 표시됨)
+const detectTile = L.tileLayer(
+  'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+  { attribution:'© OSM', maxZoom:19 }
+).addTo(map);
+
+let points=[], markers=[], polyline=null, polygon=null;
+let gridRects=[], gridData=[];
+let waterSet = new Set();  // 수계로 감지된 격자 id 세트
+let allCandidates = [];    // 구역 내 모든 후보 격자
+let waterDetected = false;
+let gridDone = false;
+
+// ── 클릭 → 꼭짓점 ────────────────────────────────────────────────
+map.on('click', e => {
+  if (gridDone) return;
+  const { lat, lng } = e.latlng;
+  points.push({ lat, lng });
+  const m = L.circleMarker([lat,lng], {
+    radius:6, fillColor:'#facc15', color:'#fff', weight:2, fillOpacity:1
+  }).bindTooltip(`${points.length}번 (${lat.toFixed(5)}, ${lng.toFixed(5)})`).addTo(map);
+  markers.push(m);
+  if (polyline) map.removeLayer(polyline);
+  if (points.length >= 2)
+    polyline = L.polyline(points.map(p=>[p.lat,p.lng]),
+      { color:'#facc15', weight:1.5, dashArray:'4 4' }).addTo(map);
+  waterDetected = false;
+  updateUI();
+});
+
+// ── Ray Casting ───────────────────────────────────────────────────
+function insidePoly(lat, lng, ring) {
+  let inside = false;
+  for (let i=0, j=ring.length-1; i<ring.length; j=i++) {
+    const yi=ring[i][0], xi=ring[i][1];
+    const yj=ring[j][0], xj=ring[j][1];
+    if (((yi>lat)!==(yj>lat))&&(lng<(xj-xi)*(lat-yi)/(yj-yi)+xi)) inside=!inside;
+  }
+  return inside;
+}
+
+// ── 위경도 → 타일 좌표 변환 ──────────────────────────────────────
+function latlngToTile(lat, lng, zoom) {
+  const n = Math.pow(2, zoom);
+  const x = Math.floor((lng + 180) / 360 * n);
+  const latRad = lat * Math.PI / 180;
+  const y = Math.floor((1 - Math.log(Math.tan(latRad) + 1/Math.cos(latRad)) / Math.PI) / 2 * n);
+  return { x, y };
+}
+
+// 타일 내 픽셀 좌표
+function latlngToPixel(lat, lng, zoom, tileX, tileY) {
+  const n   = Math.pow(2, zoom);
+  const px  = (lng + 180) / 360 * n * 256;
+  const latRad = lat * Math.PI / 180;
+  const py  = (1 - Math.log(Math.tan(latRad)+1/Math.cos(latRad))/Math.PI)/2 * n * 256;
+  return {
+    px: px - tileX * 256,
+    py: py - tileY * 256
+  };
+}
+
+// ── 타일 이미지 로드 ──────────────────────────────────────────────
+function loadTile(z, x, y) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    const sub = ['a','b','c'][Math.abs(x+y) % 3];
+    img.src = `https://${sub}.tile.openstreetmap.org/${z}/${x}/${y}.png`;
+    img.onload  = () => resolve(img);
+    img.onerror = () => resolve(null); // 실패해도 계속
+  });
+}
+
+// ── 픽셀이 물인지 판별 ────────────────────────────────────────────
+// OSM 기본 타일에서 물은 #aad3df (R:170 G:211 B:223) 계열
+function isWaterPixel(r, g, b) {
+  // 물 색상 범위 (OSM 기본 스타일)
+  return (
+    r >= 140 && r <= 200 &&
+    g >= 190 && g <= 230 &&
+    b >= 210 && b <= 255 &&
+    b > g && g > r        // B > G > R (파란색 계열)
+  );
+}
+
+// ── 수계 감지 ─────────────────────────────────────────────────────
+async function detectWater() {
+  if (points.length < 3) return;
+  waterSet.clear();
+  waterDetected = false;
+
+  // 후보 격자 먼저 계산
+  const lats   = points.map(p=>p.lat);
+  const lngs   = points.map(p=>p.lng);
+  const minLat = Math.min(...lats), maxLat = Math.max(...lats);
+  const minLng = Math.min(...lngs), maxLng = Math.max(...lngs);
+  const midLat = (minLat+maxLat)/2;
+  const GRID_M   = parseInt(document.getElementById('gridM').value);
+  const LAT_STEP = GRID_M / 111_000;
+  const LNG_STEP = GRID_M / (111_000*Math.cos(midLat*Math.PI/180));
+  const regionCoords = points.map(p=>[p.lat,p.lng]);
+
+  allCandidates = [];
+  let gid = 0;
+  let lat = minLat;
+  while (lat < maxLat) {
+    let lng = minLng;
+    while (lng < maxLng) {
+      const cLat = lat+LAT_STEP/2, cLng = lng+LNG_STEP/2;
+      if (insidePoly(cLat, cLng, regionCoords)) {
+        allCandidates.push({ id:gid++, lat, lng, lat2:lat+LAT_STEP, lng2:lng+LNG_STEP, cLat, cLng });
+      }
+      lng += LNG_STEP;
+    }
+    lat += LAT_STEP;
+  }
+
+  setStatus('수계 감지 중... (타일 픽셀 분석)', 'loading');
+  document.getElementById('statsCard').style.display='block';
+  const pb = document.getElementById('progressBar');
+  const pf = document.getElementById('progressFill');
+  pb.style.display='block'; pf.style.width='0%';
+
+  // 줌 레벨 — 격자 크기에 따라 결정 (너무 작으면 픽셀 부정확)
+  const zoom = GRID_M <= 100 ? 16 : GRID_M <= 200 ? 15 : 14;
+
+  // 필요한 타일 수집
+  const tileCache = {};
+  const total = allCandidates.length;
+
+  for (let i=0; i<total; i++) {
+    const g = allCandidates[i];
+
+    // 격자 4개 꼭짓점 좌표 (SW, SE, NE, NW)
+    const corners = [
+      { lat: g.lat,  lng: g.lng  },   // SW
+      { lat: g.lat,  lng: g.lng2 },   // SE
+      { lat: g.lat2, lng: g.lng2 },   // NE
+      { lat: g.lat2, lng: g.lng  },   // NW
+    ];
+
+    const canvas = document.getElementById('tileCanvas');
+    const ctx    = canvas.getContext('2d');
+    let isWater  = false;
+
+    for (const corner of corners) {
+      if (isWater) break;  // 이미 수계로 판정됐으면 나머지 꼭짓점 생략
+
+      const tile = latlngToTile(corner.lat, corner.lng, zoom);
+      const key  = `${zoom}/${tile.x}/${tile.y}`;
+
+      if (!tileCache[key]) {
+        tileCache[key] = await loadTile(zoom, tile.x, tile.y);
+      }
+      const img = tileCache[key];
+      if (!img) continue;
+
+      canvas.width = 256; canvas.height = 256;
+      ctx.drawImage(img, 0, 0);
+
+      const px = latlngToPixel(corner.lat, corner.lng, zoom, tile.x, tile.y);
+      const x0 = Math.max(0, Math.min(255, Math.floor(px.px)));
+      const y0 = Math.max(0, Math.min(255, Math.floor(px.py)));
+
+      // 꼭짓점 주변 3×3 픽셀 샘플링 — 과반수(5개 이상)가 물이면 해당 꼭짓점을 수계로 판정
+      let waterCount = 0;
+      for (let dy=-1; dy<=1; dy++) {
+        for (let dx=-1; dx<=1; dx++) {
+          const sx = Math.max(0, Math.min(255, x0+dx));
+          const sy = Math.max(0, Math.min(255, y0+dy));
+          const pixel = ctx.getImageData(sx, sy, 1, 1).data;
+          if (isWaterPixel(pixel[0], pixel[1], pixel[2])) waterCount++;
+        }
+      }
+      // 꼭짓점 하나라도 수계면 격자 전체를 수계로 판정
+      if (waterCount >= 5) isWater = true;
+    }
+
+    if (isWater) waterSet.add(g.id);
+
+    // 진행률
+    if (i % 20 === 0) {
+      pf.style.width = ((i/total)*100).toFixed(0)+'%';
+      await new Promise(r => setTimeout(r, 0));
+    }
+  }
+
+  pf.style.width = '100%';
+  pb.style.display = 'none';
+  waterDetected = true;
+
+  // 수계 격자 미리 표시
+  gridRects.forEach(r=>map.removeLayer(r)); gridRects=[];
+  for (const g of allCandidates) {
+    if (waterSet.has(g.id)) {
+      const r = L.rectangle([[g.lat,g.lng],[g.lat2,g.lng2]], {
+        color:'#0ea5e9', weight:0.4, fillColor:'#0ea5e9', fillOpacity:0.35, dashArray:'2 2'
+      }).bindTooltip('수계 — 격자 제외').addTo(map);
+      gridRects.push(r);
+    }
+  }
+
+  setStatus(`수계 감지 완료 — ${waterSet.size}개 격자 수계 감지됨. [격자 생성]을 눌러주세요`);
+  document.getElementById('gridBtn').disabled = false;
+  updateUI();
+}
+
+// ── 격자 생성 ─────────────────────────────────────────────────────
+function generateGrid() {
+  if (!allCandidates.length) return;
+  gridRects.forEach(r=>map.removeLayer(r)); gridRects=[];
+  gridData=[];
+
+  if (polygon) map.removeLayer(polygon);
+  polygon = L.polygon(points.map(p=>[p.lat,p.lng]), {
+    color:'#facc15', weight:2, fillColor:'#facc15', fillOpacity:0.04
+  }).addTo(map);
+  if (polyline) { map.removeLayer(polyline); polyline=null; }
+  markers.forEach(m=>map.removeLayer(m)); markers=[];
+
+  const GRID_M = parseInt(document.getElementById('gridM').value);
+  let id=1, waterExcl=0;
+
+  for (const g of allCandidates) {
+    if (waterSet.has(g.id)) {
+      waterExcl++;
+      L.rectangle([[g.lat,g.lng],[g.lat2,g.lng2]], {
+        color:'#0ea5e9', weight:0.3, fillColor:'#0ea5e9', fillOpacity:0.2, dashArray:'2 2'
+      }).bindTooltip('수계 제외').addTo(map);
+    } else {
+      gridData.push({
+        id,
+        centerLat: parseFloat(g.cLat.toFixed(6)),
+        centerLng: parseFloat(g.cLng.toFixed(6)),
+        swLat: parseFloat(g.lat.toFixed(6)),
+        swLng: parseFloat(g.lng.toFixed(6)),
+        neLat: parseFloat(g.lat2.toFixed(6)),
+        neLng: parseFloat(g.lng2.toFixed(6)),
+      });
+      const r = L.rectangle([[g.lat,g.lng],[g.lat2,g.lng2]], {
+        color:'#60a5fa', weight:0.5, fillColor:'#60a5fa', fillOpacity:0.12
+      }).bindTooltip(`격자 ${id} | ${g.cLat.toFixed(5)}, ${g.cLng.toFixed(5)}`).addTo(map);
+      gridRects.push(r);
+      id++;
+    }
+  }
+
+  document.getElementById('r-total').textContent = allCandidates.length.toLocaleString()+'개';
+  document.getElementById('r-water').textContent = waterExcl.toLocaleString()+'개';
+  document.getElementById('r-count').textContent = gridData.length.toLocaleString()+'개';
+  document.getElementById('r-size').textContent  = GRID_M+'m × '+GRID_M+'m';
+  document.getElementById('statsCard').style.display='block';
+
+  const header = 'grid_id,center_lat,center_lng,sw_lat,sw_lng,ne_lat,ne_lng';
+  const rows   = gridData.slice(0,10).map(g=>
+    `${g.id},${g.centerLat},${g.centerLng},${g.swLat},${g.swLng},${g.neLat},${g.neLng}`
+  );
+  document.getElementById('previewText').innerHTML =
+    `<span class="head">${header}</span>\n` + rows.join('\n') +
+    (gridData.length>10 ? `\n<span style="color:#555">... 외 ${gridData.length-10}행</span>` : '');
+  document.getElementById('preview').style.display='block';
+  document.getElementById('csvBtn').disabled=false;
+  document.getElementById('gridBtn').disabled=true;
+  gridDone=true;
+  setStatus(`완료 — 유효 격자 ${gridData.length}개 (수계 ${waterExcl}개 제외)`);
+  updateUI();
+}
+
+// ── CSV 저장 ──────────────────────────────────────────────────────
+function downloadCSV() {
+  const header = 'grid_id,center_lat,center_lng,sw_lat,sw_lng,ne_lat,ne_lng';
+  const rows   = gridData.map(g=>
+    `${g.id},${g.centerLat},${g.centerLng},${g.swLat},${g.swLng},${g.neLat},${g.neLng}`
+  );
+  const a = Object.assign(document.createElement('a'), {
+    href:     URL.createObjectURL(new Blob([[header,...rows].join('\n')],{type:'text/csv'})),
+    download: `grid_${document.getElementById('gridM').value}m_${gridData.length}cells.csv`
+  });
+  a.click();
+}
+
+// ── 취소 / 초기화 ─────────────────────────────────────────────────
+function undoPoint() {
+  if (!points.length || gridDone) return;
+  points.pop();
+  const m = markers.pop(); if(m) map.removeLayer(m);
+  if(polyline){map.removeLayer(polyline);polyline=null;}
+  if(points.length>=2)
+    polyline=L.polyline(points.map(p=>[p.lat,p.lng]),{color:'#facc15',weight:1.5,dashArray:'4 4'}).addTo(map);
+  waterDetected=false; updateUI();
+}
+
+function clearAll() {
+  points=[]; markers.forEach(m=>map.removeLayer(m)); markers=[];
+  gridRects.forEach(r=>map.removeLayer(r)); gridRects=[];
+  if(polyline){map.removeLayer(polyline);polyline=null;}
+  if(polygon) {map.removeLayer(polygon); polygon=null;}
+  gridData=[]; allCandidates=[]; waterSet.clear();
+  waterDetected=false; gridDone=false;
+  ['statsCard','preview'].forEach(id=>document.getElementById(id).style.display='none');
+  document.getElementById('csvBtn').disabled=true;
+  setStatus('지도를 클릭해서 꼭짓점을 찍으세요 (최소 3개)');
+  updateUI();
+}
+
+function setStatus(msg, type='') {
+  const el = document.getElementById('status');
+  el.textContent=msg;
+  if(type==='loading') { el.style.color='#94a3b8'; el.style.borderColor='#334155'; el.style.background='#0f172a'; }
+  else { el.style.color='#facc15'; el.style.borderColor='#854d0e'; el.style.background='#1a1400'; }
+}
+
+function updateUI() {
+  const n=points.length, done=gridDone;
+  document.getElementById('undoBtn').disabled  = n===0||done;
+  document.getElementById('clearBtn').disabled = n===0&&!gridData.length;
+  document.getElementById('waterBtn').disabled = n<3||done;
+  document.getElementById('gridBtn').disabled  = !waterDetected||done||allCandidates.length===0;
+  const list=document.getElementById('coordsList');
+  list.innerHTML = n===0 ? '<span style="color:#555">아직 없음</span>'
+    : points.map((p,i)=>`<div class="coord-item"><span class="coord-num">${i+1}</span>${p.lat.toFixed(5)}, ${p.lng.toFixed(5)}</div>`).join('');
+}
+
+updateUI();
+</script>
+</body>
+</html>
