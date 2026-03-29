@@ -55,6 +55,10 @@ pre { color:#94a3b8; line-height:1.8; font-size:10px; }
   <button class="btn btn-red"   id="clearBtn" onclick="clearAll()"     disabled>✕ 초기화</button>
   <button class="btn btn-cyan"  id="waterBtn" onclick="detectWater()"  disabled>💧 수계 감지</button>
   <button class="btn btn-green" id="gridBtn"  onclick="generateGrid()" disabled>⊞ 격자 생성</button>
+  <div class="ctrl-group">
+    <input type="text" id="csvFilename" placeholder="파일명 (선택)" style="font-size:11px;padding:4px 8px;border-radius:4px;border:1px solid #334155;background:#0f172a;color:#94a3b8;width:150px;font-family:monospace;">
+    <span style="font-size:10px;color:#555;">.csv</span>
+  </div>
   <button class="btn btn-blue"  id="csvBtn"   onclick="downloadCSV()"  disabled>⬇ CSV 저장</button>
   <div class="ctrl-group">
     <label>격자 크기</label>
@@ -372,9 +376,12 @@ function downloadCSV() {
   const rows   = gridData.map(g=>
     `${g.id},${g.centerLat},${g.centerLng},${g.swLat},${g.swLng},${g.neLat},${g.neLng}`
   );
+  const customName = document.getElementById('csvFilename').value.trim();
+  const defaultName = `grid_${document.getElementById('gridM').value}m_${gridData.length}cells`;
+  const filename = (customName || defaultName).replace(/\.csv$/i,'') + '.csv';
   const a = Object.assign(document.createElement('a'), {
     href:     URL.createObjectURL(new Blob([[header,...rows].join('\n')],{type:'text/csv'})),
-    download: `grid_${document.getElementById('gridM').value}m_${gridData.length}cells.csv`
+    download: filename
   });
   a.click();
 }
