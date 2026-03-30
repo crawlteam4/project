@@ -47,73 +47,69 @@ import pandas as pd
 import folium
 from sklearn.neighbors import BallTree
 
-
 # ================================
-# 1. 데이터 로드
+# 1. 사전 설정 함수
 # ================================
-DATA_PATH = "data"
+DATA_PATH = 'D:/workspaces/00_Project/crawlProject/project/data/'
 
-def load_grid_data(default_file='grid_50m_4328cells.csv'):
-    """
-    data/ 폴더 기준으로 파일 이름만 입력받아 grid 데이터를 로드한다.
-    """
 
-    file_name = input(f"파일 이름 입력 (기본: {default_file}): ").strip()
+def get_all_data(data_list):
+    '''
+    Put all data in dictionary
+    '''
+    dfs = {}
 
-    # 입력 없으면 기본값
-    if not file_name:
-        file_name = default_file
+    for data_name in data_list:
+        df = pd.read_csv(DATA_PATH + f"{data_name}/df_{data_name}.csv")
+        dfs[data_name] = df
+    return dfs
 
-    # 전체 경로 생성
-    file_path = os.path.join(DATA_PATH, file_name)
 
-    # 존재 확인
-    if not os.path.exists(file_path):
-        raise FileNotFoundError(f"파일 없음: {file_path}")
-
-    df_grid = pd.read_csv(file_path)
-    print(f"✅ 로드 완료: {file_name} (행 수: {len(df_grid)})")
-
+def get_df_grid(data_name):
+    df_grid = pd.read_csv(DATA_PATH + f'grid/{data_name}.csv')
     return df_grid
 
-df_grid = load_grid_data()
+
+def set_score(df, alpha):
+    df['score'] = [alpha] * len(df) 
+
+
 
 # ================================
-# 2. 격자 간 커버 관계 계산 함수
+# 2. 계산 함수
 # ================================
-def make_cover_df(coords, RANGE_KM=3, include_self=False):
+def grid_cover(coords, range_km=3, include_self=False):
     """
     coords: (n,2) array [lat, lng] (degree)
     range_km: 커버 반경 (km)
     include_self: 자기 자신 포함 여부
     """
 
-    # 입력이 비어있으면 빈 데이터프레임 반환
     if len(coords) == 0:
         return pd.DataFrame()
 
-    # degree → radian 변환 (haversine 계산 필수)
+    # degree → rad
     coords_rad = np.deg2rad(coords)
 
-    # BallTree 생성 (거리 계산 최적화 구조)
+    # BallTree 생성
     tree = BallTree(coords_rad, metric='haversine')
 
-    # 반경 km → radian 변환
-    radius = RANGE_KM / 6371
+    # km → rad
+    radius = range_km / 6371
 
-    # 각 점 기준 반경 내 이웃 탐색
+    # 이웃 찾기
     indices = tree.query_radius(coords_rad, r=radius)
 
-    # 자기 자신 포함 여부 처리
+    # 자기 자신 처리
     if include_self:
         cover_indices = indices
     else:
         cover_indices = [idx[idx != i] for i, idx in enumerate(indices)]
 
-    # 커버 개수 계산
+    # 커버 개수
     cover_count = [len(idx) for idx in cover_indices]
 
-    # 결과 데이터프레임 생성
+    # 결과
     df_coverage = pd.DataFrame({
         'jammer_id': range(len(coords)),
         'cover_count': cover_count,
@@ -123,59 +119,41 @@ def make_cover_df(coords, RANGE_KM=3, include_self=False):
     return df_coverage
 
 
-# ================================
-# 3. 병원 데이터 전처리 함수
-# ================================
-def get_df_hospital():
-    df_hospital = pd.read_csv('data/서울시 병의원 위치 정보.csv', encoding='utf-8')
-    print(f'총 병원 수: {len(df_hospital)}')
-
-    # 약국 제거 (기타 + 기관명에 "약국" 포함)
-    condition = (df_hospital['병원분류명'] == '기타') & (df_hospital['기관명'].str.contains('약국'))
-    df_hospital = df_hospital[~condition]
-
-    # 중요 병원 필터링
-    df_hospital_filtered = df_hospital[
-        df_hospital['병원분류명'].isin(['병원','종합병원','보건소','기타'])
-    ]
-
-    # 분석용 building 데이터 생성
-    df_building = pd.DataFrame()
-    df_building['name'] = df_hospital_filtered['기관명']
-    df_building['latitude'] = df_hospital_filtered['병원위도']
-    df_building['longitude'] = df_hospital_filtered['병원경도']
-
-    # index 정리
-    df_building = df_building.reset_index()
-    df_building = df_building.drop(columns='index')
-
-    # 태그 및 점수 (추후 확장용)
-    df_building['tag'] = pd.Series(['병원'] * len(df_hospital_filtered))
-    df_building['score'] = pd.Series([10] * len(df_hospital_filtered))
-    print(f'전처리 + 필터링 후 병원 수: {len(df_hospital)}')
-
-    return df_building
-
-
-# ================================
-# 4. 격자 기준 건물 커버 계산
-# ================================
 def building_cover(coords_grid, coords_building, RANGE_KM=1):
     """
     격자 좌표를 기준으로 반경 내 포함되는 건물 정보를 계산하는 함수
+
+    Parameters
+    ----------
+    coords_grid : array-like (n, 2)
+        격자 중심 좌표 (위도, 경도, degree)
+
+    coords_building : array-like (m, 2)
+        건물 좌표 (위도, 경도, degree)
+
+    range_km : float, optional
+        탐색 반경 (km 단위), 기본값 1km
+
+    Returns
+    -------
+    df_result : pandas.DataFrame
+        각 격자별 포함된 건물 개수와 인덱스 정보를 담은 데이터프레임
+        - grid_id : 격자 인덱스
+        - building_count : 포함된 건물 개수
+        - building_indices : 포함된 건물 인덱스 리스트
     """
 
-    # 좌표 → radian 변환
+    # rad 변환
     grid_rad = np.deg2rad(coords_grid)
     building_rad = np.deg2rad(coords_building)
 
-    # BallTree 생성 (건물 기준으로 생성)
+    # BallTree (건물 기준)
     tree = BallTree(building_rad, metric='haversine')
 
-    # 반경 km → radian 변환
+    # 반경 (km → rad)
     radius = RANGE_KM / 6371
 
-    # 각 grid 기준 포함된 건물 탐색
+    # 각 grid 기준 건물 찾기
     indices = tree.query_radius(grid_rad, r=radius)
 
     # 결과 정리
@@ -191,87 +169,246 @@ def building_cover(coords_grid, coords_building, RANGE_KM=1):
     return df_result
 
 
-# ================================
-# 5. 데이터 준비
-# ================================
+def calc_score(dfs, df_grid, RANGE_KM):
+    '''
+    격자 점수 산출
+    dfs : 데이터 딕셔너리
+    RANGE_KM : 레이더 사정거리
+    '''
+
+    grid_lat_min = df_grid["sw_lat"].min()
+    grid_lat_max = df_grid["ne_lat"].max()
+    grid_lon_min = df_grid["sw_lng"].min()
+    grid_lon_max = df_grid["ne_lng"].max()
+   
+    # 격자 내부에 있는 데이터만 필터링
+    filtered_list = []
+
+    for key, df in dfs.items():
+        filtered = df[
+            (df['latitude'] >= grid_lat_min) &
+            (df['latitude'] <= grid_lat_max) &
+            (df['longitude'] >= grid_lon_min) &
+            (df['longitude'] <= grid_lon_max)
+        ].copy()
+
+        filtered_list.append(filtered)
+
+    df_building = pd.concat(filtered_list, ignore_index=True)
+
+    coords_building = df_building[['latitude', 'longitude']].values
+    coords_grid = df_grid[['center_lat', 'center_lng']].values
 
 
-def get_range_km(default=1.0):
+    # 점수 산정
+    df_result = building_cover(coords_grid, coords_building, RANGE_KM)
+
+    scores = []
+    for cover in df_result['building_indices'].values:
+        sc = 0
+        for grid_no in cover:
+            sc += df_building.iloc[grid_no]['score']
+        scores.append(sc)
+
+    df_result['score'] = scores
+    return df_result
+
+
+def grid_cover_single(center_coord, all_coords, RANGE_KM=3):
     """
-    반경(km)을 입력받는 함수 (입력 없으면 기본값 사용)
+    center_coord: [lat, lng] - 기준이 되는 단일 좌표
+    all_coords: (n,2) array - 전체 격자 좌표들
+    range_km: 커버 반경 (km)
     """
 
-    user_input = input(f"반경(km) 입력 (기본: {default}): ").strip()
+    # degree → radian
+    all_coords_rad = np.deg2rad(all_coords)
+    center_rad = np.deg2rad(center_coord).reshape(1, -1)
 
-    # 입력 없으면 기본값
-    if not user_input:
-        return default
+    # BallTree 생성
+    tree = BallTree(all_coords_rad, metric='haversine')
 
-    try:
-        value = float(user_input)
+    # 반경 내 이웃 탐색
+    radius = RANGE_KM / 6371
+    indices = tree.query_radius(center_rad, r=radius)[0]
 
-        if value <= 0:
-            raise ValueError
+    # 자기 자신 제외 (center_coord와 동일한 좌표)
+    indices = indices[~np.all(all_coords[indices] == center_coord, axis=1)]
 
-        return value
-
-    except ValueError:
-        print("❌ 잘못된 입력 → 기본값 사용")
-        return default
-    
-
-# 재머(레이더) 반경 설정
-RANGE_KM = get_range_km()
-df_building = get_df_hospital()
-
-# 좌표 추출
-coords_building = df_building[['latitude', 'longitude']].values
-coords_grid = df_grid[['center_lat', 'center_lng']].values
+    return indices  # 주변 격자의 인덱스 배열
 
 
-# ================================
-# 6. 커버 계산 및 점수 산정
-# ================================
-df_result = building_cover(coords_grid, coords_building, RANGE_KM)
 
-# 단순 점수: 포함 건물 수 × 10
-df_result['score'] = df_result['building_count'] * 10
+def calc_rank(dfs, df_grid, RANGE_KM, radar_num):
+    rank_dic = {}
+    dfs_temp = {key: df.copy() for key, df in dfs.items()}  # ★ dfs만 복사
 
-# 최대 점수
-max_score = df_result['score'].max()
+    for _ in range(radar_num):
+        df_result = calc_score(dfs_temp, df_grid, RANGE_KM)  # ★ df_grid 고정
 
-# 최고 점수 격자 선택 (현재는 1순위만)
-best_points = df_result[df_result['score'] == max_score].index
+        max_score = df_result['score'].max()
+        best_points = list(df_result[df_result['score'] == max_score].index)
+
+        if len(best_points) != 1:
+            cover_list = []
+            for point in best_points:
+                center_coord = df_grid.loc[point, ['center_lat', 'center_lng']].values
+                all_coords = df_grid[['center_lat', 'center_lng']].values
+                pos_indices = grid_cover_single(center_coord, all_coords, RANGE_KM)
+                label_indices = df_grid.index[pos_indices]
+                cover_list.append(label_indices)
+
+            best_idx = max(range(len(cover_list)), key=lambda x: len(cover_list[x]))
+            position_grid = best_points[best_idx]
+            rank_dic[position_grid] = cover_list[best_idx]
+            pos = df_grid.loc[position_grid, ['center_lat', 'center_lng']].values
+
+        else:
+            pos = df_grid.loc[best_points[0], ['center_lat', 'center_lng']].values
+            all_coords = df_grid[['center_lat', 'center_lng']].values
+            pos_indices = grid_cover_single(pos, all_coords, RANGE_KM)
+            label_indices = df_grid.index[pos_indices]
+            rank_dic[best_points[0]] = label_indices
+
+        # ★ dfs_temp에서 커버된 시설물만 제거
+        all_building_coords = pd.concat(dfs_temp.values())[['latitude', 'longitude']].values
+        building_pos_indices = grid_cover_single(pos, all_building_coords, RANGE_KM)
+        covered_set = set(map(tuple, all_building_coords[building_pos_indices]))
+
+        for key in dfs_temp:
+            dfs_temp[key] = dfs_temp[key][
+                ~dfs_temp[key].apply(
+                    lambda r: (r['latitude'], r['longitude']) in covered_set, axis=1
+                )
+            ]
+
+    return rank_dic
 
 
-# ================================
-# 7. 지도 시각화
-# ================================
-m = folium.Map(location=[37.5, 127.04], zoom_start=7)
+def visualize(df_grid, dfs, rank_dic, ICON_MAP):
+    # MAP 객체 생성
+    m = folium.Map(location=[37.5, 127.04], zoom_start=10)
 
-# 재머 아이콘 (안테나)
-icon_radar = folium.Icon(color='red', icon='broadcast-tower', prefix='fa')
+    # 격자 경계점
+    grid_lat_min = df_grid["sw_lat"].min()
+    grid_lat_max = df_grid["ne_lat"].max()
+    grid_lon_min = df_grid["sw_lng"].min()
+    grid_lon_max = df_grid["ne_lng"].max()
 
-# 모든 병원 표시
-for loca in coords_building:
-    folium.Marker(location=loca).add_to(m)
 
-# 최적 격자 위치 + 커버 범위 표시
-for point in best_points:
-    loca = df_grid.iloc[point][['center_lat','center_lng']].values
-
-    # 재머 위치 마커
-    folium.Marker(location=loca).add_to(m)
-
-    # 커버 반경 (원)
-    folium.Circle(
-        location=loca,
-        radius=RANGE_KM * 1000,  # km → m
-        color='red',
+    # 격자 구역 표시
+    folium.Rectangle(
+        bounds=[[grid_lat_min, grid_lon_min], [grid_lat_max, grid_lon_max]],
+        color="blue",
+        weight=2,
         fill=True,
-        fill_color='red',
-        fill_opacity=0.2
+        fill_opacity=0.05,
+        tooltip="격자 전체 영역"
     ).add_to(m)
 
-# 결과 저장
-m.save('test.html')
+
+    for key, df in dfs.items():
+
+        layer = folium.FeatureGroup(name=key)
+
+        filtered = df[
+            (df['latitude'] >= grid_lat_min) &
+            (df['latitude'] <= grid_lat_max) &
+            (df['longitude'] >= grid_lon_min) &
+            (df['longitude'] <= grid_lon_max)
+        ].copy()
+
+        for _, row in filtered.iterrows():
+            folium.Marker(
+                location=[row['latitude'], row['longitude']],
+                tooltip=row['name'],
+                popup=folium.Popup(row['name'], max_width=200),
+                icon=ICON_MAP.get(key, folium.Icon(color="gray", icon="question", prefix="fa"))
+            ).add_to(layer)
+
+        layer.add_to(m)
+
+    folium.LayerControl(collapsed=False).add_to(m)  # 레이어 패널 기본으로 열어둠
+
+    # 레이더 위치 표시
+    import random
+
+    def random_color():
+        r = random.randint(50, 200)
+        g = random.randint(50, 200)
+        b = random.randint(50, 200)
+        return f"#{r:02x}{g:02x}{b:02x}"
+
+    for rank, point in enumerate(rank_dic.keys(), start=1):
+        loca = df_grid.loc[point, ['center_lat', 'center_lng']].values
+        color = random_color()
+
+        # 숫자 아이콘
+        folium.Marker(
+            location=loca,
+            tooltip=f"{rank}순위 레이더",
+            popup=folium.Popup(f"{rank}순위 레이더 (grid_id: {point})", max_width=200),
+            icon=folium.DivIcon(
+                html=f"""
+                    <div style="
+                        background-color: {color};
+                        color: white;
+                        font-size: 13px;
+                        font-weight: bold;
+                        width: 28px;
+                        height: 28px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid white;
+                        box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+                    ">{rank}</div>
+                """,
+                icon_size=(28, 28),
+                icon_anchor=(14, 14)  # 아이콘 중심이 좌표에 오도록
+            )
+        ).add_to(m)
+
+        folium.Circle(
+            location=loca,
+            radius=RANGE_KM * 1000,
+            color=color,
+            fill=True,
+            fill_color=color,
+            fill_opacity=0.15,
+            tooltip=f"{rank}순위 커버 범위"
+        ).add_to(m)
+
+    m.save("map.html")
+    print("저장 완료: map.html")
+
+
+
+def run():
+    data_list = ['hospital',
+                'factory',
+                'bridge',
+                'electricity',
+                'infra',
+                'public',
+                'telecommunication',
+                'transportation',
+                'water']
+
+    dfs = get_all_data(data_list)
+    df_grid = get_df_grid('grid_50m_18417cells')
+
+    RANGE_KM = 1.5
+    radar_num = 3
+    rank_dic = calc_rank(dfs, df_grid, RANGE_KM, radar_num)
+
+    ICON_MAP = {
+            "hospital":   folium.Icon(color="red",     icon="hospital",        prefix="fa"),
+            "factory":    folium.Icon(color="blue",    icon="industry",        prefix="fa"),
+            "substation": folium.Icon(color="green",   icon="bolt",            prefix="fa"),
+            "bridge":     folium.Icon(color="purple",  icon="road",            prefix="fa"),
+            "core":       folium.Icon(color="darkred", icon="broadcast-tower", prefix="fa"),
+        }
+
+    visualize(df_grid, dfs, rank_dic, ICON_MAP)
