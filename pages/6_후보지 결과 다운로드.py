@@ -13,7 +13,12 @@ st.set_page_config(layout="wide")
 #     st.error("로그인이 필요합니다.")
 #     st.stop()  # 이 아래 코드는 실행되지 않음
     
-    
+with st.sidebar:
+    st.write("📊 **전체 분석 진행률**")
+    st.progress(100)
+    st.success("✅ **최종: 결과 활용**\n\n완료된 분석을 다운로드해보세요.")
+    st.divider()
+
 st.title("데이터프레임")
 
 

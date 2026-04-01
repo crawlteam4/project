@@ -33,7 +33,11 @@ ICON_MAP = {
     "water":             folium.Icon(color="lightblue", icon="tint",             prefix="fa"),
     "frequency":         folium.Icon(color="darkred",   icon="signal",           prefix="fa"),
 }
-
+with st.sidebar:
+    st.write("📊 **전체 분석 진행률**")
+    st.progress(75)
+    st.info("🚀 **3단계: 후보지 계산**\n\n알고리즘이 최적의 배치 지점을 산출하고 있습니다.")
+    st.divider()
 
 def main():
 
@@ -71,7 +75,7 @@ def main():
         RANGE_KM  = float(user_input['range_km'])
         radar_num = int(user_input['radar_num'])
 
-        with st.status('후보지 계산 중...', expanded=True) as calc_status:
+        with st.status('후보지 계산 중...', expanded=False) as calc_status:
             set_score(dfs1, weight_dic)
 
             st.write('최적 후보지 계산 중... ')
@@ -157,31 +161,53 @@ def main():
             st.components.v1.html(html_content, height=650)
 
     with col2:
-        name_list=st.session_state['user_input']['selected_weights']
-        select_name_lsit=[]
-        # st.write(name_list)
-        for name, weight in name_list.items():
-            if weight!=0:
-                select_name_lsit.append(name)
-        with st.container(border=True):
-            st.subheader(f"선택된 시설 ({len(select_name_lsit)}개)")
-            for i, name in enumerate(select_name_lsit, 1):
-                st.write(f"{i}. {name}")
-
-        st.markdown('#### 시나리오 저장')
-        st.caption('다른 조건과 비교하려면 시나리오로 저장하세요.')
-        name = st.text_input('시나리오 이름', placeholder='예) 사정거리 2km')
-        if st.button('저장', use_container_width=True):
-            if not name.strip():
-                st.warning('시나리오 이름을 입력하세요.')
-            else:
-                scenario  = {'name': name.strip(), **results}
-                scenarios = st.session_state.get('scenarios', [])
-                scenarios = [s for s in scenarios if s['name'] != name.strip()]
-                scenarios.append(scenario)
-                st.session_state['scenarios'] = scenarios
-                st.success(f"'{name.strip()}' 저장 완료! (총 {len(scenarios)}개)")
+        # 1. 분석 조건 요약 (사정거리 등 핵심 수치 강조)
+        range_km = st.session_state['user_input']['range_km']
+        radar_num = st.session_state['user_input']['radar_num']
         
+        with st.container(border=True):
+            st.markdown("### 📊 분석 조건 요약")
+            c1, c2 = st.columns(2)
+            c1.metric("사정 거리", f"{range_km}km")
+            c2.metric("후보지 수", f"{radar_num}개")
+
+        # 2. 선택된 시설 리스트 (Badge 스타일 혹은 리스트 정리)
+        name_list = st.session_state['user_input']['selected_weights']
+        select_name_list = [name for name, weight in name_list.items() if weight != 0]
+
+        with st.container(border=True):
+            st.subheader(f"🏢 선택 시설 ({len(select_name_list)}개)")
+            if select_name_list:
+                # 텍스트 앞에 이모지를 붙여 시각적 요소 추가
+                for i, name in enumerate(select_name_list, 1):
+                    st.markdown(f"**{i}.** {name}")
+            else:
+                st.caption("선택된 시설이 없습니다.")
+
+        # 3. 시나리오 저장 섹션 (강조된 박스 형태)
+        with st.container(border=True):
+            st.markdown("#### 💾 시나리오 저장")
+            st.caption('현재 분석 조건을 보관하여 나중에 비교하세요.')
+            
+            scenario_name = st.text_input(
+                '시나리오 이름', 
+                placeholder='예) 사정거리 2km 설정안',
+                key='scenario_input'
+            )
+            
+            # 버튼 색상에 포인트를 주기 위해 primary 적용 가능
+            if st.button('시나리오 저장하기', use_container_width=True, type="primary"):
+                if not scenario_name.strip():
+                    st.warning('시나리오 이름을 입력하세요.')
+                else:
+                    # 기존 저장 로직 유지
+                    scenario = {'name': scenario_name.strip(), **results}
+                    scenarios = st.session_state.get('scenarios', [])
+                    scenarios = [s for s in scenarios if s['name'] != scenario_name.strip()]
+                    scenarios.append(scenario)
+                    st.session_state['scenarios'] = scenarios
+                    st.success(f"'{scenario_name.strip()}' 저장 완료!")
+            
 
 
 

@@ -11,7 +11,11 @@ st.set_page_config(layout="wide")
 #     st.error("로그인이 필요합니다.")
 #     st.stop()  # 이 아래 코드는 실행되지 않음
     
-
+with st.sidebar:
+    st.write("📊 **전체 분석 진행률**")
+    st.progress(100)
+    st.success("✅ **최종: 결과 활용**\n\n분석이 완료되었습니다. 리포트를 확인해보세요.")
+    st.divider()
     
 def show_score_chart(df_rank: pd.DataFrame):
     """후보지 순위별 점수 엘보우 그래프"""

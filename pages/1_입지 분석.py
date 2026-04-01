@@ -174,7 +174,7 @@ def render_grid_tab():
     
     COLOR_THEME = {"인구 밀집도": "YlOrRd", "건물 고도&밀집도": "PuBu"}
 
-    if st.button("격자 시각화 실행", key="btn_g"):
+    if st.button("격자 데이터 조회", key="btn_g"):
         # 서울 중심 좌표로 지도 생성
         m_g = folium.Map(location=[37.5665, 126.9780], zoom_start=11, tiles='cartodbpositron')
         gdfs_dict = {}
@@ -261,12 +261,61 @@ def render_grid_tab():
 
 def main():
     st.set_page_config(layout="wide", page_title="C-UAS 통합 분석")
-    st.title("🛡️ C-UAS 인프라 및 밀집도 통합 분석 시스템")
+    
+    with st.sidebar:
+        st.write("📊 **전체 분석 진행률**")
+        st.caption("현재: 1단계 (25%)")
+        st.progress(25)
+        st.info("🔎 **1단계: 데이터 탐색**\n\n서울시 전역의 기초 데이터를 자유롭게 탐색해 보세요.")
+
+
+    st.title("시설물 및 밀집도 통합 분석 대시보드")
+    st.write("")
+
+    with st.expander("🔍 **이 페이지에서는 무엇을 하나요?**", expanded=False):
+        st.write("본 페이지는 서울시의 **시설물(지점)**, **인구/건물(격자)** 데이터를 탐색하는 단계입니다.")
+        st.write("") 
+
+        col1, col2 = st.columns([2,5])
+        
+        with col1:
+            # 탭 1에 대한 설명
+            st.markdown("##### 📍 시설물 지점 분석 (Point)")
+            with st.container(border=True, width=400):
+                st.markdown("""
+                - **데이터**: 분류별 시설 위치
+                - **조작**: `대분류` → `중분류` → `소분류` 순으로 선택
+                - **특징**: 서울시 내 건물이나 시설의 정확한 위치 확인
+                """)
+                
+        with col2:
+            # 탭 2에 대한 설명
+            st.markdown("##### 🟩 인구/건물 격자 분석 (Grid)")
+            with st.container(border=True, width=400):
+                st.markdown("""
+                - **데이터**: 생활인구 밀집도, 토지이용 압축도
+                - **조작**: 별도 분류 없이 **인구, 건물 선택**
+                - **특징**: 서울시 전역의 밀집도/고도 흐름 파악
+                """)
+
+        st.divider()
+        
+        # 공통 이용 방법
+        st.markdown("##### 🛠️ 이용 방법")
+        st.caption("""
+            1️⃣ 하단 탭 메뉴에서 **시설물 or 인물/건물**을 먼저 선택하세요.  
+            2️⃣ 원하는 **데이터 조건**을 설정한 후 **[데이터 조회]** 버튼을 클릭하세요.  
+            3️⃣ 지도에서 결과를 확인하고, 필요한 경우 하단에서 **CSV 파일로 다운로드**하세요.
+            """)
+        
+        st.info("💡 **Tip:** 데이터를 확인하고 다음 단계에서 어떤 변수를 얼마만큼의 가중치로 설정할 건지 고려해보세요")
+
+    st.write("")
     
     tab1, tab2 = st.tabs(["📍 시설물 지점 분석", "🟩 인구/건물 격자 분석"])
-    with tab1: render_facility_tab()
+    with tab1:
+        render_facility_tab()
     with tab2: 
-        
         render_grid_tab()
 
 if __name__ == "__main__":
