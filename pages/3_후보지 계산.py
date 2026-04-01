@@ -48,7 +48,7 @@ def main():
 
     if 'user_input' not in st.session_state:
         st.info('사용자 입력 페이지에서 조건을 먼저 입력해주세요.')
-        return
+        
 
     if 'calc_results' not in st.session_state:
         user_input = st.session_state['user_input']
@@ -82,10 +82,9 @@ def main():
 
             df_final = get_df_final(rank_dic, df_grid, df_population, df_area_density, RANGE_KM)
 
-            upload_result(df_final)
+            
 
-            if "final_df" not in st.session_state:
-                st.session_state.final_df = df_final
+            st.session_state.final_df = df_final
 
             
             ICON_MAP = {
@@ -122,12 +121,17 @@ def main():
                 for i, (idx, score) in enumerate(rank_dic.items())
             ])
 
+            # select_name_list 생성
+            name_list = st.session_state['user_input']['selected_weights']
+            select_name_list = [name for name, weight in name_list.items() if weight != 0]
+            
             st.session_state['calc_results'] = {
                 'df_rank':   df_rank,
                 'dfs':       dfs1,
                 'range_km':  RANGE_KM,
                 'radar_num': radar_num,
                 'weights':   weight_dic,
+                'selected_facilities': select_name_list,
             }
 
             calc_status.update(
@@ -138,6 +142,8 @@ def main():
 
     results = st.session_state['calc_results']
     df_rank = results['df_rank']
+
+
 
 
     col1, col2 = st.columns([6, 3])
@@ -151,6 +157,17 @@ def main():
             st.components.v1.html(html_content, height=650)
 
     with col2:
+        name_list=st.session_state['user_input']['selected_weights']
+        select_name_lsit=[]
+        # st.write(name_list)
+        for name, weight in name_list.items():
+            if weight!=0:
+                select_name_lsit.append(name)
+        with st.container(border=True):
+            st.subheader(f"선택된 시설 ({len(select_name_lsit)}개)")
+            for i, name in enumerate(select_name_lsit, 1):
+                st.write(f"{i}. {name}")
+
         st.markdown('#### 시나리오 저장')
         st.caption('다른 조건과 비교하려면 시나리오로 저장하세요.')
         name = st.text_input('시나리오 이름', placeholder='예) 사정거리 2km')
@@ -164,6 +181,9 @@ def main():
                 scenarios.append(scenario)
                 st.session_state['scenarios'] = scenarios
                 st.success(f"'{name.strip()}' 저장 완료! (총 {len(scenarios)}개)")
+        
+
+
 
 
 main()

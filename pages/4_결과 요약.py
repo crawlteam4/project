@@ -5,7 +5,7 @@ import folium
 import plotly.graph_objects as go
 from calculate.calculate import building_cover
 
-
+st.set_page_config(layout="wide")
 
 # if "logged_in" not in st.session_state or not st.session_state.logged_in:
 #     st.error("로그인이 필요합니다.")
@@ -81,20 +81,6 @@ def show_score_chart(df_rank: pd.DataFrame):
         )
 
 
-
-st.header('후보지 순위별 점수 그래프')
-results = st.session_state.get('calc_results')
-df_rank  = results['df_rank']
-
-
-show_score_chart(df_rank)
-
-
-
-
-st.set_page_config(layout="wide")
-st.header("후보지별 커버리지 지도")
-
 # ── 세션 상태 확인 ────────────────────────────────────────────────
 results    = st.session_state.get('calc_results')
 user_input = st.session_state.get('user_input')
@@ -106,6 +92,38 @@ if results is None:
 if user_input is None:
     st.info("사용자 입력 페이지에서 조건을 먼저 입력해주세요.")
     st.stop()
+
+
+
+
+# ── 선택된 시설 배지 표시 ──────────────────────────────────────────
+selected_facilities = results.get('selected_facilities', [])
+if selected_facilities:
+    st.markdown("### 분석 조건")
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.metric("선택된 시설 수", len(selected_facilities))
+    with col2:
+        st.metric("분석 범위", f"{results.get('range_km', 'N/A')} km")
+    with col3:
+        st.metric("상위 후보지", len(results['df_rank']))
+    
+    # 배지 스타일로 선택된 시설 표시
+    st.markdown("**선택된 시설:**")
+    badges_html = ""
+    colors = ["#E0E7FF", "#E0F2FE", "#F0FDF4", "#FEF3C7", "#FCE7F3", "#F3E8FF", "#ECFDF5", "#FEE2E2", "#DBEAFE", "#FEF08A"]
+    for i, facility in enumerate(selected_facilities):
+        color = colors[i % len(colors)]
+        badges_html += f"""<span style='display: inline-block; background-color: {color}; padding: 6px 12px; border-radius: 16px; margin-right: 6px; margin-bottom: 6px; font-size: 13px; font-weight: 500;'>{facility}</span>"""
+    
+    st.markdown(badges_html, unsafe_allow_html=True)
+    st.divider()
+
+st.header('후보지 순위별 점수 그래프')
+df_rank  = results['df_rank']
+show_score_chart(df_rank)
+
+st.header("후보지별 커버리지 지도")
 
 df_rank  = results['df_rank']
 dfs      = results['dfs']

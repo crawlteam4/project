@@ -29,13 +29,20 @@ else:
     st.subheader("후보지 결과 데이터프레임")
     st.dataframe(results)
 
-    
-    st.download_button(
-        label="Download CSV",
-        data=results.to_csv(index=False).encode('utf-8'),
-        file_name='candidate_sites.csv',
-        mime='text/csv',
-    )
+    vac,but1=st.columns([8,1])
+    with but1:
+        with st.container(horizontal=True,horizontal_alignment='right'):
+            st.download_button(
+            label="Download CSV",
+            data=results.to_csv(index=False).encode('utf-8'),
+            file_name='candidate_sites.csv',
+            mime='text/csv',
+                )
+            upload=st.button('Upload DB')
+            if upload:
+                upload_result(results)
+
+
 
 
 
