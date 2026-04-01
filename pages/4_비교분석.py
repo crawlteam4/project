@@ -5,6 +5,14 @@ from sklearn.neighbors import BallTree
 import plotly.graph_objects as go
 
 st.set_page_config(layout="wide")
+
+
+if "logged_in" not in st.session_state or not st.session_state.logged_in:
+    st.error("로그인이 필요합니다.")
+    st.stop()  # 이 아래 코드는 실행되지 않음
+    
+
+
 st.title("시나리오 비교")
 
 
