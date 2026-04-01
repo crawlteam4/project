@@ -4,7 +4,10 @@ import pandas as pd
 import folium
 from folium.plugins import HeatMap
 from sklearn.neighbors import BallTree
+from calculate.calculate import building_cover
 import plotly.graph_objects as go
+import plotly.express as px
+
 
 st.set_page_config(layout="wide")
 

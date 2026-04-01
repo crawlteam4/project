@@ -94,6 +94,7 @@ with st.container():
                     'radar_num':       radar_num,
                     'selected_weights': selected_weights,
                 }
+                st.session_state.pop('calc_results', None)
 
                 st.switch_page("pages/2_계산.py")
 
