@@ -5,7 +5,10 @@ import os
 from utils import apply_input_style
 
 
-
+if "logged_in" not in st.session_state or not st.session_state.logged_in:
+    st.error("로그인이 필요합니다.")
+    st.stop()  # 이 아래 코드는 실행되지 않음
+    
 apply_input_style()
 # 두 컬럼의 높이를 같게 설정하는 CSS
 st.markdown('''
@@ -16,8 +19,16 @@ st.markdown('''
     }
 </style>
 ''', unsafe_allow_html=True)
+st.title('D-DAS',text_alignment='right')
+col1, col2 = st.columns([6, 3])
 
-st.caption( 'Drone Defense Allocation System      ',text_alignment='right')
+with col1: 
+    st.caption('격자 생성 후 후보지 고려사항을 선택하세요 ')
+with col2:
+    
+    st.caption( 'Drone Defense Allocation System      ',text_alignment='right')
+
+
 
 with st.container():
     col1, col2=st.columns([6,3])

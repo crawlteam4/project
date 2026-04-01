@@ -1,11 +1,27 @@
 import streamlit as st
+import pymysql
 
 st.set_page_config(page_title="회원가입 | D-DAS", page_icon="images/technology.png",
                    layout="wide", initial_sidebar_state="collapsed")
 
+
+def get_connection():
+    return pymysql.connect(
+        host=st.secrets["mysql"]["host"],
+        port=st.secrets["mysql"]["port"],
+        user=st.secrets["mysql"]["user"],
+        password=st.secrets["mysql"]["password"],
+        database=st.secrets["mysql"]["database"],
+        charset="utf8mb4"
+    )
+
 def register_user(user_id: str, password: str, name: str, email: str) -> bool:
-# sql 구문으로 MySQL에 사용자 정보 저장하는 함수
-# 추후 MySQL INSERT로 교체 예정.
+# sql 구문으로 MySQL에 사용자 정보 저장하는 함수    
+    conn=get_connection()
+    with conn.cursor() as cursor:
+        sql = "INSERT INTO users (user_id, password, name, email) VALUES (%s, %s, %s, %s)"
+        cursor.execute(sql, (user_id, password, name, email))
+        conn.commit()
     return True 
 
 

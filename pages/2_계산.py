@@ -8,6 +8,15 @@ from visualize.visualize import visualize
 
 st.set_page_config(layout="wide")
 
+
+
+
+if "logged_in" not in st.session_state or not st.session_state.logged_in:
+    st.error("로그인이 필요합니다.")
+    st.stop()  # 이 아래 코드는 실행되지 않음
+    
+
+    
 df_grid, grid_bd_points = get_latest_grid_data()
 dfs = get_dfs()
 
@@ -59,7 +68,7 @@ def main():
 
             st.write('최적 후보지 계산 중... ')
             rank_dic, max_radar_num = calc_rank(
-                dfs, df_grid, RANGE_KM, radar_num=50, polygon_coords=grid_bd_points
+                dfs, df_grid, RANGE_KM, radar_num=radar_num, polygon_coords=grid_bd_points
             )
 
             st.write('지도 생성 중...')

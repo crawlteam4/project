@@ -4,6 +4,13 @@ import pandas as pd
 from sklearn.neighbors import BallTree # 제거 예정
 
 st.set_page_config(layout="wide")
+
+
+if "logged_in" not in st.session_state or not st.session_state.logged_in:
+    st.error("로그인이 필요합니다.")
+    st.stop()  # 이 아래 코드는 실행되지 않음
+    
+    
 st.title("데이터프레임")
 
 
@@ -74,26 +81,6 @@ else:
 
     st.markdown("#### 후보지 상세 정보")
     st.dataframe(detail_df, hide_index=True, use_container_width=True)
-
-    st.markdown("#### 카테고리별 시설 수")
-
-    df_all = pd.concat(
-        [df.assign(category=cat) for cat, df in dfs.items()],
-        ignore_index=True,
-    )
-    cover_result = building_cover(
-        df_rank[['lat', 'lng']].values,
-        df_all[['latitude', 'longitude']].values,
-        range_km,
-    )
-    all_covered = np.concatenate(cover_result['building_indices'].values)
-    cat_summary = (
-        df_all.iloc[all_covered]['category']
-        .value_counts()
-        .reset_index()
-    )
-    cat_summary.columns = ['카테고리', '시설 수']
-    st.dataframe(cat_summary, hide_index=True, use_container_width=True)
 
     st.divider()
     csv = detail_df.to_csv(index=False, encoding='utf-8-sig')
