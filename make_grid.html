@@ -17,82 +17,88 @@ body {
   color: #1a1a2e;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   overflow: hidden;
 }
 
-/* ── 사이드바 ── */
-.sidebar {
-  width: 260px;
-  min-width: 260px;
-  height: 100vh;
+/* ── 상단 툴바 ── */
+.toolbar {
+  height: 52px;
+  min-height: 52px;
   background: #ffffff;
-  border-left: 1px solid #e5e7eb;
-  display: flex;
-  flex-direction: column;
-  z-index: 1000;
-  box-shadow: -2px 0 12px rgba(0,0,0,0.06);
-  order: 2;
-}
-
-.sidebar-header {
-  padding: 20px 20px 16px;
-  border-bottom: 1px solid #f0f2f5;
-}
-
-.sidebar-title {
-  font-size: 15px;
-  font-weight: 600;
-  color: #111827;
+  border-bottom: 1px solid #e5e7eb;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  padding: 0 12px;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
 }
 
-.sidebar-title .icon {
-  width: 28px; height: 28px;
-  background: #3b82f6;
-  border-radius: 7px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 14px;
+.toolbar::-webkit-scrollbar { display: none; }
+
+/* 타이틀 */
+
+/* 구분선 */
+.sep {
+  width: 1px;
+  height: 28px;
+  background: #e5e7eb;
+  flex-shrink: 0;
+  margin: 0 2px;
 }
 
-.sidebar-body {
-  flex: 1;
-  overflow-y: auto;
-  padding: 16px;
+/* ── 슬라이더 그룹 ── */
+.slider-group {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
 }
-
-/* ── 섹션 ── */
-.section-label {
-  font-size: 10px;
+.slider-group label {
+  font-size: 11px;
+  color: #6b7280;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.slider-group input[type=range] {
+  width: 90px;
+  accent-color: #3b82f6;
+  cursor: pointer;
+}
+.slider-val {
+  font-size: 12px;
   font-weight: 600;
-  color: #9ca3af;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  margin-bottom: 8px;
+  color: #3b82f6;
+  background: #eff6ff;
+  padding: 2px 7px;
+  border-radius: 5px;
+  min-width: 42px;
+  text-align: center;
 }
 
 /* ── 버튼 ── */
 .btn {
-  width: 100%;
-  padding: 9px 14px;
-  border-radius: 8px;
+  padding: 6px 12px;
+  border-radius: 7px;
   border: 1px solid transparent;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 500;
   font-family: inherit;
   transition: all 0.15s;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: 5px;
   white-space: nowrap;
+  flex-shrink: 0;
+  height: 32px;
 }
 .btn:disabled { opacity: 0.35; cursor: not-allowed; }
-.btn:not(:disabled):hover { transform: translateY(-1px); box-shadow: 0 3px 8px rgba(0,0,0,0.12); }
+.btn:not(:disabled):hover { transform: translateY(-1px); box-shadow: 0 3px 8px rgba(0,0,0,0.14); }
 .btn:not(:disabled):active { transform: translateY(0); }
 
 .btn-primary   { background:#3b82f6; color:#fff; border-color:#2563eb; }
@@ -102,50 +108,102 @@ body {
 .btn-secondary { background:#f9fafb; color:#374151; border-color:#e5e7eb; }
 .btn-download  { background:#6366f1; color:#fff; border-color:#4f46e5; }
 
-.btn-group { display: flex; flex-direction: column; gap: 6px; }
-
-/* ── 슬라이더 ── */
-.slider-wrap { background: #f9fafb; border-radius: 8px; padding: 12px; border: 1px solid #e5e7eb; }
-.slider-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
-.slider-title { font-size: 12px; font-weight: 500; color: #374151; }
-.slider-val { font-size: 13px; font-weight: 600; color: #3b82f6; background: #eff6ff; padding: 2px 8px; border-radius: 5px; }
-input[type=range] { width: 100%; accent-color: #3b82f6; }
-
-/* ── 파일명 입력 ── */
-.filename-wrap { display: flex; flex-direction: column; gap: 5px; }
-.filename-label { font-size: 11px; color: #6b7280; }
+/* ── 파일명 인풋 ── */
 .filename-input {
-  width: 100%;
-  padding: 8px 10px;
+  height: 30px;
+  padding: 0 9px;
   border-radius: 7px;
   border: 1px solid #e5e7eb;
   background: #f9fafb;
-  font-size: 12px;
+  font-size: 11px;
   font-family: 'Courier New', monospace;
   color: #374151;
   outline: none;
+  width: 140px;
+  flex-shrink: 0;
   transition: border-color 0.15s;
 }
 .filename-input:focus { border-color: #3b82f6; background: #fff; }
-.filename-hint { font-size: 10px; color: #9ca3af; }
+.filename-input::placeholder { color: #d1d5db; }
 
-/* ── 상태 표시 ── */
-.status-box {
-  padding: 10px 12px;
-  border-radius: 8px;
+/* ── 상태 칩 ── */
+.status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 20px;
   font-size: 11px;
-  line-height: 1.5;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+  max-width: 280px;
+  overflow: hidden;
+  text-overflow: ellipsis;
   background: #fffbeb;
   border: 1px solid #fde68a;
   color: #92400e;
-  min-height: 38px;
 }
-.status-box.info   { background: #eff6ff; border-color: #bfdbfe; color: #1e40af; }
-.status-box.success{ background: #f0fdf4; border-color: #bbf7d0; color: #14532d; }
-.status-box.loading{ background: #f5f3ff; border-color: #ddd6fe; color: #4c1d95; }
+.status-chip.info    { background: #eff6ff; border-color: #bfdbfe; color: #1e40af; }
+.status-chip.success { background: #f0fdf4; border-color: #bbf7d0; color: #14532d; }
+.status-chip.loading { background: #f5f3ff; border-color: #ddd6fe; color: #4c1d95; }
 
-/* ── 꼭짓점 목록 ── */
-.coords-list { display: flex; flex-direction: column; gap: 3px; }
+/* ── 좌표 팝업 버튼 ── */
+.coords-trigger {
+  position: relative;
+  flex-shrink: 0;
+}
+.coords-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 7px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  font-size: 11px;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  height: 32px;
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+.coords-badge:hover { border-color: #3b82f6; color: #3b82f6; }
+.coord-count {
+  background: #3b82f6;
+  color: #fff;
+  border-radius: 10px;
+  padding: 1px 6px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* ── 팝업 (꼭짓점 목록) ── */
+.popup {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  padding: 12px;
+  min-width: 200px;
+  z-index: 2000;
+  display: none;
+}
+.popup.show { display: block; }
+.popup-title {
+  font-size: 9px;
+  font-weight: 600;
+  color: #9ca3af;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.coords-list { display: flex; flex-direction: column; gap: 3px; max-height: 200px; overflow-y: auto; }
 .coord-item {
   display: flex;
   align-items: center;
@@ -166,167 +224,136 @@ input[type=range] { width: 100%; accent-color: #3b82f6; }
   flex-shrink: 0;
 }
 .coord-text { font-size: 10px; color: #6b7280; font-family: monospace; }
-.coords-empty { font-size: 11px; color: #d1d5db; text-align: center; padding: 8px 0; }
+.coords-empty { font-size: 11px; color: #d1d5db; text-align: center; padding: 6px 0; }
 
-/* ── 통계 카드 ── */
-.stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
-.stat-card {
-  background: #f9fafb;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  padding: 8px 10px;
-}
-.stat-card-label { font-size: 9px; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 2px; }
-.stat-card-val { font-size: 15px; font-weight: 600; color: #111827; }
-.stat-card-val.red { color: #ef4444; }
-.stat-card-val.blue { color: #3b82f6; }
 
 /* ── 프로그레스 ── */
-.progress-bar { height: 4px; background: #e5e7eb; border-radius: 2px; overflow: hidden; display: none; margin-top: 8px; }
-.progress-fill { height: 100%; background: linear-gradient(90deg, #3b82f6, #6366f1); border-radius: 2px; width: 0%; transition: width 0.1s; }
+.progress-bar {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: #e5e7eb;
+  display: none;
+}
+.progress-fill { height: 100%; background: linear-gradient(90deg, #3b82f6, #6366f1); width: 0%; transition: width 0.1s; }
 
 /* ── 지도 영역 ── */
-.map-wrap { flex: 1; position: relative; order: 1; }
+.map-wrap { flex: 1; position: relative; overflow: hidden; }
 #map { width: 100%; height: 100%; }
 .leaflet-container { background: #e8ecf0; }
 
-/* ── CSV 미리보기 ── */
-.preview-panel {
-  position: absolute;
-  bottom: 16px; right: 16px;
-  z-index: 1000;
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  padding: 12px 14px;
-  font-size: 10px;
-  max-width: 320px;
-  max-height: 180px;
-  overflow-y: auto;
-  display: none;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+
+
+/* ── 저장 모달 ── */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s;
 }
-.preview-title { font-size: 9px; font-weight: 600; color: #9ca3af; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
-pre { color: #374151; line-height: 1.8; font-size: 10px; }
-.head { color: #3b82f6; font-weight: 600; }
-
-/* ── 스크롤바 ── */
-.sidebar-body::-webkit-scrollbar { width: 4px; }
-.sidebar-body::-webkit-scrollbar-track { background: transparent; }
-.sidebar-body::-webkit-scrollbar-thumb { background: #e5e7eb; border-radius: 2px; }
-
-/* ── 구분선 ── */
-.divider { height: 1px; background: #f0f2f5; margin: 0 -16px; }
+.modal-backdrop.show {
+  opacity: 1;
+  pointer-events: all;
+}
+.modal {
+  background: #fff;
+  border-radius: 14px;
+  padding: 28px 28px 22px;
+  width: 340px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+  transform: translateY(12px);
+  transition: transform 0.18s;
+}
+.modal-backdrop.show .modal { transform: translateY(0); }
+.modal-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 4px;
+}
+.modal-sub {
+  font-size: 12px;
+  color: #9ca3af;
+  margin-bottom: 18px;
+}
+.modal-input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1.5px solid #e5e7eb;
+  background: #f9fafb;
+  font-size: 13px;
+  font-family: 'Courier New', monospace;
+  color: #374151;
+  outline: none;
+  transition: border-color 0.15s;
+  margin-bottom: 6px;
+}
+.modal-input:focus { border-color: #3b82f6; background: #fff; }
+.modal-hint { font-size: 10px; color: #9ca3af; margin-bottom: 20px; }
+.modal-actions { display: flex; gap: 8px; justify-content: flex-end; }
 
 canvas { display: none; }
 </style>
 </head>
 <body>
 
-<!-- ── 사이드바 ── -->
-<div class="sidebar">
-  <div class="sidebar-header">
-    <div class="sidebar-title">
-      <div class="icon">🗺</div>
-      격자 생성기
-    </div>
+<!-- ── 상단 툴바 ── -->
+<div class="toolbar">
+
+  <!-- 셀 간격 -->
+  <div class="slider-group">
+    <label>셀 간격</label>
+    <input type="range" id="gridM" min="50" max="500" value="100" step="50"
+           oninput="document.getElementById('gridMVal').textContent=this.value+'m'">
+    <span class="slider-val" id="gridMVal">100m</span>
   </div>
 
-  <div class="sidebar-body">
+  <div class="sep"></div>
 
-    <!-- 상태 -->
-    <div>
-      <div class="section-label">상태</div>
-      <div id="status" class="status-box">지도를 클릭해서 꼭짓점을 찍으세요 (최소 3개)</div>
+  <!-- 실행 버튼 -->
+  <button class="btn btn-success" id="analyzeBtn" onclick="analyzeAndGenerate()" disabled>
+    ⊞ 구역 생성
+  </button>
+
+  <div class="sep"></div>
+
+  <!-- 편집 -->
+  <button class="btn btn-secondary" id="undoBtn" onclick="undoPoint()" disabled>
+    ↩ 취소
+  </button>
+  <button class="btn btn-danger" id="clearBtn" onclick="clearAll()" disabled>
+    ✕ 초기화
+  </button>
+
+  <div class="sep"></div>
+
+  <!-- 꼭짓점 팝업 -->
+  <div class="coords-trigger" id="coordsTrigger">
+    <div class="coords-badge" onclick="toggleCoords()">
+      📍 꼭짓점 <span class="coord-count" id="coordCount">0</span>
     </div>
-
-    <!-- 격자 크기 -->
-    <div>
-      <div class="section-label">격자 크기</div>
-      <div class="slider-wrap">
-        <div class="slider-row">
-          <span class="slider-title">한 변의 길이</span>
-          <span class="slider-val" id="gridMVal">100m</span>
-        </div>
-        <input type="range" id="gridM" min="50" max="500" value="100" step="50"
-               oninput="document.getElementById('gridMVal').textContent=this.value+'m'">
-      </div>
-    </div>
-
-    <!-- 작업 버튼 -->
-    <div>
-      <div class="section-label">작업</div>
-      <div class="btn-group">
-        <button class="btn btn-warning" id="waterBtn" onclick="detectWater()" disabled>
-          💧 수계 감지
-        </button>
-        <button class="btn btn-success" id="gridBtn" onclick="generateGrid()" disabled>
-          ⊞ 격자 생성
-        </button>
-      </div>
-    </div>
-
-    <!-- 저장 -->
-    <div>
-      <div class="section-label">저장</div>
-      <div class="filename-wrap" style="margin-bottom:8px;">
-        <div class="filename-label">파일명 (선택)</div>
-        <input type="text" id="csvFilename" class="filename-input" placeholder="자동 생성">
-        <div class="filename-hint">.csv + _polygon.json 으로 저장됩니다</div>
-      </div>
-      <button class="btn btn-download" id="csvBtn" onclick="downloadCSV()" disabled>
-        ⬇ CSV + JSON 저장
-      </button>
-    </div>
-
-    <div class="divider"></div>
-
-    <!-- 편집 -->
-    <div>
-      <div class="section-label">편집</div>
-      <div class="btn-group">
-        <button class="btn btn-secondary" id="undoBtn" onclick="undoPoint()" disabled>
-          ↩ 마지막 꼭짓점 취소
-        </button>
-        <button class="btn btn-danger" id="clearBtn" onclick="clearAll()" disabled>
-          ✕ 전체 초기화
-        </button>
-      </div>
-    </div>
-
-    <div class="divider"></div>
-
-    <!-- 꼭짓점 목록 -->
-    <div>
-      <div class="section-label">꼭짓점</div>
+    <div class="popup" id="coordsPopup">
+      <div class="popup-title">꼭짓점 목록</div>
       <div id="coordsList" class="coords-list">
         <div class="coords-empty">아직 없음</div>
       </div>
     </div>
+  </div>
 
-    <!-- 결과 통계 -->
-    <div id="statsCard" style="display:none;">
-      <div class="section-label">결과</div>
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-card-label">전체 후보</div>
-          <div class="stat-card-val blue" id="r-total">—</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-card-label">수계 제외</div>
-          <div class="stat-card-val red" id="r-water">—</div>
-        </div>
-        <div class="stat-card" style="grid-column:1/-1;">
-          <div class="stat-card-label">최종 격자 (격자 크기)</div>
-          <div class="stat-card-val blue" id="r-count">—</div>
-          <div style="font-size:10px;color:#9ca3af;margin-top:1px;" id="r-size"></div>
-        </div>
-      </div>
-      <div class="progress-bar" id="progressBar">
-        <div class="progress-fill" id="progressFill"></div>
-      </div>
-    </div>
+  <!-- 상태 메시지 -->
+  <div class="sep"></div>
+  <div id="status" class="status-chip info">지도를 클릭해서 꼭짓점을 찍으세요 (최소 3개)</div>
 
+  <!-- 프로그레스 바 (툴바 하단) -->
+  <div class="progress-bar" id="progressBar">
+    <div class="progress-fill" id="progressFill"></div>
   </div>
 </div>
 
@@ -335,33 +362,70 @@ canvas { display: none; }
   <div id="map"></div>
   <canvas id="tileCanvas"></canvas>
 
-  <div class="preview-panel" id="preview">
-    <div class="preview-title">CSV 미리보기 (앞 10행)</div>
-    <pre id="previewText"></pre>
+
+</div>
+
+<!-- ── 저장 모달 ── -->
+<div class="modal-backdrop" id="saveModal">
+  <div class="modal">
+    <div class="modal-title">📁 파일로 저장</div>
+    <div class="modal-sub" id="modalSub"></div>
+    <input type="text" id="csvFilename" class="modal-input" placeholder="파일명을 입력하세요">
+    <div class="modal-hint">.csv + _polygon.json 두 파일이 저장됩니다</div>
+    <div class="modal-actions">
+      <button class="btn btn-secondary" onclick="closeModal()">취소</button>
+      <button class="btn btn-download" onclick="confirmDownload()">⬇ 저장</button>
+    </div>
   </div>
 </div>
 
 <script>
+// ── 팝업 토글 ─────────────────────────────────────────────────────
+function toggleCoords() {
+  const p = document.getElementById('coordsPopup');
+  p.classList.toggle('show');
+}
+document.addEventListener('click', e => {
+  if (!document.getElementById('coordsTrigger').contains(e.target))
+    document.getElementById('coordsPopup').classList.remove('show');
+});
+
+// ── 저장 모달 ─────────────────────────────────────────────────────
+function openSaveModal() {
+  const GRID_M = parseInt(document.getElementById('gridM').value);
+  document.getElementById('modalSub').textContent =
+    `셀 ${gridData.length}개 · ${GRID_M}m × ${GRID_M}m`;
+  document.getElementById('csvFilename').value = '';
+  document.getElementById('saveModal').classList.add('show');
+  setTimeout(() => document.getElementById('csvFilename').focus(), 180);
+}
+function closeModal() {
+  document.getElementById('saveModal').classList.remove('show');
+}
+function confirmDownload() {
+  downloadCSV();
+  closeModal();
+}
+document.getElementById('saveModal').addEventListener('click', e => {
+  if (e.target === document.getElementById('saveModal')) closeModal();
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal();
+  if (e.key === 'Enter' && document.getElementById('saveModal').classList.contains('show')) confirmDownload();
+});
+
 // ── 지도 ──────────────────────────────────────────────────────────
-// 수계 감지를 위해 일반 OSM 타일 사용 (밝은 배경)
 const map = L.map('map', { zoomControl:true }).setView([37.555, 126.928], 14);
 
-// 수계 감지용: 밝은 타일 (물이 파란색으로 명확히 표시됨)
-
 const detectTile = L.tileLayer(
-  'https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', 
+  'https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
   { attribution: '© OpenStreetMap contributors' }
 ).addTo(map);
 
-// const detectTile = L.tileLayer(
-//   'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-//   { attribution:'© OSM', maxZoom:19 }
-// ).addTo(map);
-
 let points=[], markers=[], polyline=null, polygon=null;
 let gridRects=[], gridData=[];
-let waterSet = new Set();  // 수계로 감지된 격자 id 세트
-let allCandidates = [];    // 구역 내 모든 후보 격자
+let waterSet = new Set();
+let allCandidates = [];
 let waterDetected = false;
 let gridDone = false;
 
@@ -402,7 +466,6 @@ function latlngToTile(lat, lng, zoom) {
   return { x, y };
 }
 
-// 타일 내 픽셀 좌표
 function latlngToPixel(lat, lng, zoom, tileX, tileY) {
   const n   = Math.pow(2, zoom);
   const px  = (lng + 180) / 360 * n * 256;
@@ -416,35 +479,33 @@ function latlngToPixel(lat, lng, zoom, tileX, tileY) {
 
 // ── 타일 이미지 로드 ──────────────────────────────────────────────
 function loadTile(z, x, y) {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     const img = new Image();
     img.crossOrigin = 'anonymous';
     const sub = ['a','b','c'][Math.abs(x+y) % 3];
     img.src = `https://${sub}.tile.openstreetmap.org/${z}/${x}/${y}.png`;
     img.onload  = () => resolve(img);
-    img.onerror = () => resolve(null); // 실패해도 계속
+    img.onerror = () => resolve(null);
   });
 }
 
 // ── 픽셀이 물인지 판별 ────────────────────────────────────────────
-// OSM 기본 타일에서 물은 #aad3df (R:170 G:211 B:223) 계열
 function isWaterPixel(r, g, b) {
-  // 물 색상 범위 (OSM 기본 스타일)
   return (
     r >= 140 && r <= 200 &&
     g >= 190 && g <= 230 &&
     b >= 210 && b <= 255 &&
-    b > g && g > r        // B > G > R (파란색 계열)
+    b > g && g > r
   );
 }
 
-// ── 수계 감지 ─────────────────────────────────────────────────────
-async function detectWater() {
+// ── 구역 생성 (수계 감지 + 셀 분할 통합) ────────────────────────
+async function analyzeAndGenerate() {
   if (points.length < 3) return;
+  document.getElementById('analyzeBtn').disabled = true;
   waterSet.clear();
   waterDetected = false;
 
-  // 후보 격자 먼저 계산
   const lats   = points.map(p=>p.lat);
   const lngs   = points.map(p=>p.lng);
   const minLat = Math.min(...lats), maxLat = Math.max(...lats);
@@ -470,28 +531,22 @@ async function detectWater() {
     lat += LAT_STEP;
   }
 
-  setStatus('수계 감지 중... 타일 픽셀을 분석하고 있어요.', 'loading');
-  document.getElementById('statsCard').style.display='block';
+  setStatus('수계 분석 중...', 'loading');
   const pb = document.getElementById('progressBar');
   const pf = document.getElementById('progressFill');
   pb.style.display='block'; pf.style.width='0%';
 
-  // 줌 레벨 — 격자 크기에 따라 결정 (너무 작으면 픽셀 부정확)
   const zoom = GRID_M <= 100 ? 16 : GRID_M <= 200 ? 15 : 14;
-
-  // 필요한 타일 수집
   const tileCache = {};
   const total = allCandidates.length;
 
   for (let i=0; i<total; i++) {
     const g = allCandidates[i];
-
-    // 격자 4개 꼭짓점 좌표 (SW, SE, NE, NW)
     const corners = [
-      { lat: g.lat,  lng: g.lng  },   // SW
-      { lat: g.lat,  lng: g.lng2 },   // SE
-      { lat: g.lat2, lng: g.lng2 },   // NE
-      { lat: g.lat2, lng: g.lng  },   // NW
+      { lat: g.lat,  lng: g.lng  },
+      { lat: g.lat,  lng: g.lng2 },
+      { lat: g.lat2, lng: g.lng2 },
+      { lat: g.lat2, lng: g.lng  },
     ];
 
     const canvas = document.getElementById('tileCanvas');
@@ -499,25 +554,19 @@ async function detectWater() {
     let isWater  = false;
 
     for (const corner of corners) {
-      if (isWater) break;  // 이미 수계로 판정됐으면 나머지 꼭짓점 생략
-
+      if (isWater) break;
       const tile = latlngToTile(corner.lat, corner.lng, zoom);
       const key  = `${zoom}/${tile.x}/${tile.y}`;
-
       if (!tileCache[key]) {
         tileCache[key] = await loadTile(zoom, tile.x, tile.y);
       }
       const img = tileCache[key];
       if (!img) continue;
-
       canvas.width = 256; canvas.height = 256;
       ctx.drawImage(img, 0, 0);
-
       const px = latlngToPixel(corner.lat, corner.lng, zoom, tile.x, tile.y);
       const x0 = Math.max(0, Math.min(255, Math.floor(px.px)));
       const y0 = Math.max(0, Math.min(255, Math.floor(px.py)));
-
-      // 꼭짓점 주변 3×3 픽셀 샘플링 — 과반수(5개 이상)가 물이면 해당 꼭짓점을 수계로 판정
       let waterCount = 0;
       for (let dy=-1; dy<=1; dy++) {
         for (let dx=-1; dx<=1; dx++) {
@@ -527,13 +576,11 @@ async function detectWater() {
           if (isWaterPixel(pixel[0], pixel[1], pixel[2])) waterCount++;
         }
       }
-      // 꼭짓점 하나라도 수계면 격자 전체를 수계로 판정
       if (waterCount >= 5) isWater = true;
     }
 
     if (isWater) waterSet.add(g.id);
 
-    // 진행률
     if (i % 20 === 0) {
       pf.style.width = ((i/total)*100).toFixed(0)+'%';
       await new Promise(r => setTimeout(r, 0));
@@ -542,27 +589,8 @@ async function detectWater() {
 
   pf.style.width = '100%';
   pb.style.display = 'none';
-  waterDetected = true;
 
-  // 수계 격자 미리 표시
-  gridRects.forEach(r=>map.removeLayer(r)); gridRects=[];
-  for (const g of allCandidates) {
-    if (waterSet.has(g.id)) {
-      const r = L.rectangle([[g.lat,g.lng],[g.lat2,g.lng2]], {
-        color:'#0ea5e9', weight:0.4, fillColor:'#0ea5e9', fillOpacity:0.35, dashArray:'2 2'
-      }).bindTooltip('수계 — 격자 제외').addTo(map);
-      gridRects.push(r);
-    }
-  }
-
-  setStatus(`수계 감지 완료 — ${waterSet.size}개 격자 수계 감지됨. 격자 생성을 눌러주세요`, 'success');
-  document.getElementById('gridBtn').disabled = false;
-  updateUI();
-}
-
-// ── 격자 생성 ─────────────────────────────────────────────────────
-function generateGrid() {
-  if (!allCandidates.length) return;
+  // ── 셀 분할 ──
   gridRects.forEach(r=>map.removeLayer(r)); gridRects=[];
   gridData=[];
 
@@ -573,7 +601,6 @@ function generateGrid() {
   if (polyline) { map.removeLayer(polyline); polyline=null; }
   markers.forEach(m=>map.removeLayer(m)); markers=[];
 
-  const GRID_M = parseInt(document.getElementById('gridM').value);
   let id=1, waterExcl=0;
 
   for (const g of allCandidates) {
@@ -594,31 +621,16 @@ function generateGrid() {
       });
       const r = L.rectangle([[g.lat,g.lng],[g.lat2,g.lng2]], {
         color:'#60a5fa', weight:0.5, fillColor:'#60a5fa', fillOpacity:0.12
-      }).bindTooltip(`격자 ${id} | ${g.cLat.toFixed(5)}, ${g.cLng.toFixed(5)}`).addTo(map);
+      }).bindTooltip(`셀 ${id} | ${g.cLat.toFixed(5)}, ${g.cLng.toFixed(5)}`).addTo(map);
       gridRects.push(r);
       id++;
     }
   }
 
-  document.getElementById('r-total').textContent = allCandidates.length.toLocaleString()+'개';
-  document.getElementById('r-water').textContent = waterExcl.toLocaleString()+'개';
-  document.getElementById('r-count').textContent = gridData.length.toLocaleString()+'개';
-  document.getElementById('r-size').textContent = GRID_M+'m × '+GRID_M+'m';
-  document.getElementById('statsCard').style.display='block';
-
-  const header = 'grid_id,center_lat,center_lng,sw_lat,sw_lng,ne_lat,ne_lng';
-  const rows   = gridData.slice(0,10).map(g=>
-    `${g.id},${g.centerLat},${g.centerLng},${g.swLat},${g.swLng},${g.neLat},${g.neLng}`
-  );
-  document.getElementById('previewText').innerHTML =
-    `<span class="head">${header}</span>\n` + rows.join('\n') +
-    (gridData.length>10 ? `\n<span style="color:#555">... 외 ${gridData.length-10}행</span>` : '');
-  document.getElementById('preview').style.display='block';
-  document.getElementById('csvBtn').disabled=false;
-  document.getElementById('gridBtn').disabled=true;
-  gridDone=true;
-  setStatus(`완료 — 유효 격자 ${gridData.length}개 (수계 ${waterExcl}개 제외)`, 'success');
+  gridDone = true;
+  setStatus(`완료 — 셀 ${gridData.length}개 (수계 ${waterExcl}개 제외)`, 'success');
   updateUI();
+  openSaveModal();
 }
 
 // ── CSV + JSON 저장 ───────────────────────────────────────────────
@@ -627,7 +639,6 @@ function downloadCSV() {
   const defaultName = `grid_${document.getElementById('gridM').value}m_${gridData.length}cells`;
   const baseName = (customName || defaultName).replace(/\.csv$/i,'');
 
-  // ── CSV ──
   const header = 'grid_id,center_lat,center_lng,sw_lat,sw_lng,ne_lat,ne_lng';
   const rows   = gridData.map(g=>
     `${g.id},${g.centerLat},${g.centerLng},${g.swLat},${g.swLng},${g.neLat},${g.neLng}`
@@ -638,7 +649,6 @@ function downloadCSV() {
   });
   csvLink.click();
 
-  // ── JSON (polygon_coords) ──
   const polygonJson = JSON.stringify({
     polygon_coords: points.map(p => [
       parseFloat(p.lat.toFixed(6)),
@@ -674,8 +684,6 @@ function clearAll() {
   if(polygon) {map.removeLayer(polygon); polygon=null;}
   gridData=[]; allCandidates=[]; waterSet.clear();
   waterDetected=false; gridDone=false;
-  ['statsCard','preview'].forEach(id=>document.getElementById(id).style.display='none');
-  document.getElementById('csvBtn').disabled=true;
   setStatus('지도를 클릭해서 꼭짓점을 찍으세요 (최소 3개)', 'info');
   updateUI();
 }
@@ -683,7 +691,7 @@ function clearAll() {
 function setStatus(msg, type='') {
   const el = document.getElementById('status');
   el.textContent = msg;
-  el.className = 'status-box';
+  el.className = 'status-chip';
   if (type === 'loading') el.classList.add('loading');
   else if (type === 'success') el.classList.add('success');
   else if (type === 'info') el.classList.add('info');
@@ -691,10 +699,10 @@ function setStatus(msg, type='') {
 
 function updateUI() {
   const n=points.length, done=gridDone;
-  document.getElementById('undoBtn').disabled  = n===0||done;
-  document.getElementById('clearBtn').disabled = n===0&&!gridData.length;
-  document.getElementById('waterBtn').disabled = n<3||done;
-  document.getElementById('gridBtn').disabled  = !waterDetected||done||allCandidates.length===0;
+  document.getElementById('undoBtn').disabled    = n===0||done;
+  document.getElementById('clearBtn').disabled   = n===0&&!gridData.length;
+  document.getElementById('analyzeBtn').disabled = n<3||done;
+  document.getElementById('coordCount').textContent = n;
   const list=document.getElementById('coordsList');
   list.innerHTML = n===0
     ? '<div class="coords-empty">아직 없음</div>'
