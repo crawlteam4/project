@@ -20,31 +20,31 @@ st.markdown('''
 </style>
 ''', unsafe_allow_html=True)
 
-# with st.sidebar:
-#     st.write("📊 **전체 분석 진행률**")
-#     st.progress(50)
-#     st.info("⚙️ **2단계: 분석 설계**\n\n격자를 생성하고 원하는 입력값과 고려변수를 선택해 보세요.")
-#     st.divider()
-
 with st.sidebar:
-
-
-    st.markdown("### 📋 분석 진행 현황")
-    
-    # 진행률을 숫자로 보여주는 대신 간결한 텍스트로 대체
-    st.caption("전체 공정률: 50%")
-
-
-    
-    # 각 단계를 하나로 묶음
-    st.write("✅ **1. 데이터 탐색**")
-    st.write("🔵 **2. 분석 설계** (진행 중)")
-    st.write("⚪ **3. 후보지 계산**")
-    st.write("⚪ **4. 결과 확인**")
-
+    st.write("📊 **전체 분석 진행률**")
+    st.progress(50)
+    st.info("⚙️ **2단계: 분석 설계**\n\n격자를 생성하고 원하는 입력값과 고려변수를 선택해 보세요.")
     st.divider()
-    # 상세 가이드는 가장 중요한 핵심 한 문장만
-    st.info("**2단계: 분석 설계**\n\n격자를 생성하고 분석에 사용할 변수와 가중치를 설정해 주세요.")
+
+# with st.sidebar:
+
+
+#     st.markdown("### 📋 분석 진행 현황")
+    
+#     # 진행률을 숫자로 보여주는 대신 간결한 텍스트로 대체
+#     st.caption("전체 공정률: 50%")
+
+
+    
+#     # 각 단계를 하나로 묶음
+#     st.write("✅ **1. 데이터 탐색**")
+#     st.write("🔵 **2. 분석 설계** (진행 중)")
+#     st.write("⚪ **3. 후보지 계산**")
+#     st.write("⚪ **4. 결과 확인**")
+
+#     st.divider()
+#     # 상세 가이드는 가장 중요한 핵심 한 문장만
+#     st.info("**2단계: 분석 설계**\n\n격자를 생성하고 분석에 사용할 변수와 가중치를 설정해 주세요.")
 
 
 st.title('D-DAS',text_alignment='right')

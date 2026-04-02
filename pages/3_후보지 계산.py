@@ -79,7 +79,7 @@ def main():
             set_score(dfs1, weight_dic)
 
             st.write('최적 후보지 계산 중... ')
-            rank_dic, max_radar_num = calc_rank(dfs1, df_grid, RANGE_KM, radar_num=50, polygon_coords=grid_bd_points)
+            rank_dic, max_radar_num = calc_rank(dfs1, df_grid, RANGE_KM, radar_num, polygon_coords=grid_bd_points)
 
             df_population = dfs2['population']
             df_area_density = dfs2['area_density']
@@ -164,12 +164,14 @@ def main():
         # 1. 분석 조건 요약 (사정거리 등 핵심 수치 강조)
         range_km = st.session_state['user_input']['range_km']
         radar_num = st.session_state['user_input']['radar_num']
-        
+        results    = st.session_state.get('calc_results')
+
         with st.container(border=True):
+            num_fac=results.get('selected_facilities')
             st.markdown("### 📊 분석 조건 요약")
             c1, c2 = st.columns(2)
             c1.metric("사정 거리", f"{range_km}km")
-            c2.metric("후보지 수", f"{radar_num}개")
+            c2.metric("후보지 수", f"{len(results['df_rank'])}개")
 
         # 2. 선택된 시설 리스트 (Badge 스타일 혹은 리스트 정리)
         name_list = st.session_state['user_input']['selected_weights']

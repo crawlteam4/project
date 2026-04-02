@@ -269,7 +269,7 @@ def main():
         st.info("🔎 **1단계: 데이터 탐색**\n\n서울시 전역의 기초 데이터를 자유롭게 탐색해 보세요.")
 
 
-    st.title("시설물 및 밀집도 통합 분석 대시보드")
+    st.title("입지 데이터 탐색")
     st.write("")
 
     with st.expander("🔍 **이 페이지에서는 무엇을 하나요?**", expanded=False):

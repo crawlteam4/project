@@ -47,8 +47,8 @@ st.markdown("""
 with st.container():
     col1, col2= st.columns([3.73, 1])
     with col1:
-        st.title("D-DAS : 대드론 방어체계 최적지 선정 서비스")
-        st.write( '(Drone Defense Allocation Service)')
+        st.title("대드론 방어체계")
+        st.write( '(D-DAS : Drone Defense Allocation Service)')
         st.write("")
         st.write("💡 **안내**")
         st.caption("본 서비스는 국내 도심 환경을 고려한 대드론 방어체계(C-UAS) 최적 입지 분석을 제공합니다.")
@@ -151,6 +151,6 @@ if sub_butt:
         
         if cursor.fetchone():
             st.session_state.logged_in = True
-            st.switch_page("pages/1_입지 분석.py")
+            st.switch_page("pages/1_데이터 탐색.py")
             
         

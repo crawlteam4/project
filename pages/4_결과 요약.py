@@ -74,15 +74,7 @@ def show_score_chart(df_rank: pd.DataFrame):
             '점수 차이': round(scores[i] - scores[i+1], 5),
             '비율':      f"{(scores[i] - scores[i+1]) / scores[0] * 100:.1f}%",
         } for i in range(len(scores) - 1)]
-        st.markdown("#### 구간별 점수 차이")
-        st.dataframe(
-            pd.DataFrame(drop_data).style.apply(
-                lambda row: ['background-color:#FEF9C3; color:#454545; font-weight:bold;'
-                             if row.name == elbow_idx else '' for _ in row],
-                axis=1,
-            ),
-            hide_index=True, use_container_width=True,
-        )
+        
 
 
 # ── 세션 상태 확인 ────────────────────────────────────────────────
@@ -100,32 +92,71 @@ if user_input is None:
 
 
 
-# ── 선택된 시설 배지 표시 ──────────────────────────────────────────
-selected_facilities = results.get('selected_facilities', [])
-if selected_facilities:
-    st.markdown("### 분석 조건")
-    col1, col2, col3 = st.columns(3)
+# # ── 선택된 시설 배지 표시 ──────────────────────────────────────────
+# selected_facilities = results.get('selected_facilities', [])
+# if selected_facilities:
+#     st.markdown("### 분석 조건")
+#     col1, col2, col3 = st.columns(3)
+#     with col1:
+#         st.metric("선택된 시설 수", len(selected_facilities))
+#     with col2:
+#         st.metric("분석 범위", f"{results.get('range_km', 'N/A')} km")
+#     with col3:
+#         st.metric("상위 후보지", len(results['df_rank']))
+    
+#     # 배지 스타일로 선택된 시설 표시
+#     st.markdown("**선택된 시설:**")
+#     badges_html = ""
+#     colors = ["#E0E7FF", "#E0F2FE", "#F0FDF4", "#FEF3C7", "#FCE7F3", "#F3E8FF", "#ECFDF5", "#FEE2E2", "#DBEAFE", "#FEF08A"]
+#     for i, facility in enumerate(selected_facilities):
+#         color = colors[i % len(colors)]
+#         badges_html += f"""<span style='display: inline-block; background-color: {color}; padding: 6px 12px; border-radius: 16px; margin-right: 6px; margin-bottom: 6px; font-size: 13px; font-weight: 500;'>{facility}</span>"""
+    
+#     st.markdown(badges_html, unsafe_allow_html=True)
+#     st.divider()
+col1,col2=st.columns([6,3])
+with col1, col2:
     with col1:
-        st.metric("선택된 시설 수", len(selected_facilities))
+        st.header('후보지 순위별 점수 그래프')
+        df_rank  = results['df_rank']
+        show_score_chart(df_rank)
     with col2:
-        st.metric("분석 범위", f"{results.get('range_km', 'N/A')} km")
-    with col3:
-        st.metric("상위 후보지", len(results['df_rank']))
-    
-    # 배지 스타일로 선택된 시설 표시
-    st.markdown("**선택된 시설:**")
-    badges_html = ""
-    colors = ["#E0E7FF", "#E0F2FE", "#F0FDF4", "#FEF3C7", "#FCE7F3", "#F3E8FF", "#ECFDF5", "#FEE2E2", "#DBEAFE", "#FEF08A"]
-    for i, facility in enumerate(selected_facilities):
-        color = colors[i % len(colors)]
-        badges_html += f"""<span style='display: inline-block; background-color: {color}; padding: 6px 12px; border-radius: 16px; margin-right: 6px; margin-bottom: 6px; font-size: 13px; font-weight: 500;'>{facility}</span>"""
-    
-    st.markdown(badges_html, unsafe_allow_html=True)
-    st.divider()
+        range_km = st.session_state['user_input']['range_km']
+        radar_num = st.session_state['user_input']['radar_num']
+        results    = st.session_state.get('calc_results')
 
-st.header('후보지 순위별 점수 그래프')
-df_rank  = results['df_rank']
-show_score_chart(df_rank)
+        with st.container(border=True):
+            num_fac=results.get('selected_facilities')
+            st.markdown("### 📊 분석 조건 요약")
+            c1, c2 = st.columns(2)
+            c1.metric("사정 거리", f"{range_km}km")
+            c2.metric("후보지 수", f"{len(results['df_rank'])}개")
+
+        # 2. 선택된 시설 리스트 (Badge 스타일 혹은 리스트 정리)
+        name_list = st.session_state['user_input']['selected_weights']
+        select_name_list = [name for name, weight in name_list.items() if weight != 0]
+
+        with st.container(border=True):
+            st.subheader(f"🏢 선택 시설 ({len(select_name_list)}개)")
+            if select_name_list:
+                # 텍스트 앞에 이모지를 붙여 시각적 요소 추가
+                for i, name in enumerate(select_name_list, 1):
+                    st.markdown(f"**{i}.** {name}")
+            else:
+                st.caption("선택된 시설이 없습니다.")
+
+st.markdown("#### 구간별 점수 차이")
+st.dataframe(
+    pd.DataFrame(drop_data).style.apply(
+        lambda row: ['background-color:#FEF9C3; color:#454545; font-weight:bold;'
+                        if row.name == elbow_idx else '' for _ in row],
+        axis=1,
+    ),
+    hide_index=True, use_container_width=True,
+)
+
+
+
 
 st.header("후보지별 커버리지 지도")
 
