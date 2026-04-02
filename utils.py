@@ -167,5 +167,3 @@ def set_common_banner():
             st.markdown("#### 결과 활용")
             st.caption("상세 점수 확인 및 시나리오를 비교합니다.")
 
-        st.divider()
-

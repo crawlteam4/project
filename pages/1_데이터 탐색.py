@@ -175,7 +175,8 @@ def render_facility_tab():
     with col_filter:
         with st.container(border=True):
             st.markdown("##### 필터 설정")
-            sel_main = st.multiselect("대분류 선택", list(FACILITY_MAP.keys()), placeholder="전체 조회")
+            sel_main = st.multiselect("대분류 선택", list(FACILITY_MAP.keys()), placeholder="전체 조회",
+                                      help='미선택시 전체 선택')
             
             mid_opts = []
             main_list = sel_main if sel_main else list(FACILITY_MAP.keys())
@@ -216,7 +217,14 @@ def render_facility_tab():
 
     # 2. 왼쪽 컬럼: 지도 출력
     with col_map:
-        m = folium.Map(location=[37.549268, 126.988717], zoom_start=11)
+        m = folium.Map(location=[37.549268, 126.988717], zoom_start=12,
+                       tiles=None)
+        folium.TileLayer(
+                    tiles='https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
+                    attr='© OpenStreetMap contributors',
+                    name='Layer',   # ← 레이어 컨트롤에 표시될 이름
+                    show=True
+                ).add_to(m)
         
         # 버튼이 눌렸을 때만 지도의 Marker 추가 로직 실행
         if search_btn and not final_df.empty:
@@ -266,7 +274,12 @@ def render_grid_tab():
     # ---------------------------------------------------------
     with col_map:
         # 기본 지도 객체 생성 (기본 서울 중심)
-        m_g = folium.Map(location=[37.5665, 126.9780], zoom_start=11, tiles='cartodbpositron')
+        m_g = folium.Map(location=[37.5665, 126.9780], zoom_start=12, tiles=None)
+        folium.TileLayer(
+                    tiles='cartodbpositron',
+                    name='Layer',   # ← 레이어 컨트롤에 표시될 이름
+                    show=True
+                ).add_to(m_g)
         
         COLOR_THEME = {"인구 밀집도": "YlOrRd", "건물 고도&밀집도": "PuBu"}
         gdfs_dict = {}
@@ -342,12 +355,9 @@ def render_grid_tab():
                         use_container_width=True
                     )
 
-        # 지도 최종 렌더링 (와이드 너비 설정)
+        # 3. 최종 지도 출력 (버튼 밖: 항상 실행됨)
         folium.LayerControl().add_to(m_g)
         folium_static(m_g, width=1200, height=650)
-    # 3. 최종 지도 출력 (버튼 밖: 항상 실행됨)
-    folium.LayerControl().add_to(m_g)
-    folium_static(m_g, width=1200, height=650)
 
 # =========================================================
 # 4. 앱 실행

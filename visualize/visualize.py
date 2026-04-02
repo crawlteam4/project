@@ -26,10 +26,19 @@ def visualize(df_grid, dfs, rank_dic, RANGE_KM, ICON_MAP,
     mid_lat = (df_grid["ne_lat"].max() + df_grid["sw_lat"].min()) / 2
     mid_lng = (df_grid["sw_lng"].min() + df_grid["ne_lng"].max()) / 2
     m = folium.Map(location=[mid_lat, mid_lng], 
-                   zoom_start=14,
-                   tiles='https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
-                   attr='© OpenStreetMap contributors' 
-                   )
+               zoom_start=14,
+               tiles=None)
+    folium.TileLayer(
+                        tiles='https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
+                        attr='© OpenStreetMap contributors',
+                        name='Layer',   # ← 레이어 컨트롤에 표시될 이름
+                        show=True
+                    ).add_to(m)
+    # m = folium.Map(location=[mid_lat, mid_lng], 
+    #                zoom_start=14,
+    #                tiles='https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
+    #                attr='© OpenStreetMap contributors' 
+    #                )
 
     # ── 구역 경계 표시 ──────────────────────────────────────────────
     if polygon_coords is not None:
