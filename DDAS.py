@@ -53,7 +53,8 @@ with st.container():
     with col1:
         st.subheader("대드론 방어체계 최적 입지 선정 서비스 (DDAS) ")
         st.caption( 'DDAS : Drone Defense Allocation Service')
-        st.divider()
+
+st.divider()
 
 
 chan1, id_log=st.columns([5,2])
@@ -120,16 +121,17 @@ with id_log:
         st.write('')
         # 3. 로그인 버튼: type="primary"로 색상 강조 및 가로 꽉 채우기
         sub_butt = st.button('로그인', use_container_width=True, type="primary")
-
-        # 4. 박스 내부 하단 정리
-        st.divider()
-        
+        st.write('')
+        st.write('')
         # 회원가입 안내를 2열로 배치하여 박스 하단 밀도를 높임
-        c1, c2 = st.columns([5, 2])
+        # 기존 [5, 2]에서 c2의 공간을 조금 더 늘려줌 (예: [5, 3] 또는 [4, 2])
+        c1, c2 = st.columns([5, 3]) 
+
         with c1:
             st.caption("계정이 없으신가요?")
         with c2:
-            if st.button("회원가입"):
+            # use_container_width=True를 설정하여 컬럼 너비만큼 버튼을 좌우로 쫙 펴줌
+            if st.button("회원가입", use_container_width=True):
                 signup_dialog()
         
 

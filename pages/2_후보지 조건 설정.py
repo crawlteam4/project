@@ -59,9 +59,9 @@ def render_help():
             st.markdown("#### **2. 격자 생성**")
             # 강조색 활용
             st.markdown("""
-            - 우측 생성기에서 **:blue[[격자 크기]]** 설정
-            - **:orange[[수계 감지]]** 버튼 클릭
-            - **:green[[격자 생성]]** 버튼 클릭 후 저장
+            - 좌측 생성기에서 **:blue[[셀 간격]]** 설정
+            - **:orange[[구역 생성]]** 버튼 클릭
+            - 파일명 선택 후 **:green[[저장]]** 버튼 클릭
             """)
 
         st.divider()
@@ -78,7 +78,7 @@ def render_help():
             - 시설 체크 시 자동으로 뜨는 **:blue[가중치 값]** 입력 (default 값 제공)
             - 최하단 **:red[[Select]]** 버튼 클릭
             """)
-
+    st.write('')
     # 주의사항을 st.warning으로 더 강력하게 표시
     st.warning("**주의**: 반드시 [따라하기 가이드] 순서대로 진행해야 정상적으로 계산이 실행됩니다.")
 
@@ -104,10 +104,27 @@ with st.container():
         
 
     with col2: 
+        # 컨테이너 내부를 2개의 동일한 너비(단)로 나눔
+        with st.container(border=True):
+            # 내부 공간을 2개로 분할
+            sub_col1, sub_col2 = st.columns(2)
+            
+            with sub_col1:
+                st.number_input(
+                    '사정 거리 (km)', 
+                    min_value=0.0, max_value=100.0, value=1.5, 
+                    step=0.2, format='%.1f', key='range_km'
+                )
+                
+            with sub_col2:
+                st.text_input(
+                    '후보지 수', 
+                    value='3', key='radar_num', 
+                    placeholder='후보지 수를 입력하세요'
+                )
+        
 
         with st.container(border=True):
-            st.number_input('사정 거리 (km)', min_value=0.0, max_value=100.0, value=1.5, step=0.2, format='%.1f', key='range_km')
-            st.text_input('후보지 수', value='3', key='radar_num', placeholder='후보지 수를 입력하세요')
 
             options = ['전력시설', '정보통신시설', '국가 공공기관 시설', '교통 항공 항만 시설', '수원 시설', '지하공동구',
                      '산업 시설', '기지국', '병원', '과학연구', '교정 시설', '방송시설']

@@ -285,7 +285,7 @@ def get_latest_grid_data():
     download_dir = os.path.join(os.path.expanduser("~"), "Downloads")
 
     # grid로 시작하는 CSV 파일 전체 검색
-    csv_files = glob(os.path.join(download_dir, "grid*.csv"))
+    csv_files = glob(os.path.join(download_dir, "*.csv"))
 
     if not csv_files:
         print(" 다운로드 폴더에서 격자 CSV 파일을 찾을 수 없다.")

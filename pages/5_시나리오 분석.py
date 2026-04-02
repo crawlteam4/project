@@ -9,14 +9,26 @@ from utils import set_common_banner
 st.set_page_config(layout="wide")
 set_common_banner()
 
+@st.dialog(" ", width="medium")
+def render_help():
+    st.subheader('도움말')
+    st.write("이 페이지는 **3단계에서 저장한 시나리오**를 불러와 상호 비교 할 수 있도록 지원합니다.")
+    st.write("") 
+    st.info('예: 같은 지역에서 사정거리가 다른 무기 운용 시 등')
 
+    
 # if "logged_in" not in st.session_state or not st.session_state.logged_in:
 #     st.error("로그인이 필요합니다.")
 #     st.stop()  # 이 아래 코드는 실행되지 않음
     
-
-st.subheader("시나리오 비교")
-st.divider()
+# title 과 도움말버튼
+header_col, help_col = st.columns([10, 1])
+with header_col:
+    st.subheader("시나리오 비교")
+with help_col:
+    st.write("") # 수직 정렬용 여백
+    if st.button("도움말"):
+        render_help()
 
 
 def building_cover(coords_grid, coords_building, RANGE_KM):
@@ -64,7 +76,7 @@ def show_conditions(s):
 
 def show_score_comparison(s1, s2):
     #두 시나리오 점수를 한 차트에 겹쳐서 표시
-    st.markdown("#### 후보지 순위별 점수 비교")
+    st.markdown("##### 후보지 순위별 점수 비교")
 
     fig = go.Figure()
 
@@ -106,7 +118,7 @@ def show_score_comparison(s1, s2):
 
 def show_coverage_comparison(s1, s2):
     #두 시나리오 누적 커버율을 한 차트에 표시
-    st.markdown("#### 누적 커버율 비교")
+    st.markdown("##### 누적 커버율 비교")
 
     fig = go.Figure()
 
@@ -146,14 +158,14 @@ def show_coverage_comparison(s1, s2):
 
 
 def show_rank_table_comparison(s1, s2):
-    st.markdown("#### 후보지 상세 비교")
+    st.markdown("##### 후보지 상세 비교")
     col1, col2 = st.columns(2)
 
     for col, s in [(col1, s1), (col2, s2)]:
         with col:
             st.markdown(f"**{s['name']}**")
             df = s['df_rank'][['rank', 'score', 'lat', 'lng']].copy()
-            df.columns = ['순위', '점수', '위도', '경도']
+            df.columns = ['순위', '종합점수 (정규화 후)', '위도', '경도']
             st.dataframe(df, hide_index=True, use_container_width=True)
 
 
@@ -188,7 +200,7 @@ def main():
     tab1, tab2, tab3, tab4 = st.tabs(['입력 조건 비교','점수 비교','누적 커버율','상세 비교'])
     
     with tab1:
-        st.markdown("#### 입력 조건 비교")
+        st.markdown("##### 입력 조건 비교")
         col1, col2 = st.columns(2)
         with col1:
             with st.container(border=True):

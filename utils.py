@@ -157,13 +157,12 @@ def set_common_banner():
 
     # 사이드바 이용 가이드
     with st.sidebar:
-        with st.expander("**이용 가이드**", expanded=False):
-            st.markdown("#### 데이터 탐색")
-            st.caption("서울시 전역의 데이터를 지도에서 확인하고 분포를 파악합니다.")
-            st.markdown("#### 후보자 조건 설정")
-            st.caption("격자 영역 생성 및 가중치를 설정합니다.")
-            st.markdown("#### 후보지 계산")
-            st.caption("최적 배치 지점을 알고리즘이 산출합니다.")
-            st.markdown("#### 결과 활용")
-            st.caption("상세 점수 확인 및 시나리오를 비교합니다.")
+        with st.expander("**유의사항**", expanded=False):
+            st.write("")
+            st.write("")
 
+            st.markdown("각 페이지의 **도움말** 버튼에서  \n해당 페이지의 자세한 사용법을 확인할 수 있습니다.")
+            st.divider()
+            st.markdown("""
+                **시나리오 분석**은  \n후보지 계산 페이지에서  \n시나리오를 **2개 이상** 저장해야  \n이용할 수 있습니다.""")
+            st.write("")

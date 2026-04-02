@@ -8,6 +8,14 @@ from calculate.calculate import building_cover
 from db.db import *
 from utils import set_common_banner
 
+
+@st.dialog(" ", width="medium")
+def render_help():
+    st.subheader('도움말')
+    st.write("이 페이지는 **3단계 계산을 통해 선정된 예비 후보지들**간의 원할한 비교를 위해 그래프와 표 등을 제공합니다.")
+    st.write("") 
+    st.warning('가장 마지막에 분석을 시행한 시나리오에 대한 내용.')
+
 st.set_page_config(layout="wide")
 set_common_banner()
 
@@ -37,7 +45,15 @@ if st.session_state.get('calc_results') ==None:
     st.page_link("pages/2_후보지 조건 설정.py", label="조건 설정 페이지로 이동")
     st.stop()  # 여기서 실행 중단
 
-st.subheader("결과 요약")
+# title 과 도움말버튼
+header_col, help_col = st.columns([10, 1])
+with header_col:
+    st.subheader("결과 요약")
+with help_col:
+    st.write("") # 수직 정렬용 여백
+    if st.button("도움말"):
+        render_help()
+
 
 results    = st.session_state.get('calc_results')
 
@@ -95,7 +111,7 @@ if len(scores) >= 2:
     drop_data = [{
         '구간':      f"{ranks[i]}순위 → {ranks[i+1]}순위",
         '점수 차이': round(scores[i] - scores[i+1], 5),
-        '비율':      f"{(scores[i] - scores[i+1]) / scores[0] * 100:.1f}%",
+        '증감률':      f"{(scores[i] - scores[i+1]) / scores[0] * 100:.1f}%",
     } for i in range(len(scores) - 1)]
         
 
@@ -111,16 +127,25 @@ if user_input is None:
     st.info("사용자 입력 페이지에서 조건을 먼저 입력해주세요.")
     st.stop()
 
-tab1, tab2, tab3, tab4=st.tabs(['후보지별 커버리지 지도','후보지 순위별 점수 그래프','전체 후보지 비교','데이터프레임 다운로드'])
+tab1, tab2, tab3=st.tabs(['후보지 상세정보','후보지 간 비교 1','후보지 간 비교 2'])
 
-with tab2: 
+with tab3: 
     col1,col2=st.columns([6,3])
     with col1, col2:
         with col1:
-            st.markdown('<h2 style="padding: 10px; border-radius: 5px;">후보지 순위별 점수 그래프</h2>', unsafe_allow_html=True)
-            st.write("")
+            with st.container(border=True):
+                st.markdown('<h5 style="padding: 10px; border-radius: 5px;">후보지 순위별 종합점수(정규화 후) 그래프</h5>', unsafe_allow_html=True)
+                st.plotly_chart(fig, use_container_width=True)
 
-            st.plotly_chart(fig, use_container_width=True)
+                st.dataframe(
+                pd.DataFrame(drop_data).style.apply(
+                    lambda row: ['background-color:#FEF9C3; color:#454545; font-weight:bold;'
+                                    if row.name == elbow_idx else '' for _ in row],
+                    axis=1,
+                ),
+                hide_index=True, use_container_width=True,
+    )
+
 
         with col2:
             range_km = st.session_state['user_input']['range_km']
@@ -128,35 +153,30 @@ with tab2:
             results    = st.session_state.get('calc_results')
 
             with st.container(border=True):
+                # 컬럼 생성
+                sub_col1, sub_col2 = st.columns([2, 4.1])
+
                 num_fac=results.get('selected_facilities')
-                st.markdown("###  분석 조건 요약")
-                c1, c2 = st.columns(2)
-                c1.metric("사정 거리", f"{range_km}km")
-                c2.metric("후보지 수", f"{len(results['df_rank'])}개")
+                with sub_col1:
+                    st.markdown("###### 분석 조건 요약")
+                    st.metric("사정 거리", f"{range_km}km")
+                    st.metric("후보지 수", f"{len(results['df_rank'])}개")
 
             # 2. 선택된 시설 리스트 (Badge 스타일 혹은 리스트 정리)
-            name_list = st.session_state['user_input']['selected_weights']
-            select_name_list = [name for name, weight in name_list.items() if weight != 0]
+                with sub_col2:
+                    name_list = st.session_state['user_input']['selected_weights']
+                    select_name_list = [name for name, weight in name_list.items() if weight != 0]
 
-            with st.container(border=True):
-                st.subheader(f"선택 시설 ({len(select_name_list)}개)")
-                if select_name_list:
-                    # 텍스트 앞에 이모지를 붙여 시각적 요소 추가
-                    for i, name in enumerate(select_name_list, 1):
-                        st.markdown(f"**{i}.** {name}")
-                else:
-                    st.caption("선택된 시설이 없습니다.")
+                    st.markdown(f"###### 선택 시설 ({len(select_name_list)}개)")
+                    if select_name_list:
+                        # 텍스트 앞에 이모지를 붙여 시각적 요소 추가
+                        for i, name in enumerate(select_name_list, 1):
+                            st.markdown(f"•  {name}")
+                    else:
+                        st.caption("선택된 시설이 없습니다.")
 
 
 
-    st.dataframe(
-        pd.DataFrame(drop_data).style.apply(
-            lambda row: ['background-color:#FEF9C3; color:#454545; font-weight:bold;'
-                            if row.name == elbow_idx else '' for _ in row],
-            axis=1,
-        ),
-        hide_index=True, use_container_width=True,
-    )
 
 
 with tab1:
@@ -265,7 +285,7 @@ with tab1:
             # 2. 메트릭 표시 (원래 col_sel2에 있던 내용)
             st.metric("순위",         f"{selected_rank}위")
             st.metric("커버 건물 수", f"{total_covered}개")
-            st.metric("가중치 점수",  f"{weighted_score:.4f}")
+            st.metric("가중치 점수 (정규화 전)",  f"{weighted_score:.4f}")
             st.metric("반경",         f"{range_km} km")
 
     # ── Folium 지도 생성 (기존 함수 유지) ──────────────────────────────────────────
@@ -338,7 +358,7 @@ with tab1:
                     '카테고리':  CAT_KR.get(cat, cat),
                     '건물 수':   cnt,
                     '가중치':    weights.get(cat, 0),
-                    '가중치 점수': round(cnt * weights.get(cat, 0), 4),
+                    '가중치 점수 (정규화 전)': round(cnt * weights.get(cat, 0), 4),
                     '_color':   CAT_COLORS.get(cat, '#6B7280'),
                 })
             bar_df = pd.DataFrame(bar_rows).sort_values('건물 수', ascending=False)
@@ -350,7 +370,7 @@ with tab1:
                 text=bar_df['건물 수'],
                 textposition='outside',
                 hovertemplate=('<b>%{x}</b><br>건물 수: %{y}개<br>가중치: %{customdata[0]}<br>가중치 점수: %{customdata[1]}<extra></extra>'),
-                customdata=bar_df[['가중치', '가중치 점수']].values,
+                customdata=bar_df[['가중치', '가중치 점수 (정규화 전)']].values,
             ))
             fig.update_layout(xaxis_tickangle=-40, yaxis_title='건물 수', plot_bgcolor='white', paper_bgcolor='white', margin=dict(t=20, b=80, l=50, r=20), height=400)
             st.plotly_chart(fig, use_container_width=True)
@@ -358,83 +378,78 @@ with tab1:
     with col_btm_table:
         with st.container(border=True):
             # ── 상세 테이블 (기존 로직 유지) ────────────────────────────────────────────────
-            st.subheader("카테고리별 상세")
-            display_df = bar_df[['카테고리', '건물 수', '가중치', '가중치 점수']].copy()
+            st.markdown("##### 카테고리별 상세")
+            display_df = bar_df[['카테고리', '건물 수', '가중치', '가중치 점수 (정규화 전)']].copy()
             st.dataframe(display_df, hide_index=True, use_container_width=True, height=400)
 
 
-with tab3:
-    st.markdown('<h2 style="padding: 10px; border-radius: 5px;">전체 후보지 비교</h2>', unsafe_allow_html=True)
-    st.write("")
+with tab2:
+        with st.container(border=True):
+            # 종합점수 및 생활인구/토지이용 압축도 간 비교
+            results = st.session_state.get('final_df', None)
 
-    summary_rows = []
-    for i, (_, cand) in enumerate(df_rank.iterrows()):
-        c_idx     = cover_result.iloc[i]['building_indices']
-        c_df      = df_all.iloc[c_idx]
-        c_counts  = c_df['category'].value_counts()
-        w_score   = sum(c_counts.get(cat, 0) * weights.get(cat, 0) for cat in active_cats)
+            if results is None:
+                st.info("계산을 먼저 실행해주세요.")
+            else:
+                results.columns=['순위', '격자ID', '위도', '경도', '종합 점수 (정규화 후)','인구 밀도','건물 밀집도']
+                
+                # 상단 제목 및 버튼 (우측에 수평으로 배치)
+                col_title, col_buttons = st.columns([1, 2.4])
+                with col_title:
+                    st.markdown('<h5 style="padding: 10px; border-radius: 5px;">종합점수 및 생활인구/토지이용 압축도 비교</h5>', unsafe_allow_html=True)
+                    st.write("")
+                with col_buttons:
+                    c1, c2 = st.columns([1,6])
+                    c1.download_button(
+                        label="CSV Download",
+                        data=results.to_csv(index=False).encode('utf-8'),
+                        file_name='candidate_sites.csv',
+                        mime='text/csv',
+                    )
+                    if c2.button('DB Upload'):
+                        upload_result(results)
 
-        row = {
-            '순위':         int(cand['rank']),
-            '위도':         round(cand['lat'], 6),
-            '경도':         round(cand['lng'], 6),
-            '커버 건물 수': len(c_idx),
-            '가중치 점수':  round(w_score, 4),
-        }
-        for cat in active_cats:
-            row[CAT_KR.get(cat, cat)] = int(c_counts.get(cat, 0))
-        summary_rows.append(row)
-
-    summary_df = pd.DataFrame(summary_rows)
-
-    # 선택된 행 강조 표시
-    def highlight_selected(row):
-        if row['순위'] == selected_rank:
-            return ['background-color: #FEF9C3'] * len(row)
-        return [''] * len(row)
-
-    st.dataframe(
-        summary_df.style.apply(highlight_selected, axis=1),
-        hide_index=True,
-        use_container_width=True,
-    )
+                # 데이터프레임 표시
+                st.dataframe(results, use_container_width=True, hide_index=True)
 
 
-with tab4:
-    
 
-    results = st.session_state.get('final_df', None)
+            st.divider()
 
-    if results is None:
-        st.info("계산을 먼저 실행해주세요.")
-    else:
-        results.columns=['순위', '격자ID', '위도', '경도', '가중치 반영 점수','인구 밀도','건물 밀집도']
-        
-        # 상단 제목 및 버튼 (우측에 수평으로 배치)
-        col_title, col_buttons = st.columns([6, 2])
-        with col_title:
-            st.markdown('<h2 style="padding: 10px; border-radius: 5px;">후보지 결과 데이터프레임</h2>', unsafe_allow_html=True)
+            # 커버 건물 개수 간 비교
+            st.markdown('<h5 style="padding: 10px; border-radius: 5px;">커버 건물 개수 간 비교</h5>', unsafe_allow_html=True)
             st.write("")
-        with col_buttons:
-            col_dl, col_up = st.columns(2)
-            with col_dl:
-                st.download_button(
-                    label="CSV Download",
-                    data=results.to_csv(index=False).encode('utf-8'),
-                    file_name='candidate_sites.csv',
-                    mime='text/csv',
-                    use_container_width=True
-                )
-            with col_up:
-                if st.button('DB Upload', use_container_width=True):
-                    upload_result(results)
-        
-        # 데이터프레임 표시
-        st.dataframe(results, use_container_width=True)
 
+            summary_rows = []
+            for i, (_, cand) in enumerate(df_rank.iterrows()):
+                c_idx     = cover_result.iloc[i]['building_indices']
+                c_df      = df_all.iloc[c_idx]
+                c_counts  = c_df['category'].value_counts()
+                w_score   = sum(c_counts.get(cat, 0) * weights.get(cat, 0) for cat in active_cats)
 
+                row = {
+                    '순위':         int(cand['rank']),
+                    '위도':         round(cand['lat'], 6),
+                    '경도':         round(cand['lng'], 6),
+                    '커버 건물 수': len(c_idx),
+                }
+                for cat in active_cats:
+                    row[CAT_KR.get(cat, cat)] = int(c_counts.get(cat, 0))
+                summary_rows.append(row)
 
+            summary_df = pd.DataFrame(summary_rows)
 
+            # 선택된 행 강조 표시
+            def highlight_selected(row):
+                if row['순위'] == selected_rank:
+                    return ['background-color: #FEF9C3'] * len(row)
+                return [''] * len(row)
+
+            st.dataframe(
+                summary_df.style.apply(highlight_selected, axis=1),
+                hide_index=True,
+                use_container_width=True,
+            )
 
 
 

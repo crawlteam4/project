@@ -21,7 +21,6 @@ from utils import set_common_banner
 # =========================================================
 
 @st.cache_resource
-@st.cache_resource
 def get_engine():
     # st.secrets에서 정보를 가져와서 SQLAlchemy 엔진 생성
     conf = st.secrets["mysql"]
@@ -160,9 +159,9 @@ def render_help():
     # 공통 이용 방법
     st.markdown("##### 이용 방법")
     st.caption("""
-        1. 하단 탭 메뉴에서 **시설물 or 인물/건물**을 먼저 선택하세요.  
+        1. 탭 메뉴에서 **시설물 or 인물/건물**을 먼저 선택하세요.  
         2. 원하는 **데이터 조건**을 설정한 후 **[데이터 조회]** 버튼을 클릭하세요.  
-        3. 지도에서 결과를 확인하고, 필요한 경우 하단에서 **CSV 파일로 다운로드**하세요.
+        3. 지도에서 결과를 확인하고, 필요한 경우 하단에서 **CSV/GeoJson 파일로 다운로드**하세요.
         """)
     
     st.info("데이터를 확인하고 다음 단계에서 어떤 변수를 얼마만큼의 가중치로 설정할 건지 고려해보세요")
