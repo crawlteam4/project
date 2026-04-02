@@ -18,6 +18,9 @@ REQUIREMENTS   = [
     'shapely',
     'sqlalchemy',
     'pymysql',
+    'numpy',
+    'pyodbc',
+    'plotly'
 ]
 
 

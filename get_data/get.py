@@ -7,7 +7,6 @@ import json
 import geopandas as gpd
 from shapely.geometry import Point, Polygon
 from shapely import wkt
-import urllib
 
 # ────────────────────────────────────────────────────────────────────────────────
 # DB 초기화 (삭제 후 재생성)
@@ -38,53 +37,7 @@ def reset_and_create_db():
     finally:
         temp_engine.dispose()  # 임시 엔진 연결 해제
 
-def reset_and_create_db_server():
-    """서버에 데이터베이스를 완전히 삭제하고 새로 생성한다."""
-    db = st.secrets["dbserver"]
-    
-    # ── 1. 마스터(master) DB로 접속 ──────────────────────
-    # 존재하지 않는 DB(projectdb)에 접속하려 하면 에러가 나므로,
-    # 시스템 기본 DB인 'master'에 접속하여 생성 명령을 내린다.
-    params = urllib.parse.quote_plus(
-        f"DRIVER={{ODBC Driver 17 for SQL Server}};"
-        f"SERVER={db['server']};"
-        f"DATABASE=master;"  # <--- 여기가 핵심: master로 접속
-        f"UID={db['username']};"
-        f"PWD={db['password']};"
-        f"TrustServerCertificate=yes;"
-    )
-    
-    # isolation_level="AUTOCOMMIT" 설정이 반드시 필요함 (CREATE DATABASE용)
-    temp_engine = create_engine(
-        f"mssql+pyodbc:///?odbc_connect={params}",
-        isolation_level="AUTOCOMMIT" 
-    )
-    
-    try:
-        with temp_engine.connect() as conn:
-            # ── 2. 기존 DB 삭제 ──────────────────────────
-            # 다른 연결이 있을 경우 삭제가 안 될 수 있으므로 SINGLE_USER 모드로 전환 후 삭제
-            print(f"🔄 기존 데이터베이스({db['database']}) 삭제 중...")
-            conn.execute(text(f"""
-                IF EXISTS (SELECT * FROM sys.databases WHERE name = '{db['database']}')
-                BEGIN
-                    ALTER DATABASE [{db['database']}] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
-                    DROP DATABASE [{db['database']}];
-                END
-            """))
-            
-            # ── 3. 새 DB 생성 ────────────────────────────
-            # SQL Server는 MySQL과 달리 'CHARACTER SET' 구문이 다르다. 
-            # 보통 설치 시 정해진 기본값을 따르거나 COLLATE를 사용한다.
-            print(f"🆕 새 데이터베이스({db['database']}) 생성 중...")
-            conn.execute(text(f"CREATE DATABASE [{db['database']}]"))
-            
-            print(f"✅ '{db['database']}' 초기화 및 생성 완료!")
 
-    except Exception as e:
-        print(f"❌ 데이터베이스 초기화 실패: {e}")
-    finally:
-        temp_engine.dispose()
 
 
 # ────────────────────────────────────────────────────────────────────────────────
@@ -105,22 +58,7 @@ def get_engine(db_name=None):
     engine = create_engine(url, pool_pre_ping=True)
     return engine
 
-def get_engine_server(db_name=None):
-    db = st.secrets["dbserver"]
 
-    database = db_name if db_name else db['database']
-    
-    params = urllib.parse.quote_plus(
-        f'DRIVER={{ODBC Driver 17 for SQL Server}};'
-        f'SERVER={db['server']};'
-        f'DATABASE={database};'
-        f'UID={db['username']};'
-        f'PWD={db['password']};'
-        f'TrustServerCertificate=yes;' # 인증서 오류 방지용 (필수)
-    )
-
-    engine = create_engine(f"mssql+pyodbc:///?odbc_connect={params}")
-    return engine
 
 # ────────────────────────────────────────────────────────────────────────────────
 # DB 연결 상태 확인
@@ -183,17 +121,6 @@ def get_all_data(engine, data_list):
         dfs[data] = pd.read_sql(query, engine)
     return dfs
 
-def get_all_data_server(engine, data_list):
-    """
-    지정된 테이블 목록을 SELECT하여 딕셔너리로 반환합니다.
-    Returns: {테이블명: DataFrame}
-    """
-    dfs = {}
-    for data in data_list:
-        query = f"SELECT * FROM [{data}]"
-        dfs[data] = pd.read_sql(query, engine)
-    return dfs
-
 # ────────────────────────────────────────────────────────────────────────────────
 # DB 연결 해제
 # ────────────────────────────────────────────────────────────────────────────────
@@ -251,50 +178,7 @@ def get_dfs1():
 
     return dfs
 
-def get_dfs1_server():
-    """
-    DB 초기화 → 연결 → 데이터 적재 → 조회 → 연결 해제 순서로 실행합니다.
-    population_raw, density 등 중간 처리용 테이블은 제외하고 반환합니다.
-    """
-    reset_and_create_db_server()
 
-    # 1단계: DB 연결
-    engine = get_engine_server()
-
-    # 2단계: 연결 상태 확인
-    try:
-        if test_connection(engine) == 1:
-            print("1/2단계: DB 연결 및 체크 성공")
-    except Exception as e:
-        print(f"DB 연결 실패: {e}")
-        return None
-
-    # 3단계: CSV / GeoJSON 파일 DB 적재
-    import_data(engine)
-
-    # 4단계: 제외 키워드 필터링 후 테이블 목록 구성
-    file_list        = glob('final_data/*.csv')
-    exclude_keywords = ['population_raw', 'density']  # 중간 처리용 테이블 제외
-    table_names      = []
-
-    for file in file_list:
-        file_basename = os.path.basename(file)
-
-        # 제외 키워드가 파일명에 포함되면 스킵
-        if any(keyword in file_basename for keyword in exclude_keywords):
-            continue
-
-        raw_name   = os.path.splitext(file_basename)[0]
-        table_name = raw_name[3:] if raw_name.startswith('df_') else raw_name
-        table_names.append(table_name)
-
-    # 5단계: 필터링된 테이블만 SELECT
-    dfs = get_all_data_server(engine, table_names)
-
-    # 6단계: 연결 해제
-    disconnect_db(engine)
-
-    return dfs
 
 # ────────────────────────────────────────────────────────────────────────────────
 # 최신 격자 CSV + 다각형 JSON 로드
@@ -316,7 +200,7 @@ def get_latest_grid_data():
     csv_files = glob(os.path.join(download_dir, "grid*.csv"))
 
     if not csv_files:
-        print("❌ 다운로드 폴더에서 격자 CSV 파일을 찾을 수 없다.")
+        print(" 다운로드 폴더에서 격자 CSV 파일을 찾을 수 없다.")
         return None, None
 
     # 수정 시간 기준 가장 최근 파일 선택
@@ -338,7 +222,7 @@ def get_latest_grid_data():
         return df_grid, polygon_info['polygon_coords']
 
     except Exception as e:
-        print(f"❌ 데이터 로드 중 오류 발생: {e}")
+        print(f" 데이터 로드 중 오류 발생: {e}")
         return None, None
 
 
@@ -451,31 +335,3 @@ def get_dfs2(df_grid):
         'population'  : df_population,
         'area_density': df_area_density
     }
-
-
-def get_dfs2_server(df_grid):
-    """
-    DB에서 population_raw, density 테이블을 불러와
-    격자 기준으로 인구밀집도·면적밀집도를 계산하여 반환합니다.
-
-    Returns
-    -------
-    dfs2 : {'population': df_population, 'area_density': df_area_density}
-    """
-    engine    = get_engine_server()
-    data_list = ['population_raw', 'density']
-    dfs2      = get_all_data_server(engine, data_list)
-
-    # 불필요한 인덱스 컬럼 제거 후 밀집도 계산
-    df_pop_raw = dfs2['population_raw'].drop(columns='Unnamed: 0')
-    df_den_raw = dfs2['density']
-
-    df_population   = get_df_population(df_pop_raw, df_grid)
-    df_area_density = get_df_area_density(df_den_raw, df_grid)
-
-    disconnect_db(engine)
-
-    return {
-        'population'  : df_population,
-        'area_density': df_area_density
-    } 
