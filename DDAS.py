@@ -3,11 +3,18 @@ import pandas as pd
 import pymysql
 from utils import show_signup_form
 from utils import set_common_banner
+from get.get import * 
+
 
 
 # DESIGN implement changes to the standard streamlit UI/UX
 st.set_page_config(page_title="D-DAS", page_icon="images/technology.png", layout="wide", initial_sidebar_state="collapsed")
 set_common_banner()
+
+
+create_db()
+set_data()
+
 
 
 if "logged_in" not in st.session_state:
