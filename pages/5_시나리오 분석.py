@@ -11,6 +11,12 @@ set_common_banner()
 
 @st.dialog(" ", width="medium")
 def render_help():
+    """
+    시나리오 분석 페이지의 도움말 다이얼로그를 렌더링한다.
+
+    3단계에서 저장한 시나리오를 불러와
+    상호 비교하는 방법을 안내한다.
+    """
     st.subheader('도움말')
     st.write("이 페이지는 **3단계에서 저장한 시나리오**를 불러와 상호 비교 할 수 있도록 지원합니다.")
     st.write("")
@@ -28,7 +34,22 @@ with help_col:
 # 2. 분석 함수
 
 def building_cover(coords_grid, coords_building, RANGE_KM):
-    """BallTree를 이용해 각 격자 좌표에서 RANGE_KM 반경 내 건물 인덱스를 반환합니다."""
+    """
+    BallTree를 이용해 각 격자 좌표의 반경 내 건물 인덱스를 반환한다.
+
+    Parameters
+    ----------
+    coords_grid     : numpy.ndarray (n, 2) — 격자 중심 좌표 (위도, 경도, degree)
+    coords_building : numpy.ndarray (m, 2) — 건물 좌표 (위도, 경도, degree)
+    RANGE_KM        : float                — 탐색 반경 (km)
+
+    Returns
+    -------
+    DataFrame
+        - grid_id          : 격자 인덱스
+        - building_count   : 반경 내 건물 수
+        - building_indices : 반경 내 건물 인덱스 배열
+    """
     grid_rad     = np.deg2rad(coords_grid)
     building_rad = np.deg2rad(coords_building)
     tree         = BallTree(building_rad, metric='haversine')
@@ -41,7 +62,20 @@ def building_cover(coords_grid, coords_building, RANGE_KM):
 
 
 def get_cumulative_coverage(dfs, df_rank, range_km):
-    """후보지를 순서대로 추가했을 때의 누적 커버율(%)을 반환합니다."""
+    """
+    후보지를 순서대로 추가했을 때의 누적 커버율(%)을 반환한다.
+
+    Parameters
+    ----------
+    dfs      : dict of DataFrame — 카테고리별 시설 데이터 딕셔너리
+    df_rank  : pandas.DataFrame  — 후보지 순위 DataFrame (lat, lng 컬럼 포함)
+    range_km : float             — 탐색 반경 (km)
+
+    Returns
+    -------
+    cumulative : list of float
+        후보지를 하나씩 추가할 때마다의 누적 커버율(%) 목록
+    """
     df_all = pd.concat(dfs.values(), ignore_index=True)
     cover_result = building_cover(
         df_rank[['lat', 'lng']].values,
@@ -60,7 +94,14 @@ def get_cumulative_coverage(dfs, df_rank, range_km):
 # 3. UI 렌더링 함수
 
 def show_conditions(s):
-    """시나리오의 입력 조건(사정거리, 후보지 수, Top3 카테고리)을 표시합니다."""
+    """
+    시나리오의 입력 조건을 화면에 표시한다.
+
+    Parameters
+    ----------
+    s : dict
+        시나리오 딕셔너리. range_km, radar_num, weights 키를 포함해야 한다.
+    """
     weights = s['weights']
     top3    = sorted(weights.items(), key=lambda x: x[1], reverse=True)[:3]
 
@@ -72,7 +113,14 @@ def show_conditions(s):
 
 
 def show_score_comparison(s1, s2):
-    """두 시나리오의 후보지 순위별 점수를 한 차트에 겹쳐서 표시합니다."""
+    """
+    두 시나리오의 후보지 순위별 점수를 한 차트에 겹쳐서 표시한다.
+
+    Parameters
+    ----------
+    s1 : dict — 시나리오 A 딕셔너리 (name, df_rank 키 포함)
+    s2 : dict — 시나리오 B 딕셔너리 (name, df_rank 키 포함)
+    """
     st.markdown("##### 후보지 순위별 점수 비교")
 
     fig = go.Figure()
@@ -107,7 +155,14 @@ def show_score_comparison(s1, s2):
 
 
 def show_coverage_comparison(s1, s2):
-    """두 시나리오의 누적 커버율을 한 차트에 표시합니다."""
+    """
+    두 시나리오의 누적 커버율을 한 차트에 표시한다.
+
+    Parameters
+    ----------
+    s1 : dict — 시나리오 A 딕셔너리 (name, df_rank, dfs, range_km 키 포함)
+    s2 : dict — 시나리오 B 딕셔너리 (name, df_rank, dfs, range_km 키 포함)
+    """
     st.markdown("##### 누적 커버율 비교")
 
     fig = go.Figure()
@@ -141,7 +196,14 @@ def show_coverage_comparison(s1, s2):
 
 
 def show_rank_table_comparison(s1, s2):
-    """두 시나리오의 후보지 상세 정보를 나란히 표시합니다."""
+    """
+    두 시나리오의 후보지 상세 정보(순위, 점수, 좌표)를 나란히 표시한다.
+
+    Parameters
+    ----------
+    s1 : dict — 시나리오 A 딕셔너리 (name, df_rank 키 포함)
+    s2 : dict — 시나리오 B 딕셔너리 (name, df_rank 키 포함)
+    """
     st.markdown("##### 후보지 상세 비교")
     col1, col2 = st.columns(2)
 
@@ -155,6 +217,12 @@ def show_rank_table_comparison(s1, s2):
 # 4. 메인 로직
 
 def main():
+    """
+    시나리오 분석 페이지 진입점.
+
+    세션에 저장된 시나리오 목록을 불러와 2개를 선택하고
+    입력 조건·점수·누적 커버율·후보지 상세 정보를 탭별로 비교한다.
+    """
     scenarios = st.session_state.get('scenarios', [])
 
     # 저장된 시나리오가 2개 미만이면 안내 메시지 출력

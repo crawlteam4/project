@@ -20,7 +20,16 @@ from utils import set_common_banner
 
 @st.cache_resource
 def get_engine():
-    # st.secrets에서 정보를 가져와서 SQLAlchemy 엔진 생성
+    """
+    SQLAlchemy 엔진을 생성하여 반환한다. (캐시 적용)
+
+    st.secrets에서 MySQL 접속 정보를 읽어 엔진을 생성한다.
+
+    Returns
+    -------
+    engine : sqlalchemy.engine.Engine
+        MySQL 데이터베이스 연결 엔진
+    """
     conf = st.secrets["mysql"]
     driver = "mysql+pymysql"
     url = f"{driver}://{conf['user']}:{conf['password']}@{conf['host']}:{conf['port']}/{conf['database']}?charset=utf8mb4"
@@ -63,6 +72,22 @@ GRID_MAP = {
 
 @st.cache_data
 def load_facility_data(target_mids, sel_tag):
+    """
+    선택된 중분류와 소분류(태그)에 해당하는 시설물 데이터를 DB에서 조회한다. (캐시 적용)
+
+    Parameters
+    ----------
+    target_mids : list of str
+        조회할 중분류 이름 목록 (TABLE_NAME_MAP의 키)
+    sel_tag : list of str
+        필터링할 소분류(태그) 이름 목록. 빈 리스트이면 전체 조회.
+
+    Returns
+    -------
+    DataFrame
+        조회된 시설물 데이터. 컬럼: name, latitude, longitude, tag, mid_cat.
+        조회 결과가 없으면 빈 DataFrame 반환.
+    """
     engine = get_engine()
     all_df = []
     for m_disp in target_mids:
@@ -83,7 +108,23 @@ def load_facility_data(target_mids, sel_tag):
 
 @st.cache_data
 def load_grid_gdf(g_name):
-    """새로운 파일 구조(Tag 없음, CRS 변환 필요)를 반영한 로드 함수"""
+    """
+    격자 분석용 GeoDataFrame을 DB에서 로드한다. (캐시 적용)
+
+    인구 밀집도는 SW/NE 좌표로 Polygon을 생성하고,
+    건물 고도·밀집도는 WKT 형식으로 읽어 EPSG:5179 → EPSG:4326으로 변환한다.
+
+    Parameters
+    ----------
+    g_name : str
+        조회할 격자 레이어 이름. GRID_MAP의 키 ('인구 밀집도' 또는 '건물 고도&밀집도')
+
+    Returns
+    -------
+    GeoDataFrame or None
+        gid, 표시값(생활인구 or 토지이용압축도), geometry 컬럼을 포함한 GeoDataFrame.
+        조회 결과가 없거나 레이어 이름이 유효하지 않으면 None 반환.
+    """
     engine = get_engine()
     table = GRID_MAP.get(g_name)
     if not table: return None
@@ -122,6 +163,12 @@ def load_grid_gdf(g_name):
 # 3. UI 함수 (UI Logic)
 @st.dialog(" ", width="medium")
 def render_help():
+    """
+    데이터 탐색 페이지의 도움말 다이얼로그를 렌더링한다.
+
+    시설물 지점 분석(Point)과 인구/건물 격자 분석(Grid)의
+    기능 설명 및 이용 방법을 안내한다.
+    """
     st.subheader('도움말')
     st.write("본 페이지는 서울시의 **시설물(지점)**, **인구/건물(격자)** 데이터를 탐색하는 단계입니다.")
     st.write("") 
@@ -161,6 +208,13 @@ def render_help():
     st.info("데이터를 확인하고 다음 단계에서 어떤 변수를 얼마만큼의 가중치로 설정할 건지 고려해보세요")
 
 def render_facility_tab():
+    """
+    시설물 지점 분석 탭을 렌더링한다.
+
+    대분류 → 중분류 → 소분류(태그) 순으로 필터를 선택하고,
+    [시설물 데이터 조회] 버튼 클릭 시 Folium 지도에 마커 클러스터로 결과를 표시한다.
+    조회 결과는 CSV 파일로 다운로드할 수 있다.
+    """
     # 좌측(지도)과 우측(필터)으로 컬럼 분할
     col_map, col_filter = st.columns([4, 1])
 
@@ -235,7 +289,13 @@ def render_facility_tab():
 
 
 def render_grid_tab():
-    """TAB 2: 격자 분석 화면 구성 (와이드 레이아웃 적용)"""
+    """
+    인구/건물 격자 분석 탭을 렌더링한다.
+
+    인구 밀집도·건물 고도&밀집도 레이어를 선택하여
+    Choropleth 지도로 시각화하고, GeoJSON 파일로 다운로드할 수 있다.
+    두 레이어가 모두 선택되면 공간 결합(sjoin)을 통해 통합 툴팁을 제공한다.
+    """
     
     # 1. 레이아웃 분할 (지도 4 : 필터 1)
     col_map, col_filter = st.columns([4, 1], gap="medium")
@@ -351,6 +411,11 @@ def render_grid_tab():
 # 4. 앱 실행
 
 def main():
+    """
+    데이터 탐색 페이지 진입점.
+
+    공통 배너를 적용하고 시설물 지점 분석·격자 분석 탭을 구성한다.
+    """
     set_common_banner()
     st.set_page_config(layout="wide", page_title="C-UAS 통합 분석")
 

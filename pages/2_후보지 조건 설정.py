@@ -1,7 +1,5 @@
 import streamlit as st
-import sys
 import os
-import base64
 from utils import set_common_banner
 
 set_common_banner()
@@ -37,6 +35,12 @@ DEFAULT_WEIGHTS = {
 
 @st.dialog(" ", width="medium")
 def render_help():
+    """
+    후보지 조건 설정 페이지의 도움말 다이얼로그를 렌더링한다.
+
+    주요 설정 항목(영역 지정, 방어 조건 설정)과
+    따라하기 가이드(3단계: 영역 지정 → 격자 생성 → 가중치 선택)를 안내한다.
+    """
     st.subheader('도움말')
     st.write("서울시 내 집중 방어 구역을 선택하고, 장비 스펙과 시설별 중요도를 설정하는 단계입니다.")
     st.write("")
@@ -109,6 +113,13 @@ def render_help():
 # 3. 메인 UI
 
 def main():
+    """
+    후보지 조건 설정 페이지 진입점.
+
+    격자 생성 지도와 사정거리·후보지 수·가중치 설정 UI를 렌더링한다.
+    [Select] 버튼 클릭 시 입력값을 세션(user_input)에 저장하고
+    3단계 계산 페이지로 이동한다.
+    """
     # 페이지 헤더 + 도움말 버튼
     header_col, help_col = st.columns([10, 1])
     with header_col:
@@ -128,8 +139,6 @@ def main():
                     with open(map_file, 'r', encoding='utf-8') as f:
                         html_content = f.read()
                     st.components.v1.html(html_content, height=700)
-
-                progress_placeholder = st.empty()
 
         with col2:
             # 사정거리 & 후보지 수 입력

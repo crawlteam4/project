@@ -5,7 +5,7 @@ import os
 from get.get import *
 from calculate.calculate import *
 from visualize.visualize import *
-from db.db import upload_result, delete_result
+from db.db import upload_result
 from utils import set_common_banner
 
 # 1. 페이지 설정
@@ -132,6 +132,13 @@ def weight_dialog():
 # 4. 메인 로직
 
 def main():
+    """
+    후보지 계산 페이지 진입점.
+
+    2단계에서 설정한 조건(user_input)을 세션에서 읽어
+    점수 계산 → 순위 산출 → 지도 생성 순으로 실행한다.
+    계산 결과는 세션(calc_results)에 저장되어 이후 페이지에서 재사용된다.
+    """
     df_grid, grid_bd_points = get_latest_grid_data()
     dfs1 = get_dfs1()
     dfs2 = get_dfs2(df_grid)
@@ -170,7 +177,7 @@ def main():
 
             # 2. 최적 후보지 순위 계산
             st.write('최적 후보지 계산 중... ')
-            rank_dic, max_radar_num = calc_rank(
+            rank_dic, _ = calc_rank(
                 dfs1, df_grid, RANGE_KM, radar_num, polygon_coords=grid_bd_points
             )
 

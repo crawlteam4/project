@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
 import folium
 import plotly.graph_objects as go
 from calculate.calculate import building_cover
@@ -62,6 +61,12 @@ CAT_COLORS = {
 
 @st.dialog(" ", width="medium")
 def render_help():
+    """
+    결과 요약 페이지의 도움말 다이얼로그를 렌더링한다.
+
+    3단계에서 계산된 후보지 간 비교를 위한
+    그래프·표 제공 목적을 안내한다.
+    """
     st.subheader('도움말')
     st.write("이 페이지는 **3단계 계산을 통해 선정된 예비 후보지들**간의 원할한 비교를 위해 그래프와 표 등을 제공합니다.")
     st.write("")
@@ -70,7 +75,22 @@ def render_help():
 # 4. 헬퍼 함수
 
 def build_score_chart(ranks, scores, elbow_idx):
-    """후보지 순위별 종합점수 꺾은선 그래프를 생성합니다."""
+    """
+    후보지 순위별 종합점수 꺾은선 그래프를 생성한다.
+
+    낙폭이 가장 큰 구간(elbow)의 점을 주황색으로 강조한다.
+
+    Parameters
+    ----------
+    ranks     : list of int   — 후보지 순위 목록
+    scores    : list of float — 순위별 종합점수 목록
+    elbow_idx : int           — 강조할 elbow 구간 인덱스
+
+    Returns
+    -------
+    fig : plotly.graph_objects.Figure
+        생성된 Plotly 꺾은선 차트 객체
+    """
     colors = ["#ffab44" if i == elbow_idx else '#8d8d8d' for i in range(len(ranks))]
     sizes  = [16 if i == elbow_idx else 10 for i in range(len(ranks))]
 
@@ -104,7 +124,24 @@ def build_score_chart(ranks, scores, elbow_idx):
 
 
 def build_candidate_map(candidate, covered_df, active_cats, range_km):
-    """선택한 후보지 커버리지를 표시하는 Folium 지도를 생성합니다."""
+    """
+    선택한 후보지의 커버리지를 시각화하는 Folium 지도를 생성한다.
+
+    후보지 위치에 마커를, 사정거리에 반경 원을,
+    커버 범위 내 시설들을 카테고리별 레이어로 표시한다.
+
+    Parameters
+    ----------
+    candidate   : pandas.Series    — 후보지 정보 (rank, lat, lng, score)
+    covered_df  : pandas.DataFrame — 커버 범위 내 시설 데이터 (category, latitude, longitude)
+    active_cats : list of str      — 가중치 > 0인 활성 카테고리 목록
+    range_km    : float            — 사정거리 (km)
+
+    Returns
+    -------
+    m : folium.Map
+        생성된 Folium 지도 객체
+    """
     m = folium.Map(
         location=[candidate['lat'], candidate['lng']],
         zoom_start=14,
@@ -163,7 +200,22 @@ def build_candidate_map(candidate, covered_df, active_cats, range_km):
 
 @st.cache_data
 def compute_coverage(rank_coords, building_coords, range_km):
-    """후보지별 커버 건물 인덱스를 계산합니다 (캐시 적용)."""
+    """
+    모든 후보지에 대해 반경 내 포함되는 건물 인덱스를 계산한다. (캐시 적용)
+
+    Parameters
+    ----------
+    rank_coords     : numpy.ndarray (n, 2) — 후보지 좌표 배열 (위도, 경도)
+    building_coords : numpy.ndarray (m, 2) — 시설 좌표 배열 (위도, 경도)
+    range_km        : float                — 탐색 반경 (km)
+
+    Returns
+    -------
+    DataFrame
+        - grid_id          : 후보지 인덱스
+        - building_count   : 커버된 시설 수
+        - building_indices : 커버된 시설 인덱스 배열
+    """
     return building_cover(rank_coords, building_coords, range_km)
 
 # 5. 메인 UI
@@ -379,6 +431,17 @@ with tab2:
 
         # 현재 tab1에서 선택한 순위 행 강조 표시
         def highlight_selected(row):
+            """
+            선택된 순위 행에 배경색을 적용하는 스타일 함수.
+
+            Parameters
+            ----------
+            row : pandas.Series — 데이터프레임의 행
+
+            Returns
+            -------
+            list of str — 각 셀에 적용할 CSS 스타일 문자열 목록
+            """
             if row['순위'] == selected_rank:
                 return ['background-color: #FEF9C3'] * len(row)
             return [''] * len(row)

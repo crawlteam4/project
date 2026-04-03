@@ -38,6 +38,11 @@ def get_connection():
 # 5. 다이얼로그 함수
 @st.dialog("계정 생성")
 def signup_dialog():
+    """
+    회원가입 다이얼로그를 열고 가입 폼을 표시한다.
+
+    utils.show_signup_form()을 호출하여 폼을 렌더링한다.
+    """
     show_signup_form()
 
 # 6. 스타일 설정 (페이지 링크 커스텀 CSS)
