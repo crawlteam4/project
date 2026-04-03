@@ -292,7 +292,7 @@ def get_dfs1():
     inspector = inspect(engine)
     all_tables = inspector.get_table_names()
     
-    exclude_keywords = ['population_raw', 'density']
+    exclude_keywords = ['population_raw', 'density', 'users']
     table_names = []
 
     for table in all_tables:
