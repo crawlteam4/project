@@ -48,10 +48,10 @@ def create_table(conn):
 
 
 
-def register_user(user_id: str, password: str, name: str, email: str) -> bool:
+def register_user(user_id: str, password: str, name: str, email: str,conn) -> bool:
 # sql 구문으로 MySQL에 사용자 정보 저장하는 함수    
-    conn=get_connection()
     with conn.cursor() as cursor:
+
         sql = "INSERT INTO users (user_id, password, name, email) VALUES (%s, %s, %s, %s)"
         cursor.execute(sql, (user_id, password, name, email))
         conn.commit()
