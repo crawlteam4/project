@@ -318,9 +318,7 @@ def main():
                     st.success(f"'{scenario_name.strip()}' 저장 완료!")
 
             col1, col2 = st.columns([1, 1])
-            with col1:
-                if st.button('가중치 변경', use_container_width=True):
-                    weight_dialog()
+            
             with col2:
                 if st.button('시설 변경', use_container_width=True):
                     facility_dialog()
