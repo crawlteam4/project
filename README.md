@@ -6,7 +6,7 @@
 
 > 서울시 도심 환경을 고려한 대드론 방어체계(C-UAS) 최적 배치 지점을 자동 산출하는 데이터 기반 의사결정 지원 웹 서비스
 
-[![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Python-3.14+-blue?logo=python)](https://www.python.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.x-red?logo=streamlit)](https://streamlit.io/)
 [![MySQL](https://img.shields.io/badge/MySQL-8.0-orange?logo=mysql)](https://www.mysql.com/)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
@@ -125,8 +125,8 @@ project/
 │
 ├── DDAS.py                  # 메인 앱 진입점 (로그인 & 홈 화면)
 ├── run.py                   # 앱 실행 보조 스크립트
-├── setup.py                 # 가상환경 생성 및 패키지 설치 스크립트 (macOS/Linux)
-├── setup.bat                # 가상환경 생성 및 패키지 설치 스크립트 (Windows)
+├── setup.py                 # 가상환경 생성 및 패키지 설치 스크립트
+├── setup.bat                # 가상환경 생성 및 패키지 설치 스크립트
 ├── utils.py                 # 공통 유틸 함수 (배너, 회원가입 폼 등)
 ├── data_crawl.ipynb         # 데이터 크롤링 탐색 노트북
 ├── main_test.ipynb          # 기능 통합 테스트 노트북
@@ -150,19 +150,23 @@ project/
 │
 ├── get/                     # 데이터 수집(크롤링) 모듈
 │   └── get.py               # DB 초기화 및 데이터 삽입 함수 (create_db, set_data 등)
+│   └── get_server.py        # DB SERVER 초기화 및 데이터 삽입 함수 (create_db_server, set_data_server 등)
 │
-├── calculate/               # 최적 입지 계산 알고리즘 모듈
+├── calculate/               
+│   └── calculate.py         # 최적 입지 계산 알고리즘 모듈
 │
-├── visualize/               # 지도/차트 시각화 모듈
+├── visualize/               
+│   └── visualize.py         # 지도/차트 시각화 모듈
 │
-├── db/                      # 데이터베이스 스키마 및 push 모듈
+├── db/                      
+│   └── db.py                # DB 스키마 및 push 모듈
+│   └── db_server.py         # DB SERVER 스키마 및 push 모듈
 │
 ├── data/                    # 원본 크롤링 데이터 (CSV, JSON 등)
 │
 ├── final_data/              # 전처리 완료 데이터
 │
 └── images/                  # UI에 사용되는 이미지 리소스
-    └── technology.png       # 앱 파비콘 이미지
 ```
 
 ---
