@@ -114,6 +114,13 @@ if len(scores) >= 2:
         '증감률':      f"{(scores[i] - scores[i+1]) / scores[0] * 100:.1f}%",
     } for i in range(len(scores) - 1)]
         
+# if len(scores) >= 2:
+drop_data = [{
+    '구간':      f"{ranks[i]}순위 → {ranks[i+1]}순위",
+    '점수 차이': round(scores[i] - scores[i+1], 5),
+    '증감률':      f"{(scores[i] - scores[i+1]) / scores[0] * 100:.1f}%",
+} for i in range(len(scores) - 1)]
+    
 
 
 # ── 세션 상태 확인 ────────────────────────────────────────────────
@@ -250,7 +257,7 @@ with tab1:
 
 # ── UI: 후보지 선택 ───────────────────────────────────────────────
     rank_options = df_rank['rank'].astype(int).tolist()
-
+    
     # 상단 레이아웃 구성을 위한 컬럼 생성 (지도 3 : 지표 2)
     col_top_map, col_top_summary = st.columns([5, 2])
 
@@ -271,6 +278,8 @@ with tab1:
             # 선택한 후보지 정보 계산 (기존 로직 유지)
             cand_idx      = selected_rank - 1
             candidate     = df_rank.iloc[cand_idx]
+            # 이미 df_rank에 들어있는 점수를 가져옴
+            final_score   = candidate['score']
             covered_idx   = cover_result.iloc[cand_idx]['building_indices']
             covered_df    = df_all.iloc[covered_idx].copy()
             cat_counts    = covered_df['category'].value_counts()
@@ -281,21 +290,32 @@ with tab1:
                 cat_counts.get(cat, 0) * weights.get(cat, 0)
                 for cat in active_cats
             )
+           
 
             # 2. 메트릭 표시 (원래 col_sel2에 있던 내용)
             st.metric("순위",         f"{selected_rank}위")
             st.metric("커버 건물 수", f"{total_covered}개")
-            st.metric("가중치 점수 (정규화 전)",  f"{weighted_score:.4f}")
+            st.metric("가중치 점수",  f"{final_score:.4f}")
             st.metric("반경",         f"{range_km} km")
 
     # ── Folium 지도 생성 (기존 함수 유지) ──────────────────────────────────────────
     def build_map(candidate, covered_df, active_cats, range_km):
-        m = folium.Map(
-            location=[candidate['lat'], candidate['lng']],
-            zoom_start=14,
-            tiles='https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
-            attr='© OpenStreetMap contributors'
-        )
+        # m = folium.Map(
+        #     location=[candidate['lat'], candidate['lng']],
+        #     zoom_start=14,
+        #     tiles='https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
+        #     attr='© OpenStreetMap contributors'
+        # )
+        
+        m = folium.Map(location=[candidate['lat'], candidate['lng']], 
+               zoom_start=14,
+               tiles=None)
+        folium.TileLayer(
+                            tiles='https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
+                            attr='© OpenStreetMap contributors',
+                            name='Layer',   # ← 레이어 컨트롤에 표시될 이름
+                            show=True
+                        ).add_to(m)
         # ... (기존 build_map 내부 코드와 동일하게 유지) ...
         folium.Circle(
             location=[candidate['lat'], candidate['lng']],
