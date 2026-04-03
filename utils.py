@@ -117,7 +117,7 @@ def get_base64_image(image_path):
 # 2. 모든 페이지에 적용될 공통 레이아웃 함수
 def set_common_banner():
     # 이미지 경로 (절대 경로 혹은 프로젝트 상대 경로 확인 필요)
-    img_path = r"images\DDAS_logo.png"
+    img_path = r"\images\DDAS_logo.png"
     img_base64 = get_base64_image(img_path)
 
     # 폰트어썸 아이콘 CDN
@@ -127,22 +127,48 @@ def set_common_banner():
     st.markdown(
         f"""
         <style>
+        /* 1. 커스텀 배너 설정 (고정된 70px 높이) */
         .custom-header {{
             position: fixed; top: 0; left: 0; width: 100vw; height: 70px;
             background-color: #000000; color: white;
             display: flex; justify-content: space-between; align-items: center;
-            padding: 0 40px; z-index: 9999999;
+            padding: 0 40px; 
+            z-index: 999999; /* 가장 최상단으로 띄움 */
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }}
         .header-icons {{ display: flex; gap: 30px; }}
         .header-icons a {{ color: white; text-decoration: none; font-size: 20px; transition: 0.3s; }}
         .header-icons a:hover {{ color: #00aaff; transform: scale(1.2); }}
         
-        .main .block-container {{ padding-top: 80px; }}
-        section[data-testid="stSidebar"] {{ padding-top: 60px; }}
-        header[data-testid="stHeader"] {{ display: none; }}
+        /* 💡 핵심 1: Streamlit 기본 헤더 영역 전체를 배너 밑으로 70px 밀어냄 */
+        header[data-testid="stHeader"] {{ 
+            top: 70px !important; 
+            background: transparent !important; 
+        }}
 
-        /* 사이드바 스타일링 */
+        /* 💡 핵심 2: 사이드바 본문도 배너에 가려지지 않게 70px 밑에서 시작 */
+        section[data-testid="stSidebar"] {{ 
+            top: 70px !important; 
+            height: calc(100vh - 70px) !important; 
+            z-index: 99998 !important;
+        }}
+
+        /* 💡 핵심 3: 혹시 버튼이 분리되어 있는 버전을 위한 강력한 마진(margin) 푸시 */
+        [data-testid="collapsedControl"] {{
+            margin-top: 75px !important; 
+            margin-left: 10px !important;
+            background-color: rgba(255, 255, 255, 0.8) !important; /* 버튼이 잘 보이게 흰 바탕 추가 */
+            border-radius: 5px !important;
+            z-index: 99999 !important;
+        }}
+        
+        /* 메인 컨텐츠가 배너에 가려지지 않도록 여백 추가 */
+        .main .block-container {{ 
+            padding-top: 40px !important; 
+            margin-top: 70px !important; 
+        }}
+
+        /* 사이드바 내부 아이템 스타일링 */
         [data-testid="stSidebarNav"] ul li:nth-child(1) {{
             border-bottom: 2px solid #000000 !important;
             margin-bottom: 15px !important;
@@ -171,7 +197,6 @@ def set_common_banner():
         """,
         unsafe_allow_html=True
     )
-
     # 사이드바 이용 가이드
     with st.sidebar:
         with st.expander("**유의사항**", expanded=False):
