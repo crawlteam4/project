@@ -8,6 +8,47 @@ import geopandas as gpd
 from shapely.geometry import Point, Polygon
 from shapely import wkt
 
+
+
+def create_db():
+    """
+
+    데이터베이스를 완전히 삭제하고 설정된 기본 인코딩으로 새로 생성한다.
+
+    st.secrets에 정의된 MySQL 정보를 바탕으로 서버에 접속하며,
+    기존 DB가 존재할 경우 삭제 후 다시 생성하여 초기 상태로 만든다.
+
+    Parameters
+    ----------------------
+    None
+
+    Returns
+    ----------------------
+    None
+    """
+    db = st.secrets["mysql"]
+
+    # 특정 DB를 지정하지 않고 서버 자체에 연결 (관리자 권한)
+    base_url = (
+        f"mysql+pymysql://{db['user']}:{db['password']}"
+        f"@{db['host']}:{db['port']}/?charset={db['charset']}"
+    )
+
+    # CREATE/DROP DATABASE는 트랜잭션 밖에서 즉시 실행해야 하므로 AUTOCOMMIT 필수
+    temp_engine = create_engine(base_url, isolation_level="AUTOCOMMIT")
+
+    try:
+        with temp_engine.connect() as conn:
+            # 새 DB 생성
+            conn.execute(text(f"CREATE DATABASE {db['database']} IF NOT EXISTS CHARACTER SET {db['charset']}"))
+
+    except Exception as e:
+        print(f"데이터베이스 초기화 실패: {e}")
+    finally:
+        temp_engine.dispose()    # 임시 엔진 연결 해제
+
+
+
 # ────────────────────────────────────────────────────────────────────────────────
 # DB 초기화 (삭제 후 재생성)
 # ────────────────────────────────────────────────────────────────────────────────

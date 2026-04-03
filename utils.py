@@ -33,6 +33,21 @@ def get_connection():
         charset="utf8mb4"
     )
 
+
+def create_table(conn):
+    
+    with conn.cursor() as cursor:
+        sql='''create table if not exists users (
+        user_id varchar(500) not null primary key,
+        password varchar(1000) not null,
+        name varchar(500) not null,
+        email varchar(1000) not null
+        ) ;'''
+        cursor.execute(sql)
+        conn.commit()
+
+
+
 def register_user(user_id: str, password: str, name: str, email: str) -> bool:
 # sql 구문으로 MySQL에 사용자 정보 저장하는 함수    
     conn=get_connection()
@@ -80,10 +95,12 @@ def show_signup_form():
             elif is_duplicate_id(user_id): # 이 함수는 utils.py 내에 정의되어 있어야 함
                 st.error("이미 사용 중인 아이디입니다.")
             else:
+                conn=get_connection()
+                create_table(conn)
                 success = register_user(user_id, pw, name, email) # 이 함수는 utils.py 내에 정의되어 있어야 함
                 if success:
                     st.success("회원가입이 완료되었습니다! 창을 닫고 로그인해주세요.")
-
+                    conn.close()
 
 # -----------------------------------------------
 # 배너 함수
@@ -100,7 +117,7 @@ def get_base64_image(image_path):
 # 2. 모든 페이지에 적용될 공통 레이아웃 함수
 def set_common_banner():
     # 이미지 경로 (절대 경로 혹은 프로젝트 상대 경로 확인 필요)
-    img_path = r"D:\project\images\DDAS_logo.png"
+    img_path = r"images\DDAS_logo.png"
     img_base64 = get_base64_image(img_path)
 
     # 폰트어썸 아이콘 CDN
