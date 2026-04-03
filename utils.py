@@ -97,7 +97,7 @@ def show_signup_form():
             else:
                 conn=get_connection()
                 create_table(conn)
-                success = register_user(user_id, pw, name, email) # 이 함수는 utils.py 내에 정의되어 있어야 함
+                success = register_user(user_id, pw, name, email, conn) # 이 함수는 utils.py 내에 정의되어 있어야 함
                 if success:
                     st.success("회원가입이 완료되었습니다! 창을 닫고 로그인해주세요.")
                     conn.close()
