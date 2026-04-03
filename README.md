@@ -41,7 +41,7 @@ project/
 
 ### 1. 저장소 클론
 ```bash
-git clone https://github.com/saesae112/project.git
+git clone https://github.com/crawlteam4/project.git
 cd project
 ```
 
@@ -83,7 +83,7 @@ streamlit run DDAS.py
 ## 기술 스택
 
 - **Frontend/UI**: Streamlit
-- **Backend**: Python, pymysql
+- **Backend**: Python, pymysql, sklearn, pandas, numpy
 - **Database**: MySQL
 - **데이터 수집**: BeautifulSoup / Selenium (크롤링)
 - **시각화**: Folium, Plotly 등
@@ -94,7 +94,7 @@ streamlit run DDAS.py
 
 | 이름 | 역할 |
 |------|------|
-| 안찬이 | 매니저 |
+| 안찬이 | 프로젝트 매니저 |
 | 주진성 | 알고리즘 개발 |
 | 김민주 | UI/UX 디자인 |
 | 권희성 | 데이터 크롤링 |

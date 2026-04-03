@@ -271,6 +271,24 @@ def disconnect_db(engine):
 # ────────────────────────────────────────────────────────────────────────────────
 @st.cache_data
 def get_dfs1():
+    """
+    데이터 적재 및 DB 연결 상태를 확인한 후, 특정 키워드가 제외된 테이블 목록을 
+    선택적으로 추출하여 데이터프레임 딕셔너리로 반환함.
+
+    로컬 파일의 DB 적재(set_data)를 먼저 수행하며, 전체 테이블 중 분석 알고리즘에 
+    필요하지 않은 원천 데이터나 사용자 관련 테이블은 필터링하여 제외함.
+    Streamlit 캐싱을 통해 중복된 데이터 로딩 및 필터링 연산을 방지함.
+
+    Parameters
+    ----------------------
+    None
+
+    Returns
+    ----------------------
+    dict or None
+        필터링된 {테이블명: DataFrame} 딕셔너리를 반환함. 
+        DB 연결 실패 시 None을 반환함.
+    """
     
     # Set data
     set_data()
@@ -323,7 +341,7 @@ def get_latest_grid_data():
     """
     download_dir = os.path.join(os.path.expanduser("~"), "Downloads")
 
-    # grid로 시작하는 CSV 파일 전체 검색
+    # CSV 파일 전체 검색
     csv_files = glob(os.path.join(download_dir, "*.csv"))
 
     if not csv_files:

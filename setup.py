@@ -43,7 +43,17 @@ def run_cmd(command, capture=False):
 
 def get_env_list():
     """
-    현재 Conda 가상환경 목록을 가져온다.
+    현재 시스템에 생성된 Conda 가상환경 목록을 가져옴.
+    'conda env list' 결과에서 환경 이름만 추출하여 리스트로 반환함.
+
+    Parameters
+    ----------------------
+    None
+
+    Returns
+    ----------------------
+    list
+        현재 존재하는 Conda 가상환경 이름들의 리스트.
     """
     # 목록을 읽어와야 하므로 capture=True 사용
     result = run_cmd('conda env list', capture=True)
@@ -56,7 +66,19 @@ def get_env_list():
 
 def step_create_env(env_name, python_version):
     """
-    가상환경을 생성한다.
+    입력받은 가상환경이 존재하는지 확인하고, 없을 경우 새로 생성함.
+    생성 과정 중 사용자의 확인 절차를 생략하기 위해 '-y' 옵션을 사용함.
+
+    Parameters
+    ----------------------
+    env_name : str
+        생성하거나 확인할 가상환경의 이름.
+    python_version : str
+        가상환경에 설치할 파이썬 버전.
+
+    Returns
+    ----------------------
+    None
     """
     print(f"\n[ 1단계 ] 가상환경 확인 중: {env_name}")
     if env_name in get_env_list():
@@ -75,7 +97,19 @@ def step_create_env(env_name, python_version):
 
 def step_install_packages(env_name, requirements):
     """
-    패키지를 설치한다.
+    지정된 가상환경 내에 필요한 패키지들을 pip를 통해 순차적으로 설치함.
+    'conda run' 명령을 사용하여 환경 활성화 없이 특정 환경에 패키지를 설치함.
+
+    Parameters
+    ----------------------
+    env_name : str
+        패키지를 설치할 대상 가상환경 이름.
+    requirements : list
+        설치할 패키지 명칭들이 담긴 리스트.
+
+    Returns
+    ----------------------
+    None
     """
     print(f"\n[ 2단계 ] 패키지 설치 확인 및 진행...")
     # 설치 과정을 눈으로 봐야 하므로 capture=False (기본값)
@@ -86,7 +120,19 @@ def step_install_packages(env_name, requirements):
 
 def step_run_app(env_name, app_file):
     """
-    Streamlit 앱을 실행한다.
+    설정이 완료된 가상환경에서 Streamlit 애플리케이션을 실행함.
+    백그라운드에서 서버가 구동되도록 Popen을 사용하며, 브라우저 자동 열기를 허용함.
+
+    Parameters
+    ----------------------
+    env_name : str
+        앱을 실행할 가상환경 이름.
+    app_file : str
+        실행할 Streamlit 메인 파일 경로 (예: DDAS.py).
+
+    Returns
+    ----------------------
+    None
     """
     print(f"\n[ 3단계 ] '{app_file}' 실행 시도 중...")
     abs_path = os.path.abspath(app_file)
