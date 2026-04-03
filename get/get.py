@@ -53,7 +53,7 @@ def create_db():
 # DB 초기화 (삭제 후 재생성)
 # ────────────────────────────────────────────────────────────────────────────────
 
-def reset_db():
+def create_db():
     """
     데이터베이스를 완전히 삭제하고 설정된 기본 인코딩으로 새로 생성한다.
 
@@ -81,10 +81,8 @@ def reset_db():
 
     try:
         with temp_engine.connect() as conn:
-            # 기존 DB 삭제 (없으면 무시)
-            conn.execute(text(f"DROP DATABASE IF EXISTS {db['database']}"))
             # 새 DB 생성
-            conn.execute(text(f"CREATE DATABASE {db['database']} CHARACTER SET {db['charset']}"))
+            conn.execute(text(f"CREATE DATABASE {db['database']} IF NOT EXISTS CHARACTER SET {db['charset']}"))
 
     except Exception as e:
         print(f"데이터베이스 초기화 실패: {e}")
