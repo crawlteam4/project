@@ -1,28 +1,31 @@
 import streamlit as st
 import pandas as pd
 import pymysql
-from utils import show_signup_form
-from utils import set_common_banner
-from get.get import * 
+from utils import show_signup_form, set_common_banner
+from get.get import *
 
-
-
-# DESIGN implement changes to the standard streamlit UI/UX
-st.set_page_config(page_title="D-DAS", page_icon="images/technology.png", layout="wide", initial_sidebar_state="collapsed")
+# 1. 페이지 설정
+st.set_page_config(
+    page_title="D-DAS",
+    page_icon="images/technology.png",
+    layout="wide",
+    initial_sidebar_state="collapsed"
+)
 set_common_banner()
 
-
+# 2. DB 초기화 (최초 실행 시 테이블/데이터 생성)
 create_db()
 set_data()
 
-
-
+# 3. 세션 상태 초기화
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
 if "username" not in st.session_state:
     st.session_state.username = ""
 
+# 4. DB 연결 함수
 def get_connection():
+    """MySQL 데이터베이스 연결 객체를 반환합니다."""
     return pymysql.connect(
         host=st.secrets["mysql"]["host"],
         port=st.secrets["mysql"]["port"],
@@ -32,12 +35,12 @@ def get_connection():
         charset="utf8mb4"
     )
 
+# 5. 다이얼로그 함수
 @st.dialog("계정 생성")
 def signup_dialog():
-    show_signup_form() # 분리해둔 함수 호출
+    show_signup_form()
 
-
-# 회원가입 스타일
+# 6. 스타일 설정 (페이지 링크 커스텀 CSS)
 st.markdown("""
 <style>
 [data-testid="stPageLink"] a {
@@ -54,25 +57,26 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# 제 맘대로 drone defense allocaton system -> D - DAS로 지어봤습니다 ㅎㅎ
+# 7. 메인 레이아웃
+
+# 서비스 소개 헤더
 with st.container():
-    col1, col2= st.columns([3.73, 1])
+    col1, col2 = st.columns([3.73, 1])
     with col1:
-        st.subheader("대드론 방어체계 최적 입지 선정 서비스 (DDAS) ")
-        st.caption( 'DDAS : Drone Defense Allocation Service')
+        st.subheader("대드론 방어체계 최적 입지 선정 서비스 (DDAS)")
+        st.caption('DDAS : Drone Defense Allocation Service')
 
 st.divider()
 
-
-chan1, id_log=st.columns([5,2])
+# 이용 가이드 + 로그인 박스 (좌우 분할)
+chan1, id_log = st.columns([5, 2])
 
 with chan1:
     st.subheader("이용 가이드")
     st.write("본 서비스는 국내 도심 환경을 고려한 대드론 방어체계(C-UAS) 최적 입지 선정을 위한 데이터와 분석을 제공합니다.")
-    st.write("") 
-    
+    st.write("")
 
-    # 2. 카드 섹션 (파란색 숫자 아이콘 + 간결한 문구)
+    # 단계별 안내 카드 (4열)
     col1, col2, col3, col4 = st.columns(4)
 
     with col1:
@@ -103,55 +107,39 @@ with chan1:
             st.write('')
             st.write("도출된 후보지의 **상세 점수를 확인**하고 여러 시나리오를 상호 비교합니다.")
 
-
 st.markdown("---")
-# 아래에 추가적인 서비스 소개나 공지사항 배치
-        
-
 
 with id_log:
-    # border=True를 유지하여 시각적 구분을 명확히 함
     with st.container(border=True, height=450):
-        # 1. 상단 타이틀: 
         st.subheader("로그인")
         st.write('')
         st.caption("D-DAS 서비스 이용을 위해 로그인하세요.")
-        st.write('')        
-        
-        # 2. 간격 조절: 
-        # label_visibility='collapsed'를 쓰면 위아래 간격이 최소화
-        input_sender = st.text_input('ID', placeholder='아이디를 입력하세요', key='login_id', label_visibility='collapsed')
-        input_recipient = st.text_input('PW', placeholder='비밀번호를 입력하세요', type='password', key='login_pw', label_visibility='collapsed')
-        
-        # 버튼 위쪽에만 살짝 간격을 주어 클릭 실수를 방지
-        st.write("") 
         st.write('')
-        # 3. 로그인 버튼: type="primary"로 색상 강조 및 가로 꽉 채우기
+
+        input_sender    = st.text_input('ID', placeholder='아이디를 입력하세요',    key='login_id', label_visibility='collapsed')
+        input_recipient = st.text_input('PW', placeholder='비밀번호를 입력하세요', type='password', key='login_pw', label_visibility='collapsed')
+
+        st.write("")
+        st.write('')
         sub_butt = st.button('로그인', use_container_width=True, type="primary")
         st.write('')
         st.write('')
-        # 회원가입 안내를 2열로 배치하여 박스 하단 밀도를 높임
-        # 기존 [5, 2]에서 c2의 공간을 조금 더 늘려줌 (예: [5, 3] 또는 [4, 2])
-        c1, c2 = st.columns([5, 3]) 
 
+        # 회원가입 안내
+        c1, c2 = st.columns([5, 3])
         with c1:
             st.caption("계정이 없으신가요?")
         with c2:
-            # use_container_width=True를 설정하여 컬럼 너비만큼 버튼을 좌우로 쫙 펴줌
             if st.button("회원가입", use_container_width=True):
                 signup_dialog()
-        
 
-
-
+# 8. 로그인 처리
 if sub_butt:
-    conn=get_connection()
+    conn = get_connection()
     with conn.cursor() as cursor:
         sql = "SELECT * FROM users WHERE user_id = %s AND password = %s"
         cursor.execute(sql, (input_sender, input_recipient))
-        
+
         if cursor.fetchone():
             st.session_state.logged_in = True
             st.switch_page("pages/1_데이터 탐색.py")
-            
-        

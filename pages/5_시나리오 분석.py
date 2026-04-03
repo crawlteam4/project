@@ -3,9 +3,9 @@ import numpy as np
 import pandas as pd
 from sklearn.neighbors import BallTree
 import plotly.graph_objects as go
-import base64
 from utils import set_common_banner
 
+# 1. 페이지 설정
 st.set_page_config(layout="wide")
 set_common_banner()
 
@@ -13,25 +13,22 @@ set_common_banner()
 def render_help():
     st.subheader('도움말')
     st.write("이 페이지는 **3단계에서 저장한 시나리오**를 불러와 상호 비교 할 수 있도록 지원합니다.")
-    st.write("") 
+    st.write("")
     st.info('예: 같은 지역에서 사정거리가 다른 무기 운용 시 등')
 
-    
-# if "logged_in" not in st.session_state or not st.session_state.logged_in:
-#     st.error("로그인이 필요합니다.")
-#     st.stop()  # 이 아래 코드는 실행되지 않음
-    
-# title 과 도움말버튼
+# 페이지 헤더 + 도움말 버튼
 header_col, help_col = st.columns([10, 1])
 with header_col:
     st.subheader("시나리오 비교")
 with help_col:
-    st.write("") # 수직 정렬용 여백
+    st.write("")  # 수직 정렬용 여백
     if st.button("도움말"):
         render_help()
 
+# 2. 분석 함수
 
 def building_cover(coords_grid, coords_building, RANGE_KM):
+    """BallTree를 이용해 각 격자 좌표에서 RANGE_KM 반경 내 건물 인덱스를 반환합니다."""
     grid_rad     = np.deg2rad(coords_grid)
     building_rad = np.deg2rad(coords_building)
     tree         = BallTree(building_rad, metric='haversine')
@@ -44,7 +41,7 @@ def building_cover(coords_grid, coords_building, RANGE_KM):
 
 
 def get_cumulative_coverage(dfs, df_rank, range_km):
-    """후보지별 누적 커버율(%)"""
+    """후보지를 순서대로 추가했을 때의 누적 커버율(%)을 반환합니다."""
     df_all = pd.concat(dfs.values(), ignore_index=True)
     cover_result = building_cover(
         df_rank[['lat', 'lng']].values,
@@ -60,10 +57,10 @@ def get_cumulative_coverage(dfs, df_rank, range_km):
         cumulative.append(round(len(covered_set) / total * 100, 1))
     return cumulative
 
-
+# 3. UI 렌더링 함수
 
 def show_conditions(s):
-    """입력 조건"""
+    """시나리오의 입력 조건(사정거리, 후보지 수, Top3 카테고리)을 표시합니다."""
     weights = s['weights']
     top3    = sorted(weights.items(), key=lambda x: x[1], reverse=True)[:3]
 
@@ -75,11 +72,10 @@ def show_conditions(s):
 
 
 def show_score_comparison(s1, s2):
-    #두 시나리오 점수를 한 차트에 겹쳐서 표시
+    """두 시나리오의 후보지 순위별 점수를 한 차트에 겹쳐서 표시합니다."""
     st.markdown("##### 후보지 순위별 점수 비교")
 
     fig = go.Figure()
-
     for s, dash in [(s1, 'solid'), (s2, 'dot')]:
         ranks  = s['df_rank']['rank'].tolist()
         scores = s['df_rank']['score'].tolist()
@@ -95,20 +91,14 @@ def show_score_comparison(s1, s2):
             hovertemplate=f"{s['name']}<br>%{{x}}순위: %{{y:.5f}}<extra></extra>",
         ))
 
-    # x축 눈금은 두 시나리오의 순위를 합친 범위로
+    # x축 눈금은 두 시나리오의 순위를 합친 범위로 설정
     all_ranks = sorted(set(
         s1['df_rank']['rank'].tolist() + s2['df_rank']['rank'].tolist()
     ))
     fig.update_layout(
-        xaxis=dict(
-            title='후보지 순위',
-            tickmode='array',
-            tickvals=all_ranks,
-            ticktext=[f"{r}순위" for r in all_ranks],
-        ),
+        xaxis=dict(title='후보지 순위', tickmode='array', tickvals=all_ranks, ticktext=[f"{r}순위" for r in all_ranks]),
         yaxis=dict(title='점수'),
-        plot_bgcolor='white',
-        paper_bgcolor='white',
+        plot_bgcolor='white', paper_bgcolor='white',
         margin=dict(t=10, b=40, l=60, r=30),
         height=360,
         legend=dict(orientation='h', yanchor='bottom', y=1.02, x=0),
@@ -117,11 +107,10 @@ def show_score_comparison(s1, s2):
 
 
 def show_coverage_comparison(s1, s2):
-    #두 시나리오 누적 커버율을 한 차트에 표시
+    """두 시나리오의 누적 커버율을 한 차트에 표시합니다."""
     st.markdown("##### 누적 커버율 비교")
 
     fig = go.Figure()
-
     for s, dash in [(s1, 'solid'), (s2, 'dot')]:
         ranks      = s['df_rank']['rank'].tolist()
         cumulative = get_cumulative_coverage(s['dfs'], s['df_rank'], s['range_km'])
@@ -141,15 +130,9 @@ def show_coverage_comparison(s1, s2):
         s1['df_rank']['rank'].tolist() + s2['df_rank']['rank'].tolist()
     ))
     fig.update_layout(
-        xaxis=dict(
-            title='후보지 수',
-            tickmode='array',
-            tickvals=all_ranks,
-            ticktext=[f"{r}순위" for r in all_ranks],
-        ),
+        xaxis=dict(title='후보지 수', tickmode='array', tickvals=all_ranks, ticktext=[f"{r}순위" for r in all_ranks]),
         yaxis=dict(title='누적 커버율 (%)', range=[0, 105]),
-        plot_bgcolor='white',
-        paper_bgcolor='white',
+        plot_bgcolor='white', paper_bgcolor='white',
         margin=dict(t=10, b=40, l=60, r=30),
         height=360,
         legend=dict(orientation='h', yanchor='bottom', y=1.02, x=0),
@@ -158,6 +141,7 @@ def show_coverage_comparison(s1, s2):
 
 
 def show_rank_table_comparison(s1, s2):
+    """두 시나리오의 후보지 상세 정보를 나란히 표시합니다."""
     st.markdown("##### 후보지 상세 비교")
     col1, col2 = st.columns(2)
 
@@ -168,12 +152,12 @@ def show_rank_table_comparison(s1, s2):
             df.columns = ['순위', '종합점수 (정규화 후)', '위도', '경도']
             st.dataframe(df, hide_index=True, use_container_width=True)
 
-
-# ── 메인 ──────────────────────────────────────────────────────────────
+# 4. 메인 로직
 
 def main():
     scenarios = st.session_state.get('scenarios', [])
 
+    # 저장된 시나리오가 2개 미만이면 안내 메시지 출력
     if len(scenarios) < 2:
         st.info(f"시나리오가 {len(scenarios)}개 저장되어 있습니다. "
                 "계산 페이지에서 최소 2개를 저장해주세요.")
@@ -197,8 +181,8 @@ def main():
     s1 = next(s for s in scenarios if s['name'] == name_a)
     s2 = next(s for s in scenarios if s['name'] == name_b)
 
-    tab1, tab2, tab3, tab4 = st.tabs(['입력 조건 비교','점수 비교','누적 커버율','상세 비교'])
-    
+    tab1, tab2, tab3, tab4 = st.tabs(['입력 조건 비교', '점수 비교', '누적 커버율', '상세 비교'])
+
     with tab1:
         st.markdown("##### 입력 조건 비교")
         col1, col2 = st.columns(2)
@@ -216,7 +200,7 @@ def main():
 
     with tab3:
         show_coverage_comparison(s1, s2)
-    
+
     with tab4:
         show_rank_table_comparison(s1, s2)
 

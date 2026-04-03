@@ -6,17 +6,45 @@ from utils import set_common_banner
 
 set_common_banner()
 
+# 1. 상수 정의
+
+# 시설 선택 옵션 목록
+FACILITY_OPTIONS = [
+    '전력시설', '정보통신시설', '국가 공공기관 시설', '교통 항공 항만 시설',
+    '수원 시설', '지하공동구', '산업 시설', '기지국', '병원', '과학연구',
+    '교정 시설', '방송시설'
+]
+
+# 시설별 기본 가중치 (AHP 분석 결과 기반)
+DEFAULT_WEIGHTS = {
+    '전력시설':           '0.242',
+    '정보통신시설':        '0.153',
+    '국가 공공기관 시설':  '0.116',
+    '교통 항공 항만 시설': '0.081',
+    '수원 시설':           '0.055',
+    '지하공동구':          '0.079',
+    '인구밀도 ':           '0.0',
+    '토지 이용 압축도':    '0.0',
+    '산업 시설':           '0.057',
+    '기지국':              '0.025',
+    '병원':                '0.030',
+    '과학연구':            '0.013',
+    '교정 시설':           '0.011',
+    '방송시설':            '0.100',
+}
+
+# 2. 도움말 다이얼로그
+
 @st.dialog(" ", width="medium")
 def render_help():
     st.subheader('도움말')
     st.write("서울시 내 집중 방어 구역을 선택하고, 장비 스펙과 시설별 중요도를 설정하는 단계입니다.")
-    st.write("") 
+    st.write("")
 
     help_tab1, help_tab2 = st.tabs(["주요 설정 항목", "따라하기 가이드"])
-    
+
     with help_tab1:
-        # 비율을 조절하여 텍스트가 너무 한 줄로 늘어지지 않게 함
-        col1, col2 = st.columns([3,3]) 
+        col1, col2 = st.columns([3, 3])
         with col1:
             st.markdown("##### 시설물 지점 분석 (Point)")
             with st.container(border=True, width=400):
@@ -25,8 +53,6 @@ def render_help():
                 - 격자 크기(100m 등) 조정
                 - 수계 감지로 불필요한 영역 제외
                 """)
-            
-
         with col2:
             st.markdown("##### 방어 조건 설정")
             with st.container(border=True, width=400):
@@ -40,24 +66,22 @@ def render_help():
         st.markdown("##### **[따라하기: 분석 설계 3단계]**")
         st.write("")
 
-        # --- STEP 1 ---
-        # 이미지와 설명을 7:3 비율로 가로 배치하여 이미지를 크게 보여줌
+        # STEP 1: 영역 지정
         c1_img, c1_txt = st.columns([0.7, 0.3])
         with c1_img:
-            st.image('images/guide1.png', use_container_width=True) # 컬럼 너비에 맞춤
+            st.image('images/guide1.png', use_container_width=True)
         with c1_txt:
             st.markdown("#### **1. 영역 지정**")
             st.markdown("- 지도 위를 **자유롭게 클릭**하여 방어하고 싶은 지역을 닫힌 다각형 형태로 그리세요.")
-        
-        st.divider() # 단계별 구분선
 
-        # --- STEP 2 ---
+        st.divider()
+
+        # STEP 2: 격자 생성
         c2_img, c2_txt = st.columns([0.7, 0.3])
         with c2_img:
             st.image('images/guide2.png', use_container_width=True)
         with c2_txt:
             st.markdown("#### **2. 격자 생성**")
-            # 강조색 활용
             st.markdown("""
             - 좌측 생성기에서 **:blue[[셀 간격]]** 설정
             - **:orange[[구역 생성]]** 버튼 클릭
@@ -66,7 +90,7 @@ def render_help():
 
         st.divider()
 
-        # --- STEP 3 ---
+        # STEP 3: 가중치 선택
         c3_img, c3_txt = st.columns([0.7, 0.3])
         with c3_img:
             st.image('images/guide3.png', use_container_width=True)
@@ -78,114 +102,103 @@ def render_help():
             - 시설 체크 시 자동으로 뜨는 **:blue[가중치 값]** 입력 (default 값 제공)
             - 최하단 **:red[[Select]]** 버튼 클릭
             """)
+
     st.write('')
-    # 주의사항을 st.warning으로 더 강력하게 표시
     st.warning("**주의**: 반드시 [따라하기 가이드] 순서대로 진행해야 정상적으로 계산이 실행됩니다.")
 
-header_col, help_col = st.columns([10, 1])
-with header_col:
-    st.subheader('후보지 조건 설정')
-with help_col:
-    st.write("") # 수직 정렬용 여백
-    if st.button("도움말"):
-        render_help()
+# 3. 메인 UI
 
-with st.container():
-    col1, col2=st.columns([7,2])
-    with col1:
-        with st.container(border=True):
-            map_file = os.path.join(os.path.dirname(__file__), '../make_grid.html')
-            if os.path.exists(map_file):
-                with open(map_file, 'r', encoding='utf-8') as f:
-                    html_content = f.read()
-                st.components.v1.html(html_content, height=700)
+def main():
+    # 페이지 헤더 + 도움말 버튼
+    header_col, help_col = st.columns([10, 1])
+    with header_col:
+        st.subheader('후보지 조건 설정')
+    with help_col:
+        st.write("")  # 수직 정렬용 여백
+        if st.button("도움말"):
+            render_help()
 
-            progress_placeholder = st.empty()
-        
+    with st.container():
+        col1, col2 = st.columns([7, 2])
 
-    with col2: 
-        # 컨테이너 내부를 2개의 동일한 너비(단)로 나눔
-        with st.container(border=True):
-            # 내부 공간을 2개로 분할
-            sub_col1, sub_col2 = st.columns(2)
-            
-            with sub_col1:
-                st.number_input(
-                    '사정 거리 (km)', 
-                    min_value=0.0, max_value=100.0, value=1.5, 
-                    step=0.2, format='%.1f', key='range_km'
-                )
-                
-            with sub_col2:
-                st.text_input(
-                    '후보지 수', 
-                    value='3', key='radar_num', 
-                    placeholder='후보지 수를 입력하세요'
-                )
-        
-
-        with st.container(border=True):
-
-            options = ['전력시설', '정보통신시설', '국가 공공기관 시설', '교통 항공 항만 시설', '수원 시설', '지하공동구',
-                     '산업 시설', '기지국', '병원', '과학연구', '교정 시설', '방송시설']
-            default_weights = {
-                '전력시설':           '0.242',
-                '정보통신시설':        '0.153',
-                '국가 공공기관 시설':  '0.116',
-                '교통 항공 항만 시설': '0.081',
-                '수원 시설':           '0.055',
-                '지하공동구':          '0.079',
-                '인구밀도 ':           '0.0',
-                '토지 이용 압축도':    '0.0',
-                '산업 시설':           '0.057',
-                '기지국':              '0.025',
-                '병원':                '0.030',
-                '과학연구':            '0.013',
-                '교정 시설':           '0.011',
-                '방송시설':            '0.100',
-            }
-            st.write('후보지 고려 사항을 선택하세요 ')
+        with col1:
             with st.container(border=True):
-                for opt in options:
-                    c1, c2 = st.columns([2, 1])
-                    with c1:
-                        checked = st.checkbox(opt, key=f'check_{opt}', value=True)
-                    with c2:
-                        if checked:
-                            st.text_input('가중치', value=default_weights[opt], key=f'weight_{opt}', label_visibility='collapsed', placeholder='가중치')
+                map_file = os.path.join(os.path.dirname(__file__), '../make_grid.html')
+                if os.path.exists(map_file):
+                    with open(map_file, 'r', encoding='utf-8') as f:
+                        html_content = f.read()
+                    st.components.v1.html(html_content, height=700)
 
-            st.write('')
-        warn_placeholder = st.empty()
+                progress_placeholder = st.empty()
 
-        if st.button("Select", key=f"button_{opt}", use_container_width=True, type='primary'):
-            any_checked = any(st.session_state.get(f'check_{opt}', False) for opt in options)
+        with col2:
+            # 사정거리 & 후보지 수 입력
+            with st.container(border=True):
+                sub_col1, sub_col2 = st.columns(2)
+                with sub_col1:
+                    st.number_input(
+                        '사정 거리 (km)',
+                        min_value=0.0, max_value=100.0, value=1.5,
+                        step=0.2, format='%.1f', key='range_km'
+                    )
+                with sub_col2:
+                    st.text_input(
+                        '후보지 수',
+                        value='3', key='radar_num',
+                        placeholder='후보지 수를 입력하세요'
+                    )
 
-            if not any_checked:
-                warn_placeholder.warning('고려 사항을 선택하세요')
-            else:
-                selected_weights = {}
-                for opt in options:
-                    if st.session_state.get(f'check_{opt}', False):
-                        try:
-                            w = float(st.session_state.get(f'weight_{opt}', '0'))
-                        except (ValueError, TypeError):
+            # 시설 선택 & 가중치 입력
+            with st.container(border=True):
+                st.write('후보지 고려 사항을 선택하세요 ')
+                with st.container(border=True):
+                    for opt in FACILITY_OPTIONS:
+                        c1, c2 = st.columns([2, 1])
+                        with c1:
+                            checked = st.checkbox(opt, key=f'check_{opt}', value=True)
+                        with c2:
+                            if checked:
+                                st.text_input(
+                                    '가중치', value=DEFAULT_WEIGHTS[opt],
+                                    key=f'weight_{opt}',
+                                    label_visibility='collapsed',
+                                    placeholder='가중치'
+                                )
+                st.write('')
+
+            warn_placeholder = st.empty()
+
+            # Select 버튼: 입력값 검증 후 세션에 저장하고 다음 페이지로 이동
+            if st.button("Select", key=f"button_{opt}", use_container_width=True, type='primary'):
+                any_checked = any(st.session_state.get(f'check_{opt}', False) for opt in FACILITY_OPTIONS)
+
+                if not any_checked:
+                    warn_placeholder.warning('고려 사항을 선택하세요')
+                else:
+                    # 선택된 시설의 가중치를 수집 (미선택은 0으로 처리)
+                    selected_weights = {}
+                    for opt in FACILITY_OPTIONS:
+                        if st.session_state.get(f'check_{opt}', False):
+                            try:
+                                w = float(st.session_state.get(f'weight_{opt}', '0'))
+                            except (ValueError, TypeError):
+                                w = 0.0
+                        else:
                             w = 0.0
-                    else:
-                        w = 0.0
-                    selected_weights[opt] = w
+                        selected_weights[opt] = w
 
-                range_km = float(st.session_state.get('range_km', 1.5))
-                radar_num = st.session_state.get('radar_num', '3')
+                    range_km  = float(st.session_state.get('range_km', 1.5))
+                    radar_num = st.session_state.get('radar_num', '3')
 
-                st.session_state['user_input'] = {
-                    'range_km':        range_km,
-                    'radar_num':       radar_num,
-                    'selected_weights': selected_weights,
-                }
-                st.session_state.pop('calc_results', None)
+                    # 세션에 사용자 입력 저장 후 계산 페이지로 이동
+                    st.session_state['user_input'] = {
+                        'range_km':         range_km,
+                        'radar_num':        radar_num,
+                        'selected_weights': selected_weights,
+                    }
+                    st.session_state.pop('calc_results', None)
 
-                st.switch_page("pages/3_후보지 계산.py")
+                    st.switch_page("pages/3_후보지 계산.py")
 
 
-                
-            
+main()
