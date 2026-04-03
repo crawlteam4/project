@@ -79,6 +79,59 @@ def render_help():
             st.markdown("<p style='text-align: center; font-size: 14px;'>분석 조건을 초기화하고 처음부터 새로운 분석을 시작할 수 있습니다.</p>", unsafe_allow_html=True)
 
 
+@st.dialog("시설 변경")
+def facility_dialog():
+    options = ['전력시설', '정보통신시설', '국가 공공기관 시설', '교통 항공 항만 시설', '수원 시설', '지하공동구',
+               '산업 시설', '기지국', '병원', '과학연구', '교정 시설', '방송시설']
+
+    current_weights = st.session_state['user_input']['selected_weights']
+
+    st.write('후보지 고려 사항을 선택하세요')
+    with st.container(border=True):
+        for opt in options:
+            c1, c2 = st.columns([2, 1])
+            with c1:
+                checked = st.checkbox(opt, key=f'dialog_check_{opt}', value=current_weights.get(opt, 0) != 0)
+            with c2:
+                if checked:
+                    st.text_input('가중치', value=str(current_weights.get(opt, 0)), key=f'dialog_weight_{opt}', label_visibility='collapsed', placeholder='가중치')
+
+    st.write('')
+    if st.button("재계산", type="primary", use_container_width=True):
+        selected_weights = {}
+        for opt in options:
+            if st.session_state.get(f'dialog_check_{opt}', False):
+                try:
+                    w = float(st.session_state.get(f'dialog_weight_{opt}', '0'))
+                except (ValueError, TypeError):
+                    w = 0.0
+            else:
+                w = 0.0
+            selected_weights[opt] = w
+        st.session_state['user_input']['selected_weights'] = selected_weights
+        st.session_state.pop('calc_results', None)
+        st.rerun()
+
+
+@st.dialog("가중치 변경", width="small")
+def weight_dialog():
+    st.caption("각 시설의 가중치를 조정하고 재계산하세요.")
+
+    current_weights = st.session_state['user_input']['selected_weights']
+    new_weights = {}
+
+    cols = st.columns(2)
+    for i, (name, val) in enumerate(current_weights.items()):
+        with cols[i % 2]:
+            st.caption(name)
+            new_weights[name] = st.text_input(name, value=str(val), key=f'weight_{name}', label_visibility='collapsed', placeholder='가중치')
+
+    if st.button("재계산", type="primary", use_container_width=True):
+        st.session_state['user_input']['selected_weights'] = {k: float(v) for k, v in new_weights.items()}
+        st.session_state.pop('calc_results', None)
+        st.rerun()
+
+
 def main():
         # Get data building data
     df_grid, grid_bd_points = get_latest_grid_data()
@@ -264,6 +317,17 @@ def main():
                     st.session_state['scenarios'] = scenarios
                     st.success(f"'{scenario_name.strip()}' 저장 완료!")
 
+            col1, col2 = st.columns([1, 1])
+            with col1:
+                if st.button('가중치 변경', use_container_width=True):
+                    weight_dialog()
+            with col2:
+                if st.button('시설 변경', use_container_width=True):
+                    facility_dialog()
+
+
+
+
         # 4. 초기화 섹션
         with st.container(border=True):
             st.markdown("###### 초기화")
@@ -273,7 +337,6 @@ def main():
                 st.session_state.pop('calc_results', None)
                 st.session_state.pop('final_df', None)
                 st.success('모든 조건이 초기화되었습니다. 2단계 페이지로 돌아가 다시 설정해주세요.')
-                st.rerun()
-            
+                st.switch_page('pages/2_후보지 조건 설정.py')
 
 main()

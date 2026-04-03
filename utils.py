@@ -117,7 +117,7 @@ def get_base64_image(image_path):
 # 2. 모든 페이지에 적용될 공통 레이아웃 함수
 def set_common_banner():
     # 이미지 경로 (절대 경로 혹은 프로젝트 상대 경로 확인 필요)
-    img_path = r"\images\DDAS_logo.png"
+    img_path = r"images\DDAS_logo.png"
     img_base64 = get_base64_image(img_path)
 
     # 폰트어썸 아이콘 CDN

@@ -154,7 +154,7 @@ with tab3:
 
             with st.container(border=True):
                 # 컬럼 생성
-                sub_col1, sub_col2 = st.columns([2, 4.1])
+                sub_col1, sub_col2 = st.columns([3, 3])
 
                 num_fac=results.get('selected_facilities')
                 with sub_col1:
@@ -394,12 +394,12 @@ with tab2:
                 results.columns=['순위', '격자ID', '위도', '경도', '종합 점수 (정규화 후)','인구 밀도','건물 밀집도']
                 
                 # 상단 제목 및 버튼 (우측에 수평으로 배치)
-                col_title, col_buttons = st.columns([1, 2.4])
+                col_title, col_buttons = st.columns([9, 2])
                 with col_title:
                     st.markdown('<h5 style="padding: 10px; border-radius: 5px;">종합점수 및 생활인구/토지이용 압축도 비교</h5>', unsafe_allow_html=True)
                     st.write("")
                 with col_buttons:
-                    c1, c2 = st.columns([1,6])
+                    c1, c2 = st.columns([1,1])
                     c1.download_button(
                         label="CSV Download",
                         data=results.to_csv(index=False).encode('utf-8'),
