@@ -3,7 +3,9 @@ from folium.plugins import MarkerCluster
 from shapely.geometry import Point, Polygon
 import random
 
-
+# ────────────────────────────────────────────────────────────────────────────────
+# 시각화
+# ────────────────────────────────────────────────────────────────────────────────
 def visualize(df_grid, dfs, rank_dic, RANGE_KM, ICON_MAP,
               show_rank=None, polygon_coords=None,
               df_final=None):
@@ -34,11 +36,6 @@ def visualize(df_grid, dfs, rank_dic, RANGE_KM, ICON_MAP,
                         name='Layer',   # ← 레이어 컨트롤에 표시될 이름
                         show=True
                     ).add_to(m)
-    # m = folium.Map(location=[mid_lat, mid_lng], 
-    #                zoom_start=14,
-    #                tiles='https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
-    #                attr='© OpenStreetMap contributors' 
-    #                )
 
     # ── 구역 경계 표시 ──────────────────────────────────────────────
     if polygon_coords is not None:

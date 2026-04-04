@@ -53,7 +53,7 @@ def building_cover(coords_grid, coords_building, RANGE_KM=1):
 # ────────────────────────────────────────────────────────────────────────────────
 # 단일 좌표 기준 격자 커버 탐색
 # ────────────────────────────────────────────────────────────────────────────────
-def grid_cover_single(center_coord, all_coords, RANGE_KM=3):
+def grid_cover_single(center_coord, all_coords, RANGE_KM=1):
     """
     단일 기준 좌표에서 반경 내 격자 인덱스를 반환하는 함수
 
@@ -258,71 +258,6 @@ def calc_rank(dfs, df_grid, RANGE_KM, radar_num=50, polygon_coords=None):
             break
 
     return rank_dic, max_radar_num
-
-
-# ────────────────────────────────────────────────────────────────────────────────
-# 격자 경계 좌표 로드
-# ────────────────────────────────────────────────────────────────────────────────
-def get_grid_bd_points(data_name):
-    """JSON 파일에서 다각형 꼭짓점 좌표 로드"""
-    with open(f'C:/Users/user2/Downloads/{data_name}_polygon.json') as f:
-        data = json.load(f)
-    return data['polygon_coords']
-
-
-# ────────────────────────────────────────────────────────────────────────────────
-# 레이더별 커버 인구·면적 밀집도 계산
-# ────────────────────────────────────────────────────────────────────────────────
-def get_radar_population_coverage(rank_dic, df_grid, df_population, df_area_density, RANGE_KM):
-    """
-    각 레이더 위치별 커버 격자의 인구밀집도 및 면적밀집도 평균 계산
-
-    Parameters
-    ----------
-    rank_dic        : {격자 인덱스: 점수} — calc_rank 반환값
-    df_grid         : 격자 정보 DataFrame
-    df_population   : grid_id, population_density 포함 DataFrame
-    df_area_density : grid_id, area_density 포함 DataFrame
-    RANGE_KM        : 레이더 커버 반경 (km)
-
-    Returns
-    -------
-    df_coverage : 레이더 순위별 커버 밀집도 DataFrame
-    """
-
-    all_coords = df_grid[['center_lat', 'center_lng']].values
-    results    = []
-
-    for rank, (grid_idx, score) in enumerate(rank_dic.items(), start=1):
-        center_coord = df_grid.loc[grid_idx, ['center_lat', 'center_lng']].values
-
-        # 커버되는 격자 인덱스 추출
-        pos_indices   = grid_cover_single(center_coord, all_coords, RANGE_KM)
-        covered_grids = df_grid.index[pos_indices]
-
-        # 커버 격자의 인구밀집도 평균
-        covered_population = df_population[
-            df_population['grid_id'].isin(covered_grids)
-        ]['population_density'].sum() / len(covered_grids)
-
-        # 커버 격자의 면적밀집도 평균
-        covered_area_density = df_area_density[
-            df_area_density['grid_id'].isin(covered_grids)
-        ]['area_density'].sum() / len(covered_grids)
-
-        results.append({
-            'rank'                : rank,
-            'grid_idx'            : grid_idx,
-            'center_lat'          : center_coord[0],
-            'center_lng'          : center_coord[1],
-            'radar_score'         : score,
-            'covered_population'  : covered_population,
-            'covered_area_density': covered_area_density
-        })
-
-    df_coverage = pd.DataFrame(results)
-    return df_coverage
-
 
 # ────────────────────────────────────────────────────────────────────────────────
 # 건물 태그별 가중치 설정

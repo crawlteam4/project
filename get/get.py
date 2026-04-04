@@ -1,226 +1,13 @@
 import os
 import pandas as pd
 import streamlit as st
-from sqlalchemy import create_engine, text, inspect
+from sqlalchemy import inspect
 from glob import glob
 import json
 import geopandas as gpd
 from shapely.geometry import Point, Polygon
 from shapely import wkt
-
-
-
-def create_db():
-    """
-
-    데이터베이스를 완전히 삭제하고 설정된 기본 인코딩으로 새로 생성한다.
-
-    st.secrets에 정의된 MySQL 정보를 바탕으로 서버에 접속하며,
-    기존 DB가 존재할 경우 삭제 후 다시 생성하여 초기 상태로 만든다.
-
-    Parameters
-    ----------------------
-    None
-
-    Returns
-    ----------------------
-    None
-    """
-    db = st.secrets["mysql"]
-
-    # 특정 DB를 지정하지 않고 서버 자체에 연결 (관리자 권한)
-    base_url = (
-        f"mysql+pymysql://{db['user']}:{db['password']}"
-        f"@{db['host']}:{db['port']}/?charset={db['charset']}"
-    )
-
-    # CREATE/DROP DATABASE는 트랜잭션 밖에서 즉시 실행해야 하므로 AUTOCOMMIT 필수
-    temp_engine = create_engine(base_url, isolation_level="AUTOCOMMIT")
-
-    try:
-        with temp_engine.connect() as conn:
-            # 새 DB 생성
-            conn.execute(text(f"CREATE DATABASE {db['database']} IF NOT EXISTS CHARACTER SET {db['charset']}"))
-
-    except Exception as e:
-        print(f"데이터베이스 초기화 실패: {e}")
-    finally:
-        temp_engine.dispose()    # 임시 엔진 연결 해제
-
-
-
-# ────────────────────────────────────────────────────────────────────────────────
-# DB 초기화 (삭제 후 재생성)
-# ────────────────────────────────────────────────────────────────────────────────
-
-def create_db():
-    """
-    데이터베이스를 완전히 삭제하고 설정된 기본 인코딩으로 새로 생성한다.
-
-    st.secrets에 정의된 MySQL 정보를 바탕으로 서버에 접속하며,
-    기존 DB가 존재할 경우 삭제 후 다시 생성하여 초기 상태로 만든다.
-
-    Parameters
-    ----------------------
-    None
-
-    Returns
-    ----------------------
-    None
-    """
-    db = st.secrets["mysql"]
-
-    # 특정 DB를 지정하지 않고 서버 자체에 연결 (관리자 권한)
-    base_url = (
-        f"mysql+pymysql://{db['user']}:{db['password']}"
-        f"@{db['host']}:{db['port']}/?charset={db['charset']}"
-    )
-
-    # CREATE/DROP DATABASE는 트랜잭션 밖에서 즉시 실행해야 하므로 AUTOCOMMIT 필수
-    temp_engine = create_engine(base_url, isolation_level="AUTOCOMMIT")
-
-    try:
-        with temp_engine.connect() as conn:
-            # 새 DB 생성
-            conn.execute(text(f"CREATE DATABASE {db['database']} IF NOT EXISTS CHARACTER SET {db['charset']}"))
-
-    except Exception as e:
-        print(f"데이터베이스 초기화 실패: {e}")
-    finally:
-        temp_engine.dispose()  # 임시 엔진 연결 해제
-
-
-
-
-# ────────────────────────────────────────────────────────────────────────────────
-# DB 연결 엔진 생성
-# ────────────────────────────────────────────────────────────────────────────────
-def get_engine(db_name=None):
-    """
-    SQLAlchemy 엔진을 생성하여 반환한다.
-
-    Parameters
-    ----------------------
-    db_name : str, optional
-        연결할 데이터베이스의 이름. 지정하지 않으면 st.secrets의 
-        기본 database 설정을 사용한다.
-
-    Returns
-    ----------------------
-    sqlalchemy.engine.base.Engine
-        생성된 SQLAlchemy 데이터베이스 엔진 객체.
-    """
-    db = st.secrets["mysql"]
-    database = db_name if db_name else db['database']
-    url = (
-        f"mysql+pymysql://{db['user']}:{db['password']}"
-        f"@{db['host']}:{db['port']}/{database}"
-        f"?charset={db['charset']}"
-    )
-    engine = create_engine(url, pool_pre_ping=True)
-    return engine
-
-
-
-# ────────────────────────────────────────────────────────────────────────────────
-# DB 연결 상태 확인
-# ────────────────────────────────────────────────────────────────────────────────
-def test_connection(engine):
-    """
-    단순 쿼리(SELECT 1)를 실행하여 DB 연결 상태를 확인한다.
-
-    Parameters
-    ----------------------
-    engine : sqlalchemy.engine.base.Engine
-        상태를 확인할 데이터베이스 엔진.
-
-    Returns
-    ----------------------
-    int
-        연결 성공 시 1을 반환한다.
-    """
-    with engine.connect() as conn:
-        result = conn.execute(text("SELECT 1"))
-        return result.scalar()
-
-
-# ────────────────────────────────────────────────────────────────────────────────
-# 데이터 세팅
-# ────────────────────────────────────────────────────────────────────────────────
-def set_data():
-    """
-    로컬의 CSV 및 GeoJSON 파일을 읽어 DB 테이블로 적재한다.
-
-    final_data 폴더 내의 파일들을 검색하여, DB에 존재하지 않는 
-    테이블일 경우에만 새로 생성하고 데이터를 임포트한다.
-
-    Parameters
-    ----------------------
-    None
-
-    Returns
-    ----------------------
-    None
-    """
-    # DATABASE 세팅
-    db = st.secrets["mysql"]
-    base_url = f"mysql+pymysql://{db['user']}:{db['password']}@{db['host']}:{db['port']}/"
-    base_engine = create_engine(base_url)
-
-    with base_engine.connect() as conn:
-        result = conn.execute(text("SHOW DATABASES"))
-        existing_dbs = [row[0] for row in result]
-        if db['database'] not in existing_dbs:
-            conn.execute(text(f'CREATE SCHEMA {db['database']} CHARACTER SET {db['charset']}'))
-        else:
-            print(f"'{db['database']}' 데이터베이스가 이미 존재한다.")
-    disconnect_db(base_engine)
-
-    # IMPORT data
-    engine = get_engine(db['database'])
-    inspector = inspect(engine)
-    existing_tables = inspector.get_table_names()
-
-    # 2. CSV 파일 처리
-    print("--- CSV 데이터 확인 및 적재 시작 ---")
-    file_list = glob('final_data/*.csv')
-
-    for file in file_list:
-        file_basename = os.path.basename(file)
-        raw_name = os.path.splitext(file_basename)[0]
-        
-        table_name = raw_name[3:] if raw_name.startswith('df_') else raw_name
-        
-        # 기존 DB에 테이블이 없는 경우에만 적재 진행
-        if table_name not in existing_tables:
-            print(f"'{table_name}' 테이블 생성 및 데이터 임포트 중...")
-            df = pd.read_csv(file)
-            df.to_sql(name=table_name, con=engine, if_exists='fail', index=False)
-        else:
-            print(f"'{table_name}' 테이블은 이미 존재하여 건너뜀.")
-
-    # 3. GeoJSON 파일 처리
-    print("\n--- GeoJSON 데이터 확인 및 적재 시작 ---")
-    json_list = glob('final_data/*.geojson')
-
-    for json_file in json_list:
-        raw_name = os.path.splitext(os.path.basename(json_file))[0]
-        json_name = raw_name.split('_')[-1]
-
-        # 기존 DB에 테이블이 없는 경우에만 적재 진행
-        if json_name not in existing_tables:
-            print(f"'{json_name}' 테이블 생성 및 데이터 임포트 중...")
-            gdf = gpd.read_file(json_file)
-            
-            # geometry 컬럼 문자열 변환
-            gdf['geometry'] = gdf['geometry'].apply(lambda x: str(x))
-            gdf.to_sql(name=json_name, con=engine, if_exists='fail', index=False)
-        else:
-            print(f"'{json_name}' 테이블은 이미 존재하여 건너뜀.")
-            
-    disconnect_db(engine)
-
-
+from db.db import *
 
 # ────────────────────────────────────────────────────────────────────────────────
 # DB에서 데이터 조회
@@ -247,27 +34,9 @@ def get_all_data(engine, data_list):
         dfs[data] = pd.read_sql(query, engine)
     return dfs
 
-# ────────────────────────────────────────────────────────────────────────────────
-# DB 연결 해제
-# ────────────────────────────────────────────────────────────────────────────────
-def disconnect_db(engine):
-    """
-    데이터베이스 엔진 연결 풀을 해제하고 리소스를 정리한다.
-
-    Parameters
-    ----------------------
-    engine : sqlalchemy.engine.base.Engine
-        해제할 데이터베이스 엔진.
-
-    Returns
-    ----------------------
-    None
-    """
-    engine.dispose()
-
 
 # ────────────────────────────────────────────────────────────────────────────────
-# dfs1 데이터 로드 파이프라인
+# dfs1 데이터 로드 
 # ────────────────────────────────────────────────────────────────────────────────
 @st.cache_data
 def get_dfs1():
@@ -477,7 +246,7 @@ def get_df_area_density(df_den_raw, df_grid):
 
 
 # ────────────────────────────────────────────────────────────────────────────────
-# 메인 데이터 로드 파이프라인 (2단계: 인구 / 면적밀집도 데이터)
+# dfs2 데이터 로드
 # ────────────────────────────────────────────────────────────────────────────────
 def get_dfs2(df_grid):
     """
