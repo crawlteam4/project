@@ -196,7 +196,7 @@ def calc_rank(dfs, df_grid, RANGE_KM, radar_num=50, polygon_coords=None):
     )
 
     # 가중치가 0인 건물(중요도 없음) 제외
-    df_building_filtered = df_building_filtered[df_building_filtered['score'] > 0]
+    df_building_filtered = df_building_filtered[df_building_filtered['score'] != 0]
 
     # 반복 소거용 임시 복사본
     df_building_temp = df_building_filtered.copy()
@@ -250,8 +250,8 @@ def calc_rank(dfs, df_grid, RANGE_KM, radar_num=50, polygon_coords=None):
         print(f'점수 : {rank_dic[position_grid]}')
         print(f'남은 시설물 : {len(df_building_temp)}개')
 
-        # 모든 건물 커버 시 조기 종료
-        if len(df_building_temp) == 0:
+        # 최고점이 음수가 될 때 루프 종료
+        if max_score <= 0 :
             max_radar_num = i + 1
             print('-' * 30)
             print(f'최대 radar 개수: {max_radar_num}')
