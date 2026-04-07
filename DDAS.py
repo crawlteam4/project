@@ -45,6 +45,10 @@ def signup_dialog():
     """
     show_signup_form()
 
+@st.dialog('로그인 불가')
+def login_error():
+    st.warning('아이디/비밀번호를 확인해주시거나 회원가입을 해주십시오.')
+
 # 6. 스타일 설정 (페이지 링크 커스텀 CSS)
 st.markdown("""
 <style>
@@ -138,16 +142,19 @@ with id_log:
             if st.button("회원가입", use_container_width=True):
                 signup_dialog()
 
-# 8. 로그인 처리
+# 8. 로그인 처리 (users table은 회원가입 시 생성)
 if sub_butt:
-    conn = get_connection()
-    with conn.cursor() as cursor:
-        sql = "SELECT * FROM users WHERE user_id = %s AND password = %s"
-        cursor.execute(sql, (input_sender, input_recipient))
-        
-
-        if cursor.fetchone():
-            st.session_state.logged_in = True
-            st.switch_page("pages/1_데이터 탐색.py")
-        
-
+    # 회원가입 안하고 로그인 시도 시 팝업창 (users table 인식 못하는 오류에 대한 예외처리)
+    try: 
+        conn = get_connection()
+        with conn.cursor() as cursor:
+            sql = "SELECT * FROM users WHERE user_id = %s AND password = %s"
+            cursor.execute(sql, (input_sender, input_recipient))
+            if cursor.fetchone():
+                st.session_state.logged_in = True
+                st.switch_page("pages/1_데이터 탐색.py")
+            # 회원가입 후 users table에 없는 아이디/비밀번호 입력 시 팝업창
+            else:
+                login_error()
+    except Exception as e: 
+        login_error()

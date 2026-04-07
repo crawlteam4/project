@@ -201,9 +201,12 @@ def main():
         st.session_state.final_df = df_final
 
         # 4. 결과 지도 생성
-        st.write('지도 생성 중...')
-        visualize(df_grid, dfs1, rank_dic, RANGE_KM, ICON_MAP,
-                  show_rank=None, polygon_coords=grid_bd_points, df_final=df_final)
+        try:
+            visualize(df_grid, dfs1, rank_dic, RANGE_KM, ICON_MAP,
+                    show_rank=None, polygon_coords=grid_bd_points, df_final=df_final)
+        except:
+            st.warning("지역 내 설정하신 시설이 없습니다. 재계산 요망!")
+            st.stop()
 
         # 5. 순위 데이터프레임 생성
         df_rank = pd.DataFrame([
