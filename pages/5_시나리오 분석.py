@@ -9,6 +9,10 @@ from utils import set_common_banner
 st.set_page_config(layout="wide")
 set_common_banner()
 
+if "logged_in" not in st.session_state or not st.session_state.logged_in:
+    st.error("로그인이 필요합니다.")
+    st.stop()  # 이 아래 코드는 실행되지 않음
+
 @st.dialog(" ", width="medium")
 def render_help():
     """
@@ -76,7 +80,7 @@ def get_cumulative_coverage(dfs, df_rank, range_km):
     cumulative : list of float
         후보지를 하나씩 추가할 때마다의 누적 커버율(%) 목록
     """
-    df_all = pd.concat(dfs.values(), ignore_index=True)
+    df_all = dfs
     cover_result = building_cover(
         df_rank[['lat', 'lng']].values,
         df_all[['latitude', 'longitude']].values,

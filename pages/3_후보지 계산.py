@@ -12,6 +12,10 @@ from utils import set_common_banner
 st.set_page_config(layout="wide")
 set_common_banner()
 
+if "logged_in" not in st.session_state or not st.session_state.logged_in:
+    st.error("로그인이 필요합니다.")
+    st.stop()  # 이 아래 코드는 실행되지 않음
+
 st.markdown("""
 <style>
 [data-testid="stPageLink"] a {
@@ -171,53 +175,63 @@ def main():
         RANGE_KM  = float(user_input['range_km'])
         radar_num = int(user_input['radar_num'])
 
+        invalid_weight = False
         with st.status('후보지 계산 중...', expanded=False) as calc_status:
             # 1. 시설별 점수 계산
             set_score(dfs1, weight_dic)
 
             # 2. 최적 후보지 순위 계산
             st.write('최적 후보지 계산 중... ')
-            rank_dic, _ = calc_rank(
+            rank_dic, _,df_filtered_building = calc_rank(
                 dfs1, df_grid, RANGE_KM, radar_num, polygon_coords=grid_bd_points
             )
 
-            # 3. 인구/밀도 데이터와 결합하여 최종 결과 생성
-            df_population   = dfs2['population']
-            df_area_density = dfs2['area_density']
-            df_final = get_df_final(rank_dic, df_grid, df_population, df_area_density, RANGE_KM)
-            st.session_state.final_df = df_final
+            if rank_dic and next(iter(rank_dic.values())) <= 0:
+                calc_status.update(label='가중치 재설정 필요', state='error', expanded=False)
+                invalid_weight = True
 
-            # 4. 결과 지도 생성
-            st.write('지도 생성 중...')
-            visualize(df_grid, dfs1, rank_dic, RANGE_KM, ICON_MAP,
-                      show_rank=None, polygon_coords=grid_bd_points, df_final=df_final)
+        if invalid_weight:
+            st.page_link("pages/2_후보지 조건 설정.py", label="조건 설정 페이지로 이동")
+            st.stop()
 
-            # 5. 순위 데이터프레임 생성
-            df_rank = pd.DataFrame([
-                {
-                    'rank':  i + 1,
-                    'score': score,
-                    'lat':   df_grid.loc[idx, 'center_lat'],
-                    'lng':   df_grid.loc[idx, 'center_lng'],
-                }
-                for i, (idx, score) in enumerate(rank_dic.items())
-            ])
+        # 3. 인구/밀도 데이터와 결합하여 최종 결과 생성
+        df_population   = dfs2['population']
+        df_area_density = dfs2['area_density']
+        df_final = get_df_final(rank_dic, df_grid, df_population, df_area_density, RANGE_KM)
+        st.session_state.final_df = df_final
 
-            # 가중치 > 0인 시설 이름 목록 추출
-            name_list = st.session_state['user_input']['selected_weights']
-            select_name_list = [name for name, weight in name_list.items() if weight != 0]
+        # 4. 결과 지도 생성
+        st.write('지도 생성 중...')
+        visualize(df_grid, dfs1, rank_dic, RANGE_KM, ICON_MAP,
+                  show_rank=None, polygon_coords=grid_bd_points, df_final=df_final)
 
-            # 계산 결과를 세션에 저장
-            st.session_state['calc_results'] = {
-                'df_rank':             df_rank,
-                'dfs':                 dfs1,
-                'range_km':            RANGE_KM,
-                'radar_num':           radar_num,
-                'weights':             weight_dic,
-                'selected_facilities': select_name_list,
+        # 5. 순위 데이터프레임 생성
+        df_rank = pd.DataFrame([
+            {
+                'rank':  i + 1,
+                'score': score,
+                'lat':   df_grid.loc[idx, 'center_lat'],
+                'lng':   df_grid.loc[idx, 'center_lng'],
             }
+            for i, (idx, score) in enumerate(rank_dic.items())
+        ])
 
-            calc_status.update(label=f'{len(rank_dic)}개 후보지 선정', state='complete', expanded=False)
+        # 가중치 > 0인 시설 이름 목록 추출
+        name_list = st.session_state['user_input']['selected_weights']
+        select_name_list = [name for name, weight in name_list.items() if weight != 0]
+
+        st.session_state['calc_results'] = {
+            'df_rank':             df_rank,
+            'dfs':                 df_filtered_building,
+            'range_km':            RANGE_KM,
+            'radar_num':           radar_num,
+            'weights':             weight_dic,
+            'selected_facilities': select_name_list,
+        }
+
+        calc_status.update(label=f'{len(rank_dic)}개 후보지 선정', state='complete', expanded=False)
+
+            
 
     results  = st.session_state['calc_results']
     df_rank  = results['df_rank']

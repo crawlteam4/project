@@ -1,64 +1,75 @@
 import streamlit as st
 import pandas as pd
 import folium
+from folium.plugins import MarkerCluster
 import plotly.graph_objects as go
 from calculate.calculate import building_cover
-from db.db import *
 from utils import set_common_banner
 
-# 1. 페이지 설정
+# ── 페이지 기본 설정 ──────────────────────────────────────────────────────────
 st.set_page_config(layout="wide")
 set_common_banner()
 
-st.markdown("""
-<style>
-[data-testid="stPageLink"] a {
-    color: #4c8bf5 !important;
-    text-decoration: underline !important;
-    font-size: 14px !important;
-    transition: color 0.2s ease, letter-spacing 0.15s ease !important;
-    display: inline-block !important;
-}
-[data-testid="stPageLink"] a:hover {
-    color: #1a3fa3 !important;
-    letter-spacing: 0.5px !important;
-}
-</style>
-""", unsafe_allow_html=True)
 
-# 2. 상수 정의 (카테고리 한글명 / 색상)
+
+if "logged_in" not in st.session_state or not st.session_state.logged_in:
+    st.error("로그인이 필요합니다.")
+    st.stop()  # 이 아래 코드는 실행되지 않음
+
+
+
+# ── 카테고리 한글 매핑 및 아이콘/색상 정의 ──────────────────────────────────
 CAT_KR = {
-    'broadcast':         '방송시설',
-    'electricity':       '전력시설',
-    'factory':           '산업 시설',
-    'hospital':          '병원',
-    'infra':             '지하공동구',
-    'prison':            '교정 시설',
-    'public':            '국가 공공기관 시설',
-    'science':           '과학연구',
-    'telecommunication': '정보통신시설',
-    'transportation':    '교통 항공 항만 시설',
-    'water':             '수원 시설',
-    'frequency':         '기지국',
+    'broadcast': '방송시설', 'electricity': '전력시설', 'factory': '산업 시설',
+    'hospital': '병원', 'infra': '지하공동구', 'prison': '교정 시설',
+    'public': '국가 공공기관 시설', 'science': '과학연구', 'telecommunication': '정보통신시설',
+    'transportation': '교통 항공 항만 시설', 'water': '수원 시설', 'frequency': '기지국',
 }
-
-CAT_COLORS = {
-    'broadcast':         '#F97316',
-    'electricity':       '#22C55E',
-    'factory':           '#3B82F6',
-    'hospital':          '#EF4444',
-    'infra':             '#1E3A8A',
-    'prison':            '#374151',
-    'public':            '#0891B2',
-    'science':           '#EC4899',
-    'telecommunication': '#A78BFA',
-    'transportation':    '#15803D',
-    'water':             '#38BDF8',
-    'frequency':         '#B91C1C',
+# 카테고리별 folium 아이콘 매핑
+ICON_MAP = {
+    "방송국":         folium.Icon(color="orange",     icon="broadcast-tower",   prefix="fa"),
+    "변전소":       folium.Icon(color="green",      icon="bolt",              prefix="fa"),
+    "산업시설":           folium.Icon(color="blue",       icon="industry",          prefix="fa"),
+    "병원":          folium.Icon(color="red",        icon="hospital",          prefix="fa"),
+    "혈액원":          folium.Icon(color="red",        icon="hospital",          prefix="fa"),
+    
+    "지하공동구":             folium.Icon(color="darkblue",   icon="cogs",              prefix="fa"),
+    "교정 시설":            folium.Icon(color="black",      icon="university",        prefix="fa"),
+    "지방행정기관":            folium.Icon(color="cadetblue",  icon="building",          prefix="fa"),
+    "중앙행정기관":            folium.Icon(color="cadetblue",  icon="building",          prefix="fa"),
+    "국가유산":            folium.Icon(color="cadetblue",  icon="building",          prefix="fa"),
+    
+    "과학연구":           folium.Icon(color="purple",     icon="flask",             prefix="fa"),
+    "정보통신시설": folium.Icon(color="beige",      icon="satellite-dish",    prefix="fa"),
+    "통신망": folium.Icon(color="beige",      icon="satellite-dish",    prefix="fa"),
+    "금융": folium.Icon(color="beige",      icon="satellite-dish",    prefix="fa"),
+    
+    "터널":    folium.Icon(color="darkgreen",  icon="train",             prefix="fa"),
+    "교량":    folium.Icon(color="darkgreen",  icon="train",             prefix="fa"),
+    
+    "배수지":             folium.Icon(color="cadetblue",  icon="tint",              prefix="fa"),
+    "기지국":         folium.Icon(color="darkred",    icon="signal",            prefix="fa"),
 }
+# 카테고리별 차트 색상 팔레트
+PALETTE = ['#E57535','#72AF26','#38AADD','#D43D2A','#00375D','#3D3D3D','#436978','#E07DBF','#CBBE73','#728224','#A3CAC5','#A23336']
 
-# 3. 도움말 다이얼로그
 
+# ── 세션 데이터 로드 ──────────────────────────────────────────────────────────
+def load_session_data():
+    """세션 상태에서 계산 결과를 불러옵니다. 결과가 없으면 에러 메시지 후 종료합니다."""
+    if st.session_state.get('calc_results') is None:
+        st.error('3페이지에서 계산을 먼저 실행해주세요.')
+        st.stop()
+
+    results = st.session_state['calc_results']
+    return (
+        results['df_rank'],       # 순위별 후보지 좌표 및 점수
+        results['dfs'],           # 전체 건물 데이터프레임
+        results['range_km'],      # 커버리지 반경 (km)
+        results['weights'],       # 카테고리별 가중치
+    )
+
+# ── 도움말 함수 ─────────────────────────────────────────────────
 @st.dialog(" ", width="medium")
 def render_help():
     """
@@ -68,33 +79,261 @@ def render_help():
     그래프·표 제공 목적을 안내한다.
     """
     st.subheader('도움말')
-    st.write("이 페이지는 **3단계 계산을 통해 선정된 예비 후보지들**간의 원할한 비교를 위해 그래프와 표 등을 제공합니다.")
+    st.write("이 페이지는 **3단계 계산을 통해 선정된 예비 후보지들**의 상세 내용과 후보지들 간의 원할한 비교를 위해 그래프와 표 등을 제공합니다.")
     st.write("")
-    st.warning('가장 마지막에 분석을 시행한 시나리오에 대한 내용.')
+    st.warning('가장 마지막에 분석을 시행한 시나리오에 대한 내용입니다.')
 
-# 4. 헬퍼 함수
 
-def build_score_chart(ranks, scores, elbow_idx):
+# ── 커버리지 계산 (캐시 적용) ─────────────────────────────────────────────────
+@st.cache_data
+def compute_coverage(rank_coords, building_coords, range_km):
+    """후보지 좌표 기준으로 반경 내 건물 커버리지를 계산합니다. (결과 캐시)"""
+    return building_cover(rank_coords, building_coords, range_km)
+
+
+# ── 엘보우 인덱스 계산 ────────────────────────────────────────────────────────
+def compute_elbow_index(scores):
     """
-    후보지 순위별 종합점수 꺾은선 그래프를 생성한다.
-
-    낙폭이 가장 큰 구간(elbow)의 점을 주황색으로 강조한다.
-
-    Parameters
-    ----------
-    ranks     : list of int   — 후보지 순위 목록
-    scores    : list of float — 순위별 종합점수 목록
-    elbow_idx : int           — 강조할 elbow 구간 인덱스
-
-    Returns
-    -------
-    fig : plotly.graph_objects.Figure
-        생성된 Plotly 꺾은선 차트 객체
+    점수 구간별 차이가 가장 큰 위치(엘보우 포인트)의 인덱스를 반환합니다.
+    순위 그래프에서 적정 후보지 수를 시각적으로 표시하는 데 사용됩니다.
     """
-    colors = ["#ffab44" if i == elbow_idx else '#8d8d8d' for i in range(len(ranks))]
-    sizes  = [16 if i == elbow_idx else 10 for i in range(len(ranks))]
+    if len(scores) < 2:
+        return 0
+    diffs = [scores[i] - scores[i + 1] for i in range(len(scores) - 1)]
+    return diffs.index(max(diffs))
 
+
+# ── Tab 1 관련 함수들 ─────────────────────────────────────────────────────────
+
+def build_coverage_map(candidate, covered_df, range_km):
+    """
+    선택된 후보지의 커버리지 지도를 생성합니다.
+    - 후보지 위치 마커(빨간 원형)
+    - 반경 원(파란 원)
+    - 카테고리별 건물 마커 클러스터 레이어
+    """
+    m = folium.Map(
+        location=[candidate['lat'], candidate['lng']],
+        zoom_start=14,
+        tiles=None,
+    )
+
+    # 베이스맵 타일 추가
+    folium.TileLayer(
+        tiles='https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
+
+        attr='© OpenStreetMap contributors',
+
+        name='Layer',
+        show=True
+        ).add_to(m)
+
+    # 커버리지 반경 원 표시
+    folium.Circle(
+        location=[candidate['lat'], candidate['lng']],
+        radius=range_km * 1000,
+        color='#3B82F6', weight=2,
+        fill=True, fill_color='#3B82F6', fill_opacity=0.08,
+    ).add_to(m)
+
+    # 후보지 순위 마커 (빨간 원형 배지)
+    folium.Marker(
+        location=[candidate['lat'], candidate['lng']],
+        icon=folium.DivIcon(
+            html=(
+                f'<div style="background:#EF4444;color:white;font-weight:bold;'
+                f'border-radius:50%;width:32px;height:32px;display:flex;'
+                f'align-items:center;justify-content:center;font-size:13px;'
+                f'border:2px solid white;">{int(candidate["rank"])}</div>'
+            ),
+            icon_size=(32, 32),
+            icon_anchor=(16, 16),
+        ),
+    ).add_to(m)
+
+    # 카테고리별 건물 마커 레이어 추가
+    for cat in covered_df['tag'].unique():
+        cat_df = covered_df[covered_df['tag'] == cat]
+        layer = folium.FeatureGroup(name=f"{CAT_KR.get(cat, cat)} ({len(cat_df)}개)", show=True)
+        mc = MarkerCluster().add_to(layer)
+
+        for _, row in cat_df.iterrows():
+            # 건물명 컬럼명이 다를 수 있으므로 순서대로 탐색
+            name = row.get('name', row.get('시설명', row.get('건물명', '')))
+            folium.Marker(
+                location=[row['latitude'], row['longitude']],
+                tooltip=name,
+                popup=folium.Popup(
+                    f"<b>{name}</b><br>{CAT_KR.get(cat, cat)}",
+                    max_width=250,
+                ),
+                # visualize.py 방식과 동일: 마커마다 ICON_MAP에서 직접 조회
+                icon=ICON_MAP.get(cat, folium.Icon(color="gray", icon="question", prefix="fa")),
+            ).add_to(mc)
+
+        layer.add_to(m)
+
+    folium.LayerControl(collapsed=False).add_to(m)
+    return m
+
+
+def build_category_bar_chart(bar_df):
+    """카테고리별 건물 수를 막대 그래프로 생성합니다."""
+    fig = go.Figure(go.Bar(
+        x=bar_df['카테고리'],
+        y=bar_df['건물 수'],
+        marker_color=[PALETTE[i % len(PALETTE)] for i in range(len(bar_df))],
+        text=bar_df['건물 수'],
+        textposition='outside',
+        hovertemplate='<b>%{x}</b><br>건물 수: %{y}개<extra></extra>',
+    ))
+    fig.update_layout(
+        xaxis_tickangle=-40,
+        yaxis_title='건물 수',
+        plot_bgcolor='white',
+        paper_bgcolor='white',
+        margin=dict(t=20, b=80, l=50, r=20),
+        height=400,
+    )
+    return fig
+
+
+def render_tab1(df_rank, df_buildings, cover_result, range_km):
+    """
+    [Tab 1] 후보지 상세정보 탭을 렌더링합니다.
+    - 좌측: 커버리지 지도
+    - 우측: 순위 선택 및 요약 메트릭
+    - 하단: 카테고리별 건물 수 막대 그래프 + 테이블
+    """
+    col_map, col_info = st.columns([5, 2])
+
+    with col_info:
+        with st.container(border=True):
+            # 순위 선택 박스
+            selected_rank = st.selectbox(
+                "후보지 순위 선택",
+                df_rank['rank'].astype(int).tolist(),
+                format_func=lambda x: f"{x}순위",
+            )
+            st.divider()
+
+            # 선택된 후보지 정보 추출
+            candidate = df_rank.iloc[selected_rank - 1]
+            covered_idx = cover_result.iloc[selected_rank - 1]['building_indices']
+            covered_df = df_buildings.iloc[covered_idx].copy()
+            cat_counts = covered_df['tag'].value_counts()
+
+            # 요약 메트릭 표시
+            st.metric("순위",         f"{selected_rank}위")
+            st.metric("커버 건물 수", f"{len(covered_idx)}개")
+            st.metric("최종점수 (정규화 후)",  f"{candidate['score']:.4f}")
+            st.metric("반경",         f"{range_km} km")
+
+    with col_map:
+        with st.container(border=True):
+            st.markdown(f"##### {selected_rank}순위 후보지 커버리지")
+            st.caption(
+                f"위도 {candidate['lat']:.6f} | 경도 {candidate['lng']:.6f} | 반경 {range_km}km"
+            )
+            # 커버리지 지도 생성 및 렌더링
+            m = build_coverage_map(candidate, covered_df, range_km)
+            st.components.v1.html(m._repr_html_(), height=500)
+
+    st.divider()
+
+    # 카테고리별 건물 수 데이터프레임 생성
+    bar_df = pd.DataFrame([
+        {'카테고리': CAT_KR.get(cat, cat), '건물 수': int(cat_counts.get(cat, 0))}
+        for cat in covered_df['tag'].unique()
+    ]).sort_values('건물 수', ascending=False)
+
+    col_chart, col_table = st.columns([5, 2])
+
+    with col_chart:
+        with st.container(border=True):
+            st.markdown("##### 카테고리별 건물 수")
+            fig = build_category_bar_chart(bar_df)
+            st.plotly_chart(fig, use_container_width=True)
+
+    with col_table:
+        with st.container(border=True):
+            st.markdown("##### 카테고리별 상세")
+            st.dataframe(bar_df[['카테고리', '건물 수']], hide_index=True, use_container_width=True, height=400)
+
+    return selected_rank  # Tab 2에서 강조 표시에 사용
+
+
+# ── Tab 2 관련 함수들 ─────────────────────────────────────────────────────────
+
+def build_coverage_summary_df(df_rank, df_buildings, cover_result):
+    """
+    후보지별 커버 건물 수 요약 데이터프레임을 생성합니다.
+    각 후보지의 전체 커버 수와 카테고리별 세부 수치를 포함합니다.
+    """
+    summary_rows = []
+    for i, (_, cand) in enumerate(df_rank.iterrows()):
+        c_idx = cover_result.iloc[i]['building_indices']
+        c_counts = df_buildings.iloc[c_idx]['tag'].value_counts()
+
+        row = {
+            '순위': int(cand['rank']),
+            '위도': round(cand['lat'], 6),
+            '경도': round(cand['lng'], 6),
+            '커버 건물 수': len(c_idx),
+        }
+        # 카테고리별 건물 수 추가
+        for cat in sorted(df_buildings['tag'].unique()):
+            row[CAT_KR.get(cat, cat)] = int(c_counts.get(cat, 0))
+
+        summary_rows.append(row)
+
+    return pd.DataFrame(summary_rows)
+
+
+def render_tab2(df_rank, df_buildings, cover_result, selected_rank):
+    """
+    [Tab 2] 후보지 간 비교 탭을 렌더링합니다.
+    - 종합점수 및 생활인구/토지이용 압축도 비교 테이블
+    - 후보지별 커버 건물 수 비교 테이블 (선택된 순위 강조)
+    """
+    with st.container(border=True):
+        final_df = st.session_state.get('final_df')
+        if final_df is None:
+            st.info("계산을 먼저 실행해주세요.")
+        else:
+            # 컬럼명 한글로 변환
+            final_df.columns = ['순위', '격자ID', '위도', '경도', '종합 점수 (정규화 후)', '인구 밀도', '건물 밀집도']
+            st.markdown('<h5>종합점수 및 생활인구/토지이용 압축도 비교</h5>', unsafe_allow_html=True)
+            st.dataframe(final_df, use_container_width=True, hide_index=True)
+
+    st.divider()
+
+    with st.container(border=True):
+        st.markdown('<h5>커버 건물 개수 비교</h5>', unsafe_allow_html=True)
+        summary_df = build_coverage_summary_df(df_rank, df_buildings, cover_result)
+
+        # 선택된 순위 행을 노란색으로 강조
+        st.dataframe(
+            summary_df.style.apply(
+                lambda row: ['background-color:#FEF9C3'] * len(row)
+                if row['순위'] == selected_rank else [''] * len(row),
+                axis=1,
+            ),
+            hide_index=True,
+            use_container_width=True,
+        )
+
+
+# ── Tab 3 관련 함수들 ─────────────────────────────────────────────────────────
+
+def build_score_scatter_chart(ranks, scores, elbow_idx):
+    """
+    후보지 순위별 종합점수 산점도 + 라인 그래프를 생성합니다.
+    엘보우 포인트(점수 낙폭이 가장 큰 구간의 시작점)를 주황색으로 강조합니다.
+    """
     fig = go.Figure()
+
+    # 라인 레이어 (배경 연결선)
     fig.add_trace(go.Scatter(
         x=ranks, y=scores,
         mode='lines',
@@ -102,18 +341,29 @@ def build_score_chart(ranks, scores, elbow_idx):
         showlegend=False,
         hoverinfo='skip',
     ))
+
+    # 포인트 레이어 (순위별 점수 마커)
     fig.add_trace(go.Scatter(
         x=ranks, y=scores,
         mode='markers+text',
-        marker=dict(color=colors, size=sizes, line=dict(color='white', width=2)),
+        marker=dict(
+            color=['#ffab44' if i == elbow_idx else '#8d8d8d' for i in range(len(ranks))],
+            size=[16 if i == elbow_idx else 10 for i in range(len(ranks))],
+            line=dict(color='white', width=2),
+        ),
         text=[f"{s:.4f}" for s in scores],
         textposition='top center',
-        textfont=dict(size=11, color='#475569'),
         hovertemplate='%{x}순위<br>점수: %{y:.5f}<extra></extra>',
         showlegend=False,
     ))
+
     fig.update_layout(
-        xaxis=dict(title='후보지 순위', tickmode='array', tickvals=ranks, ticktext=[f"{r}순위" for r in ranks]),
+        xaxis=dict(
+            title='후보지 순위',
+            tickmode='array',
+            tickvals=ranks,
+            ticktext=[f"{r}순위" for r in ranks],
+        ),
         yaxis=dict(title='점수'),
         plot_bgcolor='white',
         paper_bgcolor='white',
@@ -123,119 +373,89 @@ def build_score_chart(ranks, scores, elbow_idx):
     return fig
 
 
-def build_candidate_map(candidate, covered_df, active_cats, range_km):
+def build_score_diff_df(ranks, scores, elbow_idx):
     """
-    선택한 후보지의 커버리지를 시각화하는 Folium 지도를 생성한다.
-
-    후보지 위치에 마커를, 사정거리에 반경 원을,
-    커버 범위 내 시설들을 카테고리별 레이어로 표시한다.
-
-    Parameters
-    ----------
-    candidate   : pandas.Series    — 후보지 정보 (rank, lat, lng, score)
-    covered_df  : pandas.DataFrame — 커버 범위 내 시설 데이터 (category, latitude, longitude)
-    active_cats : list of str      — 가중치 > 0인 활성 카테고리 목록
-    range_km    : float            — 사정거리 (km)
-
-    Returns
-    -------
-    m : folium.Map
-        생성된 Folium 지도 객체
+    순위 간 점수 차이 및 증감률 데이터프레임을 생성합니다.
+    엘보우 구간을 굵은 노란색으로 강조합니다.
     """
-    m = folium.Map(
-        location=[candidate['lat'], candidate['lng']],
-        zoom_start=14,
-        tiles=None
+    diff_rows = [
+        {
+            '구간': f"{ranks[i]}순위 → {ranks[i+1]}순위",
+            '점수 차이': round(scores[i] - scores[i + 1], 5),
+            '증감률': f"{(scores[i] - scores[i + 1]) / scores[0] * 100:.1f}%",
+        }
+        for i in range(len(scores) - 1)
+    ]
+    df = pd.DataFrame(diff_rows)
+    return df.style.apply(
+        lambda row: ['background-color:#FEF9C3;font-weight:bold;' if row.name == elbow_idx else '' for _ in row],
+        axis=1,
     )
-    folium.TileLayer(
-        tiles='https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
-        attr='© OpenStreetMap contributors',
-        name='Layer',
-        show=True
-    ).add_to(m)
-
-    # 사정거리 원
-    folium.Circle(
-        location=[candidate['lat'], candidate['lng']],
-        radius=range_km * 1000,
-        color='#3B82F6', weight=2,
-        fill=True, fill_color='#3B82F6', fill_opacity=0.08,
-        tooltip=f"{int(candidate['rank'])}순위 반경 {range_km}km",
-    ).add_to(m)
-
-    # 후보지 마커
-    folium.Marker(
-        location=[candidate['lat'], candidate['lng']],
-        icon=folium.DivIcon(
-            html=f'''<div style="background:#EF4444;color:white;font-weight:bold;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:13px;border:2px solid white;box-shadow:0 2px 6px rgba(0,0,0,0.3);">{int(candidate['rank'])}</div>''',
-            icon_size=(32, 32),
-            icon_anchor=(16, 16),
-        ),
-        tooltip=f"{int(candidate['rank'])}순위 후보지 | 위도 {candidate['lat']:.5f}, 경도 {candidate['lng']:.5f}",
-    ).add_to(m)
-
-    # 카테고리별 시설 마커 레이어
-    for cat in active_cats:
-        cat_df = covered_df[covered_df['category'] == cat]
-        if cat_df.empty:
-            continue
-        layer = folium.FeatureGroup(name=f"{CAT_KR.get(cat, cat)} ({len(cat_df)}개)", show=True)
-        color = CAT_COLORS.get(cat, '#6B7280')
-        for _, row in cat_df.iterrows():
-            name_val     = row.get('name', row.get('시설명', row.get('건물명', '')))
-            tooltip_text = CAT_KR.get(cat, cat)
-            if name_val:
-                tooltip_text += f" | {name_val}"
-            folium.CircleMarker(
-                location=[row['latitude'], row['longitude']],
-                radius=6, color=color, fill=True,
-                fill_color=color, fill_opacity=0.8, weight=1.5,
-                tooltip=tooltip_text
-            ).add_to(layer)
-        layer.add_to(m)
-
-    folium.LayerControl(collapsed=False).add_to(m)
-    return m
 
 
-@st.cache_data
-def compute_coverage(rank_coords, building_coords, range_km):
+def render_tab3(ranks, scores, elbow_idx, df_rank, range_km):
     """
-    모든 후보지에 대해 반경 내 포함되는 건물 인덱스를 계산한다. (캐시 적용)
-
-    Parameters
-    ----------
-    rank_coords     : numpy.ndarray (n, 2) — 후보지 좌표 배열 (위도, 경도)
-    building_coords : numpy.ndarray (m, 2) — 시설 좌표 배열 (위도, 경도)
-    range_km        : float                — 탐색 반경 (km)
-
-    Returns
-    -------
-    DataFrame
-        - grid_id          : 후보지 인덱스
-        - building_count   : 커버된 시설 수
-        - building_indices : 커버된 시설 인덱스 배열
+    [Tab 3] 후보지 간 비교 2 탭을 렌더링합니다.
+    - 좌측: 순위별 종합점수 그래프 + 점수 차이 테이블
+    - 우측: 분석 조건 요약 및 선택 시설 목록
     """
-    return building_cover(rank_coords, building_coords, range_km)
+    col_chart, col_summary = st.columns([6, 3])
 
-# 5. 메인 UI
+    with col_chart:
+        with st.container(border=True):
+            st.markdown('<h5>후보지 순위별 종합점수 그래프</h5>', unsafe_allow_html=True)
 
-# 계산 결과 없으면 중단
-if st.session_state.get('calc_results') is None:
-    st.error('사용자 입력 페이지에서 조건을 먼저 입력해주세요.')
-    st.page_link("pages/2_후보지 조건 설정.py", label="조건 설정 페이지로 이동")
-    st.stop()
+            # 순위별 점수 그래프 렌더링
+            fig = build_score_scatter_chart(ranks, scores, elbow_idx)
+            st.plotly_chart(fig, use_container_width=True)
 
-# 세션 데이터 추출
-results    = st.session_state.get('calc_results')
-user_input = st.session_state.get('user_input')
+            # 점수 차이 테이블 (2개 이상 후보지일 때만 표시)
+            if len(scores) >= 2:
+                st.dataframe(
+                    build_score_diff_df(ranks, scores, elbow_idx),
+                    hide_index=True,
+                    use_container_width=True,
+                )
 
-if results is None:
-    st.info("계산 페이지에서 계산을 먼저 실행해주세요.")
-    st.stop()
-if user_input is None:
-    st.info("사용자 입력 페이지에서 조건을 먼저 입력해주세요.")
-    st.stop()
+    with col_summary:
+        with st.container(border=True):
+            sub1, sub2 = st.columns(2)
+
+            with sub1:
+                # 분석 조건 요약 메트릭
+                st.markdown("###### 분석 조건 요약")
+                st.metric("사정 거리", f"{range_km}km")
+                st.metric("후보지 수", f"{len(df_rank)}개")
+
+            with sub2:
+                # 사용자가 선택한 시설 목록 (가중치가 0이 아닌 항목만)
+                user_input = st.session_state.get('user_input', {})
+                selected_names = [
+                    n for n, w in user_input.get('selected_weights', {}).items() if w != 0
+                ]
+                st.markdown(f"###### 선택 시설 ({len(selected_names)}개)")
+                for name in selected_names:
+                    st.markdown(f"• {name}")
+
+
+# ── 메인 렌더링 ───────────────────────────────────────────────────────────────
+
+# 세션 데이터 로드
+df_rank, df_buildings, range_km, weights = load_session_data()
+
+# 커버리지 계산 (좌표 배열을 캐시 키로 사용)
+cover_result = compute_coverage(
+    df_rank[['lat', 'lng']].values,
+    df_buildings[['latitude', 'longitude']].values,
+    range_km,
+)
+
+# 순위 및 점수 리스트 추출
+ranks  = df_rank['rank'].tolist()
+scores = df_rank['score'].tolist()
+
+# 엘보우 포인트 인덱스 계산
+elbow_idx = compute_elbow_index(scores)
 
 # 페이지 헤더 + 도움말 버튼
 header_col, help_col = st.columns([10, 1])
@@ -245,247 +465,18 @@ with help_col:
     st.write("")  # 수직 정렬용 여백
     if st.button("도움말"):
         render_help()
-
-df_rank  = results['df_rank']
-dfs      = results['dfs']
-range_km = results['range_km']
-weights  = results['weights']
-
-ranks  = df_rank['rank'].tolist()
-scores = df_rank['score'].tolist()
-
-# 점수 낙폭이 가장 큰 구간(elbow) 탐지
-if len(scores) >= 2:
-    drops     = [scores[i] - scores[i + 1] for i in range(len(scores) - 1)]
-    elbow_idx = drops.index(max(drops))
-else:
-    elbow_idx = 0
-
-# 구간별 점수 차이 테이블
-drop_data = [
-    {
-        '구간':      f"{ranks[i]}순위 → {ranks[i+1]}순위",
-        '점수 차이': round(scores[i] - scores[i+1], 5),
-        '증감률':    f"{(scores[i] - scores[i+1]) / scores[0] * 100:.1f}%",
-    }
-    for i in range(len(scores) - 1)
-]
-
-active_cats = [cat for cat in dfs.keys() if weights.get(cat, 0) > 0]
-
-if not active_cats:
-    st.warning("가중치가 0보다 큰 카테고리가 없습니다. 사용자 입력에서 가중치를 설정해주세요.")
-    st.stop()
-
-# 활성 카테고리의 시설 데이터를 하나의 DataFrame으로 합치기
-df_all = pd.concat(
-    [dfs[cat].assign(category=cat) for cat in active_cats if cat in dfs],
-    ignore_index=True,
-)
-
-# 모든 후보지에 대해 커버 건물 계산
-cover_result = compute_coverage(
-    df_rank[['lat', 'lng']].values,
-    df_all[['latitude', 'longitude']].values,
-    range_km,
-)
-
-# 탭 구성
 tab1, tab2, tab3 = st.tabs(['후보지 상세정보', '후보지 간 비교 1', '후보지 간 비교 2'])
 
 with tab1:
-    rank_options = df_rank['rank'].astype(int).tolist()
+    # Tab 1 렌더링 후 선택된 순위를 받아 Tab 2 강조에 사용
+    selected_rank = render_tab1(df_rank, df_buildings, cover_result, range_km)
+    # st.write(df_buildings['tag'].unique())  # 실제 tag 값 확인
 
-    col_top_map, col_top_summary = st.columns([5, 2])
 
-    with col_top_summary:
-        with st.container(border=True):
-            st.markdown("##### 분석 결과 요약")
-
-            selected_rank = st.selectbox(
-                "후보지 순위 선택",
-                rank_options,
-                format_func=lambda x: f"{x}순위",
-                key="rank_selector"
-            )
-            st.divider()
-
-            # 선택 후보지 상세 계산
-            cand_idx    = selected_rank - 1
-            candidate   = df_rank.iloc[cand_idx]
-            final_score = candidate['score']
-            covered_idx = cover_result.iloc[cand_idx]['building_indices']
-            covered_df  = df_all.iloc[covered_idx].copy()
-            cat_counts  = covered_df['category'].value_counts()
-
-            total_covered = len(covered_idx)
-
-            st.metric("순위",         f"{selected_rank}위")
-            st.metric("커버 건물 수", f"{total_covered}개")
-            st.metric("가중치 점수",  f"{final_score:.4f}")
-            st.metric("반경",         f"{range_km} km")
-
-    # 후보지 커버리지 지도
-    map_obj  = build_candidate_map(candidate, covered_df, active_cats, range_km)
-    map_html = map_obj._repr_html_()
-
-    with col_top_map:
-        with st.container(border=True):
-            st.markdown(f"##### {selected_rank}순위 후보지 커버리지")
-            st.caption(f"위도 {candidate['lat']:.6f} | 경도 {candidate['lng']:.6f} | 반경 {range_km}km")
-            st.components.v1.html(map_html, height=500, scrolling=False)
-
-    st.divider()
-
-    # 하단: 카테고리별 차트 + 상세 테이블
-    col_btm_chart, col_btm_table = st.columns([1, 1])
-
-    with col_btm_chart:
-        with st.container(border=True):
-            st.markdown("##### 카테고리별 건물 수")
-            bar_rows = [
-                {
-                    '카테고리':              CAT_KR.get(cat, cat),
-                    '건물 수':               int(cat_counts.get(cat, 0)),
-                    '가중치':                weights.get(cat, 0),
-                    '가중치 점수 (정규화 전)': round(int(cat_counts.get(cat, 0)) * weights.get(cat, 0), 4),
-                    '_color':               CAT_COLORS.get(cat, '#6B7280'),
-                }
-                for cat in active_cats
-            ]
-            bar_df = pd.DataFrame(bar_rows).sort_values('건물 수', ascending=False)
-
-            fig = go.Figure(go.Bar(
-                x=bar_df['카테고리'],
-                y=bar_df['건물 수'],
-                marker_color=bar_df['_color'].tolist(),
-                text=bar_df['건물 수'],
-                textposition='outside',
-                hovertemplate='<b>%{x}</b><br>건물 수: %{y}개<br>가중치: %{customdata[0]}<br>가중치 점수: %{customdata[1]}<extra></extra>',
-                customdata=bar_df[['가중치', '가중치 점수 (정규화 전)']].values,
-            ))
-            fig.update_layout(
-                xaxis_tickangle=-40, yaxis_title='건물 수',
-                plot_bgcolor='white', paper_bgcolor='white',
-                margin=dict(t=20, b=80, l=50, r=20), height=400
-            )
-            st.plotly_chart(fig, use_container_width=True)
-
-    with col_btm_table:
-        with st.container(border=True):
-            st.markdown("##### 카테고리별 상세")
-            display_df = bar_df[['카테고리', '건물 수', '가중치', '가중치 점수 (정규화 전)']].copy()
-            st.dataframe(display_df, hide_index=True, use_container_width=True, height=400)
 
 
 with tab2:
-    with st.container(border=True):
-        # 종합점수 및 생활인구/토지이용 압축도 비교
-        final_df = st.session_state.get('final_df', None)
-
-        if final_df is None:
-            st.info("계산을 먼저 실행해주세요.")
-        else:
-            final_df.columns = ['순위', '격자ID', '위도', '경도', '종합 점수 (정규화 후)', '인구 밀도', '건물 밀집도']
-
-            col_title, col_buttons = st.columns([9, 2])
-            with col_title:
-                st.markdown('<h5 style="padding: 10px; border-radius: 5px;">종합점수 및 생활인구/토지이용 압축도 비교</h5>', unsafe_allow_html=True)
-                st.write("")
-            with col_buttons:
-                c1, c2 = st.columns([1, 1])
-                c1.download_button(
-                    label="CSV Download",
-                    data=final_df.to_csv(index=False).encode('utf-8'),
-                    file_name='candidate_sites.csv',
-                    mime='text/csv',
-                )
-                if c2.button('DB Upload'):
-                    upload_result(final_df)
-
-            st.dataframe(final_df, use_container_width=True, hide_index=True)
-
-        st.divider()
-
-        # 커버 건물 개수 후보지 간 비교 테이블
-        st.markdown('<h5 style="padding: 10px; border-radius: 5px;">커버 건물 개수 간 비교</h5>', unsafe_allow_html=True)
-        st.write("")
-
-        summary_rows = []
-        for i, (_, cand) in enumerate(df_rank.iterrows()):
-            c_idx    = cover_result.iloc[i]['building_indices']
-            c_df     = df_all.iloc[c_idx]
-            c_counts = c_df['category'].value_counts()
-
-            row = {
-                '순위':         int(cand['rank']),
-                '위도':         round(cand['lat'], 6),
-                '경도':         round(cand['lng'], 6),
-                '커버 건물 수': len(c_idx),
-            }
-            for cat in active_cats:
-                row[CAT_KR.get(cat, cat)] = int(c_counts.get(cat, 0))
-            summary_rows.append(row)
-
-        summary_df = pd.DataFrame(summary_rows)
-
-        # 현재 tab1에서 선택한 순위 행 강조 표시
-        def highlight_selected(row):
-            """
-            선택된 순위 행에 배경색을 적용하는 스타일 함수.
-
-            Parameters
-            ----------
-            row : pandas.Series — 데이터프레임의 행
-
-            Returns
-            -------
-            list of str — 각 셀에 적용할 CSS 스타일 문자열 목록
-            """
-            if row['순위'] == selected_rank:
-                return ['background-color: #FEF9C3'] * len(row)
-            return [''] * len(row)
-
-        st.dataframe(
-            summary_df.style.apply(highlight_selected, axis=1),
-            hide_index=True,
-            use_container_width=True,
-        )
-
+    render_tab2(df_rank, df_buildings, cover_result, selected_rank)
 
 with tab3:
-    col1, col2 = st.columns([6, 3])
-
-    with col1:
-        with st.container(border=True):
-            st.markdown('<h5 style="padding: 10px; border-radius: 5px;">후보지 순위별 종합점수(정규화 후) 그래프</h5>', unsafe_allow_html=True)
-            st.plotly_chart(build_score_chart(ranks, scores, elbow_idx), use_container_width=True)
-
-            st.dataframe(
-                pd.DataFrame(drop_data).style.apply(
-                    lambda row: ['background-color:#FEF9C3; color:#454545; font-weight:bold;'
-                                 if row.name == elbow_idx else '' for _ in row],
-                    axis=1,
-                ),
-                hide_index=True, use_container_width=True,
-            )
-
-    with col2:
-        with st.container(border=True):
-            sub_col1, sub_col2 = st.columns([3, 3])
-
-            with sub_col1:
-                st.markdown("###### 분석 조건 요약")
-                st.metric("사정 거리", f"{range_km}km")
-                st.metric("후보지 수", f"{len(df_rank)}개")
-
-            with sub_col2:
-                select_name_list = [
-                    name for name, w in user_input['selected_weights'].items() if w != 0
-                ]
-                st.markdown(f"###### 선택 시설 ({len(select_name_list)}개)")
-                if select_name_list:
-                    for name in select_name_list:
-                        st.markdown(f"•  {name}")
-                else:
-                    st.caption("선택된 시설이 없습니다.")
+    render_tab3(ranks, scores, elbow_idx, df_rank, range_km)

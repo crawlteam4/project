@@ -198,8 +198,14 @@ def calc_rank(dfs, df_grid, RANGE_KM, radar_num=50, polygon_coords=None):
     # 가중치가 0인 건물(중요도 없음) 제외
     df_building_filtered = df_building_filtered[df_building_filtered['score'] != 0]
 
+
     # 반복 소거용 임시 복사본
     df_building_temp = df_building_filtered.copy()
+
+    if len(df_building_temp) == 0:
+        print("선택된 영역 내에 가중치가 적용된 시설물이 하나도 없습니다.")
+        # 빈 결과값과 함께 즉시 반환
+        return rank_dic, 0, df_building_filtered
 
     # ── 4. 순위별 최적 위치 선정 (Greedy) ─────────────────────────
     max_radar_num = radar_num  # 조기 종료 없을 경우 기본값
@@ -250,15 +256,21 @@ def calc_rank(dfs, df_grid, RANGE_KM, radar_num=50, polygon_coords=None):
         print(f'점수 : {rank_dic[position_grid]}')
         print(f'남은 시설물 : {len(df_building_temp)}개')
 
-        # 최고점이 음수가 될 때 루프 종료
-        if max_score <= 0 :
+
+        if len(df_building_temp) == 0:
             max_radar_num = i + 1
             print('-' * 30)
-            print(f'최대 radar 개수: {max_radar_num}')
+            print(f'모든 시설물 커버 완료. 사용된 radar 개수: {max_radar_num}')
             break
 
-    return rank_dic, max_radar_num
+        # 최고점이 음수가 될 때 루프 종료
+        if max_score <= 0:
+            max_radar_num = i 
+            print('-' * 30)
+            print(f'수익성이 있는 최대 radar 개수: {max_radar_num}')
+            break
 
+    return rank_dic, max_radar_num, df_building_filtered
 # ────────────────────────────────────────────────────────────────────────────────
 # 건물 태그별 가중치 설정
 # ────────────────────────────────────────────────────────────────────────────────
