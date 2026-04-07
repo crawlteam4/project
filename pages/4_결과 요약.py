@@ -49,6 +49,10 @@ ICON_MAP = {
     
     "배수지":             folium.Icon(color="cadetblue",  icon="tint",              prefix="fa"),
     "기지국":         folium.Icon(color="darkred",    icon="signal",            prefix="fa"),
+
+    "철도": folium.Icon(color="darkred", icon="subway", prefix="fa"),
+    "차량기지": folium.Icon(color="darkred", icon="subway", prefix="fa"),
+    "공항": folium.Icon(color="darkred", icon="plane", prefix="fa"),
 }
 # 카테고리별 차트 색상 팔레트
 PALETTE = ['#E57535','#72AF26','#38AADD','#D43D2A','#00375D','#3D3D3D','#436978','#E07DBF','#CBBE73','#728224','#A3CAC5','#A23336']

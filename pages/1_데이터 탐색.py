@@ -15,6 +15,7 @@ from utils import set_common_banner, require_login
 if "logged_in" not in st.session_state or not st.session_state.logged_in:
     st.error("로그인이 필요합니다.")
     st.stop()  # 이 아래 코드는 실행되지 않음
+
 # 1. 초기 설정 및 데이터 매핑
 
 @st.cache_resource
@@ -34,7 +35,7 @@ def get_engine():
     url = f"{driver}://{conf['user']}:{conf['password']}@{conf['host']}:{conf['port']}/{conf['database']}?charset=utf8mb4"
     return create_engine(url)
 
-
+# multiselect 분류별 매핑
 FACILITY_MAP = {
     "국가중요시설": {
         "전력시설 (electricity)": ["변전소"],
@@ -65,6 +66,41 @@ TABLE_NAME_MAP = {
 GRID_MAP = {
     "인구 밀집도": "population_raw",
     "건물 고도&밀집도": "density"
+}
+
+# icon 및 레이어 매핑
+
+CAT_KR = {
+    'broadcast': '방송시설', 'electricity': '전력시설', 'factory': '산업 시설',
+    'hospital': '병원', 'infra': '공동구', 'prison': '교정 시설',
+    'public': '국가 공공기관 시설', 'science': '과학연구', 'telecommunication': '정보통신시설',
+    'transportation': '교통 항공 항만 시설', 'water': '수원 시설', 'frequency': '기지국',
+}
+
+ICON_MAP = {
+    "방송국": folium.Icon(color="orange", icon="broadcast-tower", prefix="fa"),
+    "변전소": folium.Icon(color="green", icon="bolt", prefix="fa"),
+    "산업시설": folium.Icon(color="blue", icon="industry", prefix="fa"),
+    "병원": folium.Icon(color="red", icon="hospital", prefix="fa"),
+    "혈액원": folium.Icon(color="red", icon="hospital", prefix="fa"),
+    "혈액검사센터": folium.Icon(color="red", icon="hospital", prefix="fa"),
+    "공동구": folium.Icon(color="darkblue", icon="cogs", prefix="fa"),
+    "교정시설": folium.Icon(color="black", icon="university", prefix="fa"),
+    "지방행정기관": folium.Icon(color="cadetblue", icon="building", prefix="fa"),
+    "중앙행정기관": folium.Icon(color="cadetblue", icon="building", prefix="fa"),
+    "국가유산": folium.Icon(color="cadetblue", icon="building", prefix="fa"),
+    "과학연구": folium.Icon(color="purple", icon="flask", prefix="fa"),
+    "정보통신시설": folium.Icon(color="beige", icon="satellite-dish", prefix="fa"),
+    "통신망": folium.Icon(color="beige", icon="satellite-dish", prefix="fa"),
+    "금융": folium.Icon(color="beige", icon="satellite-dish", prefix="fa"),
+    "터널": folium.Icon(color="darkgreen", icon="train", prefix="fa"),
+    "교량": folium.Icon(color="darkgreen", icon="train", prefix="fa"),
+    "배수지": folium.Icon(color="cadetblue", icon="tint", prefix="fa"),
+    "지방정수장": folium.Icon(color="cadetblue", icon="tint", prefix="fa"),
+    "기지국": folium.Icon(color="darkred", icon="signal", prefix="fa"),
+    "철도": folium.Icon(color="darkred", icon="subway", prefix="fa"),
+    "차량기지": folium.Icon(color="darkred", icon="subway", prefix="fa"),
+    "공항": folium.Icon(color="darkred", icon="plane", prefix="fa")
 }
 
 # 2. 데이터 처리 함수 (Business Logic)
@@ -274,16 +310,24 @@ def render_facility_tab():
         
         # 버튼이 눌렸을 때만 지도의 Marker 추가 로직 실행
         if search_btn and not final_df.empty:
-            mc = MarkerCluster(name="시설물 클러스터").add_to(m)
-            for _, row in final_df.iterrows():
-                popup_text = f"<b>{row['name']}</b><br>{row['mid_cat']}<br>Tag: {row['tag']}"
-                folium.Marker(
-                    [row['latitude'], row['longitude']], 
-                    popup=folium.Popup(popup_text, max_width=250),
-                    icon=folium.Icon(color='blue', icon='info-sign')
-                ).add_to(mc)
+            for cat in final_df['tag'].unique():
+                cat_df = final_df[final_df['tag'] == cat]
+                # 레이어 생성 (이름: 한글명 (개수))
+                layer_name = f"{CAT_KR.get(cat, cat)} ({len(cat_df)}개)"
+                layer = folium.FeatureGroup(name=layer_name, show=True).add_to(m)
+                mc = MarkerCluster().add_to(layer)
+                for _, row in cat_df.iterrows():
+                    name = row.get('name', '')
+                    popup_text = f"<b>{name}</b><br>{row['mid_cat']}<br>Tag: {row['tag']}"
+                    folium.Marker(
+                        location=[row['latitude'], row['longitude']], 
+                        popup=folium.Popup(popup_text, max_width=250),
+                        tooltip=name,
+                        # ICON_MAP에서 아이콘 조회, 없으면 회색 기본 아이콘
+                        icon=ICON_MAP.get(row['tag'], folium.Icon(color="gray", icon="question", prefix="fa"))
+                    ).add_to(mc)
         
-        folium.LayerControl().add_to(m)
+        folium.LayerControl(collapsed=False).add_to(m)
         folium_static(m, width=1200, height=650)
 
 

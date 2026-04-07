@@ -201,6 +201,7 @@ def main():
         st.session_state.final_df = df_final
 
         # 4. 결과 지도 생성
+        # 단, 너무 좁은 구역 또는 적은 시설물 선택 시 아예 계산이 진행되지 않아 뜨는 오류 방지할 예외처리 필요
         try:
             visualize(df_grid, dfs1, rank_dic, RANGE_KM, ICON_MAP,
                     show_rank=None, polygon_coords=grid_bd_points, df_final=df_final)
